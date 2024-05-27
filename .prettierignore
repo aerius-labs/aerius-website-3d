@@ -1,0 +1,9 @@
+.yarn
+.vscode
+.next
+dist
+node_modules
+*.md
+pnpm-lock.yaml
+.eslintignore
+.husky/*

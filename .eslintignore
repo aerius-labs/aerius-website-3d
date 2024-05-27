@@ -1,0 +1,7 @@
+**/node_modules/*
+**/out/*
+**/dist/*
+**/.tsbuild*
+**/.next/*
+*.md
+pnpm-lock.yaml

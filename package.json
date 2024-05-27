@@ -1,0 +1,35 @@
+{
+  "name": "aerius-website-3d",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "pnpm run lint --fix && pnpm run prettier && next dev --turbo",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "clean": "rimraf .next",
+    "prettier": "prettier --write --cache '**/**/*.{js,jsx,ts,tsx,css}'",
+    "check-types": "tsc --noEmit --pretty",
+    "prepare": "husky"
+  },
+  "dependencies": {
+    "next": "14.2.3",
+    "react": "^18",
+    "react-dom": "^18"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "eslint": "^8",
+    "eslint-config-next": "14.2.3",
+    "eslint-config-prettier": "^9.1.0",
+    "husky": "^9.0.11",
+    "postcss": "^8",
+    "prettier": "^3.2.5",
+    "prettier-plugin-tailwindcss": "^0.5.14",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5"
+  }
+}
