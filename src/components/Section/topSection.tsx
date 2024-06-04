@@ -51,7 +51,7 @@ export default function TopSection() {
     <main className='relative flex min-h-screen flex-col items-center justify-center text-white'>
       <div className='absolute top-0 flex justify-center overflow-hidden'>
         <Image
-          className='w-16 sm:w-20 lg:w-24'
+          className='w-10 sm:w-12 lg:w-16'
           data-aos='slide-up'
           data-aos-delay='100'
           src='/images/logo.png'
@@ -60,7 +60,7 @@ export default function TopSection() {
           height={150}
         ></Image>
       </div>
-      <div className='flex flex-wrap gap-4 text-5xl font-extrabold lg:gap-10 lg:text-9xl'>
+      <div className='flex flex-wrap gap-0 text-7xl font-extrabold lg:gap-10 lg:text-[150px]'>
         <div className='mx-auto flex flex-row flex-nowrap overflow-hidden'>
           <p data-aos='slide-up' data-aos-delay='100'>
             Z
@@ -77,42 +77,35 @@ export default function TopSection() {
         </div>
         <div className='mx-auto flex flex-row flex-nowrap overflow-hidden'>
           <p data-aos='slide-up' data-aos-delay='300'>
-            K
+            U
           </p>
           <p data-aos='slide-up' data-aos-delay='350'>
             N
           </p>
           <p data-aos='slide-up' data-aos-delay='400'>
-            O
+            S
           </p>
           <p data-aos='slide-up' data-aos-delay='450'>
-            W
+            E
           </p>
           <p data-aos='slide-up' data-aos-delay='500'>
-            L
+            E
           </p>
           <p data-aos='slide-up' data-aos-delay='550'>
-            E
-          </p>
-          <p data-aos='slide-up' data-aos-delay='600'>
-            D
-          </p>
-          <p data-aos='slide-up' data-aos-delay='650'>
-            G
-          </p>
-          <p data-aos='slide-up' data-aos-delay='700'>
-            E
+            N
           </p>
         </div>
       </div>
       <div className='overflow-hidden'>
         <p
-          className='sm:text-1xl py-4 text-center text-sm lg:py-8 lg:text-2xl'
+          className='py-4 text-center text-sm sm:text-xl lg:py-8 lg:text-2xl'
           data-aos='slide-up'
           data-aos-delay='1000'
         >
-          <span>Pioneering Invisible Integrity with </span>{' '}
-          <span className='font-bold'>Zero Knowledge Proofs</span>
+          <span className='text-grey'>
+            Pioneering Invisible Integrity with{' '}
+          </span>{' '}
+          <span>Zero Knowledge Proofs</span>
         </p>
       </div>
     </main>
