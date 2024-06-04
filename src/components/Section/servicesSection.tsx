@@ -6,7 +6,7 @@ export default function ServicesSection() {
           BOOST YOUR PRODUCTS
         </h1>
         <h3 className='sm:text-1xl text-center text-lg lg:text-2xl'>
-          <span>Enhance Your Brand's Potential with Our </span>
+          <span>Enhance Your Brand&apos;s Potential with Our </span>
           <span>Range of Product-Boosting Services</span>
         </h3>
       </div>
@@ -18,7 +18,7 @@ export default function ServicesSection() {
           <p className='text-1xl pt-5 text-center leading-normal'>
             Whether it is leveraging an anonymous network, ZKPs, MPC or any
             other privacy technique, we can assist your team in integrating
-            these tools into your product’s initial prototyping phase.
+            these tools into your product&apos;s initial prototyping phase.
           </p>
         </div>
         <div className='border-[1px] border-white p-5'>
