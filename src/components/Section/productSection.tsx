@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 export default function ProductSection() {
   return (
-    <main className='flex min-h-screen w-screen flex-col justify-center py-10 text-white lg:items-start'>
+    <section className='flex min-h-screen w-screen flex-col justify-center py-10 text-white lg:items-start'>
       <div className='md:w-[70vw] lg:w-[50vw]'>
         <div className='flex flex-col gap-4 px-10 text-center md:text-left'>
           <h1 className='text-2xl font-bold sm:text-3xl lg:text-5xl'>
@@ -56,6 +56,6 @@ export default function ProductSection() {
           </div>
         </div>
       </div>
-    </main>
+    </section>
   );
 }

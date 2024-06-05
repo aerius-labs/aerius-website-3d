@@ -1,6 +1,6 @@
 export default function OurWritingsSection() {
   return (
-    <main className='flex min-h-screen w-screen flex-col items-center justify-center px-5 py-10 text-white lg:p-20'>
+    <section className='flex min-h-screen w-screen flex-col items-center justify-center px-5 py-10 text-white lg:p-20'>
       <div className='flex flex-col items-center justify-center'>
         <h1 className='text-2xl font-bold sm:text-3xl lg:text-5xl'>
           Ready to Geek Out?
@@ -74,6 +74,6 @@ export default function OurWritingsSection() {
           </div>
         </div>
       </div>
-    </main>
+    </section>
   );
 }

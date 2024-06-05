@@ -1,6 +1,6 @@
 export default function ServicesSection() {
   return (
-    <main className='flex min-h-screen w-screen flex-col justify-center py-10 text-white'>
+    <section className='flex min-h-screen w-screen flex-col justify-center py-10 text-white'>
       <div className='flex flex-col items-center gap-4 px-5'>
         <h1 className='text-2xl font-bold sm:text-4xl lg:text-6xl'>
           BOOST YOUR PRODUCTS
@@ -44,6 +44,6 @@ export default function ServicesSection() {
           </p>
         </div>
       </div>
-    </main>
+    </section>
   );
 }

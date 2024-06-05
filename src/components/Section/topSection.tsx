@@ -48,7 +48,7 @@ export default function TopSection() {
   }, []);
 
   return (
-    <main className='relative flex min-h-screen flex-col items-center justify-center text-white'>
+    <section className='relative flex min-h-screen flex-col items-center justify-center text-white'>
       <div className='absolute top-0 flex justify-center overflow-hidden'>
         <Image
           className='w-10 sm:w-12 lg:w-16'
@@ -108,6 +108,6 @@ export default function TopSection() {
           <span>Zero Knowledge Proofs</span>
         </p>
       </div>
-    </main>
+    </section>
   );
 }
