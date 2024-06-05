@@ -73,7 +73,7 @@ export function Aerius3DModel(props: any) {
         receiveShadow
         geometry={nodes.Logo_Main.geometry}
         material={materials['Frosted Glass 01']}
-        position={[0, 0, 0]}
+        position={[0, -0.7, 0]}
       />
       <mesh
         castShadow

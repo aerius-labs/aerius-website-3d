@@ -26,7 +26,11 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
-    overflow-x: hidden;
+  overflow-x: hidden;
+}
+
+.canvasContainer div div div {
+  scrollbar-width: none;
 }
 
 @layer utilities {
