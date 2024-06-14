@@ -2,20 +2,35 @@
 
 import TopSection from './topSection';
 import { Canvas } from '@react-three/fiber';
-import { Environment, ScrollControls } from '@react-three/drei';
-import { Aerius3DModel } from '@/components/3DModels/aeriusLogo';
+import { Suspense } from 'react';
+import { useProgress, Html, Environment, Center } from '@react-three/drei';
+import Aerius3DModel from '@/components/3DModels/aeriusLogo';
+
+function Loader() {
+  const { progress, active } = useProgress();
+
+  return <Html center>{progress.toFixed(1)} % loaded</Html>;
+}
 
 export default function HeroSection() {
   return (
     <>
       <TopSection />
-      <div className='canvasContainer h-[100vh] w-[100vw]'>
-        <Canvas shadows camera={{ position: [0, 0, 5], fov: 60 }}>
-          <ScrollControls pages={2} damping={0.5}>
-            <Aerius3DModel scale={1} />
-            <Environment preset='studio' />
-          </ScrollControls>
-          <ambientLight intensity={0.5} />
+      <div className='relative flex h-screen w-screen items-center justify-center'>
+        <Canvas
+          gl={{ antialias: true }}
+          dpr={[1, 1.5]}
+          camera={{ fov: 70, position: [0, 0, 5] }}
+          className='h-screen w-screen'
+        >
+          <color attach='background' args={['#000']} />
+          <directionalLight position={[-5, -5, 5]} intensity={4} />
+          <Environment preset='studio' />
+          <Suspense fallback={<Loader />}>
+            <Center>
+              <Aerius3DModel />
+            </Center>
+          </Suspense>
         </Canvas>
       </div>
     </>
