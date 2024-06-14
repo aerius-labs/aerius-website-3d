@@ -1,26 +1,64 @@
+import Image from 'next/image';
+
 export default function AboutUsSection() {
   return (
-    <section className='flex min-h-screen w-screen flex-col items-end justify-center px-5 py-10 text-white lg:p-20'>
-      <div className='gap-4 border-[1px] border-white p-5 md:w-[70vw] lg:w-[50vw]'>
-        <h1 className='border-b-[1px] border-white pb-5 text-center text-2xl font-bold sm:text-left lg:text-3xl'>
-          <span className='text-grey'>FUTURE OF</span>{' '}
-          <span>SECURE SYSTEMS</span>
-        </h1>
-        <p className='flex flex-col gap-5 pt-5 text-center text-xl leading-normal sm:text-left'>
-          <span>
-            Aerius Labs is where cryptography, blockchain, and zero-knowledge
-            proofs (ZK) converge to shape the future of secure systems.
-          </span>
-          <span>
-            Our team of experts specializes in cutting-edge technologies like
-            Plonky2, Halo2, and Nova, bringing expertise to the realm of ZK
-            proofs.
-          </span>
-          <span>
-            With a relentless pursuit of innovation, we strive to build trust,
-            privacy, and efficiency into every solution we create.
-          </span>
-        </p>
+    <section className='flex w-screen flex-col items-end justify-center text-white'>
+      {/* Top line */}
+      <div className='relative min-h-[150vh] w-screen overflow-hidden text-center'>
+        <div className='absolute left-[15%] flex h-full justify-center md:left-[55%]'>
+          <div className='absolute z-[5] h-full w-[2px] bg-grey'></div>
+          <div className='absolute bottom-[50px] z-10 bg-black py-2 text-3xl font-bold text-grey md:text-4xl'>
+            01
+          </div>
+        </div>
+      </div>
+
+      {/* Content */}
+      <div className='px-5 lg:px-20'>
+        <div className='gap-4 border-[1px] border-white p-5 md:w-[60vw] lg:w-[50vw]'>
+          <h1 className='border-b-[1px] border-white pb-5 text-center text-2xl font-bold sm:text-left lg:text-3xl'>
+            <span className='text-grey'>FUTURE OF</span>{' '}
+            <span>SECURE SYSTEMS</span>
+          </h1>
+          <p className='flex flex-col gap-5 pt-5 text-center text-xl leading-normal sm:text-left'>
+            <span>
+              Aerius Labs is where cryptography, blockchain, and zero-knowledge
+              proofs (ZK) converge to shape the future of secure systems.
+            </span>
+            <span>
+              Our team of experts specializes in cutting-edge technologies like
+              Plonky2, Halo2, and Nova, bringing expertise to the realm of ZK
+              proofs.
+            </span>
+            <span>
+              With a relentless pursuit of innovation, we strive to build trust,
+              privacy, and efficiency into every solution we create.
+            </span>
+          </p>
+        </div>
+      </div>
+
+      {/* Bottom line */}
+      <div className='relative flex min-h-[150vh] w-screen overflow-hidden'>
+        <div className='absolute bottom-0 left-[50%] top-0 h-full w-[35%]'>
+          <Image
+            className='hidden h-full w-[100%] object-cover lg:absolute lg:block'
+            width={100}
+            height={100}
+            src='/Lines/gMobileB01Line.svg'
+            alt='sds'
+          />
+          <Image
+            className='absolute h-full w-[100%] scale-x-[-1] object-cover lg:hidden'
+            width={100}
+            height={100}
+            src='/Lines/mobileB01line.svg'
+            alt='sds'
+          />
+          <div className='absolute bottom-[50px] left-[-20px] z-10 bg-black py-2 text-3xl font-bold text-grey md:text-4xl'>
+            02
+          </div>
+        </div>
       </div>
     </section>
   );
