@@ -2,7 +2,8 @@ import Image from 'next/image';
 
 export default function ProductSection() {
   return (
-    <section className='flex min-h-screen w-screen flex-col justify-center py-10 text-white lg:items-start'>
+    <section className='flex w-screen flex-col justify-center pt-6 text-white lg:items-start'>
+      {/* Content */}
       <div className='md:w-[70vw] lg:w-[50vw]'>
         <div className='flex flex-col gap-4 px-10 text-center md:text-left'>
           <h1 className='text-2xl font-bold sm:text-3xl lg:text-5xl'>
@@ -13,7 +14,7 @@ export default function ProductSection() {
             <span>Innovative Product Solution</span>
           </h3>
         </div>
-        <div className='grid gap-4 px-5 py-10 md:grid-rows-2'>
+        <div className='grid gap-4 px-5 pt-10 md:grid-rows-2'>
           <div className='border-[1px] border-white p-5 sm:flex sm:flex-row'>
             <div className='basis-1/3'>
               <Image
@@ -53,6 +54,23 @@ export default function ProductSection() {
                 anonymous, and user friendly.
               </p>
             </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Bottom Line */}
+      <div className='relative flex min-h-[150vh] w-screen items-center justify-center overflow-hidden'>
+        <div className='absolute left-[50%] top-0 h-full lg:left-[18%] lg:w-[32%]'>
+          <Image
+            className='hidden h-full w-[100%] scale-x-[-1] object-cover lg:absolute lg:block'
+            width={100}
+            height={100}
+            src='/Lines/gMobileB01Line.svg'
+            alt='sds'
+          />
+          <div className='absolute z-[5] h-full w-[2px] bg-grey lg:hidden'></div>
+          <div className='absolute bottom-[50px] right-[-20px] z-10 bg-black py-2 text-3xl font-bold text-grey md:text-4xl'>
+            04
           </div>
         </div>
       </div>

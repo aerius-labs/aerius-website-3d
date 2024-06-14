@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 export default function ServicesSection() {
   return (
-    <section className='flex w-screen flex-col justify-center py-6 text-white'>
+    <section className='flex w-screen flex-col justify-center pt-6 text-white'>
       {/* Heading */}
       <div className='flex flex-col items-center gap-4 px-5'>
         <h1 className='text-2xl font-bold sm:text-4xl lg:text-6xl'>
