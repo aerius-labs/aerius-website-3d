@@ -1,6 +1,9 @@
+import Image from 'next/image';
+
 export default function ServicesSection() {
   return (
-    <section className='flex min-h-screen w-screen flex-col justify-center py-10 text-white'>
+    <section className='flex w-screen flex-col justify-center py-6 text-white'>
+      {/* Heading */}
       <div className='flex flex-col items-center gap-4 px-5'>
         <h1 className='text-2xl font-bold sm:text-4xl lg:text-6xl'>
           BOOST YOUR PRODUCTS
@@ -12,6 +15,8 @@ export default function ServicesSection() {
           <span>Our Range of Product-Boosting Services</span>
         </h3>
       </div>
+
+      {/* Grid */}
       <div className='grid gap-4 px-5 py-10 md:grid-cols-3 lg:p-20'>
         <div className='border-[1px] border-white p-5'>
           <h1 className='border-b-[1px] border-white pb-5 text-center text-2xl font-bold lg:text-3xl'>
@@ -42,6 +47,23 @@ export default function ServicesSection() {
             We offer thorough analysis and verification of zero-knowledge
             circuits and smart contracts for enhanced security and reliability.
           </p>
+        </div>
+      </div>
+
+      {/* Bottom Line */}
+      <div className='relative flex min-h-[150vh] w-screen items-center justify-center overflow-hidden'>
+        <div className='absolute bottom-0 left-[50%] top-0 h-full w-[32%] lg:left-[18%]'>
+          <Image
+            className='hidden h-full w-[100%] object-cover lg:absolute lg:block'
+            width={100}
+            height={100}
+            src='/Lines/gMobileB01Line.svg'
+            alt='sds'
+          />
+          <div className='absolute z-[5] h-full w-[2px] bg-grey lg:hidden'></div>
+          <div className='absolute bottom-[50px] left-[-20px] z-10 bg-black py-2 text-3xl font-bold text-grey md:text-4xl'>
+            03
+          </div>
         </div>
       </div>
     </section>
