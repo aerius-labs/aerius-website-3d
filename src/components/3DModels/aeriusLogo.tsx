@@ -29,7 +29,7 @@ export default function Model() {
   }, []);
 
   useEffect(() => {
-    if (scrollPosition >= 0.07 && actions) {
+    if (scrollPosition >= 0.04 && actions) {
       setAnimationStarted(true);
       console.log('Animation started');
       Object.values(actions).forEach((action: any) => action.play());
@@ -43,7 +43,7 @@ export default function Model() {
   useFrame(() => {
     if (animationStarted && actions) {
       Object.values(actions).forEach((action: any) => {
-        action.time = (scrollPosition - 0.07) * 2 * action.getClip().duration;
+        action.time = (scrollPosition - 0.04) * 2 * action.getClip().duration;
         action.paused = false;
       });
     }

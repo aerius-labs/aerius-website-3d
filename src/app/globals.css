@@ -18,8 +18,12 @@
   }
 }
 
-* {
+*,
+html, body {
   scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
@@ -31,6 +35,7 @@ body {
     )
     rgb(var(--background-start-rgb));
   overflow-x: hidden;
+  background-color: #000;
 }
 
 @layer utilities {

@@ -46,14 +46,14 @@ export default function AboutUsSection() {
             width={100}
             height={100}
             src='/Lines/gMobileB01Line.svg'
-            alt='sds'
+            alt='line'
           />
           <Image
             className='absolute h-full w-[100%] scale-x-[-1] object-cover lg:hidden'
             width={100}
             height={100}
             src='/Lines/mobileB01line.svg'
-            alt='sds'
+            alt='line'
           />
           <div className='absolute bottom-[50px] left-[-20px] z-10 bg-black py-2 text-3xl font-bold text-grey md:text-4xl'>
             02
