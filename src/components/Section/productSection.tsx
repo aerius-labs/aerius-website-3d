@@ -4,8 +4,8 @@ export default function ProductSection() {
   return (
     <section className='flex w-screen flex-col justify-center pt-6 text-white lg:items-start'>
       {/* Content */}
-      <div className='md:w-[70vw] lg:w-[50vw]'>
-        <div className='flex flex-col gap-4 px-10 text-center md:text-left'>
+      <div className='px-5 md:w-[70vw] lg:w-[50vw] lg:px-20'>
+        <div className='flex flex-col gap-4 text-center md:text-left'>
           <h1 className='text-2xl font-bold sm:text-3xl lg:text-5xl'>
             EMPOWER YOUR EXPERIENCES
           </h1>
@@ -14,7 +14,7 @@ export default function ProductSection() {
             <span>Innovative Product Solution</span>
           </h3>
         </div>
-        <div className='grid gap-4 px-5 pt-10 md:grid-rows-2'>
+        <div className='grid gap-4 pt-10 md:grid-rows-2'>
           <div className='border-[1px] border-white p-5 sm:flex sm:flex-row'>
             <div className='basis-1/3'>
               <Image
