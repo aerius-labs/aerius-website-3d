@@ -14,7 +14,7 @@ export default function AboutUsSection() {
       </div>
 
       {/* Content */}
-      <div className='px-5 lg:px-20'>
+      <div id='About' className='px-5 lg:px-20'>
         <div className='gap-4 border-[1px] border-white p-5 md:w-[60vw] lg:w-[50vw]'>
           <h1 className='border-b-[1px] border-white pb-5 text-center text-2xl font-bold sm:text-left lg:text-3xl'>
             <span className='text-grey'>FUTURE OF</span>{' '}

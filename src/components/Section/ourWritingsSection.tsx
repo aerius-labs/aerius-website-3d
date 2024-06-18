@@ -2,7 +2,10 @@ import Link from 'next/link';
 
 export default function OurWritingsSection() {
   return (
-    <section className='relative flex w-screen flex-col items-center justify-center px-5 pb-40 pt-10 text-white lg:px-20'>
+    <section
+      id='Blogs'
+      className='relative flex w-screen flex-col items-center justify-center px-5 pb-40 pt-10 text-white lg:px-20'
+    >
       {/* Content */}
       <div className='flex flex-col items-center justify-center'>
         <h1 className='text-2xl font-bold sm:text-3xl lg:text-5xl'>

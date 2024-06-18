@@ -3,7 +3,10 @@ import MarqueeComponent from '../MarqueeComponent/marquee';
 
 export default function TrustSection() {
   return (
-    <section className='flex w-screen flex-col justify-center pt-10 text-white'>
+    <section
+      id='Trusted'
+      className='flex w-screen flex-col justify-center pt-10 text-white'
+    >
       {/* Content */}
       <div className='flex flex-col items-center gap-4 px-5'>
         <h1 className='text-2xl font-bold sm:text-4xl lg:text-6xl'>

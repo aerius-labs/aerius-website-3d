@@ -5,6 +5,7 @@ import ProductSection from '@/components/Section/productSection';
 import TrustSection from '@/components/Section/trustSection';
 import OurWritingsSection from '@/components/Section/ourWritingsSection';
 import FooterSection from '@/components/Section/footerSection';
+import ScrollSpy from '@/components/SpyScroll/spySrcoll';
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
       <TrustSection />
       <OurWritingsSection />
       <FooterSection />
+      <ScrollSpy />
     </main>
   );
 }

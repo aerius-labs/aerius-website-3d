@@ -2,7 +2,10 @@ import Image from 'next/image';
 
 export default function ProductSection() {
   return (
-    <section className='flex w-screen flex-col justify-center pt-6 text-white lg:items-start'>
+    <section
+      id='Products'
+      className='flex w-screen flex-col justify-center pt-6 text-white lg:items-start'
+    >
       {/* Content */}
       <div className='px-5 md:w-[70vw] lg:w-[50vw] lg:px-20'>
         <div className='flex flex-col gap-4 text-center md:text-left'>
