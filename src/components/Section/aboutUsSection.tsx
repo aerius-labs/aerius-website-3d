@@ -1,10 +1,16 @@
+'use client';
 import Image from 'next/image';
+import dynamic from 'next/dynamic';
+
+// const Scene = dynamic(() => import('@/components/Scenes/astronautScene'), {
+//   ssr: false,
+// });
 
 export default function AboutUsSection() {
   return (
-    <section className='flex w-screen flex-col items-end justify-center text-white'>
+    <section className='relative flex w-screen flex-col items-end justify-center text-white'>
       {/* Top line */}
-      <div className='relative min-h-[150vh] w-screen overflow-hidden text-center'>
+      <div className='relative z-10 min-h-[150vh] w-screen overflow-hidden text-center'>
         <div className='absolute left-[15%] flex h-full justify-center md:left-[55%]'>
           <div className='absolute z-[5] h-full w-[2px] bg-grey'></div>
           <div className='absolute bottom-[50px] z-10 bg-black py-2 text-3xl font-bold text-grey md:text-4xl'>
@@ -14,7 +20,7 @@ export default function AboutUsSection() {
       </div>
 
       {/* Content */}
-      <div id='About' className='px-5 lg:px-20'>
+      <div id='About' className='z-10 px-5 lg:px-20'>
         <div className='gap-4 border-[1px] border-white p-5 md:w-[60vw] lg:w-[50vw]'>
           <h1 className='border-b-[1px] border-white pb-5 text-center text-2xl font-bold sm:text-left lg:text-3xl'>
             <span className='text-grey'>FUTURE OF</span>{' '}
@@ -39,7 +45,7 @@ export default function AboutUsSection() {
       </div>
 
       {/* Bottom line */}
-      <div className='relative flex min-h-[150vh] w-screen overflow-hidden'>
+      <div className='relative z-10 flex min-h-[150vh] w-screen overflow-hidden'>
         <div className='absolute bottom-0 left-[50%] top-0 h-full w-[35%]'>
           <Image
             className='hidden h-full w-[100%] object-cover lg:absolute lg:block'
@@ -60,6 +66,10 @@ export default function AboutUsSection() {
           </div>
         </div>
       </div>
+
+      {/* <div className='absolute left-0 top-0 z-0 h-full w-full'>
+        <Scene />
+      </div> */}
     </section>
   );
 }
