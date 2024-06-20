@@ -39,6 +39,22 @@ body {
   background-color: #000;
 }
 
+.bottom_black {
+  background-image: linear-gradient(
+    to bottom,
+    transparent,
+    transparent 60%,
+    #000 60%,
+    #000 100%
+  );
+}
+
+@media screen and (max-width: 768px) {
+  .bottom_black {
+    background-image: none;
+  }
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;

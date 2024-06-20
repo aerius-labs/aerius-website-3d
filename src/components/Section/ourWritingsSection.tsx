@@ -7,11 +7,11 @@ export default function OurWritingsSection() {
       className='relative flex w-screen flex-col items-center justify-center px-5 pb-40 pt-10 text-white lg:px-20'
     >
       {/* Content */}
-      <div className='flex flex-col items-center justify-center'>
+      <div className='sticky top-10 flex flex-col items-center justify-center'>
         <h1 className='text-2xl font-bold sm:text-3xl lg:text-5xl'>
           Ready to Geek Out?
         </h1>
-        <h3 className='pt-5 text-xl lg:text-2xl'>
+        <h3 className='pt-5 text-center text-lg lg:text-2xl'>
           <span className='text-grey'>
             Discover tomorrow&apos;s trends today, explore our insights on{' '}
           </span>
@@ -19,8 +19,8 @@ export default function OurWritingsSection() {
         </h3>
       </div>
 
-      <div className='grid gap-5 pt-10 md:grid-cols-4 lg:pt-20'>
-        <div className='flex flex-col items-center justify-center'>
+      <div className='bottom_black relative mt-10 flex flex-col justify-center gap-10 md:mt-20 md:flex-row'>
+        <div className='sticky top-[150px] flex h-[50vh] flex-col items-center justify-center pb-5 md:top-52 md:mt-[40vh] md:h-screen'>
           <div className='group flex cursor-pointer flex-col justify-between gap-20 border-[1px] p-5 md:gap-40'>
             <h1 className='text-xl font-bold lg:text-2xl'>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum,
@@ -37,10 +37,9 @@ export default function OurWritingsSection() {
             </div>
           </div>
           {/* Bottom Line */}
-          <div className='hidden h-[40vh] max-h-[400px] min-h-[250px] w-[2px] bg-grey md:block'></div>
+          <div className='hidden h-[70%] min-h-[250px] w-[2px] bg-grey md:block'></div>
         </div>
-
-        <div className='flex flex-col items-center justify-center'>
+        <div className='sticky top-[430px] flex h-[50vh] flex-col items-center justify-center pb-5 md:top-52 md:mt-[80vh] md:h-screen'>
           <div className='group flex cursor-pointer flex-col justify-between gap-20 border-[1px] p-5 md:gap-40'>
             <h1 className='text-xl font-bold lg:text-2xl'>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum,
@@ -57,10 +56,9 @@ export default function OurWritingsSection() {
             </div>
           </div>
           {/* Bottom Line */}
-          <div className='hidden h-[40vh] max-h-[400px] min-h-[250px] w-[2px] bg-grey md:block'></div>
+          <div className='hidden h-[70%] min-h-[250px] w-[2px] bg-grey md:block'></div>
         </div>
-
-        <div className='flex flex-col items-center justify-center'>
+        <div className='sticky top-[710px] flex h-[50vh] flex-col items-center justify-center pb-5 md:top-52 md:mt-[120vh] md:h-screen'>
           <div className='group flex cursor-pointer flex-col justify-between gap-20 border-[1px] p-5 md:gap-40'>
             <h1 className='text-xl font-bold lg:text-2xl'>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum,
@@ -77,11 +75,10 @@ export default function OurWritingsSection() {
             </div>
           </div>
           {/* Bottom Line */}
-          <div className='hidden h-[40vh] max-h-[400px] min-h-[250px] w-[2px] bg-grey md:block'></div>
+          <div className='hidden h-[70%] min-h-[250px] w-[2px] bg-grey md:block'></div>
         </div>
-
-        <div className='flex flex-col items-center justify-center'>
-          <div className='group flex cursor-pointer flex-col justify-between gap-20 border-[1px] p-5 md:gap-40'>
+        <div className='sticky top-[990px] flex h-[50vh] flex-col items-center justify-center pb-5 md:top-52 md:mt-[160vh] md:h-screen'>
+          <div className='group flex cursor-pointer flex-col justify-between gap-20 border-[1px] bg-black p-5 md:gap-40 md:bg-transparent'>
             <h1 className='text-xl font-bold lg:text-2xl'>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum,
               distinctio quo
@@ -97,7 +94,7 @@ export default function OurWritingsSection() {
             </div>
           </div>
           {/* Bottom Line */}
-          <div className='hidden h-[40vh] max-h-[400px] min-h-[250px] w-[2px] bg-grey md:block'></div>
+          <div className='hidden h-[70%] min-h-[250px] w-[2px] bg-grey md:block'></div>
         </div>
       </div>
 
