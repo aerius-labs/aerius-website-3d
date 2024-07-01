@@ -1,5 +1,5 @@
 'use client';
-import { useAnimations, useGLTF } from '@react-three/drei';
+import { useAnimations, useGLTF, PerspectiveCamera } from '@react-three/drei';
 import { useFrame } from '@react-three/fiber';
 import { useEffect, useRef, useState } from 'react';
 
@@ -52,7 +52,7 @@ export default function SatelliteModel() {
     <group ref={group} dispose={null}>
       <group name='Scene'>
         {/* <PerspectiveCamera
-          name='Camera'
+          name="Camera"
           makeDefault={false}
           far={1000}
           near={0.1}
@@ -174,6 +174,22 @@ export default function SatelliteModel() {
             scale={[0.061, 0.119, 0.119]}
           />
         </mesh>
+        <pointLight
+          name='Point'
+          intensity={2717570.653}
+          decay={2}
+          color='#b8b6ff'
+          position={[17.563, 23.175, 7.499]}
+          rotation={[-Math.PI / 2, 0, 0]}
+        />
+        <pointLight
+          name='Point001'
+          intensity={543514.131}
+          decay={2}
+          color='#fefffa'
+          position={[-9.122, 20.686, -1.713]}
+          rotation={[-Math.PI / 2, 0, 0]}
+        />
         <group
           name='Empty001'
           position={[0.318, 0, -11.854]}

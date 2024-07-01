@@ -18,7 +18,6 @@ export default function SatelliteScene() {
       }}
     >
       <color attach='background' args={['#000']} />
-      <directionalLight position={[-5, -5, 5]} intensity={4} />
       <Environment preset='night' />
       <Suspense fallback={null}>
         <SatelliteModel />
