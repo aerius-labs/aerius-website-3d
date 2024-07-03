@@ -1,10 +1,10 @@
 'use client';
 
-import TopSection from './topSection';
+import TopSection from './TopSection';
 import { Canvas } from '@react-three/fiber';
 import { Suspense } from 'react';
 import { useProgress, Html, Environment, Center } from '@react-three/drei';
-import Aerius3DModel from '@/components/3DModels/aeriusLogo';
+import Aerius3DModel from '@/components/3DModel/AeriusLogo';
 
 function Loader() {
   const { progress, active } = useProgress();
