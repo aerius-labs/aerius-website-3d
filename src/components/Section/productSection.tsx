@@ -21,7 +21,7 @@ export default function ProductSection() {
           <div className='border-[1px] border-white p-5 sm:flex sm:flex-row'>
             <div className='basis-1/3'>
               <Image
-                src='/images/athena_finance.png'
+                src='/Images/athena_finance.png'
                 width={200}
                 height={200}
                 alt='Zk_Snap'
@@ -41,7 +41,7 @@ export default function ProductSection() {
           <div className='border-[1px] border-white p-5 sm:flex sm:flex-row'>
             <div className='basis-1/3'>
               <Image
-                src='/images/zk_snap.png'
+                src='/Images/zk_snap.png'
                 width={200}
                 height={200}
                 alt='Zk_Snap'
@@ -68,7 +68,7 @@ export default function ProductSection() {
             className='hidden h-full w-[100%] scale-x-[-1] object-cover lg:absolute lg:block'
             width={100}
             height={100}
-            src='/Lines/gMobileB01Line.svg'
+            src='/Lines/bottomLineForLargeS.svg'
             alt='sds'
           />
           <div className='absolute z-[5] h-full w-[2px] bg-grey lg:hidden'></div>

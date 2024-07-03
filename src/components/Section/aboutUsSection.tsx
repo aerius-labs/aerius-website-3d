@@ -94,14 +94,14 @@ export default function AboutUsSection() {
             className='hidden h-full w-[100%] object-cover lg:absolute lg:block'
             width={100}
             height={100}
-            src='/Lines/gMobileB01Line.svg'
+            src='/Lines/bottomLineForLargeS.svg'
             alt='line'
           />
           <Image
             className='absolute h-full w-[100%] scale-x-[-1] object-cover lg:hidden'
             width={100}
             height={100}
-            src='/Lines/mobileB01line.svg'
+            src='/Lines/bottomLineForSmallS.svg'
             alt='line'
           />
           <div className='absolute bottom-[50px] left-[-20px] z-10 bg-black py-2 text-3xl font-bold text-grey md:text-4xl'>

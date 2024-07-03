@@ -2,12 +2,12 @@ import { useAnimations, useGLTF } from '@react-three/drei';
 import { useFrame } from '@react-three/fiber';
 import { useEffect, useRef, useState } from 'react';
 
-useGLTF.preload('/models/Astronaut.glb');
+useGLTF.preload('/Models/Astronaut.glb');
 
 export default function AstronautModel() {
   const group = useRef<any>(null);
   const { nodes, materials, animations, scene }: any = useGLTF(
-    '/models/Astronaut.glb'
+    '/Models/Astronaut.glb'
   );
   const { actions } = useAnimations(animations, group);
 
