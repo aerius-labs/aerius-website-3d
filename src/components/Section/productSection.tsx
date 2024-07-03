@@ -18,7 +18,7 @@ export default function ProductSection() {
           </h3>
         </div>
         <div className='grid gap-4 pt-10 md:grid-rows-2'>
-          <div className='border-[1px] border-white p-5 sm:flex sm:flex-row'>
+          <div className='border border-white p-5 sm:flex sm:flex-row'>
             <div className='basis-1/3'>
               <Image
                 src='/Images/athena_finance.png'
@@ -26,7 +26,7 @@ export default function ProductSection() {
                 height={200}
                 alt='Zk_Snap'
                 className='h-full w-full object-cover pb-5 md:pr-5'
-              ></Image>
+              />
             </div>
             <div className='basis-2/3 border-white md:border-l-[1px] md:pl-5'>
               <h1 className='border-b-[1px] border-white pb-5 text-center text-2xl font-bold lg:text-3xl'>
@@ -38,7 +38,7 @@ export default function ProductSection() {
               </p>
             </div>
           </div>
-          <div className='border-[1px] border-white p-5 sm:flex sm:flex-row'>
+          <div className='border border-white p-5 sm:flex sm:flex-row'>
             <div className='basis-1/3'>
               <Image
                 src='/Images/zk_snap.png'
@@ -46,7 +46,7 @@ export default function ProductSection() {
                 height={200}
                 alt='Zk_Snap'
                 className='h-full w-full object-cover pb-5 md:pr-5'
-              ></Image>
+              />
             </div>
             <div className='basis-2/3 border-white md:border-l-[1px] md:pl-5'>
               <h1 className='border-b-[1px] border-white pb-5 text-center text-2xl font-bold lg:text-3xl'>
