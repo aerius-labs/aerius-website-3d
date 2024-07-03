@@ -54,7 +54,7 @@ export default function TopSection() {
           className='w-10 sm:w-12 lg:w-16'
           data-aos='slide-up'
           data-aos-delay='100'
-          src='/images/logo.png'
+          src='/Images/logo.png'
           alt='logo_image'
           width={150}
           height={150}

@@ -60,7 +60,7 @@ export default function ServicesSection() {
             className='hidden h-full w-[100%] object-cover lg:absolute lg:block'
             width={100}
             height={100}
-            src='/Lines/gMobileB01Line.svg'
+            src='/Lines/bottomLineForLargeS.svg'
             alt='sds'
           />
           <div className='absolute z-[5] h-full w-[2px] bg-grey lg:hidden'></div>
