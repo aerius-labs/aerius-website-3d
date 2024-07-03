@@ -10,16 +10,15 @@ export default function AstronautScene() {
       dpr={[1, 1.5]}
       camera={{
         far: 1000,
-        fov: 32.269,
+        fov: 40,
         near: 0.1,
         position: [27.771, 8.578, 32.226],
         rotation: [0.046, 1.028, -0.039],
       }}
-      className='h-full w-full'
     >
       <color attach='background' args={['#000']} />
       <directionalLight position={[-5, -5, 5]} intensity={4} />
-      <Environment preset='studio' />
+      <Environment preset='night' />
       <Suspense fallback={null}>
         <AstronautModel />
       </Suspense>

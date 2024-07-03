@@ -1,16 +1,59 @@
 'use client';
+import { useEffect, useRef } from 'react';
 import Image from 'next/image';
 import dynamic from 'next/dynamic';
 
-// const Scene = dynamic(() => import('@/components/Scenes/astronautScene'), {
-//   ssr: false,
-// });
+const Scene = dynamic(() => import('@/components/Scenes/astronautScene'), {
+  ssr: false,
+});
 
 export default function AboutUsSection() {
+  const canvasRef = useRef<HTMLDivElement>(null);
+  const sectionRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleResize = () => {
+      const vh50 = window.innerHeight * 0.5;
+      observer.disconnect();
+      if (sectionRef.current) {
+        observer.observe(sectionRef.current);
+      }
+    };
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          canvasRef.current!.style.position = 'fixed';
+        } else {
+          canvasRef.current!.style.position = 'absolute';
+        }
+      },
+      {
+        root: null,
+        rootMargin: `0px 0px -${window.innerHeight}px 0px`,
+        threshold: 0,
+      }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      observer.disconnect();
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
   return (
-    <section className='relative flex w-screen flex-col items-end justify-center text-white'>
+    <section
+      ref={sectionRef}
+      className='relative flex w-screen flex-col items-end justify-center overflow-hidden text-white'
+    >
       {/* Top line */}
-      <div className='relative z-10 min-h-[150vh] w-screen overflow-hidden text-center'>
+      <div className='relative z-10 min-h-[110vh] w-screen overflow-hidden text-center'>
         <div className='absolute left-[15%] flex h-full justify-center md:left-[55%]'>
           <div className='absolute z-[5] h-full w-[2px] bg-grey'></div>
           <div className='absolute bottom-[50px] z-10 bg-black py-2 text-3xl font-bold text-grey md:text-4xl'>
@@ -45,7 +88,7 @@ export default function AboutUsSection() {
       </div>
 
       {/* Bottom line */}
-      <div className='relative z-10 flex min-h-[150vh] w-screen overflow-hidden'>
+      <div className='relative z-10 flex min-h-[130vh] w-screen overflow-hidden'>
         <div className='absolute bottom-0 left-[50%] top-0 h-full w-[35%]'>
           <Image
             className='hidden h-full w-[100%] object-cover lg:absolute lg:block'
@@ -67,9 +110,9 @@ export default function AboutUsSection() {
         </div>
       </div>
 
-      {/* <div className='absolute left-0 top-0 z-0 h-full w-full'>
+      <div ref={canvasRef} className='left-0 right-0 top-0 h-screen w-full'>
         <Scene />
-      </div> */}
+      </div>
     </section>
   );
 }
