@@ -25,7 +25,7 @@ export default function TopSection() {
           data-aos='slide-up'
           data-aos-delay='100'
           src='/Images/logo.png'
-          alt='logo_image'
+          alt='aeriusLogo_image'
           width={150}
           height={150}
         />
@@ -72,7 +72,7 @@ export default function TopSection() {
           data-aos='slide-up'
           data-aos-delay='1000'
         >
-          <span className='text-grey'>
+          <span className='text-gray'>
             Pioneering Invisible Integrity with{' '}
           </span>{' '}
           <span>Zero Knowledge Proofs</span>
