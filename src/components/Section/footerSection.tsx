@@ -12,7 +12,7 @@ export default function FooterSection() {
           >
             <Image
               src='/SocialIcons/briefcase_icon.svg'
-              alt='social_icon'
+              alt='briefcase_icon'
               width={35}
               height={35}
               className='w-5 sm:w-6'
@@ -25,7 +25,7 @@ export default function FooterSection() {
           >
             <Image
               src='/SocialIcons/telegram_icon.svg'
-              alt='social_icon'
+              alt='telegram_icon'
               width={35}
               height={35}
               className='w-5 sm:w-6'
@@ -38,7 +38,7 @@ export default function FooterSection() {
           >
             <Image
               src='/SocialIcons/github_icon.svg'
-              alt='social_icon'
+              alt='github_icon'
               width={35}
               height={35}
               className='w-5 sm:w-6'
@@ -51,7 +51,7 @@ export default function FooterSection() {
           >
             <Image
               src='/SocialIcons/medium_icon.svg'
-              alt='social_icon'
+              alt='medium_icon'
               width={35}
               height={35}
               className='w-5 sm:w-6'
@@ -64,7 +64,7 @@ export default function FooterSection() {
           >
             <Image
               src='/SocialIcons/twitter_icon.svg'
-              alt='social_icon'
+              alt='twitter_icon'
               width={35}
               height={35}
               className='w-5 sm:w-6'
@@ -72,7 +72,7 @@ export default function FooterSection() {
             <p className='text-sm'>Twitter</p>
           </Link>
         </div>
-        <div className='mb-0 border-t-2 border-grey bg-black text-left text-[25.5vw] font-extrabold leading-none  sm:text-center sm:text-[14.5vw]'>
+        <div className='mb-0 border-t-2 border-gray bg-black text-left text-[25.5vw] font-extrabold leading-none  sm:text-center sm:text-[14.5vw]'>
           AERIUS LABS
         </div>
       </div>

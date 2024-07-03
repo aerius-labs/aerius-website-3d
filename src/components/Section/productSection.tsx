@@ -13,7 +13,7 @@ export default function ProductSection() {
             EMPOWER YOUR EXPERIENCES
           </h1>
           <h3 className='text-lg sm:text-xl lg:text-2xl'>
-            <span className='text-grey'>With our </span>
+            <span className='text-gray'>With our </span>
             <span>Innovative Product Solution</span>
           </h3>
         </div>
@@ -24,7 +24,7 @@ export default function ProductSection() {
                 src='/Images/athena_finance.png'
                 width={200}
                 height={200}
-                alt='Zk_Snap'
+                alt='athenaFinance_image'
                 className='h-full w-full object-cover pb-5 md:pr-5'
               />
             </div>
@@ -44,7 +44,7 @@ export default function ProductSection() {
                 src='/Images/zk_snap.png'
                 width={200}
                 height={200}
-                alt='Zk_Snap'
+                alt='zkSnap_image'
                 className='h-full w-full object-cover pb-5 md:pr-5'
               />
             </div>
@@ -69,10 +69,10 @@ export default function ProductSection() {
             width={100}
             height={100}
             src='/Lines/bottomLineForLargeS.svg'
-            alt='sds'
+            alt='bottomLineForLargeS_image'
           />
-          <div className='absolute z-[5] h-full w-[2px] bg-grey lg:hidden'></div>
-          <div className='absolute bottom-[50px] right-[-20px] z-10 bg-black py-2 text-3xl font-bold text-grey md:text-4xl'>
+          <div className='absolute z-[5] h-full w-[2px] bg-gray lg:hidden'></div>
+          <div className='absolute bottom-[50px] right-[-20px] z-10 bg-black py-2 text-3xl font-bold text-gray md:text-4xl'>
             04
           </div>
         </div>

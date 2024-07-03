@@ -48,12 +48,12 @@ const ScrollSpy = () => {
           className='flex items-center gap-1'
         >
           <p
-            className={`hidden text-grey transition duration-300 ease-in-out hover:text-white group-hover:block ${activeSection === sectionId ? 'text-white' : ''}`}
+            className={`hidden text-gray transition duration-300 ease-in-out hover:text-white group-hover:block ${activeSection === sectionId ? 'text-white' : ''}`}
           >
             {sectionId}
           </p>
           <div
-            className={`h-3 w-3 rounded-full border bg-black ${activeSection === sectionId ? 'border-white' : 'border-grey'}`}
+            className={`h-3 w-3 rounded-full border bg-black ${activeSection === sectionId ? 'border-white' : 'border-gray'}`}
           ></div>
         </Link>
       ))}
