@@ -20,9 +20,19 @@ const config: Config = {
           '0%': { width: '0%' },
           '100%': { width: '100%' },
         },
+        topAway: {
+          '0%': { justifyContent: 'center', alignItems: 'end' },
+          '100%': { justifyContent: 'space-between', alignItems: 'start' },
+        },
+        bottomAway: {
+          '0%': { justifyContent: 'center', alignItems: 'start' },
+          '100%': { justifyContent: 'space-between', alignItems: 'end' },
+        },
       },
       animation: {
         grow: 'grow 4s ease forwards',
+        topAway: 'topAway 0.5s ease-out forwards',
+        bottomAway: 'bottomAway 0.5s ease-out forwards',
       },
     },
   },

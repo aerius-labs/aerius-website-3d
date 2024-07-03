@@ -6,6 +6,8 @@ import AOS from 'aos';
 import Image from 'next/image';
 import Loader from '@/components/Loader/loader';
 
+import BordersCorner from '@/components/BorderCorners/borderCorners';
+
 // import aos styles
 import 'aos/dist/aos.css';
 
@@ -91,6 +93,10 @@ export default function TopSection() {
           </span>{' '}
           <span>Zero Knowledge Proofs</span>
         </p>
+      </div>
+
+      <div className='fixed z-10 h-full w-full'>
+        <BordersCorner />
       </div>
     </section>
   );
