@@ -21,7 +21,7 @@ export default function OurWritingsSection() {
 
       <div className='bottom_black relative mt-10 flex flex-col justify-center gap-10 md:mt-20 md:flex-row'>
         <div className='sticky top-[150px] flex h-[50vh] flex-col items-center justify-center pb-5 md:top-52 md:mt-[40vh] md:h-screen'>
-          <div className='group flex cursor-pointer flex-col justify-between gap-20 border-[1px] p-5 md:gap-40'>
+          <div className='group flex cursor-pointer flex-col justify-between gap-20 border p-5 md:gap-40'>
             <h1 className='text-xl font-bold lg:text-2xl'>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum,
               distinctio quo
@@ -40,7 +40,7 @@ export default function OurWritingsSection() {
           <div className='hidden h-[70%] min-h-[250px] w-[2px] bg-grey md:block'></div>
         </div>
         <div className='sticky top-[430px] flex h-[50vh] flex-col items-center justify-center pb-5 md:top-52 md:mt-[80vh] md:h-screen'>
-          <div className='group flex cursor-pointer flex-col justify-between gap-20 border-[1px] p-5 md:gap-40'>
+          <div className='group flex cursor-pointer flex-col justify-between gap-20 border p-5 md:gap-40'>
             <h1 className='text-xl font-bold lg:text-2xl'>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum,
               distinctio quo
@@ -59,7 +59,7 @@ export default function OurWritingsSection() {
           <div className='hidden h-[70%] min-h-[250px] w-[2px] bg-grey md:block'></div>
         </div>
         <div className='sticky top-[710px] flex h-[50vh] flex-col items-center justify-center pb-5 md:top-52 md:mt-[120vh] md:h-screen'>
-          <div className='group flex cursor-pointer flex-col justify-between gap-20 border-[1px] p-5 md:gap-40'>
+          <div className='group flex cursor-pointer flex-col justify-between gap-20 border p-5 md:gap-40'>
             <h1 className='text-xl font-bold lg:text-2xl'>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum,
               distinctio quo
@@ -78,7 +78,7 @@ export default function OurWritingsSection() {
           <div className='hidden h-[70%] min-h-[250px] w-[2px] bg-grey md:block'></div>
         </div>
         <div className='sticky top-[990px] flex h-[50vh] flex-col items-center justify-center pb-5 md:top-52 md:mt-[160vh] md:h-screen'>
-          <div className='group flex cursor-pointer flex-col justify-between gap-20 border-[1px] bg-black p-5 md:gap-40 md:bg-transparent'>
+          <div className='group flex cursor-pointer flex-col justify-between gap-20 border bg-black p-5 md:gap-40 md:bg-transparent'>
             <h1 className='text-xl font-bold lg:text-2xl'>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum,
               distinctio quo

@@ -8,36 +8,6 @@ import Image from 'next/image';
 // import aos styles
 import 'aos/dist/aos.css';
 
-// for reference purposes
-const animations = [
-  `fade-up`,
-  `fade-down`,
-  `fade-left`,
-  `fade-right`,
-  `fade-up-right`,
-  `fade-up-left`,
-  `fade-down-right`,
-  `fade-down-left`,
-  `zoom-in`,
-  `zoom-in-up`,
-  `zoom-in-down`,
-  `zoom-in-left`,
-  `zoom-in-right`,
-  `zoom-out`,
-  `zoom-out-up`,
-  `zoom-out-down`,
-  `zoom-out-left`,
-  `zoom-out-right`,
-  `slide-up`,
-  `slide-down`,
-  `slide-right`,
-  `slide-left`,
-  `flip-left`,
-  `flip-right`,
-  `flip-up`,
-  `flip-down`,
-];
-
 export default function TopSection() {
   useEffect(() => {
     AOS.init({
@@ -58,7 +28,7 @@ export default function TopSection() {
           alt='logo_image'
           width={150}
           height={150}
-        ></Image>
+        />
       </div>
       <div className='flex flex-wrap gap-0 text-7xl font-extrabold lg:gap-10 lg:text-[150px]'>
         <div className='mx-auto flex flex-row flex-nowrap overflow-hidden'>

@@ -11,9 +11,6 @@ export default function AstronautModel() {
   );
   const { actions } = useAnimations(animations, group);
 
-  console.log(actions);
-  console.log(actions?.['ArmatureAction']?.getClip().duration);
-
   const [scrollPosition, setScrollPosition] = useState(0);
   const [animationStarted, setAnimationStarted] = useState(false);
 
@@ -34,11 +31,9 @@ export default function AstronautModel() {
   useEffect(() => {
     if (scrollPosition >= 0.12 && actions) {
       setAnimationStarted(true);
-      console.log('Animation1 started');
       Object.values(actions).forEach((action: any) => action.play());
     } else if (actions) {
       setAnimationStarted(false);
-      console.log('Animation1 paused');
       Object.values(actions).forEach((action: any) => action.stop());
     }
   }, [scrollPosition, actions]);
@@ -55,15 +50,6 @@ export default function AstronautModel() {
   return (
     <group ref={group} dispose={null}>
       <group name='Scene'>
-        {/* <PerspectiveCamera
-          name="Camera"
-          makeDefault={false}
-          far={1000}
-          near={0.1}
-          fov={32.269}
-          position={[27.771, 8.578, 32.226]}
-          rotation={[0.046, 1.028, -0.039]}
-        /> */}
         <group
           name='Armature001'
           position={[-4.452, -11.697, -12.968]}

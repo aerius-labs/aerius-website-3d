@@ -53,7 +53,7 @@ const ScrollSpy = () => {
             {sectionId}
           </p>
           <div
-            className={`h-3 w-3 rounded-full border-[1px] bg-black ${activeSection === sectionId ? 'border-white' : 'border-grey'}`}
+            className={`h-3 w-3 rounded-full border bg-black ${activeSection === sectionId ? 'border-white' : 'border-grey'}`}
           ></div>
         </Link>
       ))}

@@ -21,7 +21,7 @@ export default function ServicesSection() {
 
       {/* Grid */}
       <div className='grid gap-4 px-5 py-10 md:grid-cols-3 lg:px-20'>
-        <div className='border-[1px] border-white p-5'>
+        <div className='border border-white p-5'>
           <h1 className='border-b-[1px] border-white pb-5 text-center text-2xl font-bold lg:text-3xl'>
             R&D
           </h1>
@@ -31,7 +31,7 @@ export default function ServicesSection() {
             these tools into your product&apos;s initial prototyping phase.
           </p>
         </div>
-        <div className='border-[1px] border-white p-5'>
+        <div className='border border-white p-5'>
           <h1 className='border-b-[1px] border-white pb-5 text-center text-2xl font-bold lg:text-3xl'>
             Consulting
           </h1>
@@ -42,7 +42,7 @@ export default function ServicesSection() {
             digital solutions.
           </p>
         </div>
-        <div className='border-[1px] border-white p-5'>
+        <div className='border border-white p-5'>
           <h1 className='border-b-[1px] border-white pb-5 text-center text-2xl font-bold lg:text-3xl'>
             Auditing
           </h1>
