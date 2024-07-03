@@ -15,6 +15,15 @@ const config: Config = {
         'gradient-black':
           'linear-gradient(to bottom, transparent, transparent 60%, #000 60%, #000 100%)',
       },
+      keyframes: {
+        grow: {
+          '0%': { width: '0%' },
+          '100%': { width: '100%' },
+        },
+      },
+      animation: {
+        grow: 'grow 4s ease forwards',
+      },
     },
   },
   plugins: [],

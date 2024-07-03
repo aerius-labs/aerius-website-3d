@@ -1,21 +1,35 @@
 'use client';
 
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import AOS from 'aos';
 
 import Image from 'next/image';
+import Loader from '@/components/Loader/loader';
 
 // import aos styles
 import 'aos/dist/aos.css';
 
 export default function TopSection() {
+  const [isLoading, setIsLoading] = useState(true);
+
   useEffect(() => {
+    // Simulating the loader completion
+    const loaderTimeout = setTimeout(() => {
+      setIsLoading(false);
+    }, 4000);
+
     AOS.init({
       duration: 700,
       once: false,
       offset: 100,
     });
+
+    return () => clearTimeout(loaderTimeout);
   }, []);
+
+  if (isLoading) {
+    return <Loader />;
+  }
 
   return (
     <section className='relative flex min-h-screen flex-col items-center justify-center text-white'>
