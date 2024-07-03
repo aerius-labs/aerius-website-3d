@@ -2,6 +2,7 @@
 import { useEffect, useRef, useCallback } from 'react';
 import Image from 'next/image';
 import dynamic from 'next/dynamic';
+import { Akzidenzgroteskbe, IBMPlexMono } from '@/fonts/fonts';
 
 const Scene = dynamic(() => import('@/components/Scene/astronautScene'), {
   ssr: false,
@@ -41,7 +42,7 @@ export default function AboutUsSection() {
   return (
     <section
       ref={sectionRef}
-      className='relative flex w-screen flex-col items-end justify-center overflow-hidden text-white'
+      className={`relative ${Akzidenzgroteskbe.className} flex w-screen flex-col items-end justify-center overflow-hidden text-white`}
     >
       {/* Top line */}
       <div className='relative z-10 min-h-[110vh] w-screen overflow-hidden text-center'>
@@ -60,7 +61,9 @@ export default function AboutUsSection() {
             <span className='text-white/50'>FUTURE OF</span>{' '}
             <span>SECURE SYSTEMS</span>
           </h1>
-          <p className='flex flex-col gap-5 pt-5 text-center text-xl leading-normal sm:text-left'>
+          <p
+            className={`flex ${IBMPlexMono.className} flex-col gap-5 pt-5 text-center text-xl leading-normal sm:text-left`}
+          >
             <span>
               Aerius Labs is where cryptography, blockchain, and zero-knowledge
               proofs (ZK) converge to shape the future of secure systems.

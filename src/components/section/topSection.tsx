@@ -7,6 +7,7 @@ import Image from 'next/image';
 
 // import aos styles
 import 'aos/dist/aos.css';
+import { Akzidenzgroteskbe, FKScreamerBlack } from '@/fonts/fonts';
 
 export default function TopSection() {
   useEffect(() => {
@@ -30,7 +31,9 @@ export default function TopSection() {
           height={150}
         />
       </div>
-      <div className='flex flex-wrap gap-0 text-7xl font-extrabold lg:gap-10 lg:text-[150px]'>
+      <div
+        className={`flex ${FKScreamerBlack.className} flex-wrap gap-0 text-[35vw] font-extrabold leading-[35vw] sm:gap-10 sm:text-[32vw] sm:leading-[32vw] md:text-[20vw] md:leading-[20vw]`}
+      >
         <div className='mx-auto flex flex-row flex-nowrap overflow-hidden'>
           <p data-aos='slide-up' data-aos-delay='100'>
             Z
@@ -68,7 +71,7 @@ export default function TopSection() {
       </div>
       <div className='overflow-hidden'>
         <p
-          className='py-4 text-center text-sm sm:text-xl lg:py-8 lg:text-2xl'
+          className={`py-4 ${Akzidenzgroteskbe.className} text-center text-sm sm:text-xl lg:py-8 lg:text-2xl`}
           data-aos='slide-up'
           data-aos-delay='1000'
         >
