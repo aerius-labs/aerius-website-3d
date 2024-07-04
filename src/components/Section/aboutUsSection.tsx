@@ -1,5 +1,5 @@
 'use client';
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useCallback } from 'react';
 import Image from 'next/image';
 import dynamic from 'next/dynamic';
 
@@ -7,25 +7,57 @@ const Scene = dynamic(() => import('@/components/Scene/AstronautScene'), {
   ssr: false,
 });
 
+function debounce(func: (...args: any[]) => void, wait: number) {
+  let timeout: NodeJS.Timeout;
+  return function executedFunction(...args: any[]) {
+    const later = () => {
+      clearTimeout(timeout);
+      func(...args);
+    };
+    clearTimeout(timeout);
+    timeout = setTimeout(later, wait);
+  };
+}
+
 export default function AboutUsSection() {
   const canvasRef = useRef<HTMLDivElement>(null);
   const sectionRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    const handleResize = () => {
-      const vh50 = window.innerHeight * 0.5;
-      observer.disconnect();
+  const handleResize = useCallback(
+    debounce(() => {
       if (sectionRef.current) {
+        const observer = new IntersectionObserver(
+          ([entry]) => {
+            if (canvasRef.current) {
+              if (entry.isIntersecting) {
+                canvasRef.current.style.position = 'fixed';
+              } else {
+                canvasRef.current.style.position = 'absolute';
+              }
+            }
+          },
+          {
+            root: null,
+            rootMargin: `0px 0px -${window.innerHeight}px 0px`,
+            threshold: 0,
+          }
+        );
         observer.observe(sectionRef.current);
+        return () => observer.disconnect();
       }
-    };
+    }, 100),
+    []
+  );
 
+  useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) {
-          canvasRef.current!.style.position = 'fixed';
-        } else {
-          canvasRef.current!.style.position = 'absolute';
+        if (canvasRef.current) {
+          if (entry.isIntersecting) {
+            canvasRef.current.style.position = 'fixed';
+          } else {
+            canvasRef.current.style.position = 'absolute';
+          }
         }
       },
       {
@@ -45,7 +77,7 @@ export default function AboutUsSection() {
       observer.disconnect();
       window.removeEventListener('resize', handleResize);
     };
-  }, []);
+  }, [handleResize]);
 
   return (
     <section
