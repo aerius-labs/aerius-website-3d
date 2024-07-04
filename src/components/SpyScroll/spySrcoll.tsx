@@ -31,6 +31,7 @@ const ScrollSpy = () => {
 
     return () => {
       sections.forEach((sectionId) => {
+        observer.disconnect();
         const sectionElement = document.getElementById(sectionId);
         if (sectionElement) {
           observer.unobserve(sectionElement);
@@ -53,7 +54,7 @@ const ScrollSpy = () => {
             {sectionId}
           </p>
           <div
-            className={`h-3 w-3 rounded-full border bg-black ${activeSection === sectionId ? 'border-white' : 'border-gray'}`}
+            className={`h-3 w-3 rounded-full border bg-black ${activeSection === sectionId ? 'border-white' : 'border-white/50'}`}
           ></div>
         </Link>
       ))}

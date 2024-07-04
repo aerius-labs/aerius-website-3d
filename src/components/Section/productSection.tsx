@@ -1,6 +1,25 @@
 import Image from 'next/image';
 
 export default function ProductSection() {
+  const products = [
+    {
+      id: 1,
+      imageSrc: '/Images/athena_finance.png',
+      imageAlt: 'athenaFinance_image',
+      title: 'Athena Finance',
+      description:
+        'On-chain asset management for the Cosmos ecosystem, based on CosmWasm.',
+    },
+    {
+      id: 2,
+      imageSrc: '/Images/zk_snap.png',
+      imageAlt: 'zkSnap_image',
+      title: 'Zk Snap',
+      description:
+        'Off-chain ballot privacy for DAOs, where voting is simple, anonymous, and user friendly.',
+    },
+  ];
+
   return (
     <section
       id='Products'
@@ -18,46 +37,30 @@ export default function ProductSection() {
           </h3>
         </div>
         <div className='grid gap-4 pt-10 md:grid-rows-2'>
-          <div className='border border-white p-5 sm:flex sm:flex-row'>
-            <div className='basis-1/3'>
-              <Image
-                src='/Images/athena_finance.png'
-                width={200}
-                height={200}
-                alt='athenaFinance_image'
-                className='h-full w-full object-cover pb-5 md:pr-5'
-              />
+          {products.map((item) => (
+            <div
+              key={item.id}
+              className='border border-white p-5 sm:flex sm:flex-row'
+            >
+              <div className='basis-1/3'>
+                <Image
+                  src={item.imageSrc}
+                  width={200}
+                  height={200}
+                  alt={item.imageAlt}
+                  className='h-full w-full object-cover pb-5 md:pr-5'
+                />
+              </div>
+              <div className='basis-2/3 border-white md:border-l-[1px] md:pl-5'>
+                <h1 className='border-b-[1px] border-white pb-5 text-center text-2xl font-bold lg:text-3xl'>
+                  {item.title}
+                </h1>
+                <p className='pt-5 text-center text-xl leading-normal sm:text-left'>
+                  {item.description}
+                </p>
+              </div>
             </div>
-            <div className='basis-2/3 border-white md:border-l-[1px] md:pl-5'>
-              <h1 className='border-b-[1px] border-white pb-5 text-center text-2xl font-bold lg:text-3xl'>
-                Athena Finance
-              </h1>
-              <p className='pt-5 text-center text-xl leading-normal sm:text-left'>
-                On-chain asset management for the Cosmos ecosystem, based on
-                CosmWasm.
-              </p>
-            </div>
-          </div>
-          <div className='border border-white p-5 sm:flex sm:flex-row'>
-            <div className='basis-1/3'>
-              <Image
-                src='/Images/zk_snap.png'
-                width={200}
-                height={200}
-                alt='zkSnap_image'
-                className='h-full w-full object-cover pb-5 md:pr-5'
-              />
-            </div>
-            <div className='basis-2/3 border-white md:border-l-[1px] md:pl-5'>
-              <h1 className='border-b-[1px] border-white pb-5 text-center text-2xl font-bold lg:text-3xl'>
-                Zk Snap
-              </h1>
-              <p className='pt-5 text-center text-xl leading-normal sm:text-left'>
-                Off-chain ballot privacy for DAOs, where voting is simple,
-                anonymous, and user friendly.
-              </p>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
 
