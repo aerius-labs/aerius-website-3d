@@ -55,8 +55,8 @@ export default function AboutUsSection() {
       {/* Top line */}
       <div className='relative z-10 min-h-[110vh] w-screen overflow-hidden text-center'>
         <div className='absolute left-[15%] flex h-full justify-center md:left-[55%]'>
-          <div className='absolute z-[5] h-full w-[2px] bg-gray'></div>
-          <div className='absolute bottom-[50px] z-10 bg-black py-2 text-3xl font-bold text-gray md:text-4xl'>
+          <div className='absolute z-[5] h-full w-[2px] bg-white/50'></div>
+          <div className='absolute bottom-[50px] z-10 bg-black py-2 text-3xl font-bold text-white/50 md:text-4xl'>
             01
           </div>
         </div>
@@ -66,7 +66,7 @@ export default function AboutUsSection() {
       <div id='About' className='z-10 px-5 lg:px-20'>
         <div className='gap-4 border border-white p-5 md:w-[60vw] lg:w-[50vw]'>
           <h1 className='border-b-[1px] border-white pb-5 text-center text-2xl font-bold sm:text-left lg:text-3xl'>
-            <span className='text-gray'>FUTURE OF</span>{' '}
+            <span className='text-white/50'>FUTURE OF</span>{' '}
             <span>SECURE SYSTEMS</span>
           </h1>
           <p className='flex flex-col gap-5 pt-5 text-center text-xl leading-normal sm:text-left'>
@@ -104,7 +104,7 @@ export default function AboutUsSection() {
             src='/Lines/bottomLineForSmallS.svg'
             alt='bottomLineForSmallS_image'
           />
-          <div className='absolute bottom-[50px] left-[-20px] z-10 bg-black py-2 text-3xl font-bold text-gray md:text-4xl'>
+          <div className='absolute bottom-[50px] left-[-20px] z-10 bg-black py-2 text-3xl font-bold text-white/50 md:text-4xl'>
             02
           </div>
         </div>

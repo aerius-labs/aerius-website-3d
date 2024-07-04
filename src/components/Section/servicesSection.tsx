@@ -12,7 +12,7 @@ export default function ServicesSection() {
           BOOST YOUR PRODUCTS
         </h1>
         <h3 className='text-center text-lg sm:text-xl lg:text-2xl'>
-          <span className='text-gray'>
+          <span className='text-white/50'>
             Enhance Your Brand&apos;s Potential with{' '}
           </span>
           <span>Our Range of Product-Boosting Services</span>
@@ -63,8 +63,8 @@ export default function ServicesSection() {
             src='/Lines/bottomLineForLargeS.svg'
             alt='bottomLineForLargeS_image'
           />
-          <div className='absolute z-[5] h-full w-[2px] bg-gray lg:hidden'></div>
-          <div className='absolute bottom-[50px] left-[-20px] z-10 bg-black py-2 text-3xl font-bold text-gray md:text-4xl'>
+          <div className='absolute z-[5] h-full w-[2px] bg-white/50 lg:hidden'></div>
+          <div className='absolute bottom-[50px] left-[-20px] z-10 bg-black py-2 text-3xl font-bold text-white/50 md:text-4xl'>
             03
           </div>
         </div>

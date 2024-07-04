@@ -13,7 +13,7 @@ export default function ProductSection() {
             EMPOWER YOUR EXPERIENCES
           </h1>
           <h3 className='text-lg sm:text-xl lg:text-2xl'>
-            <span className='text-gray'>With our </span>
+            <span className='text-white/50'>With our </span>
             <span>Innovative Product Solution</span>
           </h3>
         </div>
@@ -71,8 +71,8 @@ export default function ProductSection() {
             src='/Lines/bottomLineForLargeS.svg'
             alt='bottomLineForLargeS_image'
           />
-          <div className='absolute z-[5] h-full w-[2px] bg-gray lg:hidden'></div>
-          <div className='absolute bottom-[50px] right-[-20px] z-10 bg-black py-2 text-3xl font-bold text-gray md:text-4xl'>
+          <div className='absolute z-[5] h-full w-[2px] bg-white/50 lg:hidden'></div>
+          <div className='absolute bottom-[50px] right-[-20px] z-10 bg-black py-2 text-3xl font-bold text-white/50 md:text-4xl'>
             04
           </div>
         </div>
