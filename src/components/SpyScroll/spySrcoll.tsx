@@ -48,7 +48,7 @@ const ScrollSpy = () => {
           className='flex items-center gap-1'
         >
           <p
-            className={`hidden text-gray transition duration-300 ease-in-out hover:text-white group-hover:block ${activeSection === sectionId ? 'text-white' : ''}`}
+            className={`hidden text-white/50 transition duration-300 ease-in-out hover:text-white group-hover:block ${activeSection === sectionId ? 'text-white' : ''}`}
           >
             {sectionId}
           </p>

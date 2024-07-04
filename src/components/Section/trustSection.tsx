@@ -13,7 +13,7 @@ export default function TrustSection() {
           BUILT ON TRUST
         </h1>
         <h3 className='text-center text-lg sm:text-xl lg:text-2xl'>
-          <span className='text-gray'>
+          <span className='text-white/50'>
             At Aerius Labs, we&apos;re honoured to have earned the trust of{' '}
           </span>
           <span>countless of individuals and businesses worldwide</span>
@@ -35,8 +35,8 @@ export default function TrustSection() {
       {/* Bottom Line */}
       <div className='relative flex min-h-[70vh] w-screen items-center justify-center overflow-hidden'>
         <div className='absolute bottom-0 left-[50%] top-0 h-full'>
-          <div className='absolute z-[5] h-full w-[2px] bg-gray'></div>
-          <div className='absolute bottom-[50px] left-[-20px] z-10 bg-black py-2 text-3xl font-bold text-gray md:text-4xl'>
+          <div className='absolute z-[5] h-full w-[2px] bg-white/50'></div>
+          <div className='absolute bottom-[50px] left-[-20px] z-10 bg-black py-2 text-3xl font-bold text-white/50 md:text-4xl'>
             05
           </div>
         </div>

@@ -12,14 +12,14 @@ export default function OurWritingsSection() {
           Ready to Geek Out?
         </h1>
         <h3 className='pt-5 text-center text-lg lg:text-2xl'>
-          <span className='text-gray'>
+          <span className='text-white/50'>
             Discover tomorrow&apos;s trends today, explore our insights on{' '}
           </span>
           <span>Pioneering Technologies and Future Topics</span>
         </h3>
       </div>
 
-      <div className='bottom_black relative mt-10 flex flex-col justify-center gap-10 md:mt-20 md:flex-row'>
+      <div className='relative mt-10 flex flex-col justify-center gap-10 md:mt-20 md:flex-row md:bg-gradient-black'>
         <div className='sticky top-[150px] flex h-[50vh] flex-col items-center justify-center pb-5 md:top-52 md:mt-[40vh] md:h-screen'>
           <div className='group flex cursor-pointer flex-col justify-between gap-20 border p-5 md:gap-40'>
             <h1 className='text-xl font-bold lg:text-2xl'>
@@ -29,7 +29,7 @@ export default function OurWritingsSection() {
             <div className='flex items-end justify-between gap-5'>
               <div>
                 <p>Lorem ipsum dolor sit amet.</p>
-                <p className='text-gray'>May 5, 2024</p>
+                <p className='text-white/50'>May 5, 2024</p>
               </div>
               <div className='flex h-[20px] w-[20px] items-center justify-center rounded-[50%] p-4 font-bold group-hover:-rotate-45 group-hover:bg-white group-hover:text-black'>
                 →
@@ -37,7 +37,7 @@ export default function OurWritingsSection() {
             </div>
           </div>
           {/* Bottom Line */}
-          <div className='hidden h-[70%] min-h-[250px] w-[2px] bg-gray md:block'></div>
+          <div className='hidden h-[70%] min-h-[250px] w-[2px] bg-white/50 md:block'></div>
         </div>
         <div className='sticky top-[430px] flex h-[50vh] flex-col items-center justify-center pb-5 md:top-52 md:mt-[80vh] md:h-screen'>
           <div className='group flex cursor-pointer flex-col justify-between gap-20 border p-5 md:gap-40'>
@@ -48,7 +48,7 @@ export default function OurWritingsSection() {
             <div className='flex items-end justify-between gap-5'>
               <div>
                 <p>Lorem ipsum dolor sit amet.</p>
-                <p className='text-gray'>May 5, 2024</p>
+                <p className='text-white/50'>May 5, 2024</p>
               </div>
               <div className='flex h-[20px] w-[20px] items-center justify-center rounded-[50%] p-4 font-bold group-hover:-rotate-45 group-hover:bg-white group-hover:text-black'>
                 →
@@ -56,7 +56,7 @@ export default function OurWritingsSection() {
             </div>
           </div>
           {/* Bottom Line */}
-          <div className='hidden h-[70%] min-h-[250px] w-[2px] bg-gray md:block'></div>
+          <div className='hidden h-[70%] min-h-[250px] w-[2px] bg-white/50 md:block'></div>
         </div>
         <div className='sticky top-[710px] flex h-[50vh] flex-col items-center justify-center pb-5 md:top-52 md:mt-[120vh] md:h-screen'>
           <div className='group flex cursor-pointer flex-col justify-between gap-20 border p-5 md:gap-40'>
@@ -67,7 +67,7 @@ export default function OurWritingsSection() {
             <div className='flex items-end justify-between gap-5'>
               <div>
                 <p>Lorem ipsum dolor sit amet.</p>
-                <p className='text-gray'>May 5, 2024</p>
+                <p className='text-white/50'>May 5, 2024</p>
               </div>
               <div className='flex h-[20px] w-[20px] items-center justify-center rounded-[50%] p-4 font-bold group-hover:-rotate-45 group-hover:bg-white group-hover:text-black'>
                 →
@@ -75,7 +75,7 @@ export default function OurWritingsSection() {
             </div>
           </div>
           {/* Bottom Line */}
-          <div className='hidden h-[70%] min-h-[250px] w-[2px] bg-gray md:block'></div>
+          <div className='hidden h-[70%] min-h-[250px] w-[2px] bg-white/50 md:block'></div>
         </div>
         <div className='sticky top-[990px] flex h-[50vh] flex-col items-center justify-center pb-5 md:top-52 md:mt-[160vh] md:h-screen'>
           <div className='group flex cursor-pointer flex-col justify-between gap-20 border bg-black p-5 md:gap-40 md:bg-transparent'>
@@ -86,7 +86,7 @@ export default function OurWritingsSection() {
             <div className='flex items-end justify-between gap-5'>
               <div>
                 <p>Lorem ipsum dolor sit amet.</p>
-                <p className='text-gray'>May 5, 2024</p>
+                <p className='text-white/50'>May 5, 2024</p>
               </div>
               <div className='flex h-[20px] w-[20px] items-center justify-center rounded-[50%] p-4 font-bold group-hover:-rotate-45 group-hover:bg-white group-hover:text-black'>
                 →
@@ -94,7 +94,7 @@ export default function OurWritingsSection() {
             </div>
           </div>
           {/* Bottom Line */}
-          <div className='hidden h-[70%] min-h-[250px] w-[2px] bg-gray md:block'></div>
+          <div className='hidden h-[70%] min-h-[250px] w-[2px] bg-white/50 md:block'></div>
         </div>
       </div>
 

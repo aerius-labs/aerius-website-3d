@@ -6,8 +6,6 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
-
-  --gray: rgba(255, 255, 255, 0.5);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -16,15 +14,6 @@
     --background-start-rgb: 0, 0, 0;
     --background-end-rgb: 0, 0, 0;
   }
-}
-
-*,
-html,
-body {
-  scroll-behavior: smooth;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
 }
 
 body {
@@ -37,22 +26,6 @@ body {
     rgb(var(--background-start-rgb));
   overflow-x: hidden;
   background-color: #000;
-}
-
-.bottom_black {
-  background-image: linear-gradient(
-    to bottom,
-    transparent,
-    transparent 60%,
-    #000 60%,
-    #000 100%
-  );
-}
-
-@media screen and (max-width: 768px) {
-  .bottom_black {
-    background-image: none;
-  }
 }
 
 @layer utilities {

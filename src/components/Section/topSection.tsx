@@ -72,7 +72,7 @@ export default function TopSection() {
           data-aos='slide-up'
           data-aos-delay='1000'
         >
-          <span className='text-gray'>
+          <span className='text-white/50'>
             Pioneering Invisible Integrity with{' '}
           </span>{' '}
           <span>Zero Knowledge Proofs</span>
