@@ -72,7 +72,7 @@ export default function FooterSection() {
             <p className='text-sm'>Twitter</p>
           </Link>
         </div>
-        <div className='mb-0 border-t-2 border-gray bg-black text-left text-[25.5vw] font-extrabold leading-none  sm:text-center sm:text-[14.5vw]'>
+        <div className='mb-0 border-t-2 border-white/50 bg-black text-left text-[25.5vw] font-extrabold leading-none  sm:text-center sm:text-[14.5vw]'>
           AERIUS LABS
         </div>
       </div>
