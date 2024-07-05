@@ -3,14 +3,8 @@
 import TopSection from './TopSection';
 import { Canvas } from '@react-three/fiber';
 import { Suspense } from 'react';
-import { useProgress, Html, Environment, Center } from '@react-three/drei';
+import { Environment, Center } from '@react-three/drei';
 import Aerius3DModel from '@/components/3DModel/AeriusLogo';
-
-function Loader() {
-  const { progress, active } = useProgress();
-
-  return <Html center>{progress.toFixed(1)} % loaded</Html>;
-}
 
 export default function HeroSection() {
   return (
@@ -26,7 +20,7 @@ export default function HeroSection() {
           <color attach='background' args={['#000']} />
           <directionalLight position={[-5, -5, 5]} intensity={4} />
           <Environment preset='studio' />
-          <Suspense fallback={<Loader />}>
+          <Suspense fallback={null}>
             <Center>
               <Aerius3DModel />
             </Center>

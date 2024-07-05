@@ -31,7 +31,6 @@ const ScrollSpy = () => {
 
     return () => {
       sections.forEach((sectionId) => {
-        observer.disconnect();
         const sectionElement = document.getElementById(sectionId);
         if (sectionElement) {
           observer.unobserve(sectionElement);

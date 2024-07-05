@@ -7,47 +7,9 @@ const Scene = dynamic(() => import('@/components/Scene/AstronautScene'), {
   ssr: false,
 });
 
-function debounce(func: (...args: any[]) => void, wait: number) {
-  let timeout: NodeJS.Timeout;
-  return function executedFunction(...args: any[]) {
-    const later = () => {
-      clearTimeout(timeout);
-      func(...args);
-    };
-    clearTimeout(timeout);
-    timeout = setTimeout(later, wait);
-  };
-}
-
 export default function AboutUsSection() {
   const canvasRef = useRef<HTMLDivElement>(null);
   const sectionRef = useRef<HTMLDivElement>(null);
-
-  const handleResize = useCallback(
-    debounce(() => {
-      if (sectionRef.current) {
-        const observer = new IntersectionObserver(
-          ([entry]) => {
-            if (canvasRef.current) {
-              if (entry.isIntersecting) {
-                canvasRef.current.style.position = 'fixed';
-              } else {
-                canvasRef.current.style.position = 'absolute';
-              }
-            }
-          },
-          {
-            root: null,
-            rootMargin: `0px 0px -${window.innerHeight}px 0px`,
-            threshold: 0,
-          }
-        );
-        observer.observe(sectionRef.current);
-        return () => observer.disconnect();
-      }
-    }, 100),
-    []
-  );
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -71,13 +33,10 @@ export default function AboutUsSection() {
       observer.observe(sectionRef.current);
     }
 
-    window.addEventListener('resize', handleResize);
-
     return () => {
       observer.disconnect();
-      window.removeEventListener('resize', handleResize);
     };
-  }, [handleResize]);
+  }, []);
 
   return (
     <section
@@ -126,14 +85,14 @@ export default function AboutUsSection() {
             className='hidden h-full w-[100%] object-cover lg:absolute lg:block'
             width={100}
             height={100}
-            src='/Lines/bottomLineForLargeS.svg'
+            src='/lines/bottomLineForLargeS.svg'
             alt='bottomLineForLargeS_image'
           />
           <Image
             className='absolute h-full w-[100%] scale-x-[-1] object-cover lg:hidden'
             width={100}
             height={100}
-            src='/Lines/bottomLineForSmallS.svg'
+            src='/lines/bottomLineForSmallS.svg'
             alt='bottomLineForSmallS_image'
           />
           <div className='absolute bottom-[50px] left-[-20px] z-10 bg-black py-2 text-3xl font-bold text-white/50 md:text-4xl'>
