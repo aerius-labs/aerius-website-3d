@@ -4,7 +4,7 @@ export default function ProductSection() {
   const products = [
     {
       id: 1,
-      imageSrc: '/Images/athena_finance.png',
+      imageSrc: '/images/athena_finance.png',
       imageAlt: 'athenaFinance_image',
       title: 'Athena Finance',
       description:
@@ -12,7 +12,7 @@ export default function ProductSection() {
     },
     {
       id: 2,
-      imageSrc: '/Images/zk_snap.png',
+      imageSrc: '/images/zk_snap.png',
       imageAlt: 'zkSnap_image',
       title: 'Zk Snap',
       description:

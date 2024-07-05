@@ -3,7 +3,7 @@ import { useEffect, useRef, useCallback } from 'react';
 import Image from 'next/image';
 import dynamic from 'next/dynamic';
 
-const Scene = dynamic(() => import('@/components/Scene/AstronautScene'), {
+const Scene = dynamic(() => import('@/components/Scene/astronautScene'), {
   ssr: false,
 });
 

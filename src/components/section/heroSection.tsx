@@ -1,10 +1,10 @@
 'use client';
 
-import TopSection from './TopSection';
+import TopSection from './topSection';
 import { Canvas } from '@react-three/fiber';
 import { Suspense } from 'react';
 import { Environment, Center } from '@react-three/drei';
-import Aerius3DModel from '@/components/3DModel/AeriusLogo';
+import Aerius3DModel from '@/components/3dModel/aeriusLogo';
 
 export default function HeroSection() {
   return (

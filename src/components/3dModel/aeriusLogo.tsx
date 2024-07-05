@@ -3,12 +3,12 @@ import { useFrame } from '@react-three/fiber';
 import { useEffect, useRef, useState } from 'react';
 import { Group } from 'three';
 
-useGLTF.preload('/models/LogoBreak.glb');
+useGLTF.preload('/models/logoBreak.glb');
 
 export default function Model() {
   const group = useRef<Group | any>();
   const { nodes, materials, animations, scene }: any = useGLTF(
-    '/models/LogoBreak.glb'
+    '/models/logoBreak.glb'
   );
   const { actions } = useAnimations(animations, group);
   const [scrollPosition, setScrollPosition] = useState(0);
