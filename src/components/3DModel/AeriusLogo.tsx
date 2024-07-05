@@ -3,12 +3,12 @@ import { useFrame } from '@react-three/fiber';
 import { useEffect, useRef, useState } from 'react';
 import { Group } from 'three';
 
-useGLTF.preload('/Models/LogoBreak.glb');
+useGLTF.preload('/models/LogoBreak.glb');
 
 export default function Model() {
   const group = useRef<Group | any>();
   const { nodes, materials, animations, scene }: any = useGLTF(
-    '/Models/LogoBreak.glb'
+    '/models/LogoBreak.glb'
   );
   const { actions } = useAnimations(animations, group);
   const [scrollPosition, setScrollPosition] = useState(0);
@@ -31,11 +31,9 @@ export default function Model() {
   useEffect(() => {
     if (scrollPosition >= 0.04 && actions) {
       setAnimationStarted(true);
-      console.log('Animation started');
       Object.values(actions).forEach((action: any) => action.play());
     } else if (actions) {
       setAnimationStarted(false);
-      console.log('Animation paused');
       Object.values(actions).forEach((action: any) => action.stop());
     }
   }, [scrollPosition, actions]);
