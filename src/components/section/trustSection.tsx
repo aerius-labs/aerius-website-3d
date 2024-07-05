@@ -1,5 +1,5 @@
 import Marquee from 'react-fast-marquee';
-import MarqueeComponent from '../MarqueeComponent/Marquee';
+import MarqueeComponent from '../marqueeComponent/marquee';
 
 export default function TrustSection() {
   return (

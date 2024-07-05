@@ -24,7 +24,7 @@ export default function TopSection() {
           className='w-10 sm:w-12 lg:w-16'
           data-aos='slide-up'
           data-aos-delay='100'
-          src='/Images/logo.png'
+          src='/images/logo.png'
           alt='aeriusLogo_image'
           width={150}
           height={150}

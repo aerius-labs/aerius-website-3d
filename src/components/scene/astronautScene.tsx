@@ -1,7 +1,7 @@
 import { Canvas } from '@react-three/fiber';
 import { Suspense } from 'react';
 import { Environment } from '@react-three/drei';
-import AstronautModel from '../3DModel/Astronaut';
+import AstronautModel from '../3dModel/astronaut';
 
 export default function AstronautScene() {
   return (
