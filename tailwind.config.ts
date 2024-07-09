@@ -30,7 +30,6 @@ const config: Config = {
         },
       },
       animation: {
-        grow: 'grow 4s ease forwards',
         topAway: 'topAway 0.5s ease-out forwards',
         bottomAway: 'bottomAway 0.5s ease-out forwards',
       },

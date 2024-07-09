@@ -21,9 +21,7 @@ export default function HeroSection() {
           <directionalLight position={[-5, -5, 5]} intensity={4} />
           <Environment preset='studio' />
           <Suspense fallback={null}>
-            <Center>
-              <Aerius3DModel />
-            </Center>
+            <Aerius3DModel />
           </Suspense>
         </Canvas>
       </div>

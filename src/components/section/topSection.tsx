@@ -1,10 +1,9 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import AOS from 'aos';
 
 import Image from 'next/image';
-import Loader from '@/components/Loader/loader';
 
 import BordersCorner from '@/components/BorderCorners/borderCorners';
 
@@ -12,26 +11,13 @@ import BordersCorner from '@/components/BorderCorners/borderCorners';
 import 'aos/dist/aos.css';
 
 export default function TopSection() {
-  const [isLoading, setIsLoading] = useState(true);
-
   useEffect(() => {
-    // Simulating the loader completion
-    const loaderTimeout = setTimeout(() => {
-      setIsLoading(false);
-    }, 4000);
-
     AOS.init({
       duration: 700,
       once: false,
       offset: 100,
     });
-
-    return () => clearTimeout(loaderTimeout);
   }, []);
-
-  if (isLoading) {
-    return <Loader />;
-  }
 
   return (
     <section className='relative flex min-h-screen flex-col items-center justify-center text-white'>

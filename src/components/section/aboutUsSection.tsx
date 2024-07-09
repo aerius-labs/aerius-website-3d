@@ -1,9 +1,9 @@
 'use client';
-import { useEffect, useRef, useCallback } from 'react';
+import { useEffect, useRef } from 'react';
 import Image from 'next/image';
 import dynamic from 'next/dynamic';
 
-const Scene = dynamic(() => import('@/components/Scene/astronautScene'), {
+const Scene = dynamic(() => import('@/components/scene/astronautScene'), {
   ssr: false,
 });
 
