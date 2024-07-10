@@ -1,5 +1,13 @@
+'use client';
+
+import { useEffect, useRef } from 'react';
 import { Akzidenzgroteskbe, IBMPlexMono } from '@/fonts/fonts';
 import Image from 'next/image';
+import dynamic from 'next/dynamic';
+
+const Scene = dynamic(() => import('@/components/scene/satelliteScene'), {
+  ssr: false,
+});
 
 export default function ProductSection() {
   const products = [
@@ -21,13 +29,61 @@ export default function ProductSection() {
     },
   ];
 
+  const satelliteCanvasRef = useRef<HTMLDivElement>(null);
+  const poductSectionRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (satelliteCanvasRef.current) {
+          if (entry.isIntersecting) {
+            satelliteCanvasRef.current.style.position = 'fixed';
+          } else {
+            satelliteCanvasRef.current.style.position = 'absolute';
+          }
+        }
+      },
+      {
+        root: null,
+        rootMargin: `0px 0px -${window.innerHeight}px 0px`,
+        threshold: 0,
+      }
+    );
+
+    if (poductSectionRef.current) {
+      observer.observe(poductSectionRef.current);
+    }
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
+
   return (
     <section
+      ref={poductSectionRef}
       id='Products'
       className={`relative ${Akzidenzgroteskbe.className} flex w-screen flex-col justify-center text-white lg:items-start`}
     >
+      {/* Top Line */}
+      <div className='relative z-10 flex min-h-[150vh] w-screen items-center justify-center overflow-hidden'>
+        <div className='absolute bottom-0 left-[50%] top-0 h-full w-[32%] lg:left-[18%]'>
+          <Image
+            className='hidden h-full w-[100%] object-cover lg:absolute lg:block'
+            width={100}
+            height={100}
+            src='/lines/bottomLineForLargeS.svg'
+            alt='bottomLineForLargeS_image'
+          />
+          <div className='absolute z-[5] h-full w-[2px] bg-white/50 lg:hidden'></div>
+          <div className='absolute bottom-[50px] left-[-20px] z-10 bg-black py-2 text-3xl font-bold text-white/50 md:text-4xl'>
+            03
+          </div>
+        </div>
+      </div>
+
       {/* Content */}
-      <div className='px-5 md:w-[70vw] lg:w-[50vw] lg:px-20'>
+      <div className='z-10 px-5 pt-6 md:w-[70vw] lg:w-[50vw] lg:px-20'>
         <div className='flex flex-col gap-4 text-center md:text-left'>
           <h1 className='text-2xl font-bold sm:text-3xl lg:text-5xl'>
             EMPOWER YOUR EXPERIENCES
@@ -56,13 +112,22 @@ export default function ProductSection() {
                 <h1 className='border-b-[1px] border-white pb-5 text-center text-2xl font-bold lg:text-3xl'>
                   {item.title}
                 </h1>
-                <p className={`${IBMPlexMono.className} pt-5 text-center text-xl leading-normal sm:text-left`}>
+                <p
+                  className={`${IBMPlexMono.className} pt-5 text-center text-xl leading-normal sm:text-left`}
+                >
                   {item.description}
                 </p>
               </div>
             </div>
           ))}
         </div>
+      </div>
+
+      <div
+        ref={satelliteCanvasRef}
+        className='left-0 right-0 top-0 h-screen w-full'
+      >
+        <Scene />
       </div>
 
       {/* Bottom Line */}
