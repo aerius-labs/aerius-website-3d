@@ -1,11 +1,12 @@
 'use client';
 import Image from 'next/image';
+import { Akzidenzgroteskbe, IBMPlexMono } from '@/fonts/fonts';
 
 export default function ServicesSection() {
   return (
     <section
       id='Services'
-      className='z-10 flex w-screen flex-col justify-center bg-black pt-6 text-white'
+      className={`z-10 ${Akzidenzgroteskbe.className} flex w-screen flex-col justify-center bg-black pt-6 text-white`}
     >
       {/* Heading */}
       <div className='flex flex-col items-center gap-4 px-5'>
@@ -26,7 +27,9 @@ export default function ServicesSection() {
           <h1 className='border-b-[1px] border-white pb-5 text-center text-2xl font-bold lg:text-3xl'>
             R&D
           </h1>
-          <p className='pt-5 text-center text-xl leading-normal'>
+          <p
+            className={`pt-5 ${IBMPlexMono.className} text-center text-xl leading-normal`}
+          >
             Whether it is leveraging an anonymous network, ZKPs, MPC or any
             other privacy technique, we can assist your team in integrating
             these tools into your product&apos;s initial prototyping phase.
@@ -36,7 +39,9 @@ export default function ServicesSection() {
           <h1 className='border-b-[1px] border-white pb-5 text-center text-2xl font-bold lg:text-3xl'>
             Consulting
           </h1>
-          <p className='pt-5 text-center text-xl leading-normal'>
+          <p
+            className={`pt-5 ${IBMPlexMono.className} text-center text-xl leading-normal`}
+          >
             We provide expert consulting by creating catered implementations for
             clients who want to integrate ZK or cryptography into their
             solutions, guiding organizations to unlock the potential of secure
@@ -47,7 +52,9 @@ export default function ServicesSection() {
           <h1 className='border-b-[1px] border-white pb-5 text-center text-2xl font-bold lg:text-3xl'>
             Auditing
           </h1>
-          <p className='pt-5 text-center text-xl leading-normal'>
+          <p
+            className={`pt-5 ${IBMPlexMono.className} text-center text-xl leading-normal`}
+          >
             We offer thorough analysis and verification of zero-knowledge
             circuits and smart contracts for enhanced security and reliability.
           </p>

@@ -1,10 +1,11 @@
 import Link from 'next/link';
+import { IBMPlexMono, Akzidenzgroteskbe } from '@/fonts/fonts';
 
 export default function OurWritingsSection() {
   return (
     <section
       id='Blogs'
-      className='relative flex w-screen flex-col items-center justify-center px-5 pb-40 pt-10 text-white lg:px-20'
+      className={`relative ${Akzidenzgroteskbe.className} flex w-screen flex-col items-center justify-center px-5 pb-60 pt-10 text-white md:pb-80 lg:px-20`}
     >
       {/* Content */}
       <div className='sticky top-10 flex flex-col items-center justify-center'>
@@ -27,7 +28,7 @@ export default function OurWritingsSection() {
               distinctio quo
             </h1>
             <div className='flex items-end justify-between gap-5'>
-              <div>
+              <div className={`${IBMPlexMono.className}`}>
                 <p>Lorem ipsum dolor sit amet.</p>
                 <p className='text-white/50'>May 5, 2024</p>
               </div>
@@ -46,7 +47,7 @@ export default function OurWritingsSection() {
               distinctio quo
             </h1>
             <div className='flex items-end justify-between gap-5'>
-              <div>
+              <div className={`${IBMPlexMono.className}`}>
                 <p>Lorem ipsum dolor sit amet.</p>
                 <p className='text-white/50'>May 5, 2024</p>
               </div>
@@ -65,7 +66,7 @@ export default function OurWritingsSection() {
               distinctio quo
             </h1>
             <div className='flex items-end justify-between gap-5'>
-              <div>
+              <div className={`${IBMPlexMono.className}`}>
                 <p>Lorem ipsum dolor sit amet.</p>
                 <p className='text-white/50'>May 5, 2024</p>
               </div>
@@ -84,7 +85,7 @@ export default function OurWritingsSection() {
               distinctio quo
             </h1>
             <div className='flex items-end justify-between gap-5'>
-              <div>
+              <div className={`${IBMPlexMono.className}`}>
                 <p>Lorem ipsum dolor sit amet.</p>
                 <p className='text-white/50'>May 5, 2024</p>
               </div>
@@ -100,12 +101,16 @@ export default function OurWritingsSection() {
 
       <Link
         href='#'
-        className='group absolute bottom-[80px] z-[10] flex items-center justify-center gap-3 md:bottom-[240px] lg:bottom-[350px]'
+        className='group absolute bottom-[160px] z-[10] flex items-center justify-center gap-3 md:bottom-[300px] lg:bottom-[450px]'
       >
         <div className='flex h-[10px] w-[10px] items-center justify-center rounded-[50%] p-3 font-bold group-hover:-rotate-45 group-hover:bg-white group-hover:text-black'>
           →
         </div>
-        <span className='text-base font-bold md:text-lg'>Explore more</span>
+        <span
+          className={`text-base ${IBMPlexMono.className} font-bold md:text-lg`}
+        >
+          Explore More
+        </span>
       </Link>
     </section>
   );

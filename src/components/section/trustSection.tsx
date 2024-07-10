@@ -1,11 +1,12 @@
 import Marquee from 'react-fast-marquee';
 import MarqueeComponent from '../marqueeComponent/marquee';
+import { Akzidenzgroteskbe } from '@/fonts/fonts';
 
 export default function TrustSection() {
   return (
     <section
       id='Trusted'
-      className='z-10 flex w-screen flex-col justify-center bg-black pt-10 text-white'
+      className={`z-10 flex ${Akzidenzgroteskbe.className} w-screen flex-col justify-center bg-black pt-10 text-white`}
     >
       {/* Content */}
       <div className='flex flex-col items-center gap-4 px-5'>

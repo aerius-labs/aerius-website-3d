@@ -1,3 +1,4 @@
+import { Akzidenzgroteskbe, IBMPlexMono } from '@/fonts/fonts';
 import Image from 'next/image';
 
 export default function ProductSection() {
@@ -23,7 +24,7 @@ export default function ProductSection() {
   return (
     <section
       id='Products'
-      className='flex w-screen flex-col justify-center pt-6 text-white lg:items-start'
+      className={`relative ${Akzidenzgroteskbe.className} flex w-screen flex-col justify-center text-white lg:items-start`}
     >
       {/* Content */}
       <div className='px-5 md:w-[70vw] lg:w-[50vw] lg:px-20'>
@@ -55,7 +56,7 @@ export default function ProductSection() {
                 <h1 className='border-b-[1px] border-white pb-5 text-center text-2xl font-bold lg:text-3xl'>
                   {item.title}
                 </h1>
-                <p className='pt-5 text-center text-xl leading-normal sm:text-left'>
+                <p className={`${IBMPlexMono.className} pt-5 text-center text-xl leading-normal sm:text-left`}>
                   {item.description}
                 </p>
               </div>

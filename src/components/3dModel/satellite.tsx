@@ -3,12 +3,12 @@ import { useAnimations, useGLTF, PerspectiveCamera } from '@react-three/drei';
 import { useFrame } from '@react-three/fiber';
 import { useEffect, useRef, useState } from 'react';
 
-useGLTF.preload('/models/Satellite.glb');
+useGLTF.preload('/models/satellite.glb');
 
 export default function SatelliteModel() {
   const group = useRef<any>(null);
   const { nodes, materials, animations, scene }: any = useGLTF(
-    '/models/Satellite.glb'
+    '/models/satellite.glb'
   );
   const { actions } = useAnimations(animations, group);
 
