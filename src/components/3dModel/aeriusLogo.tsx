@@ -1,55 +1,404 @@
-import { useAnimations, useGLTF } from '@react-three/drei';
-import { useFrame } from '@react-three/fiber';
-import { useEffect, useRef, useState } from 'react';
-import { Group } from 'three';
+import * as THREE from 'three';
+import React, { useRef } from 'react';
+import { useGLTF, PerspectiveCamera, useAnimations } from '@react-three/drei';
+import { GLTF } from 'three-stdlib';
 
-useGLTF.preload('/models/logoBreak.glb');
+type GLTFResult = GLTF & {
+  nodes: {
+    Logo_Main: THREE.Mesh;
+    Logo_Main001_cell: THREE.Mesh;
+    Logo_Main001_cell001: THREE.Mesh;
+    Logo_Main001_cell002: THREE.Mesh;
+    Logo_Main001_cell003: THREE.Mesh;
+    Logo_Main001_cell004: THREE.Mesh;
+    Logo_Main001_cell005: THREE.Mesh;
+    Logo_Main001_cell006: THREE.Mesh;
+    Logo_Main001_cell007: THREE.Mesh;
+    Logo_Main001_cell008: THREE.Mesh;
+    Logo_Main001_cell009: THREE.Mesh;
+    Logo_Main001_cell010: THREE.Mesh;
+    Logo_Main001_cell011: THREE.Mesh;
+    Logo_Main001_cell012: THREE.Mesh;
+    Logo_Main001_cell013: THREE.Mesh;
+    Logo_Main001_cell014: THREE.Mesh;
+    Logo_Main001_cell015: THREE.Mesh;
+    Logo_Main001_cell016: THREE.Mesh;
+    Logo_Main001_cell017: THREE.Mesh;
+    Logo_Main001_cell018: THREE.Mesh;
+    Logo_Main001_cell019: THREE.Mesh;
+    Logo_Main001_cell021: THREE.Mesh;
+    Logo_Main001_cell022: THREE.Mesh;
+    Logo_Main001_cell023: THREE.Mesh;
+    Logo_Main001_cell024: THREE.Mesh;
+    Logo_Main001_cell025: THREE.Mesh;
+    Logo_Main001_cell026: THREE.Mesh;
+    Logo_Main001_cell027: THREE.Mesh;
+    Logo_Main001_cell028: THREE.Mesh;
+    Logo_Main001_cell029: THREE.Mesh;
+    Logo_Main001_cell030: THREE.Mesh;
+    Logo_Main001_cell031: THREE.Mesh;
+    Logo_Main001_cell032: THREE.Mesh;
+    Logo_Main001_cell033: THREE.Mesh;
+    Logo_Main001_cell034: THREE.Mesh;
+    Logo_Main001_cell035: THREE.Mesh;
+    Logo_Main001_cell036: THREE.Mesh;
+    Logo_Main001_cell037: THREE.Mesh;
+    Logo_Main001_cell038: THREE.Mesh;
+    Logo_Main001_cell039: THREE.Mesh;
+    Logo_Main001_cell040: THREE.Mesh;
+    Logo_Main001_cell041: THREE.Mesh;
+    Logo_Main001_cell042: THREE.Mesh;
+    Logo_Main001_cell043: THREE.Mesh;
+    Logo_Main001_cell044: THREE.Mesh;
+    Logo_Main001_cell045: THREE.Mesh;
+    Logo_Main001_cell046: THREE.Mesh;
+    Logo_Main001_cell047: THREE.Mesh;
+    Logo_Main001_cell048: THREE.Mesh;
+    Logo_Main001_cell049: THREE.Mesh;
+    Logo_Main001_cell050: THREE.Mesh;
+    Logo_Main001_cell051: THREE.Mesh;
+    Logo_Main001_cell052: THREE.Mesh;
+    Logo_Main001_cell053: THREE.Mesh;
+    Logo_Main001_cell054: THREE.Mesh;
+    Logo_Main001_cell055: THREE.Mesh;
+    Logo_Main001_cell056: THREE.Mesh;
+    Logo_Main001_cell057: THREE.Mesh;
+    Logo_Main001_cell058: THREE.Mesh;
+    Logo_Main001_cell059: THREE.Mesh;
+    Logo_Main001_cell060: THREE.Mesh;
+    Logo_Main001_cell061: THREE.Mesh;
+    Logo_Main001_cell062: THREE.Mesh;
+    Logo_Main001_cell063: THREE.Mesh;
+    Logo_Main001_cell064: THREE.Mesh;
+    Logo_Main001_cell065: THREE.Mesh;
+    Logo_Main001_cell067: THREE.Mesh;
+    Logo_Main001_cell068: THREE.Mesh;
+    Logo_Main001_cell069: THREE.Mesh;
+    Logo_Main001_cell070: THREE.Mesh;
+    Logo_Main001_cell071: THREE.Mesh;
+    Logo_Main001_cell072: THREE.Mesh;
+    Logo_Main001_cell073: THREE.Mesh;
+    Logo_Main001_cell074: THREE.Mesh;
+    Logo_Main001_cell075: THREE.Mesh;
+    Logo_Main001_cell076: THREE.Mesh;
+    Logo_Main001_cell077: THREE.Mesh;
+    Logo_Main001_cell078: THREE.Mesh;
+    Logo_Main001_cell079: THREE.Mesh;
+    Logo_Main001_cell080: THREE.Mesh;
+    Logo_Main001_cell081: THREE.Mesh;
+    Logo_Main001_cell082: THREE.Mesh;
+    Logo_Main001_cell083: THREE.Mesh;
+    Logo_Main001_cell084: THREE.Mesh;
+    Logo_Main001_cell085: THREE.Mesh;
+    Logo_Main001_cell086: THREE.Mesh;
+    Logo_Main001_cell087: THREE.Mesh;
+    Logo_Main001_cell088: THREE.Mesh;
+    Logo_Main001_cell089: THREE.Mesh;
+    Logo_Main001_cell090: THREE.Mesh;
+    Logo_Main001_cell091: THREE.Mesh;
+    Logo_Main001_cell092: THREE.Mesh;
+    Logo_Main001_cell093: THREE.Mesh;
+    Logo_Main001_cell094: THREE.Mesh;
+    Logo_Main001_cell095: THREE.Mesh;
+    Logo_Main001_cell096: THREE.Mesh;
+    Logo_Main001_cell097: THREE.Mesh;
+    Logo_Main001_cell098: THREE.Mesh;
+    Logo_Main001_cell020: THREE.Mesh;
+    Logo_Main001_cell066: THREE.Mesh;
+    Logo_Main001_cell099: THREE.Mesh;
+    Logo_Main001_cell100: THREE.Mesh;
+    Logo_Main001_cell101: THREE.Mesh;
+    Logo_Main001_cell102: THREE.Mesh;
+    Logo_Main001_cell103: THREE.Mesh;
+    Logo_Main001_cell104: THREE.Mesh;
+    Logo_Main001_cell105: THREE.Mesh;
+    Logo_Main001_cell106: THREE.Mesh;
+    Logo_Main001_cell107: THREE.Mesh;
+    Logo_Main001_cell108: THREE.Mesh;
+    Logo_Main001_cell109: THREE.Mesh;
+    Logo_Main001_cell110: THREE.Mesh;
+    Logo_Main001_cell111: THREE.Mesh;
+    Logo_Main001_cell112: THREE.Mesh;
+    Logo_Main001_cell113: THREE.Mesh;
+    Logo_Main001_cell114: THREE.Mesh;
+    Logo_Main001_cell116: THREE.Mesh;
+    Logo_Main001_cell117: THREE.Mesh;
+    Logo_Main001_cell118: THREE.Mesh;
+    Logo_Main001_cell119: THREE.Mesh;
+    Logo_Main001_cell120: THREE.Mesh;
+    Logo_Main001_cell121: THREE.Mesh;
+    Logo_Main001_cell122: THREE.Mesh;
+    Logo_Main001_cell123: THREE.Mesh;
+    Logo_Main001_cell124: THREE.Mesh;
+    Logo_Main001_cell125: THREE.Mesh;
+    Logo_Main001_cell126: THREE.Mesh;
+    Logo_Main001_cell127: THREE.Mesh;
+    Logo_Main001_cell128: THREE.Mesh;
+    Logo_Main001_cell129: THREE.Mesh;
+    Logo_Main001_cell130: THREE.Mesh;
+    Logo_Main001_cell131: THREE.Mesh;
+    Logo_Main001_cell132: THREE.Mesh;
+    Logo_Main001_cell133: THREE.Mesh;
+    Logo_Main001_cell134: THREE.Mesh;
+    Logo_Main001_cell135: THREE.Mesh;
+    Logo_Main001_cell136: THREE.Mesh;
+    Logo_Main001_cell137: THREE.Mesh;
+    Logo_Main001_cell138: THREE.Mesh;
+    Logo_Main001_cell139: THREE.Mesh;
+    Logo_Main001_cell140: THREE.Mesh;
+    Logo_Main001_cell141: THREE.Mesh;
+    Logo_Main001_cell142: THREE.Mesh;
+    Logo_Main001_cell143: THREE.Mesh;
+    Logo_Main001_cell144: THREE.Mesh;
+    Logo_Main001_cell145: THREE.Mesh;
+    Logo_Main001_cell146: THREE.Mesh;
+    Logo_Main001_cell147: THREE.Mesh;
+    Logo_Main001_cell148: THREE.Mesh;
+    Logo_Main001_cell149: THREE.Mesh;
+    Logo_Main001_cell150: THREE.Mesh;
+    Logo_Main001_cell151: THREE.Mesh;
+    Logo_Main001_cell152: THREE.Mesh;
+    Logo_Main001_cell153: THREE.Mesh;
+    Logo_Main001_cell154: THREE.Mesh;
+    Logo_Main001_cell155: THREE.Mesh;
+    Logo_Main001_cell156: THREE.Mesh;
+    Logo_Main001_cell157: THREE.Mesh;
+    Logo_Main001_cell158: THREE.Mesh;
+    Logo_Main001_cell159: THREE.Mesh;
+    Logo_Main001_cell160: THREE.Mesh;
+    Logo_Main001_cell161: THREE.Mesh;
+    Logo_Main001_cell162: THREE.Mesh;
+    Logo_Main001_cell163: THREE.Mesh;
+    Logo_Main001_cell164: THREE.Mesh;
+    Logo_Main001_cell165: THREE.Mesh;
+    Logo_Main001_cell166: THREE.Mesh;
+    Logo_Main001_cell167: THREE.Mesh;
+    Logo_Main001_cell168: THREE.Mesh;
+    Logo_Main001_cell169: THREE.Mesh;
+    Logo_Main001_cell170: THREE.Mesh;
+    Logo_Main001_cell171: THREE.Mesh;
+    Logo_Main001_cell172: THREE.Mesh;
+    Logo_Main001_cell173: THREE.Mesh;
+    Logo_Main001_cell174: THREE.Mesh;
+    Logo_Main001_cell175: THREE.Mesh;
+    Logo_Main001_cell176: THREE.Mesh;
+    Logo_Main001_cell177: THREE.Mesh;
+    Logo_Main001_cell178: THREE.Mesh;
+    Logo_Main001_cell179: THREE.Mesh;
+    Logo_Main001_cell180: THREE.Mesh;
+    Logo_Main001_cell181: THREE.Mesh;
+    Logo_Main001_cell182: THREE.Mesh;
+  };
+  materials: {
+    ['Frosted Glass 01']: THREE.MeshStandardMaterial;
+  };
+};
 
-export default function Model() {
-  const group = useRef<Group | any>();
-  const { nodes, materials, animations, scene }: any = useGLTF(
-    '/models/logoBreak.glb'
-  );
-  const { actions } = useAnimations(animations, group);
-  const [scrollPosition, setScrollPosition] = useState(0);
-  const [animationStarted, setAnimationStarted] = useState(false);
+type ActionName =
+  | 'Layer_001Action.001'
+  | 'Logo Main.001_cellAction.001'
+  | 'Logo Main.001_cell.001Action'
+  | 'Logo Main.001_cell.002Action'
+  | 'Logo Main.001_cell.003Action'
+  | 'Logo Main.001_cell.004Action'
+  | 'Logo Main.001_cell.005Action'
+  | 'Logo Main.001_cell.006Action'
+  | 'Logo Main.001_cell.007Action'
+  | 'Logo Main.001_cell.008Action'
+  | 'Logo Main.001_cell.009Action'
+  | 'Logo Main.001_cell.010Action'
+  | 'Logo Main.001_cell.011Action'
+  | 'Logo Main.001_cell.012Action'
+  | 'Logo Main.001_cell.013Action'
+  | 'Logo Main.001_cell.014Action'
+  | 'Logo Main.001_cell.015Action'
+  | 'Logo Main.001_cell.016Action'
+  | 'Logo Main.001_cell.017Action'
+  | 'Logo Main.001_cell.018Action'
+  | 'Logo Main.001_cell.019Action'
+  | 'Logo Main.001_cell.021Action'
+  | 'Logo Main.001_cell.022Action'
+  | 'Logo Main.001_cell.023Action'
+  | 'Logo Main.001_cell.024Action'
+  | 'Logo Main.001_cell.025Action'
+  | 'Logo Main.001_cell.026Action'
+  | 'Logo Main.001_cell.027Action'
+  | 'Logo Main.001_cell.028Action'
+  | 'Logo Main.001_cell.029Action'
+  | 'Logo Main.001_cell.030Action'
+  | 'Logo Main.001_cell.031Action'
+  | 'Logo Main.001_cell.032Action'
+  | 'Logo Main.001_cell.033Action'
+  | 'Logo Main.001_cell.034Action'
+  | 'Logo Main.001_cell.035Action'
+  | 'Logo Main.001_cell.036Action'
+  | 'Logo Main.001_cell.037Action'
+  | 'Logo Main.001_cell.038Action'
+  | 'Logo Main.001_cell.039Action'
+  | 'Logo Main.001_cell.040Action'
+  | 'Logo Main.001_cell.041Action'
+  | 'Logo Main.001_cell.042Action'
+  | 'Logo Main.001_cell.043Action'
+  | 'Logo Main.001_cell.044Action'
+  | 'Logo Main.001_cell.045Action'
+  | 'Logo Main.001_cell.046Action'
+  | 'Logo Main.001_cell.047Action'
+  | 'Logo Main.001_cell.048Action'
+  | 'Logo Main.001_cell.049Action'
+  | 'Logo Main.001_cell.050Action'
+  | 'Logo Main.001_cell.051Action'
+  | 'Logo Main.001_cell.052Action'
+  | 'Logo Main.001_cell.053Action'
+  | 'Logo Main.001_cell.054Action'
+  | 'Logo Main.001_cell.055Action'
+  | 'Logo Main.001_cell.056Action'
+  | 'Logo Main.001_cell.057Action'
+  | 'Logo Main.001_cell.058Action'
+  | 'Logo Main.001_cell.059Action'
+  | 'Logo Main.001_cell.060Action'
+  | 'Logo Main.001_cell.061Action'
+  | 'Logo Main.001_cell.062Action'
+  | 'Logo Main.001_cell.063Action'
+  | 'Logo Main.001_cell.064Action'
+  | 'Logo Main.001_cell.065Action'
+  | 'Logo Main.001_cell.067Action'
+  | 'Logo Main.001_cell.068Action'
+  | 'Logo Main.001_cell.069Action'
+  | 'Logo Main.001_cell.070Action'
+  | 'Logo Main.001_cell.071Action'
+  | 'Logo Main.001_cell.072Action'
+  | 'Logo Main.001_cell.073Action'
+  | 'Logo Main.001_cell.074Action'
+  | 'Logo Main.001_cell.075Action'
+  | 'Logo Main.001_cell.076Action'
+  | 'Logo Main.001_cell.077Action'
+  | 'Logo Main.001_cell.078Action'
+  | 'Logo Main.001_cell.079Action'
+  | 'Logo Main.001_cell.080Action'
+  | 'Logo Main.001_cell.081Action'
+  | 'Logo Main.001_cell.082Action'
+  | 'Logo Main.001_cell.083Action'
+  | 'Logo Main.001_cell.084Action'
+  | 'Logo Main.001_cell.085Action'
+  | 'Logo Main.001_cell.086Action'
+  | 'Logo Main.001_cell.087Action'
+  | 'Logo Main.001_cell.088Action'
+  | 'Logo Main.001_cell.089Action'
+  | 'Logo Main.001_cell.090Action'
+  | 'Logo Main.001_cell.091Action'
+  | 'Logo Main.001_cell.092Action'
+  | 'Logo Main.001_cell.093Action'
+  | 'Logo Main.001_cell.094Action'
+  | 'Logo Main.001_cell.095Action'
+  | 'Logo Main.001_cell.096Action'
+  | 'Logo Main.001_cell.097Action'
+  | 'Logo Main.001_cell.098Action'
+  | 'Logo Main.001_cell.020Action'
+  | 'Logo Main.001_cell.066Action'
+  | 'Logo Main.001_cell.099Action'
+  | 'Logo Main.001_cell.100Action'
+  | 'Logo Main.001_cell.101Action'
+  | 'Logo Main.001_cell.102Action'
+  | 'Logo Main.001_cell.103Action'
+  | 'Logo Main.001_cell.104Action'
+  | 'Logo Main.001_cell.105Action'
+  | 'Logo Main.001_cell.106Action'
+  | 'Logo Main.001_cell.107Action'
+  | 'Logo Main.001_cell.108Action'
+  | 'Logo Main.001_cell.109Action'
+  | 'Logo Main.001_cell.110Action'
+  | 'Logo Main.001_cell.111Action'
+  | 'Logo Main.001_cell.112Action'
+  | 'Logo Main.001_cell.113Action'
+  | 'Logo Main.001_cell.114Action'
+  | 'Logo Main.001_cell.115Action'
+  | 'Logo Main.001_cell.116Action'
+  | 'Logo Main.001_cell.117Action'
+  | 'Logo Main.001_cell.118Action'
+  | 'Logo Main.001_cell.119Action'
+  | 'Logo Main.001_cell.120Action'
+  | 'Logo Main.001_cell.121Action'
+  | 'Logo Main.001_cell.122Action'
+  | 'Logo Main.001_cell.123Action'
+  | 'Logo Main.001_cell.124Action'
+  | 'Logo Main.001_cell.125Action'
+  | 'Logo Main.001_cell.126Action'
+  | 'Logo Main.001_cell.127Action'
+  | 'Logo Main.001_cell.128Action'
+  | 'Logo Main.001_cell.129Action'
+  | 'Logo Main.001_cell.130Action'
+  | 'Logo Main.001_cell.131Action'
+  | 'Logo Main.001_cell.132Action'
+  | 'Logo Main.001_cell.133Action'
+  | 'Logo Main.001_cell.134Action'
+  | 'Logo Main.001_cell.135Action'
+  | 'Logo Main.001_cell.136Action'
+  | 'Logo Main.001_cell.137Action'
+  | 'Logo Main.001_cell.138Action'
+  | 'Logo Main.001_cell.139Action'
+  | 'Logo Main.001_cell.140Action'
+  | 'Logo Main.001_cell.141Action'
+  | 'Logo Main.001_cell.142Action'
+  | 'Logo Main.001_cell.143Action'
+  | 'Logo Main.001_cell.144Action'
+  | 'Logo Main.001_cell.145Action'
+  | 'Logo Main.001_cell.146Action'
+  | 'Logo Main.001_cell.147Action'
+  | 'Logo Main.001_cell.148Action'
+  | 'Logo Main.001_cell.149Action'
+  | 'Logo Main.001_cell.150Action'
+  | 'Logo Main.001_cell.151Action'
+  | 'Logo Main.001_cell.152Action'
+  | 'Logo Main.001_cell.153Action'
+  | 'Logo Main.001_cell.154Action'
+  | 'Logo Main.001_cell.155Action'
+  | 'Logo Main.001_cell.156Action'
+  | 'Logo Main.001_cell.157Action'
+  | 'Logo Main.001_cell.158Action'
+  | 'Logo Main.001_cell.159Action'
+  | 'Logo Main.001_cell.160Action'
+  | 'Logo Main.001_cell.161Action'
+  | 'Logo Main.001_cell.162Action'
+  | 'Logo Main.001_cell.163Action'
+  | 'Logo Main.001_cell.164Action'
+  | 'Logo Main.001_cell.165Action'
+  | 'Logo Main.001_cell.166Action'
+  | 'Logo Main.001_cell.167Action'
+  | 'Logo Main.001_cell.168Action'
+  | 'Logo Main.001_cell.169Action'
+  | 'Logo Main.001_cell.170Action'
+  | 'Logo Main.001_cell.171Action'
+  | 'Logo Main.001_cell.172Action'
+  | 'Logo Main.001_cell.173Action'
+  | 'Logo Main.001_cell.174Action'
+  | 'Logo Main.001_cell.175Action'
+  | 'Logo Main.001_cell.176Action'
+  | 'Logo Main.001_cell.177Action'
+  | 'Logo Main.001_cell.178Action'
+  | 'Logo Main.001_cell.179Action'
+  | 'Logo Main.001_cell.180Action'
+  | 'Logo Main.001_cell.181Action'
+  | 'Logo Main.001_cell.182Action';
+type GLTFActions = Record<ActionName, THREE.AnimationClip>;
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollY = window.scrollY;
-      const maxScroll =
-        document.documentElement.scrollHeight - window.innerHeight;
-      setScrollPosition(scrollY / maxScroll);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
-
-  useEffect(() => {
-    if (scrollPosition >= 0.04 && actions) {
-      setAnimationStarted(true);
-      Object.values(actions).forEach((action: any) => action.play());
-    } else if (actions) {
-      setAnimationStarted(false);
-      Object.values(actions).forEach((action: any) => action.stop());
-    }
-  }, [scrollPosition, actions]);
-
-  useFrame(() => {
-    if (animationStarted && actions) {
-      Object.values(actions).forEach((action: any) => {
-        action.time = (scrollPosition - 0.04) * 2 * action.getClip().duration;
-        action.paused = false;
-      });
-    }
-  });
-
+export default function AeriusLogoModel() {
+  const group = useRef<THREE.Group | any>();
+  const { nodes, materials, animations } = useGLTF(
+    '/models/logobreak.glb'
+  ) as GLTFResult;
+  const { actions } = useAnimations<GLTFActions | any>(animations, group);
   return (
     <group ref={group} dispose={null}>
       <group name='Scene'>
+        <mesh
+          name='Logo_Main'
+          castShadow
+          receiveShadow
+          geometry={nodes.Logo_Main.geometry}
+          material={materials['Frosted Glass 01']}
+          position={[0, -4.5, 0]}
+          rotation={[0, -0.611, 0]}
+        />
         <mesh
           name='Logo_Main001_cell'
           castShadow
@@ -1507,7 +1856,23 @@ export default function Model() {
           material={materials['Frosted Glass 01']}
           position={[-0.475, 0.076, -0.25]}
         />
+        <PerspectiveCamera
+          name='Camera'
+          makeDefault={true}
+          far={1000}
+          near={0.1}
+          fov={32.269}
+          position={[-0.078, 0.935, 11.351]}
+        />
+        <group
+          name='Area'
+          position={[19.732, 18.518, -14.928]}
+          rotation={[-2.213, 0.666, 0.245]}
+          scale={11.778}
+        />
       </group>
     </group>
   );
 }
+
+useGLTF.preload('/models/logobreak.glb');

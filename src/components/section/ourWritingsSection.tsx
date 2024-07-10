@@ -101,7 +101,7 @@ export default function OurWritingsSection() {
 
       <Link
         href='#'
-        className='group absolute bottom-[160px] z-[10] flex items-center justify-center gap-3 md:bottom-[300px] lg:bottom-[450px]'
+        className='group absolute bottom-[80px] z-[10] flex items-center justify-center gap-3 md:bottom-[240px] lg:bottom-[350px]'
       >
         <div className='flex h-[10px] w-[10px] items-center justify-center rounded-[50%] p-3 font-bold group-hover:-rotate-45 group-hover:bg-white group-hover:text-black'>
           →
