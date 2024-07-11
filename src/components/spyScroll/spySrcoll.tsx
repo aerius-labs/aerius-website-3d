@@ -40,7 +40,7 @@ const ScrollSpy = () => {
   }, []);
 
   return (
-    <div className='group fixed right-6 top-6 hidden h-[25px] gap-2 p-5 text-white md:flex'>
+    <div className='group fixed right-6 top-6 z-20 hidden h-[25px] gap-2 p-5 text-white md:flex'>
       {sections.map((sectionId) => (
         <Link
           href={`#${sectionId}`}

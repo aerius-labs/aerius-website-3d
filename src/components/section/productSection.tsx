@@ -75,7 +75,7 @@ export default function ProductSection() {
             src='/lines/bottomLineForLargeS.svg'
             alt='bottomLineForLargeS_image'
           />
-          <div className='absolute z-[5] h-full w-[2px] bg-white/50 lg:hidden'></div>
+          <div className='absolute h-full w-[2px] bg-white/50 lg:hidden'></div>
           <div className='absolute bottom-[50px] left-[-20px] z-10 bg-black py-2 text-3xl font-bold text-white/50 md:text-4xl'>
             03
           </div>
@@ -131,7 +131,7 @@ export default function ProductSection() {
       </div>
 
       {/* Bottom Line */}
-      <div className='relative flex min-h-[150vh] w-screen items-center justify-center overflow-hidden'>
+      <div className='relative z-10 flex min-h-[150vh] w-screen items-center justify-center overflow-hidden'>
         <div className='absolute left-[50%] top-0 h-full lg:left-[18%] lg:w-[32%]'>
           <Image
             className='hidden h-full w-[100%] scale-x-[-1] object-cover lg:absolute lg:block'
@@ -140,7 +140,7 @@ export default function ProductSection() {
             src='/lines/bottomLineForLargeS.svg'
             alt='bottomLineForLargeS_image'
           />
-          <div className='absolute z-[5] h-full w-[2px] bg-white/50 lg:hidden'></div>
+          <div className='absolute h-full w-[2px] bg-white/50 lg:hidden'></div>
           <div className='absolute bottom-[50px] right-[-20px] z-10 bg-black py-2 text-3xl font-bold text-white/50 md:text-4xl'>
             04
           </div>

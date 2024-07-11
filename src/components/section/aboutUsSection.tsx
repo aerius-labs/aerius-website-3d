@@ -47,7 +47,7 @@ export default function AboutUsSection() {
       {/* Top line */}
       <div className='relative z-10 min-h-[110vh] w-screen overflow-hidden text-center'>
         <div className='absolute left-[15%] flex h-full justify-center md:left-[55%]'>
-          <div className='absolute z-[5] h-full w-[2px] bg-white/50'></div>
+          <div className='absolute h-full w-[2px] bg-white/50'></div>
           <div className='absolute bottom-[50px] z-10 bg-black py-2 text-3xl font-bold text-white/50 md:text-4xl'>
             01
           </div>
