@@ -19,6 +19,7 @@ export default function Loader({ progress }: LoaderProps) {
           style={{ width: `${progress}%` }}
         ></div>
       </div>
+      <div className='text-white'>{progress}</div>
     </div>
   );
 }
