@@ -50,16 +50,6 @@ export default function AstronautModel() {
   return (
     <group ref={group} dispose={null}>
       <group name='Scene'>
-        <PerspectiveCamera
-          name='Camera'
-          makeDefault={true}
-          far={1000}
-          near={0.1}
-          fov={32.269}
-          position={[27.771, 8.578, 32.226]}
-          rotation={[-3.096, -1.028, 0.039]}
-          scale={-1}
-        />
         <group
           name='Armature001'
           position={[-4.452, -11.697, -12.968]}

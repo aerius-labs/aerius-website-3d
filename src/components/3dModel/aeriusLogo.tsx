@@ -1516,14 +1516,14 @@ export default function AeriusLogoModel() {
           material={materials['Frosted Glass 01']}
           position={[-0.475, 0.076, -0.25]}
         />
-        <PerspectiveCamera
+        {/* <PerspectiveCamera
           name='Camera'
           makeDefault={true}
           far={1000}
           near={0.1}
           fov={32.269}
           position={[-0.078, 0.935, 11.351]}
-        />
+        /> */}
         <group
           name='Area'
           position={[19.732, 18.518, -14.928]}

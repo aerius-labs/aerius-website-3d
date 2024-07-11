@@ -51,16 +51,6 @@ export default function SatelliteModel() {
   return (
     <group ref={group} dispose={null}>
       <group name='Scene'>
-        <PerspectiveCamera
-          name='Camera'
-          makeDefault={true}
-          far={1000}
-          near={0.1}
-          fov={32.269}
-          position={[-28.552, -15.162, 0.847]}
-          rotation={[-1.888, 0.938, -1.184]}
-          scale={-1}
-        />
         <mesh
           name='Tie_fighter'
           castShadow
