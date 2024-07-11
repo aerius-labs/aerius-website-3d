@@ -1,4 +1,4 @@
-import { useAnimations, useGLTF, PerspectiveCamera } from '@react-three/drei';
+import { useAnimations, useGLTF } from '@react-three/drei';
 import { useFrame } from '@react-three/fiber';
 import { useEffect, useRef, useState } from 'react';
 
@@ -6,7 +6,7 @@ useGLTF.preload('/models/astronaut.glb');
 
 export default function AstronautModel() {
   const group = useRef<any>(null);
-  const { nodes, materials, animations, scene }: any = useGLTF(
+  const { nodes, materials, animations }: any = useGLTF(
     '/models/astronaut.glb'
   );
   const { actions } = useAnimations(animations, group);
@@ -29,7 +29,7 @@ export default function AstronautModel() {
   }, []);
 
   useEffect(() => {
-    if (scrollPosition >= 0.12 && actions) {
+    if (scrollPosition >= 0.12 && scrollPosition < 0.4 && actions) {
       setAnimationStarted(true);
       Object.values(actions).forEach((action: any) => action.play());
     } else if (actions) {

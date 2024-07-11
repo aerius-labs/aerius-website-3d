@@ -1,5 +1,5 @@
 'use client';
-import { useAnimations, useGLTF, PerspectiveCamera } from '@react-three/drei';
+import { useAnimations, useGLTF } from '@react-three/drei';
 import { useFrame } from '@react-three/fiber';
 import { useEffect, useRef, useState } from 'react';
 
@@ -7,7 +7,7 @@ useGLTF.preload('/models/satellite.glb');
 
 export default function SatelliteModel() {
   const group = useRef<any>(null);
-  const { nodes, materials, animations, scene }: any = useGLTF(
+  const { nodes, materials, animations }: any = useGLTF(
     '/models/satellite.glb'
   );
   const { actions } = useAnimations(animations, group);
@@ -30,7 +30,7 @@ export default function SatelliteModel() {
   }, []);
 
   useEffect(() => {
-    if (scrollPosition >= 0.45 && actions) {
+    if (scrollPosition >= 0.43 && scrollPosition < 0.8 && actions) {
       setAnimationStarted(true);
       Object.values(actions).forEach((action: any) => action.play());
     } else if (actions) {
@@ -42,7 +42,7 @@ export default function SatelliteModel() {
   useFrame(() => {
     if (animationStarted && actions) {
       Object.values(actions).forEach((action: any) => {
-        action.time = (scrollPosition - 0.45) * 2 * action.getClip().duration;
+        action.time = (scrollPosition - 0.43) * 2 * action.getClip().duration;
         action.paused = false;
       });
     }
@@ -167,18 +167,18 @@ export default function SatelliteModel() {
           />
         </mesh>
         {/* <pointLight
-          name="Point"
+          name='Point'
           intensity={2717570.653}
           decay={2}
-          color="#b8b6ff"
+          color='#b8b6ff'
           position={[17.563, 23.175, 7.499]}
           rotation={[-Math.PI / 2, 0, 0]}
         />
         <pointLight
-          name="Point001"
+          name='Point001'
           intensity={543514.131}
           decay={2}
-          color="#fefffa"
+          color='#fefffa'
           position={[-9.122, 20.686, -1.713]}
           rotation={[-Math.PI / 2, 0, 0]}
         /> */}
@@ -2005,16 +2005,6 @@ export default function SatelliteModel() {
             scale={0.065}
           />
         </group>
-        <mesh
-          name='Retopo_other_glass_frame003'
-          castShadow
-          receiveShadow
-          geometry={nodes.Retopo_other_glass_frame003.geometry}
-          material={materials['tie fighter base']}
-          position={[-5.882, 0.449, -14.077]}
-          rotation={[-1.52, 0.004, 2.763]}
-          scale={1.474}
-        />
       </group>
     </group>
   );

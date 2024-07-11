@@ -29,7 +29,7 @@ export default function AeriusLogoModel() {
   }, []);
 
   useEffect(() => {
-    if (scrollPosition >= 0.04 && actions) {
+    if (scrollPosition >= 0.03 && scrollPosition < 0.15 && actions) {
       setAnimationStarted(true);
       Object.values(actions).forEach((action: any) => action.play());
     } else if (actions) {
@@ -41,7 +41,7 @@ export default function AeriusLogoModel() {
   useFrame(() => {
     if (animationStarted && actions) {
       Object.values(actions).forEach((action: any) => {
-        action.time = (scrollPosition - 0.04) * 2 * action.getClip().duration;
+        action.time = (scrollPosition - 0.03) * 2 * action.getClip().duration;
         action.paused = false;
       });
     }
@@ -50,15 +50,6 @@ export default function AeriusLogoModel() {
   return (
     <group ref={group} dispose={null}>
       <group name='Scene'>
-        {/* <mesh
-          name='Logo_Main'
-          castShadow
-          receiveShadow
-          geometry={nodes.Logo_Main.geometry}
-          material={materials['Frosted Glass 01']}
-          position={[0, -4.5, 0]}
-          rotation={[0, -0.611, 0]}
-        /> */}
         <mesh
           name='Logo_Main001_cell'
           castShadow
@@ -1515,20 +1506,6 @@ export default function AeriusLogoModel() {
           geometry={nodes.Logo_Main001_cell182.geometry}
           material={materials['Frosted Glass 01']}
           position={[-0.475, 0.076, -0.25]}
-        />
-        {/* <PerspectiveCamera
-          name='Camera'
-          makeDefault={true}
-          far={1000}
-          near={0.1}
-          fov={32.269}
-          position={[-0.078, 0.935, 11.351]}
-        /> */}
-        <group
-          name='Area'
-          position={[19.732, 18.518, -14.928]}
-          rotation={[-2.213, 0.666, 0.245]}
-          scale={11.778}
         />
       </group>
     </group>
