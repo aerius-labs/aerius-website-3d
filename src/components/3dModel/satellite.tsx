@@ -19,17 +19,40 @@ export default function SatelliteModel() {
     // Play the actions once to initialize them
     animations.forEach((clip: any) => {
       const action = mixer.clipAction(clip);
-      action.play();
+      action.paused = true;
     });
 
     // Register ScrollTrigger
     ScrollTrigger.create({
-      trigger: '.ghi',
+      trigger: '#satelliteContainer',
       start: 'top top',
-      end: 'top -250%',
+      end: 'top -400%',
       pin: true,
-      markers: true,
       scrub: 2,
+      onEnter: () => {
+        animations.forEach((clip: any) => {
+          const action = mixer.clipAction(clip);
+          action.play();
+        });
+      },
+      onLeave: () => {
+        animations.forEach((clip: any) => {
+          const action = mixer.clipAction(clip);
+          action.paused = true;
+        });
+      },
+      onEnterBack: () => {
+        animations.forEach((clip: any) => {
+          const action = mixer.clipAction(clip);
+          action.play();
+        });
+      },
+      onLeaveBack: () => {
+        animations.forEach((clip: any) => {
+          const action = mixer.clipAction(clip);
+          action.paused = true;
+        });
+      },
       onUpdate: (self) => {
         const progress = self.progress;
         animations.forEach((clip: any) => {
@@ -43,9 +66,9 @@ export default function SatelliteModel() {
     return () => {
       ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
     };
-  }, [animations, mixer]);
+  }, [mixer]);
 
-  useFrame((state, delta) => {
+  useFrame((_, delta) => {
     mixer?.update(delta);
   });
 

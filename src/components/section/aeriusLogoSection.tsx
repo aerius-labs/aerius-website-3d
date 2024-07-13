@@ -1,5 +1,3 @@
-'use client';
-
 import dynamic from 'next/dynamic';
 
 const Scene = dynamic(() => import('@/components/scene/aeriusLogoScene'), {
@@ -8,8 +6,8 @@ const Scene = dynamic(() => import('@/components/scene/aeriusLogoScene'), {
 
 export default function AeriusLogoSection() {
   return (
-    <div className='h-[200vh]'>
-      <div className='abc relative flex h-screen w-screen items-center justify-center'>
+    <div>
+      <div id='logoContainer' className='h-screen w-screen'>
         <Scene />
       </div>
     </div>

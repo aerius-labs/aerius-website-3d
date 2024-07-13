@@ -1,5 +1,3 @@
-'use client';
-import { useEffect, useRef } from 'react';
 import Image from 'next/image';
 import dynamic from 'next/dynamic';
 import { Akzidenzgroteskbe, IBMPlexMono } from '@/fonts/fonts';
@@ -9,39 +7,8 @@ const Scene = dynamic(() => import('@/components/scene/astronautScene'), {
 });
 
 export default function AboutUsSection() {
-  // const canvasRef = useRef<HTMLDivElement>(null);
-  // const sectionRef = useRef<HTMLDivElement>(null);
-
-  // useEffect(() => {
-  //   const observer = new IntersectionObserver(
-  //     ([entry]) => {
-  //       if (canvasRef.current) {
-  //         if (entry.isIntersecting) {
-  //           canvasRef.current.style.position = 'fixed';
-  //         } else {
-  //           canvasRef.current.style.position = 'absolute';
-  //         }
-  //       }
-  //     },
-  //     {
-  //       root: null,
-  //       rootMargin: `0px 0px -${window.innerHeight}px 0px`,
-  //       threshold: 0,
-  //     }
-  //   );
-
-  //   if (sectionRef.current) {
-  //     observer.observe(sectionRef.current);
-  //   }
-
-  //   return () => {
-  //     observer.disconnect();
-  //   };
-  // }, []);
-
   return (
     <section
-      // ref={sectionRef}
       className={`relative ${Akzidenzgroteskbe.className} flex w-screen flex-col items-end justify-center overflow-hidden text-white`}
     >
       {/* Top line */}
@@ -104,9 +71,10 @@ export default function AboutUsSection() {
         </div>
       </div>
 
+      {/* Astronaut Scene */}
       <div
-        // ref={canvasRef}
-        className='def absolute left-0 right-0 top-0 h-screen w-full'
+        id='astronautContainer'
+        className='absolute left-0 right-0 top-0 h-screen w-full'
       >
         <Scene />
       </div>

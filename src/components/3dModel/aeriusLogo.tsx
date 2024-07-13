@@ -18,17 +18,40 @@ export default function AeriusLogoModel() {
     // Play the actions once to initialize them
     animations.forEach((clip: any) => {
       const action = mixer.clipAction(clip);
-      action.play();
+      action.paused = true;
     });
 
     // Register ScrollTrigger
     ScrollTrigger.create({
-      trigger: '.abc',
+      trigger: '#logoContainer',
       start: 'top top',
       end: 'top -200%',
       pin: true,
-      markers: true,
       scrub: 2,
+      onEnter: () => {
+        animations.forEach((clip: any) => {
+          const action = mixer.clipAction(clip);
+          action.play();
+        });
+      },
+      onLeave: () => {
+        animations.forEach((clip: any) => {
+          const action = mixer.clipAction(clip);
+          action.paused = true;
+        });
+      },
+      onEnterBack: () => {
+        animations.forEach((clip: any) => {
+          const action = mixer.clipAction(clip);
+          action.play();
+        });
+      },
+      onLeaveBack: () => {
+        animations.forEach((clip: any) => {
+          const action = mixer.clipAction(clip);
+          action.paused = true;
+        });
+      },
       onUpdate: (self) => {
         const progress = self.progress;
         animations.forEach((clip: any) => {
@@ -42,7 +65,7 @@ export default function AeriusLogoModel() {
     return () => {
       ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
     };
-  }, [animations, mixer]);
+  }, [mixer]);
 
   useFrame((state, delta) => {
     mixer?.update(delta);
