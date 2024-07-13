@@ -8,8 +8,10 @@ const Scene = dynamic(() => import('@/components/scene/aeriusLogoScene'), {
 
 export default function AeriusLogoSection() {
   return (
-    <div className='relative flex h-screen w-screen items-center justify-center'>
-      <Scene />
+    <div className='h-[200vh]'>
+      <div className='abc relative flex h-screen w-screen items-center justify-center'>
+        <Scene />
+      </div>
     </div>
   );
 }

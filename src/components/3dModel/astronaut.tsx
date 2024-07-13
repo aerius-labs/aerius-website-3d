@@ -1,6 +1,10 @@
 import { useAnimations, useGLTF } from '@react-three/drei';
 import { useFrame } from '@react-three/fiber';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef } from 'react';
+import gsap from 'gsap';
+import ScrollTrigger from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
 
 useGLTF.preload('/models/astronaut.glb');
 
@@ -9,42 +13,40 @@ export default function AstronautModel() {
   const { nodes, materials, animations }: any = useGLTF(
     '/models/astronaut.glb'
   );
-  const { actions } = useAnimations(animations, group);
-
-  const [scrollPosition, setScrollPosition] = useState(0);
-  const [animationStarted, setAnimationStarted] = useState(false);
+  const { mixer } = useAnimations(animations, group);
 
   useEffect(() => {
-    const handleScroll = () => {
-      const scrollY = window.scrollY;
-      const maxScroll =
-        document.documentElement.scrollHeight - window.innerHeight;
-      setScrollPosition(scrollY / maxScroll);
-    };
+    // Play the actions once to initialize them
+    animations.forEach((clip: any) => {
+      const action = mixer.clipAction(clip);
+      action.play();
+    });
 
-    window.addEventListener('scroll', handleScroll);
+    // Register ScrollTrigger
+    ScrollTrigger.create({
+      trigger: '.def',
+      start: 'top top',
+      end: 'top -300%',
+      pin: true,
+      markers: true,
+      scrub: 2,
+      onUpdate: (self) => {
+        const progress = self.progress;
+        animations.forEach((clip: any) => {
+          const action = mixer.clipAction(clip);
+          action.paused = true;
+          action.time = clip.duration * progress;
+        });
+      },
+    });
+
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
     };
-  }, []);
+  }, [animations, mixer]);
 
-  useEffect(() => {
-    if (scrollPosition >= 0.12 && scrollPosition < 0.4 && actions) {
-      setAnimationStarted(true);
-      Object.values(actions).forEach((action: any) => action.play());
-    } else if (actions) {
-      setAnimationStarted(false);
-      Object.values(actions).forEach((action: any) => action.stop());
-    }
-  }, [scrollPosition, actions]);
-
-  useFrame(() => {
-    if (animationStarted && actions) {
-      Object.values(actions).forEach((action: any) => {
-        action.time = (scrollPosition - 0.12) * 2 * action.getClip().duration;
-        action.paused = false;
-      });
-    }
+  useFrame((state, delta) => {
+    mixer?.update(delta);
   });
 
   return (

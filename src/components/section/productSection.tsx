@@ -29,39 +29,39 @@ export default function ProductSection() {
     },
   ];
 
-  const satelliteCanvasRef = useRef<HTMLDivElement>(null);
-  const poductSectionRef = useRef<HTMLDivElement>(null);
+  // const satelliteCanvasRef = useRef<HTMLDivElement>(null);
+  // const poductSectionRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (satelliteCanvasRef.current) {
-          if (entry.isIntersecting) {
-            satelliteCanvasRef.current.style.position = 'fixed';
-          } else {
-            satelliteCanvasRef.current.style.position = 'absolute';
-          }
-        }
-      },
-      {
-        root: null,
-        rootMargin: `0px 0px -${window.innerHeight}px 0px`,
-        threshold: 0,
-      }
-    );
+  // useEffect(() => {
+  //   const observer = new IntersectionObserver(
+  //     ([entry]) => {
+  //       if (satelliteCanvasRef.current) {
+  //         if (entry.isIntersecting) {
+  //           satelliteCanvasRef.current.style.position = 'fixed';
+  //         } else {
+  //           satelliteCanvasRef.current.style.position = 'absolute';
+  //         }
+  //       }
+  //     },
+  //     {
+  //       root: null,
+  //       rootMargin: `0px 0px -${window.innerHeight}px 0px`,
+  //       threshold: 0,
+  //     }
+  //   );
 
-    if (poductSectionRef.current) {
-      observer.observe(poductSectionRef.current);
-    }
+  //   if (poductSectionRef.current) {
+  //     observer.observe(poductSectionRef.current);
+  //   }
 
-    return () => {
-      observer.disconnect();
-    };
-  }, []);
+  //   return () => {
+  //     observer.disconnect();
+  //   };
+  // }, []);
 
   return (
     <section
-      ref={poductSectionRef}
+      // ref={poductSectionRef}
       id='Products'
       className={`relative ${Akzidenzgroteskbe.className} flex w-screen flex-col justify-center text-white lg:items-start`}
     >
@@ -124,8 +124,8 @@ export default function ProductSection() {
       </div>
 
       <div
-        ref={satelliteCanvasRef}
-        className='left-0 right-0 top-0 h-screen w-full'
+        // ref={satelliteCanvasRef}
+        className='ghi absolute left-0 right-0 top-0 h-screen w-full'
       >
         <Scene />
       </div>
