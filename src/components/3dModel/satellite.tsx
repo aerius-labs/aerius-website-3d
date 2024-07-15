@@ -26,7 +26,7 @@ export default function SatelliteModel() {
     ScrollTrigger.create({
       trigger: '#satelliteContainer',
       start: 'top top',
-      end: 'top -400%',
+      end: 'top -280%',
       pin: true,
       scrub: 2,
       onEnter: () => {

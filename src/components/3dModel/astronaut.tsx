@@ -26,7 +26,7 @@ export default function AstronautModel() {
     ScrollTrigger.create({
       trigger: '#astronautContainer',
       start: 'top top',
-      end: 'top -300%',
+      end: 'top -200%',
       pin: true,
       scrub: 2,
       onEnter: () => {

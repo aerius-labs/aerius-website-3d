@@ -6,7 +6,7 @@ export default function ServicesSection() {
   return (
     <section
       id='Services'
-      className={`z-10 ${Akzidenzgroteskbe.className} flex w-screen flex-col justify-center bg-black pt-6 text-white`}
+      className={`z-10 ${Akzidenzgroteskbe.className} flex w-screen flex-col justify-center pt-6 text-white`}
     >
       {/* Heading */}
       <div className='flex flex-col items-center gap-4 px-5'>

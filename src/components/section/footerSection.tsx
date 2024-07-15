@@ -75,7 +75,7 @@ export default function FooterSection() {
           </Link>
         </div>
         <div
-          className={`mb-0 border-t-2 ${FKScreamerBlack.className} border-white/50 bg-black pl-4 text-left text-[40vw] font-extrabold leading-none sm:pl-0 sm:text-center sm:text-[24vw]`}
+          className={`mb-0 border-t-2 ${FKScreamerBlack.className} border-white/50 pl-4 text-left text-[40vw] font-extrabold leading-none sm:pl-0 sm:text-center sm:text-[24vw]`}
         >
           AERIUS LABS
         </div>

@@ -12,6 +12,7 @@ export default function Loader({ progress }: LoaderProps) {
         alt='loader'
         width={100}
         height={100}
+        priority
       />
       <div className='relative h-[2px] w-[25%] overflow-hidden'>
         <div
