@@ -21,7 +21,7 @@ export default function ServicesSection() {
   return (
     <section
       id='Services'
-      className={`z-10 ${Akzidenzgroteskbe.className} flex w-screen flex-col justify-center pt-6 text-white`}
+      className={`${Akzidenzgroteskbe.className} flex w-screen flex-col justify-center pt-6 text-white`}
     >
       {/* Heading */}
       <div className='flex flex-col items-center gap-4 px-5'>
@@ -32,7 +32,8 @@ export default function ServicesSection() {
           <span className='text-white/50'>
             Enhance Your Brand&apos;s Potential with{' '}
           </span>
-          <span className='hovering'>
+          <span className='hovering relative'>
+            <span className='absolute z-40 h-full w-full bg-transparent'></span>
             Our Range of Product-Boosting Services
           </span>
         </h3>

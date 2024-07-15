@@ -8,18 +8,19 @@ export default function OurWritingsSection() {
   return (
     <section
       id='Blogs'
-      className={`relative ${Akzidenzgroteskbe.className} z-10 flex w-screen flex-col items-center justify-center px-5 pb-60 pt-10 text-white md:pb-0 lg:px-20`}
+      className={`relative ${Akzidenzgroteskbe.className} flex w-screen flex-col items-center justify-center px-5 pb-60 pt-10 text-white md:pb-0 lg:px-20`}
     >
       {/* Content */}
       <div className='sticky top-10 flex flex-col items-center justify-center'>
-        <h1 className='text-2xl font-bold sm:text-3xl lg:text-5xl'>
+        <h1 className='text-2xl font-bold uppercase sm:text-3xl lg:text-5xl'>
           Ready to Geek Out?
         </h1>
         <h3 className='pt-5 text-center text-lg lg:text-2xl'>
           <span className='text-white/50'>
             Discover tomorrow&apos;s trends today, explore our insights on{' '}
           </span>
-          <span className='hovering'>
+          <span className='hovering relative'>
+            <span className='absolute z-40 h-full w-full bg-transparent'></span>
             Pioneering Technologies and Future Topics
           </span>
         </h3>
@@ -29,8 +30,9 @@ export default function OurWritingsSection() {
         <div className='sticky top-[150px] flex h-[50vh] flex-col items-center justify-center md:top-52 md:mt-[40vh] md:h-screen'>
           <Link
             href='#'
-            className='hovering group flex cursor-pointer flex-col justify-between gap-20 border p-5 md:gap-40'
+            className='hovering group relative flex cursor-pointer flex-col justify-between gap-20 border p-5 md:gap-40'
           >
+            <div className='absolute left-0 top-0 z-40 h-full w-full bg-transparent'></div>
             <h1 className='text-xl font-bold lg:text-2xl'>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum,
               distinctio quo
@@ -51,8 +53,9 @@ export default function OurWritingsSection() {
         <div className='sticky top-[430px] flex h-[50vh] flex-col items-center justify-center md:top-52 md:mt-[80vh] md:h-screen'>
           <Link
             href='#'
-            className='hovering group flex cursor-pointer flex-col justify-between gap-20 border p-5 md:gap-40'
+            className='hovering group relative flex cursor-pointer flex-col justify-between gap-20 border p-5 md:gap-40'
           >
+            <div className='absolute z-40 h-full w-full bg-transparent'></div>
             <h1 className='text-xl font-bold lg:text-2xl'>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum,
               distinctio quo
@@ -73,8 +76,9 @@ export default function OurWritingsSection() {
         <div className='sticky top-[710px] flex h-[50vh] flex-col items-center justify-center md:top-52 md:mt-[120vh] md:h-screen'>
           <Link
             href='#'
-            className='hovering group flex cursor-pointer flex-col justify-between gap-20 border p-5 md:gap-40'
+            className='hovering group relative flex cursor-pointer flex-col justify-between gap-20 border p-5 md:gap-40'
           >
+            <div className='absolute z-40 h-full w-full bg-transparent'></div>
             <h1 className='text-xl font-bold lg:text-2xl'>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum,
               distinctio quo
@@ -95,8 +99,9 @@ export default function OurWritingsSection() {
         <div className='sticky top-[990px] flex h-[50vh] flex-col items-center justify-center md:top-52 md:mt-[160vh] md:h-screen'>
           <Link
             href='#'
-            className='hovering group flex cursor-pointer flex-col justify-between gap-20 border bg-black p-5 md:gap-40 md:bg-transparent'
+            className='hovering group relative flex cursor-pointer flex-col justify-between gap-20 border bg-black p-5 md:gap-40 md:bg-transparent'
           >
+            <div className='absolute z-40 h-full w-full bg-transparent'></div>
             <h1 className='text-xl font-bold lg:text-2xl'>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum,
               distinctio quo

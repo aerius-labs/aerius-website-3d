@@ -14,12 +14,10 @@ import Loader from '@/components/Loader/loader';
 import CustomCursor from '@/components/customCursor/customCursor';
 
 import { useLoading } from '../context/loadingContext';
-import { useEffect, useRef } from 'react';
+import { useEffect } from 'react';
 import { useProgress } from '@react-three/drei';
 
 export default function Home() {
-  const mainRef = useRef<HTMLElement>(null);
-  const wtbRef = useRef<HTMLDivElement>(null);
   const { progress } = useProgress();
   const { isLoaded, setIsLoaded } = useLoading();
 
@@ -33,10 +31,7 @@ export default function Home() {
     <>
       {!isLoaded && <Loader progress={progress} />}
       {isLoaded && <CustomCursor />}
-      <main
-        ref={mainRef}
-        className='flex flex-col items-center justify-between'
-      >
+      <main className='flex flex-col items-center justify-between'>
         {isLoaded && <BordersCorner />}
         {isLoaded && <HeroSection />}
         <AeriusLogoSection />

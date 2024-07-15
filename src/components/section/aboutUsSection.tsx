@@ -26,7 +26,7 @@ export default function AboutUsSection() {
         <div className='gap-4 border border-white p-5 md:w-[60vw] lg:w-[50vw]'>
           <h1 className='border-b-[1px] border-white pb-5 text-center text-2xl font-bold sm:text-left lg:text-3xl'>
             <span className='text-white/50'>FUTURE OF</span>{' '}
-            <span className='hovering'>SECURE SYSTEMS</span>
+            <span>SECURE SYSTEMS</span>
           </h1>
           <p
             className={`flex ${IBMPlexMono.className} flex-col gap-5 pt-5 text-center text-xl leading-normal sm:text-left`}

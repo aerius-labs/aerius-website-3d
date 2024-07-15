@@ -6,7 +6,7 @@ import { IBMPlexMono, FKScreamerBlack } from '@/fonts/fonts';
 export default function FooterSection() {
   return (
     <section className='relative w-full'>
-      <div className='relative bottom-0 left-0 right-0 z-40 flex w-full flex-col text-white'>
+      <div className='relative bottom-0 left-0 right-0 z-10 flex w-full flex-col text-white'>
         <div className='absolute bottom-6 right-4 flex flex-col gap-2 sm:relative sm:left-0 sm:flex-row sm:gap-0 sm:py-2'>
           <Link
             href='#'
