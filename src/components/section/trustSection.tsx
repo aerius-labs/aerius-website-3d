@@ -17,7 +17,9 @@ export default function TrustSection() {
           <span className='text-white/50'>
             At Aerius Labs, we&apos;re honoured to have earned the trust of{' '}
           </span>
-          <span>countless of individuals and businesses worldwide</span>
+          <span className='hovering'>
+            countless of individuals and businesses worldwide
+          </span>
         </h3>
       </div>
       <div className='h-[250px]  overflow-hidden 2xl:h-[350px]'>

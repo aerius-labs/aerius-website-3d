@@ -17,8 +17,6 @@ import { useLoading } from '../context/loadingContext';
 import { useEffect, useRef } from 'react';
 import { useProgress } from '@react-three/drei';
 
-import gsap from 'gsap';
-
 export default function Home() {
   const mainRef = useRef<HTMLElement>(null);
   const wtbRef = useRef<HTMLDivElement>(null);
@@ -30,33 +28,6 @@ export default function Home() {
       setIsLoaded(true);
     }
   }, [progress]);
-
-  useEffect(() => {
-    // CursorFollow logic
-    const moveCursor = (dets: { x: number; y: number }) => {
-      gsap.to('.cursorFollower', {
-        x: dets.x - 6,
-        y: dets.y - 6,
-        duration: 1,
-        ease: 'power4.out',
-      });
-      gsap.to('.cursor', {
-        x: dets.x - 4,
-        y: dets.y - 4,
-        duration: 0.1,
-        ease: 'power4.out',
-      });
-    };
-
-    if (mainRef.current != null)
-      mainRef.current.addEventListener('mousemove', moveCursor);
-
-    // CursorHover logic
-    return () => {
-      if (mainRef.current != null)
-        mainRef.current.removeEventListener('mousemove', moveCursor);
-    };
-  }, []);
 
   return (
     <>

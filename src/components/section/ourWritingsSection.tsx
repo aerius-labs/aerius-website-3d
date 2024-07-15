@@ -1,7 +1,10 @@
 import Link from 'next/link';
 import { IBMPlexMono, Akzidenzgroteskbe } from '@/fonts/fonts';
+import { useRef } from 'react';
 
 export default function OurWritingsSection() {
+  const abc = useRef<HTMLDivElement>(null);
+
   return (
     <section
       id='Blogs'
@@ -16,7 +19,9 @@ export default function OurWritingsSection() {
           <span className='text-white/50'>
             Discover tomorrow&apos;s trends today, explore our insights on{' '}
           </span>
-          <span>Pioneering Technologies and Future Topics</span>
+          <span className='hovering'>
+            Pioneering Technologies and Future Topics
+          </span>
         </h3>
       </div>
 
@@ -24,7 +29,7 @@ export default function OurWritingsSection() {
         <div className='sticky top-[150px] flex h-[50vh] flex-col items-center justify-center md:top-52 md:mt-[40vh] md:h-screen'>
           <Link
             href='#'
-            className='group flex cursor-pointer flex-col justify-between gap-20 border p-5 md:gap-40'
+            className='hovering group flex cursor-pointer flex-col justify-between gap-20 border p-5 md:gap-40'
           >
             <h1 className='text-xl font-bold lg:text-2xl'>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum,
@@ -46,7 +51,7 @@ export default function OurWritingsSection() {
         <div className='sticky top-[430px] flex h-[50vh] flex-col items-center justify-center md:top-52 md:mt-[80vh] md:h-screen'>
           <Link
             href='#'
-            className='group flex cursor-pointer flex-col justify-between gap-20 border p-5 md:gap-40'
+            className='hovering group flex cursor-pointer flex-col justify-between gap-20 border p-5 md:gap-40'
           >
             <h1 className='text-xl font-bold lg:text-2xl'>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum,
@@ -68,7 +73,7 @@ export default function OurWritingsSection() {
         <div className='sticky top-[710px] flex h-[50vh] flex-col items-center justify-center md:top-52 md:mt-[120vh] md:h-screen'>
           <Link
             href='#'
-            className='group flex cursor-pointer flex-col justify-between gap-20 border p-5 md:gap-40'
+            className='hovering group flex cursor-pointer flex-col justify-between gap-20 border p-5 md:gap-40'
           >
             <h1 className='text-xl font-bold lg:text-2xl'>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum,
@@ -90,7 +95,7 @@ export default function OurWritingsSection() {
         <div className='sticky top-[990px] flex h-[50vh] flex-col items-center justify-center md:top-52 md:mt-[160vh] md:h-screen'>
           <Link
             href='#'
-            className='group flex cursor-pointer flex-col justify-between gap-20 border bg-black p-5 md:gap-40 md:bg-transparent'
+            className='hovering group flex cursor-pointer flex-col justify-between gap-20 border bg-black p-5 md:gap-40 md:bg-transparent'
           >
             <h1 className='text-xl font-bold lg:text-2xl'>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum,

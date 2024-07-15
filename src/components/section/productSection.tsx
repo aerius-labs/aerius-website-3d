@@ -56,7 +56,7 @@ export default function ProductSection() {
           </h1>
           <h3 className='text-lg sm:text-xl lg:text-2xl'>
             <span className='text-white/50'>With our </span>
-            <span>Innovative Product Solution</span>
+            <span className='hovering'>Innovative Product Solution</span>
           </h3>
         </div>
         <div className='grid gap-4 pt-10 md:grid-rows-2'>

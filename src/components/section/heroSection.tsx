@@ -19,7 +19,7 @@ export default function HeroSection() {
   }, []);
 
   return (
-    <section className='abc relative z-10 flex min-h-screen flex-col items-center justify-center text-white'>
+    <section className='relative z-10 flex min-h-screen flex-col items-center justify-center text-white'>
       <div className='absolute top-0 flex justify-center overflow-hidden'>
         <Image
           className='w-10 sm:w-12 lg:w-16'
@@ -32,7 +32,7 @@ export default function HeroSection() {
         />
       </div>
       <div
-        className={`flex ${FKScreamerBlack.className} flex-wrap gap-0 text-[35vw] font-extrabold leading-[35vw] sm:gap-10 sm:text-[32vw] sm:leading-[32vw] md:text-[20vw] md:leading-[20vw]`}
+        className={`flex ${FKScreamerBlack.className} hovering flex-wrap gap-0 text-[35vw] font-extrabold leading-[35vw] sm:gap-10 sm:text-[32vw] sm:leading-[32vw] md:text-[20vw] md:leading-[20vw]`}
       >
         <div className='mx-auto flex flex-row flex-nowrap overflow-hidden'>
           <p data-aos='slide-up' data-aos-delay='100'>
