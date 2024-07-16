@@ -53,7 +53,9 @@ const CustomCursor = () => {
 
   return (
     <>
-      <div className='cursor fixed top-0 z-20 h-3 w-3 rounded-[50%] border-2 border-black'></div>
+      <div className='cursor fixed top-0 z-20 flex h-2 w-2 items-center justify-center rounded-[50%] bg-black mix-blend-difference'>
+        <div className='absolute left-[2px] top-[2px] h-full w-full rounded-[50%] bg-white mix-blend-difference'></div>
+      </div>
       <div className='cursorFollower fixed top-0 z-10 h-4 w-4 rounded-[50%] bg-white mix-blend-difference'></div>
     </>
   );
