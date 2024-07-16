@@ -3,6 +3,7 @@ import { useFrame } from '@react-three/fiber';
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
+import { Color, Euler, Vector2 } from 'three';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -14,6 +15,58 @@ export default function AstronautModel() {
     '/models/astronaut.glb'
   );
   const { mixer } = useAnimations(animations, group);
+
+  useEffect(() => {
+    materials['Frosted Glass 01'].aoMapIntensity = 1;
+    materials['Frosted Glass 01'].blendAlpha = 0;
+    materials['Frosted Glass 01'].blendColor = new Color(0, 0, 0);
+    materials['Frosted Glass 01'].blendDst = 205;
+    materials['Frosted Glass 01'].blendEquation = 100;
+    materials['Frosted Glass 01'].blendSrc = 204;
+    materials['Frosted Glass 01'].blending = 1;
+    materials['Frosted Glass 01'].bumpScale = 1;
+    materials['Frosted Glass 01'].color = new Color(
+      0.5972017883558645,
+      0.06301001764564068,
+      1
+    );
+    materials['Frosted Glass 01'].colorWrite = true;
+    materials['Frosted Glass 01'].depthFunc = 3;
+    materials['Frosted Glass 01'].depthTest = true;
+    materials['Frosted Glass 01'].depthWrite = true;
+    materials['Frosted Glass 01'].displacementScale = 1;
+    materials['Frosted Glass 01'].dust = 1;
+    materials['Frosted Glass 01'].emissive = new Color(0, 0, 0);
+    materials['Frosted Glass 01'].emissiveIntensity = 1;
+    materials['Frosted Glass 01'].envMapIntensity = 1;
+    materials['Frosted Glass 01'].envMapRotation = new Euler(0, 0, 0, 'XYZ');
+    materials['Frosted Glass 01'].fog = true;
+    materials['Frosted Glass 01'].ior = 1.85;
+    materials['Frosted Glass 01'].isMaterial = true;
+    materials['Frosted Glass 01'].isMeshStandardMaterial = true;
+    materials['Frosted Glass 01'].lightMapIntensity = 1;
+    materials['Frosted Glass 01'].metalness = 1;
+    materials['Frosted Glass 01'].name = 'Frosted Glass 01';
+    materials['Frosted Glass 01'].normalScale = new Vector2(1, -1);
+    materials['Frosted Glass 01'].opacity = 0.9;
+    materials['Frosted Glass 01'].reflection = new Color(
+      1,
+      0.17144110072255403,
+      0.9301108583738498
+    );
+    materials['Frosted Glass 01'].refractionFactor = 0.54;
+    materials['Frosted Glass 01'].roughness = 0.6;
+    materials['Frosted Glass 01'].shininess = 0.5;
+    materials['Frosted Glass 01'].side = 2;
+    materials['Frosted Glass 01'].stencilFail = 7680;
+    materials['Frosted Glass 01'].stencilFunc = 519;
+    materials['Frosted Glass 01'].stencilFuncMask = 255;
+    materials['Frosted Glass 01'].stencilWriteMask = 255;
+    materials['Frosted Glass 01'].stencilZFail = 7680;
+    materials['Frosted Glass 01'].stencilZPass = 7680;
+    materials['Frosted Glass 01'].toneMapped = true;
+    materials['Frosted Glass 01'].transparent = true;
+  }, []);
 
   useEffect(() => {
     // Play the actions once to initialize them

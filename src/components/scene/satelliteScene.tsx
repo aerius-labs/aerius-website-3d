@@ -19,6 +19,20 @@ export default function SatelliteScene() {
       }}
     >
       <color attach='background' args={['#000']} />
+      <pointLight
+        decay={2}
+        intensity={1000}
+        color='#b8b6ff'
+        position={[17.563, 23.175, 7.499]}
+        rotation={[-Math.PI / 2, 0, 0]}
+      />
+      <pointLight
+        decay={2}
+        intensity={100}
+        color='#fefffa'
+        position={[-9.122, 20.686, -1.713]}
+        rotation={[-Math.PI / 2, 0, 0]}
+      />
       <Environment preset='night' />
       <Suspense fallback={null}>
         <SatelliteModel />
