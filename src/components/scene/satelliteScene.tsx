@@ -19,17 +19,17 @@ export default function SatelliteScene() {
       }}
     >
       <pointLight
-        intensity={5000}
+        intensity={1500}
         decay={2}
         color='#b8b6ff'
-        position={[17.563, 23.175, 7.499]}
+        position={[10, 20, -10]}
         rotation={[-Math.PI / 2, 0, 0]}
       />
       <pointLight
-        intensity={2000}
+        intensity={100}
         decay={2}
         color='#fefffa'
-        position={[-9.122, 20.686, -1.713]}
+        position={[0, 10, -10]}
         rotation={[-Math.PI / 2, 0, 0]}
       />
       <ambientLight intensity={0.5} />

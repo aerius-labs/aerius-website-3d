@@ -7,12 +7,12 @@ import { Color, Euler, Vector2 } from 'three';
 
 gsap.registerPlugin(ScrollTrigger);
 
-useGLTF.preload('/models/FighterSatt2.glb');
+useGLTF.preload('/models/satellite.glb');
 
 export default function SatelliteModel() {
   const group = useRef<any>(null);
   const { nodes, materials, animations }: any = useGLTF(
-    '/models/FighterSatt2.glb'
+    '/models/satellite.glb'
   );
   const { mixer } = useAnimations(animations, group);
 
@@ -45,7 +45,7 @@ export default function SatelliteModel() {
     materials['Frosted Glass 01'].isMaterial = true;
     materials['Frosted Glass 01'].isMeshStandardMaterial = true;
     materials['Frosted Glass 01'].lightMapIntensity = 1;
-    materials['Frosted Glass 01'].metalness = 1;
+    materials['Frosted Glass 01'].metalness = 0.9;
     materials['Frosted Glass 01'].name = 'Frosted Glass 01';
     materials['Frosted Glass 01'].normalScale = new Vector2(1, -1);
     materials['Frosted Glass 01'].opacity = 0.9;
@@ -55,7 +55,7 @@ export default function SatelliteModel() {
       0.9301108583738498
     );
     materials['Frosted Glass 01'].refractionFactor = 0.54;
-    materials['Frosted Glass 01'].roughness = 0.6;
+    materials['Frosted Glass 01'].roughness = 0.2;
     materials['Frosted Glass 01'].shininess = 0.5;
     materials['Frosted Glass 01'].side = 2;
     materials['Frosted Glass 01'].stencilFail = 7680;
@@ -66,6 +66,11 @@ export default function SatelliteModel() {
     materials['Frosted Glass 01'].stencilZPass = 7680;
     materials['Frosted Glass 01'].toneMapped = true;
     materials['Frosted Glass 01'].transparent = true;
+
+    materials['tie fighter window '].roughness = 0.3;
+    materials['tie fighter window '].metalness = 1;
+
+    materials['tie fighter base'].roughness = 0.2;
   }, []);
 
   useEffect(() => {
@@ -223,22 +228,6 @@ export default function SatelliteModel() {
             scale={[0.061, 0.119, 0.119]}
           />
         </mesh>
-        {/* <pointLight
-          name="Point"
-          intensity={2717570.653}
-          decay={2}
-          color="#b8b6ff"
-          position={[17.563, 23.175, 7.499]}
-          rotation={[-Math.PI / 2, 0, 0]}
-        />
-        <pointLight
-          name="Point001"
-          intensity={543514.131}
-          decay={2}
-          color="#fefffa"
-          position={[-9.122, 20.686, -1.713]}
-          rotation={[-Math.PI / 2, 0, 0]}
-        /> */}
         <group
           name='Empty001'
           position={[0.318, 0, -11.854]}

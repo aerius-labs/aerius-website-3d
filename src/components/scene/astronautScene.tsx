@@ -16,18 +16,17 @@ export default function AstronautScene() {
         position: [27.771, 8.578, 32.226],
         rotation: [-3.096, -1.028, 0.039],
         scale: -1,
-        aspect: 1.77,
       }}
     >
       <pointLight
-        intensity={2700.653}
+        intensity={1500.653}
         decay={2}
         color='#b8b6ff'
-        position={[17.563, 23.175, 7.499]}
+        position={[-15, 22, 7.499]}
         rotation={[-Math.PI / 2, 0, 0]}
       />
       <pointLight
-        intensity={100}
+        intensity={25}
         decay={2}
         color='#fefffa'
         position={[-9.122, 20.686, -1.713]}
