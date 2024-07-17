@@ -7,12 +7,12 @@ import { Color, Euler, Vector2 } from 'three';
 
 gsap.registerPlugin(ScrollTrigger);
 
-useGLTF.preload('/models/satellite.glb');
+useGLTF.preload('/models/FighterSatt2.glb');
 
 export default function SatelliteModel() {
   const group = useRef<any>(null);
   const { nodes, materials, animations }: any = useGLTF(
-    '/models/satellite.glb'
+    '/models/FighterSatt2.glb'
   );
   const { mixer } = useAnimations(animations, group);
 
@@ -121,6 +121,8 @@ export default function SatelliteModel() {
     };
   }, [mixer]);
 
+  console.log(materials);
+
   useFrame((_, delta) => {
     mixer?.update(delta);
   });
@@ -171,6 +173,16 @@ export default function SatelliteModel() {
             scale={1.016}
           />
           <mesh
+            name='Retopo_other_glass_frame003'
+            castShadow
+            receiveShadow
+            geometry={nodes.Retopo_other_glass_frame003.geometry}
+            material={materials['tie fighter base']}
+            position={[0.624, -0.014, 0]}
+            rotation={[-Math.PI / 2, 0.023, -Math.PI / 2]}
+            scale={0.784}
+          />
+          <mesh
             name='wing_outer_frame'
             castShadow
             receiveShadow
@@ -180,48 +192,16 @@ export default function SatelliteModel() {
             rotation={[Math.PI / 2, -Math.PI / 6, 0]}
             scale={4.175}
           />
-          <group
+          <mesh
             name='wing_panel_DO_NOT_JOIN_2'
+            castShadow
+            receiveShadow
+            geometry={nodes.wing_panel_DO_NOT_JOIN_2.geometry}
+            material={materials['TIE FIGHTER WING']}
             position={[-0.012, -0.004, -2.295]}
             rotation={[Math.PI / 2, -Math.PI / 6, 0]}
             scale={4.189}
-          >
-            <mesh
-              name='Circle001'
-              castShadow
-              receiveShadow
-              geometry={nodes.Circle001.geometry}
-              material={materials['TIE FIGHTER WING.001']}
-            />
-            <mesh
-              name='Circle001_1'
-              castShadow
-              receiveShadow
-              geometry={nodes.Circle001_1.geometry}
-              material={materials['TIE FIGHTER WING']}
-            />
-          </group>
-          <group
-            name='wing_pannel_DO_NOT_JOIN'
-            position={[-0.014, -0.007, -2.295]}
-            rotation={[-Math.PI / 2, -0.52, 0]}
-            scale={-4.189}
-          >
-            <mesh
-              name='Circle010'
-              castShadow
-              receiveShadow
-              geometry={nodes.Circle010.geometry}
-              material={materials['TIE FIGHTER WING']}
-            />
-            <mesh
-              name='Circle010_1'
-              castShadow
-              receiveShadow
-              geometry={nodes.Circle010_1.geometry}
-              material={materials['TIE FIGHTER WING.001']}
-            />
-          </group>
+          />
           <mesh
             name='wing_tech_pannel'
             castShadow
@@ -243,6 +223,22 @@ export default function SatelliteModel() {
             scale={[0.061, 0.119, 0.119]}
           />
         </mesh>
+        {/* <pointLight
+          name="Point"
+          intensity={2717570.653}
+          decay={2}
+          color="#b8b6ff"
+          position={[17.563, 23.175, 7.499]}
+          rotation={[-Math.PI / 2, 0, 0]}
+        />
+        <pointLight
+          name="Point001"
+          intensity={543514.131}
+          decay={2}
+          color="#fefffa"
+          position={[-9.122, 20.686, -1.713]}
+          rotation={[-Math.PI / 2, 0, 0]}
+        /> */}
         <group
           name='Empty001'
           position={[0.318, 0, -11.854]}

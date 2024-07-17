@@ -18,26 +18,22 @@ export default function SatelliteScene() {
         scale: -1,
       }}
     >
-      <directionalLight
-        position={[-20, 10, 10]}
-        intensity={5}
-        color={'#900193'}
-      />
       <pointLight
+        intensity={5000}
         decay={2}
-        intensity={10000}
         color='#b8b6ff'
         position={[17.563, 23.175, 7.499]}
         rotation={[-Math.PI / 2, 0, 0]}
       />
       <pointLight
+        intensity={2000}
         decay={2}
-        intensity={100}
         color='#fefffa'
         position={[-9.122, 20.686, -1.713]}
         rotation={[-Math.PI / 2, 0, 0]}
       />
-      <Environment preset='night' />
+      <ambientLight intensity={0.5} />
+      <Environment files={'./images/env.hdr'} />
       <Suspense fallback={null}>
         <SatelliteModel />
       </Suspense>

@@ -16,14 +16,8 @@ export default function AstronautScene() {
         position: [-0.078, 0.935, 11.351],
       }}
     >
-      <directionalLight
-        position={[30, 10, -30]}
-        intensity={3}
-        color={'#900193'}
-      />
-      <pointLight intensity={500} color='#fff' position={[5, 10, 10]} />
-      <pointLight intensity={100} color='#fefffa' position={[5, 10, 10]} />
-      <Environment preset='night' />
+      <pointLight intensity={400} color='#fff' position={[5, 10, 0]} />
+      <Environment files={'./images/env.hdr'} />
       <Suspense fallback={null}>
         <AeriusLogoModel />
       </Suspense>

@@ -53,8 +53,8 @@ export default function AeriusLogoModel() {
       0.17144110072255403,
       0.9301108583738498
     );
-    materials['Frosted Glass 01'].refractionFactor = 0.54;
-    materials['Frosted Glass 01'].roughness = 0.6;
+    materials['Frosted Glass 01'].refractionFactor = 0.9;
+    materials['Frosted Glass 01'].roughness = 0.1;
     materials['Frosted Glass 01'].shininess = 0.5;
     materials['Frosted Glass 01'].side = 2;
     materials['Frosted Glass 01'].stencilFail = 7680;
