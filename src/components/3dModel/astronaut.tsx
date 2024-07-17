@@ -156,22 +156,6 @@ export default function AstronautModel() {
           </group>
           <primitive object={nodes.mixamorigHips} />
         </group>
-        {/* <pointLight
-          name="Point"
-          intensity={2717570.653}
-          decay={2}
-          color="#b8b6ff"
-          position={[17.563, 23.175, 7.499]}
-          rotation={[-Math.PI / 2, 0, 0]}
-        />
-        <pointLight
-          name="Point001"
-          intensity={543514.131}
-          decay={2}
-          color="#fefffa"
-          position={[-9.122, 20.686, -1.713]}
-          rotation={[-Math.PI / 2, 0, 0]}
-        /> */}
         <group name='Empty001' scale={26.353}>
           <mesh
             name='Logo_Main001_cell'

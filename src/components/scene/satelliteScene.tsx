@@ -18,10 +18,14 @@ export default function SatelliteScene() {
         scale: -1,
       }}
     >
-      <color attach='background' args={['#000']} />
+      <directionalLight
+        position={[-20, 10, 10]}
+        intensity={5}
+        color={'#900193'}
+      />
       <pointLight
         decay={2}
-        intensity={1000}
+        intensity={10000}
         color='#b8b6ff'
         position={[17.563, 23.175, 7.499]}
         rotation={[-Math.PI / 2, 0, 0]}
