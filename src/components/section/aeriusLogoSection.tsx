@@ -6,7 +6,7 @@ const Scene = dynamic(() => import('@/components/scene/aeriusLogoScene'), {
 
 export default function AeriusLogoSection() {
   return (
-    <div>
+    <div className='h-[150vh]'>
       <div id='logoContainer' className='h-screen w-screen'>
         <Scene />
       </div>

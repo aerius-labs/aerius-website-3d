@@ -9,8 +9,16 @@ const Scene = dynamic(() => import('@/components/scene/astronautScene'), {
 export default function AboutUsSection() {
   return (
     <section
-      className={`relative ${Akzidenzgroteskbe.className} flex w-screen flex-col items-end justify-center overflow-hidden text-white`}
+      className={`relative ${Akzidenzgroteskbe.className} flex h-fit w-screen flex-col items-end justify-center overflow-hidden text-white`}
     >
+      {/* Astronaut Scene */}
+      <div
+        id='astronautContainer'
+        className='absolute left-0 right-0 top-0 h-screen w-full'
+      >
+        <Scene />
+      </div>
+
       {/* Top line */}
       <div className='relative z-10 min-h-[110vh] w-screen overflow-hidden text-center'>
         <div className='absolute left-[15%] flex h-full justify-center md:left-[55%]'>
@@ -69,14 +77,6 @@ export default function AboutUsSection() {
             02
           </div>
         </div>
-      </div>
-
-      {/* Astronaut Scene */}
-      <div
-        id='astronautContainer'
-        className='absolute left-0 right-0 top-0 h-screen w-full'
-      >
-        <Scene />
       </div>
     </section>
   );

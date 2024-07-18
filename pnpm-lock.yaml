@@ -38,9 +38,6 @@ importers:
       three:
         specifier: ^0.165.0
         version: 0.165.0
-      three-stdlib:
-        specifier: ^2.30.4
-        version: 2.30.4(three@0.165.0)
     devDependencies:
       '@types/aos':
         specifier: ^3.0.7

@@ -182,10 +182,10 @@ export default function AstronautModel() {
     // Register ScrollTrigger
     ScrollTrigger.create({
       trigger: '#astronautContainer',
-      start: 'top top',
-      end: 'top -200%',
-      pin: true,
+      start: 'top 40%',
+      end: '+=280%',
       scrub: 2,
+      markers: true,
       onEnter: () => {
         animations.forEach((clip: any) => {
           const action = mixer.clipAction(clip);
@@ -197,11 +197,21 @@ export default function AstronautModel() {
           const action = mixer.clipAction(clip);
           action.paused = true;
         });
+        gsap.to('#astronautContainer', {
+          opacity: 0.4,
+          duration: 1,
+          ease: 'power2.out',
+        });
       },
       onEnterBack: () => {
         animations.forEach((clip: any) => {
           const action = mixer.clipAction(clip);
           action.play();
+        });
+        gsap.to('#astronautContainer', {
+          opacity: 1,
+          duration: 0.3,
+          ease: 'power2.in',
         });
       },
       onLeaveBack: () => {
@@ -220,12 +230,18 @@ export default function AstronautModel() {
       },
     });
 
+    ScrollTrigger.create({
+      trigger: '#astronautContainer',
+      start: 'top top', // Pin when the top of the logoContainer hits the top of the viewport
+      end: '+=180%', // End pinning when the bottom of the logoContainer hits the top of the viewport
+      pin: true,
+      scrub: 2,
+    });
+
     return () => {
       ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
     };
   }, [mixer]);
-
-  console.log(materials);
 
   useFrame((_, delta) => {
     mixer?.update(delta);

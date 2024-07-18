@@ -77,10 +77,10 @@ export default function AeriusLogoModel() {
     // Register ScrollTrigger
     ScrollTrigger.create({
       trigger: '#logoContainer',
-      start: 'top top',
-      end: 'top -150%',
-      pin: true,
+      start: 'top 40%',
+      end: '+=150%',
       scrub: 2,
+      markers: true,
       onEnter: () => {
         animations.forEach((clip: any) => {
           const action = mixer.clipAction(clip);
@@ -92,11 +92,21 @@ export default function AeriusLogoModel() {
           const action = mixer.clipAction(clip);
           action.paused = true;
         });
+        gsap.to('#logoContainer', {
+          opacity: 0.4,
+          duration: 1,
+          ease: 'power2.out',
+        });
       },
       onEnterBack: () => {
         animations.forEach((clip: any) => {
           const action = mixer.clipAction(clip);
           action.play();
+        });
+        gsap.to('#logoContainer', {
+          opacity: 1,
+          duration: 0.3,
+          ease: 'power2.in',
         });
       },
       onLeaveBack: () => {
@@ -113,6 +123,15 @@ export default function AeriusLogoModel() {
           action.time = clip.duration * progress;
         });
       },
+    });
+
+    ScrollTrigger.create({
+      trigger: '#logoContainer',
+      start: 'top top', // Pin when the top of the logoContainer hits the top of the viewport
+      end: '+=50%', // End pinning when the bottom of the logoContainer hits the top of the viewport
+      pin: true,
+      scrub: 2,
+      pinSpacing: false,
     });
 
     return () => {
