@@ -88,7 +88,6 @@ export default function SatelliteModel() {
       start: 'top 40%',
       end: '+=380%',
       scrub: 2,
-      markers: true,
       onEnter: () => {
         animations.forEach((clip: any) => {
           const action = mixer.clipAction(clip);

@@ -83,7 +83,6 @@ export default function AeriusLogoModel() {
       start: 'top 40%',
       end: '+=150%',
       scrub: 2,
-      markers: true,
       onEnter: () => {
         animations.forEach((clip: any) => {
           const action = mixer.clipAction(clip);

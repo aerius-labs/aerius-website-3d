@@ -187,7 +187,6 @@ export default function AstronautModel() {
       start: 'top 40%',
       end: '+=280%',
       scrub: 2,
-      markers: true,
       onEnter: () => {
         animations.forEach((clip: any) => {
           const action = mixer.clipAction(clip);
