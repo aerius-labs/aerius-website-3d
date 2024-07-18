@@ -4,8 +4,10 @@ import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 import { Color, Euler, Vector2 } from 'three';
+import { useGSAP } from '@gsap/react';
 
 gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(useGSAP);
 
 useGLTF.preload('/models/satellite.glb');
 
@@ -73,7 +75,7 @@ export default function SatelliteModel() {
     materials['tie fighter base'].roughness = 0.2;
   }, []);
 
-  useEffect(() => {
+  useGSAP(() => {
     // Play the actions once to initialize them
     animations.forEach((clip: any) => {
       const action = mixer.clipAction(clip);
@@ -139,10 +141,6 @@ export default function SatelliteModel() {
       scrub: 2,
       pinSpacing: false,
     });
-
-    return () => {
-      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
-    };
   }, [mixer]);
 
   useFrame((_, delta) => {

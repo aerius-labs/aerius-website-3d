@@ -8,7 +8,7 @@ export default function SatelliteScene() {
   return (
     <Canvas
       gl={{ antialias: true }}
-      dpr={[1, 1.5]}
+      dpr={[0.7, 0.9]}
       camera={{
         far: 1000,
         near: 0.1,

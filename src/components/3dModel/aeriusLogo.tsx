@@ -4,8 +4,11 @@ import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 import { Color, Euler, Vector2 } from 'three';
+import { useGSAP } from '@gsap/react';
 
 gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(useGSAP);
+
 useGLTF.preload('/models/logoBreak.glb');
 
 export default function AeriusLogoModel() {
@@ -67,7 +70,7 @@ export default function AeriusLogoModel() {
     materials['Frosted Glass 01'].transparent = true;
   }, []);
 
-  useEffect(() => {
+  useGSAP(() => {
     // Play the actions once to initialize them
     animations.forEach((clip: any) => {
       const action = mixer.clipAction(clip);
@@ -133,10 +136,6 @@ export default function AeriusLogoModel() {
       scrub: 2,
       pinSpacing: false,
     });
-
-    return () => {
-      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
-    };
   }, [mixer]);
 
   useFrame((state, delta) => {

@@ -4,8 +4,10 @@ import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 import { Color, Euler, Vector2 } from 'three';
+import { useGSAP } from '@gsap/react';
 
 gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(useGSAP);
 
 useGLTF.preload('/models/astronaut.glb');
 
@@ -172,7 +174,7 @@ export default function AstronautModel() {
     materials['Glass Gradient'].wireframeLinewidth = 1;
   }, []);
 
-  useEffect(() => {
+  useGSAP(() => {
     // Play the actions once to initialize them
     animations.forEach((clip: any) => {
       const action = mixer.clipAction(clip);
