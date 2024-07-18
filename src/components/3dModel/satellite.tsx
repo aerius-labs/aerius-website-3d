@@ -100,21 +100,11 @@ export default function SatelliteModel() {
           const action = mixer.clipAction(clip);
           action.paused = true;
         });
-        gsap.to('#satelliteContainer', {
-          opacity: 0.4,
-          duration: 1,
-          ease: 'power2.out',
-        });
       },
       onEnterBack: () => {
         animations.forEach((clip: any) => {
           const action = mixer.clipAction(clip);
           action.play();
-        });
-        gsap.to('#satelliteContainer', {
-          opacity: 1,
-          duration: 0.3,
-          ease: 'power2.in',
         });
       },
       onLeaveBack: () => {

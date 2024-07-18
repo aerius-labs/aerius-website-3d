@@ -14,7 +14,7 @@ export default function AboutUsSection() {
       {/* Astronaut Scene */}
       <div
         id='astronautContainer'
-        className='absolute left-0 right-0 top-0 h-screen w-full'
+        className='absolute brightness-110 left-0 right-0 top-0 h-screen w-full'
       >
         <Scene />
       </div>

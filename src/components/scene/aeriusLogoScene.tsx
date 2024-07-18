@@ -16,7 +16,7 @@ export default function AstronautScene() {
         position: [-0.078, 0.935, 11.351],
       }}
     >
-      <pointLight intensity={400} color='#fff' position={[5, 10, 0]} />
+      <pointLight intensity={800} color='#fff' position={[5, 10, 0]} />
       <Environment files={'./images/env.hdr'} />
       <Suspense fallback={null}>
         <AeriusLogoModel />

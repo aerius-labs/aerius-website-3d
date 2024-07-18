@@ -32,7 +32,7 @@ export default function SatelliteScene() {
         position={[0, 10, -10]}
         rotation={[-Math.PI / 2, 0, 0]}
       />
-      <ambientLight intensity={0.5} />
+      <ambientLight intensity={0.4} />
       <Environment files={'./images/env.hdr'} />
       <Suspense fallback={null}>
         <SatelliteModel />

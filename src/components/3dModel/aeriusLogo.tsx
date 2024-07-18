@@ -95,21 +95,11 @@ export default function AeriusLogoModel() {
           const action = mixer.clipAction(clip);
           action.paused = true;
         });
-        gsap.to('#logoContainer', {
-          opacity: 0.4,
-          duration: 1,
-          ease: 'power2.out',
-        });
       },
       onEnterBack: () => {
         animations.forEach((clip: any) => {
           const action = mixer.clipAction(clip);
           action.play();
-        });
-        gsap.to('#logoContainer', {
-          opacity: 1,
-          duration: 0.3,
-          ease: 'power2.in',
         });
       },
       onLeaveBack: () => {

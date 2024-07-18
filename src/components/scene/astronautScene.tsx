@@ -8,7 +8,7 @@ export default function AstronautScene() {
   return (
     <Canvas
       gl={{ antialias: true }}
-      dpr={[1, 1.5]}
+      dpr={[1.0, 1.1]}
       camera={{
         far: 1000,
         near: 0.1,

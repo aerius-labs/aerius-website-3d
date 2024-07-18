@@ -95,7 +95,7 @@ export default function ProductSection() {
       {/* Satellite Scene */}
       <div
         id='satelliteContainer'
-        className='absolute left-0 right-0 top-0 h-screen w-full'
+        className='absolute brightness-100 left-0 right-0 top-0 h-screen w-full'
       >
         <Scene />
       </div>
