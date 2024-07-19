@@ -1,38 +1,20 @@
 import { Akzidenzgroteskbe, IBMPlexMono } from '@/fonts/fonts';
 import Image from 'next/image';
 import dynamic from 'next/dynamic';
+import { productItem } from '@/data/data';
 
 const Scene = dynamic(() => import('@/components/scene/satelliteScene'), {
   ssr: false,
 });
 
-export default function ProductSection() {
-  const products = [
-    {
-      id: 1,
-      imageSrc: '/images/athena_finance.png',
-      imageAlt: 'athenaFinance_image',
-      title: 'Athena Finance',
-      description:
-        'On-chain asset management for the Cosmos ecosystem, based on CosmWasm.',
-    },
-    {
-      id: 2,
-      imageSrc: '/images/zk_snap.png',
-      imageAlt: 'zkSnap_image',
-      title: 'Zk Snap',
-      description:
-        'Off-chain ballot privacy for DAOs, where voting is simple, anonymous, and user friendly.',
-    },
-  ];
-
+export default function productItemection() {
   return (
     <section
-      id='Products'
+      id='productItem'
       className={`relative ${Akzidenzgroteskbe.className} flex w-screen flex-col justify-center text-white lg:items-start`}
     >
       {/* Top Line */}
-      <div className='relative z-10 flex min-h-[150vh] w-screen items-center justify-center overflow-hidden'>
+      <div className='relative flex min-h-[150vh] w-screen items-center justify-center overflow-hidden'>
         <div className='absolute bottom-0 left-[50%] top-0 h-full w-[32%] lg:left-[18%]'>
           <Image
             className='hidden h-full w-[100%] object-cover lg:absolute lg:block'
@@ -49,21 +31,24 @@ export default function ProductSection() {
       </div>
 
       {/* Content */}
-      <div className='z-10 px-5 pt-6 md:w-[70vw] lg:w-[50vw] lg:px-20'>
+      <div className='px-5 pt-6 md:w-[70vw] lg:w-[50vw] lg:px-20'>
         <div className='flex flex-col gap-4 text-center md:text-left'>
           <h1 className='text-2xl font-bold sm:text-3xl lg:text-5xl'>
             EMPOWER YOUR EXPERIENCES
           </h1>
           <h3 className='text-lg sm:text-xl lg:text-2xl'>
             <span className='text-white/50'>With our </span>
-            <span>Innovative Product Solution</span>
+            <span className='hovering relative'>
+              <span className='absolute z-40 h-full w-full bg-transparent'></span>
+              Innovative Product Solution
+            </span>
           </h3>
         </div>
         <div className='grid gap-4 pt-10 md:grid-rows-2'>
-          {products.map((item) => (
+          {productItem.map((item, index) => (
             <div
-              key={item.id}
-              className='border border-white p-5 sm:flex sm:flex-row'
+              key={index}
+              className='border border-white p-5 backdrop-blur-sm sm:flex sm:flex-row'
             >
               <div className='basis-1/3'>
                 <Image
@@ -92,13 +77,13 @@ export default function ProductSection() {
       {/* Satellite Scene */}
       <div
         id='satelliteContainer'
-        className='absolute left-0 right-0 top-0 h-screen w-full'
+        className='absolute left-0 right-0 top-0 -z-10 h-screen w-full brightness-100'
       >
         <Scene />
       </div>
 
       {/* Bottom Line */}
-      <div className='relative z-10 flex min-h-[150vh] w-screen items-center justify-center overflow-hidden'>
+      <div className='relative flex min-h-[150vh] w-screen items-center justify-center overflow-hidden'>
         <div className='absolute left-[50%] top-0 h-full lg:left-[18%] lg:w-[32%]'>
           <Image
             className='hidden h-full w-[100%] scale-x-[-1] object-cover lg:absolute lg:block'

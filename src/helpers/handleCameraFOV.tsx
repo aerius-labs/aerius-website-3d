@@ -1,5 +1,4 @@
-'use client';
-import { useThree, useFrame } from '@react-three/fiber';
+import { useThree } from '@react-three/fiber';
 import { useEffect } from 'react';
 import { PerspectiveCamera } from 'three';
 
@@ -17,7 +16,7 @@ export default function AdjustCamera({
   const { camera } = useThree();
 
   useEffect(() => {
-    const handleResize = () => {
+    const handleModelResize = () => {
       if (camera instanceof PerspectiveCamera) {
         const aspect = window.innerWidth / window.innerHeight;
         camera.aspect = aspect;
@@ -26,20 +25,13 @@ export default function AdjustCamera({
       }
     };
 
-    handleResize(); // Initial call
-    window.addEventListener('resize', handleResize);
+    handleModelResize(); // Initial call
+    window.addEventListener('resize', handleModelResize);
 
     return () => {
-      window.removeEventListener('resize', handleResize);
+      window.removeEventListener('resize', handleModelResize);
     };
   }, [camera]);
-
-  useFrame(() => {
-    if (camera instanceof PerspectiveCamera) {
-      // Ensure the camera updates every frame if needed
-      camera.updateProjectionMatrix();
-    }
-  });
 
   return null;
 }

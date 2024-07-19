@@ -3,8 +3,11 @@ import { useFrame } from '@react-three/fiber';
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
+import { Color, Euler, Vector2 } from 'three';
+import { useGSAP } from '@gsap/react';
 
 gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(useGSAP);
 
 useGLTF.preload('/models/satellite.glb');
 
@@ -16,6 +19,63 @@ export default function SatelliteModel() {
   const { mixer } = useAnimations(animations, group);
 
   useEffect(() => {
+    materials['Frosted Glass 01'].aoMapIntensity = 1;
+    materials['Frosted Glass 01'].blendAlpha = 0;
+    materials['Frosted Glass 01'].blendColor = new Color(0, 0, 0);
+    materials['Frosted Glass 01'].blendDst = 205;
+    materials['Frosted Glass 01'].blendEquation = 100;
+    materials['Frosted Glass 01'].blendSrc = 204;
+    materials['Frosted Glass 01'].blending = 1;
+    materials['Frosted Glass 01'].bumpScale = 1;
+    materials['Frosted Glass 01'].color = new Color(
+      0.5972017883558645,
+      0.06301001764564068,
+      1
+    );
+    materials['Frosted Glass 01'].colorWrite = true;
+    materials['Frosted Glass 01'].depthFunc = 3;
+    materials['Frosted Glass 01'].depthTest = true;
+    materials['Frosted Glass 01'].depthWrite = true;
+    materials['Frosted Glass 01'].displacementScale = 1;
+    materials['Frosted Glass 01'].dust = 1;
+    materials['Frosted Glass 01'].emissive = new Color(0, 0, 0);
+    materials['Frosted Glass 01'].emissiveIntensity = 1;
+    materials['Frosted Glass 01'].envMapIntensity = 1;
+    materials['Frosted Glass 01'].envMapRotation = new Euler(0, 0, 0, 'XYZ');
+    materials['Frosted Glass 01'].fog = true;
+    materials['Frosted Glass 01'].ior = 1.85;
+    materials['Frosted Glass 01'].isMaterial = true;
+    materials['Frosted Glass 01'].isMeshStandardMaterial = true;
+    materials['Frosted Glass 01'].lightMapIntensity = 1;
+    materials['Frosted Glass 01'].metalness = 0.9;
+    materials['Frosted Glass 01'].name = 'Frosted Glass 01';
+    materials['Frosted Glass 01'].normalScale = new Vector2(1, -1);
+    materials['Frosted Glass 01'].opacity = 0.9;
+    materials['Frosted Glass 01'].reflection = new Color(
+      1,
+      0.17144110072255403,
+      0.9301108583738498
+    );
+    materials['Frosted Glass 01'].refractionFactor = 0.54;
+    materials['Frosted Glass 01'].roughness = 0.2;
+    materials['Frosted Glass 01'].shininess = 0.5;
+    materials['Frosted Glass 01'].side = 2;
+    materials['Frosted Glass 01'].stencilFail = 7680;
+    materials['Frosted Glass 01'].stencilFunc = 519;
+    materials['Frosted Glass 01'].stencilFuncMask = 255;
+    materials['Frosted Glass 01'].stencilWriteMask = 255;
+    materials['Frosted Glass 01'].stencilZFail = 7680;
+    materials['Frosted Glass 01'].stencilZPass = 7680;
+    materials['Frosted Glass 01'].toneMapped = true;
+    materials['Frosted Glass 01'].transparent = true;
+
+    materials['tie fighter window '].roughness = 0.3;
+    materials['tie fighter window '].metalness = 1;
+
+    materials['tie fighter base'].roughness = 0.2;
+  }, []);
+
+  useGSAP(() => {
     // Play the actions once to initialize them
     animations.forEach((clip: any) => {
       const action = mixer.clipAction(clip);
@@ -25,9 +85,8 @@ export default function SatelliteModel() {
     // Register ScrollTrigger
     ScrollTrigger.create({
       trigger: '#satelliteContainer',
-      start: 'top top',
-      end: 'top -400%',
-      pin: true,
+      start: 'top 40%',
+      end: '+=380%',
       scrub: 2,
       onEnter: () => {
         animations.forEach((clip: any) => {
@@ -63,9 +122,14 @@ export default function SatelliteModel() {
       },
     });
 
-    return () => {
-      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
-    };
+    ScrollTrigger.create({
+      trigger: '#satelliteContainer',
+      start: 'top top', // Pin when the top of the logoContainer hits the top of the viewport
+      end: '+=280%', // End pinning when the bottom of the logoContainer hits the top of the viewport
+      pin: true,
+      scrub: 2,
+      pinSpacing: false,
+    });
   }, [mixer]);
 
   useFrame((_, delta) => {
@@ -118,6 +182,16 @@ export default function SatelliteModel() {
             scale={1.016}
           />
           <mesh
+            name='Retopo_other_glass_frame003'
+            castShadow
+            receiveShadow
+            geometry={nodes.Retopo_other_glass_frame003.geometry}
+            material={materials['tie fighter base']}
+            position={[0.624, -0.014, 0]}
+            rotation={[-Math.PI / 2, 0.023, -Math.PI / 2]}
+            scale={0.784}
+          />
+          <mesh
             name='wing_outer_frame'
             castShadow
             receiveShadow
@@ -127,48 +201,16 @@ export default function SatelliteModel() {
             rotation={[Math.PI / 2, -Math.PI / 6, 0]}
             scale={4.175}
           />
-          <group
+          <mesh
             name='wing_panel_DO_NOT_JOIN_2'
+            castShadow
+            receiveShadow
+            geometry={nodes.wing_panel_DO_NOT_JOIN_2.geometry}
+            material={materials['TIE FIGHTER WING']}
             position={[-0.012, -0.004, -2.295]}
             rotation={[Math.PI / 2, -Math.PI / 6, 0]}
             scale={4.189}
-          >
-            <mesh
-              name='Circle001'
-              castShadow
-              receiveShadow
-              geometry={nodes.Circle001.geometry}
-              material={materials['TIE FIGHTER WING.001']}
-            />
-            <mesh
-              name='Circle001_1'
-              castShadow
-              receiveShadow
-              geometry={nodes.Circle001_1.geometry}
-              material={materials['TIE FIGHTER WING']}
-            />
-          </group>
-          <group
-            name='wing_pannel_DO_NOT_JOIN'
-            position={[-0.014, -0.007, -2.295]}
-            rotation={[-Math.PI / 2, -0.52, 0]}
-            scale={-4.189}
-          >
-            <mesh
-              name='Circle010'
-              castShadow
-              receiveShadow
-              geometry={nodes.Circle010.geometry}
-              material={materials['TIE FIGHTER WING']}
-            />
-            <mesh
-              name='Circle010_1'
-              castShadow
-              receiveShadow
-              geometry={nodes.Circle010_1.geometry}
-              material={materials['TIE FIGHTER WING.001']}
-            />
-          </group>
+          />
           <mesh
             name='wing_tech_pannel'
             castShadow
@@ -190,22 +232,6 @@ export default function SatelliteModel() {
             scale={[0.061, 0.119, 0.119]}
           />
         </mesh>
-        {/* <pointLight
-          name='Point'
-          intensity={2717570.653}
-          decay={2}
-          color='#b8b6ff'
-          position={[17.563, 23.175, 7.499]}
-          rotation={[-Math.PI / 2, 0, 0]}
-        />
-        <pointLight
-          name='Point001'
-          intensity={543514.131}
-          decay={2}
-          color='#fefffa'
-          position={[-9.122, 20.686, -1.713]}
-          rotation={[-Math.PI / 2, 0, 0]}
-        /> */}
         <group
           name='Empty001'
           position={[0.318, 0, -11.854]}

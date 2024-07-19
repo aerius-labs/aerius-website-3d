@@ -9,10 +9,18 @@ const Scene = dynamic(() => import('@/components/scene/astronautScene'), {
 export default function AboutUsSection() {
   return (
     <section
-      className={`relative ${Akzidenzgroteskbe.className} flex w-screen flex-col items-end justify-center overflow-hidden text-white`}
+      className={`relative ${Akzidenzgroteskbe.className} flex h-fit w-screen flex-col items-end justify-center overflow-hidden text-white`}
     >
+      {/* Astronaut Scene */}
+      <div
+        id='astronautContainer'
+        className='absolute left-0 right-0 top-0 -z-10 h-screen w-full brightness-110'
+      >
+        <Scene />
+      </div>
+
       {/* Top line */}
-      <div className='relative z-10 min-h-[110vh] w-screen overflow-hidden text-center'>
+      <div className='relative min-h-[110vh] w-screen overflow-hidden text-center'>
         <div className='absolute left-[15%] flex h-full justify-center md:left-[55%]'>
           <div className='absolute h-full w-[2px] bg-white/50'></div>
           <div className='absolute bottom-[50px] z-10 bg-black py-2 text-3xl font-bold text-white/50 md:text-4xl'>
@@ -22,11 +30,14 @@ export default function AboutUsSection() {
       </div>
 
       {/* Content */}
-      <div id='About' className='z-10 px-5 lg:px-20'>
-        <div className='gap-4 border border-white p-5 md:w-[60vw] lg:w-[50vw]'>
-          <h1 className='border-b-[1px] border-white pb-5 text-center text-2xl font-bold sm:text-left lg:text-3xl'>
+      <div id='About' className='px-5 lg:px-20'>
+        <div className='gap-4 border border-white p-5 backdrop-blur-sm md:w-[60vw] lg:w-[50vw]'>
+          <h1 className='border-b border-white pb-5 text-center text-2xl font-bold sm:text-left lg:text-3xl'>
             <span className='text-white/50'>FUTURE OF</span>{' '}
-            <span>SECURE SYSTEMS</span>
+            <span className='hovering relative'>
+              <span className='absolute z-40 h-full w-full bg-transparent'></span>
+              SECURE SYSTEMS
+            </span>
           </h1>
           <p
             className={`flex ${IBMPlexMono.className} flex-col gap-5 pt-5 text-center text-xl leading-normal sm:text-left`}
@@ -69,14 +80,6 @@ export default function AboutUsSection() {
             02
           </div>
         </div>
-      </div>
-
-      {/* Astronaut Scene */}
-      <div
-        id='astronautContainer'
-        className='absolute left-0 right-0 top-0 h-screen w-full'
-      >
-        <Scene />
       </div>
     </section>
   );

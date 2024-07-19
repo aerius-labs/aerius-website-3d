@@ -1,5 +1,4 @@
 import { Canvas } from '@react-three/fiber';
-import { Suspense } from 'react';
 import { Environment } from '@react-three/drei';
 import SatelliteModel from '../3dModel/satellite';
 import AdjustCamera from '@/helpers/handleCameraFOV';
@@ -8,7 +7,7 @@ export default function SatelliteScene() {
   return (
     <Canvas
       gl={{ antialias: true }}
-      dpr={[1, 1.5]}
+      dpr={[0.7, 0.9]}
       camera={{
         far: 1000,
         near: 0.1,
@@ -18,11 +17,23 @@ export default function SatelliteScene() {
         scale: -1,
       }}
     >
-      <color attach='background' args={['#000']} />
-      <Environment preset='night' />
-      <Suspense fallback={null}>
-        <SatelliteModel />
-      </Suspense>
+      <pointLight
+        intensity={1500}
+        decay={2}
+        color='#b8b6ff'
+        position={[10, 20, -10]}
+        rotation={[-Math.PI / 2, 0, 0]}
+      />
+      <pointLight
+        intensity={100}
+        decay={2}
+        color='#fefffa'
+        position={[0, 10, -10]}
+        rotation={[-Math.PI / 2, 0, 0]}
+      />
+      <ambientLight intensity={0.4} />
+      <Environment files={'./images/env.hdr'} />
+      <SatelliteModel />
       <AdjustCamera mobileFov={50} desktopFov={32} aspectRatio={16 / 9} />
     </Canvas>
   );
