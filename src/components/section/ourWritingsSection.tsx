@@ -1,6 +1,5 @@
 import Link from 'next/link';
 import { IBMPlexMono, Akzidenzgroteskbe } from '@/fonts/fonts';
-import { useRef } from 'react';
 
 export default function OurWritingsSection() {
   return (
