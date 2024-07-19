@@ -3,8 +3,6 @@ import { IBMPlexMono, Akzidenzgroteskbe } from '@/fonts/fonts';
 import { useRef } from 'react';
 
 export default function OurWritingsSection() {
-  const abc = useRef<HTMLDivElement>(null);
-
   return (
     <section
       id='Blogs'
@@ -27,12 +25,11 @@ export default function OurWritingsSection() {
       </div>
 
       <div className='relative mt-10 flex flex-col justify-center gap-10 md:mt-20 md:flex-row md:bg-gradient-black'>
-        <div className='sticky top-[150px] flex h-[50vh] flex-col items-center justify-center md:top-52 md:mt-[40vh] md:h-screen'>
+        <div className='sticky top-[150px] z-10 flex h-[50vh] flex-col items-center justify-center md:top-52 md:mt-[40vh] md:h-screen'>
           <Link
             href='#'
-            className='hovering group relative flex cursor-pointer flex-col justify-between gap-20 border p-5 md:gap-40'
+            className='group relative flex cursor-pointer flex-col justify-between gap-20 border p-5 md:gap-40'
           >
-            <div className='absolute left-0 top-0 z-40 h-full w-full bg-transparent'></div>
             <h1 className='text-xl font-bold lg:text-2xl'>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum,
               distinctio quo
@@ -50,12 +47,11 @@ export default function OurWritingsSection() {
           {/* Bottom Line */}
           <div className='hidden h-[70%] min-h-[250px] w-[2px] bg-white/50 md:block'></div>
         </div>
-        <div className='sticky top-[430px] flex h-[50vh] flex-col items-center justify-center md:top-52 md:mt-[80vh] md:h-screen'>
+        <div className='sticky top-[430px] z-10 flex h-[50vh] flex-col items-center justify-center md:top-52 md:mt-[80vh] md:h-screen'>
           <Link
             href='#'
-            className='hovering group relative flex cursor-pointer flex-col justify-between gap-20 border p-5 md:gap-40'
+            className='group relative flex cursor-pointer flex-col justify-between gap-20 border p-5 md:gap-40'
           >
-            <div className='absolute z-40 h-full w-full bg-transparent'></div>
             <h1 className='text-xl font-bold lg:text-2xl'>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum,
               distinctio quo
@@ -73,12 +69,11 @@ export default function OurWritingsSection() {
           {/* Bottom Line */}
           <div className='hidden h-[70%] min-h-[250px] w-[2px] bg-white/50 md:block'></div>
         </div>
-        <div className='sticky top-[710px] flex h-[50vh] flex-col items-center justify-center md:top-52 md:mt-[120vh] md:h-screen'>
+        <div className='sticky top-[710px] z-10 flex h-[50vh] flex-col items-center justify-center md:top-52 md:mt-[120vh] md:h-screen'>
           <Link
             href='#'
-            className='hovering group relative flex cursor-pointer flex-col justify-between gap-20 border p-5 md:gap-40'
+            className='group relative flex cursor-pointer flex-col justify-between gap-20 border p-5 md:gap-40'
           >
-            <div className='absolute z-40 h-full w-full bg-transparent'></div>
             <h1 className='text-xl font-bold lg:text-2xl'>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum,
               distinctio quo
@@ -96,12 +91,11 @@ export default function OurWritingsSection() {
           {/* Bottom Line */}
           <div className='hidden h-[70%] min-h-[250px] w-[2px] bg-white/50 md:block'></div>
         </div>
-        <div className='sticky top-[990px] flex h-[50vh] flex-col items-center justify-center md:top-52 md:mt-[160vh] md:h-screen'>
+        <div className='sticky top-[990px] z-10 flex h-[50vh] flex-col items-center justify-center md:top-52 md:mt-[160vh] md:h-screen'>
           <Link
             href='#'
-            className='hovering group relative flex cursor-pointer flex-col justify-between gap-20 border bg-black p-5 md:gap-40 md:bg-transparent'
+            className='group relative flex cursor-pointer flex-col justify-between gap-20 border bg-black p-5 md:gap-40 md:bg-transparent'
           >
-            <div className='absolute z-40 h-full w-full bg-transparent'></div>
             <h1 className='text-xl font-bold lg:text-2xl'>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum,
               distinctio quo
@@ -123,7 +117,7 @@ export default function OurWritingsSection() {
 
       <Link
         href='#'
-        className='group absolute bottom-[220px] flex items-center justify-center gap-3'
+        className='group absolute bottom-[220px] z-10 flex items-center justify-center gap-3'
       >
         <div className='flex h-[10px] w-[10px] items-center justify-center rounded-[50%] p-3 font-bold group-hover:-rotate-45 group-hover:bg-white group-hover:text-black'>
           →

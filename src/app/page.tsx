@@ -20,7 +20,6 @@ import { useProgress } from '@react-three/drei';
 import Lenis from 'lenis';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
-import { OnScrollEvent } from 'locomotive-scroll';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -63,7 +62,8 @@ export default function Home() {
     <>
       {!isLoaded && <Loader progress={progress} />}
       {isLoaded && <CustomCursor />}
-      <main className='flex flex-col items-center justify-between'>
+      <main className='relative flex flex-col items-center justify-between'>
+        <div className='fixed -z-20 h-screen w-screen bg-black'></div>
         {isLoaded && <BordersCorner />}
         {isLoaded && <HeroSection />}
         <AeriusLogoSection />

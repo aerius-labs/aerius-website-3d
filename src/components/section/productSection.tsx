@@ -32,7 +32,7 @@ export default function ProductSection() {
       className={`relative ${Akzidenzgroteskbe.className} flex w-screen flex-col justify-center text-white lg:items-start`}
     >
       {/* Top Line */}
-      <div className='relative z-10 flex min-h-[150vh] w-screen items-center justify-center overflow-hidden'>
+      <div className='relative flex min-h-[150vh] w-screen items-center justify-center overflow-hidden'>
         <div className='absolute bottom-0 left-[50%] top-0 h-full w-[32%] lg:left-[18%]'>
           <Image
             className='hidden h-full w-[100%] object-cover lg:absolute lg:block'
@@ -66,7 +66,7 @@ export default function ProductSection() {
           {products.map((item) => (
             <div
               key={item.id}
-              className='border border-white p-5 sm:flex sm:flex-row'
+              className='border border-white p-5 backdrop-blur-sm sm:flex sm:flex-row'
             >
               <div className='basis-1/3'>
                 <Image
@@ -95,13 +95,13 @@ export default function ProductSection() {
       {/* Satellite Scene */}
       <div
         id='satelliteContainer'
-        className='absolute left-0 right-0 top-0 h-screen w-full brightness-100'
+        className='absolute left-0 right-0 top-0 -z-10 h-screen w-full brightness-100'
       >
         <Scene />
       </div>
 
       {/* Bottom Line */}
-      <div className='relative z-10 flex min-h-[150vh] w-screen items-center justify-center overflow-hidden'>
+      <div className='relative flex min-h-[150vh] w-screen items-center justify-center overflow-hidden'>
         <div className='absolute left-[50%] top-0 h-full lg:left-[18%] lg:w-[32%]'>
           <Image
             className='hidden h-full w-[100%] scale-x-[-1] object-cover lg:absolute lg:block'

@@ -1,3 +1,4 @@
+// 'use client';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
@@ -16,8 +17,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang='en' className='cursor-none'>
-      <body className={inter.className}>
+    <html lang='en' className='m-0 cursor-none p-0'>
+      <body className={`${inter.className} m-0 p-0`}>
         <LoadingProvider>{children}</LoadingProvider>
       </body>
     </html>
