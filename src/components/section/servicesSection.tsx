@@ -1,21 +1,7 @@
 import { Akzidenzgroteskbe, IBMPlexMono } from '@/fonts/fonts';
+import { serviceItem } from '@/data/data';
 
 export default function ServicesSection() {
-  const serviceItem = [
-    {
-      title: 'R&D',
-      description: `Whether it is leveraging an anonymous network, ZKPs, MPC or any other privacy technique, we can assist your team in integrating these tools into your product's initial prototyping phase.`,
-    },
-    {
-      title: 'Consulting',
-      description: `We provide expert consulting by creating catered implementations for clients who want to integrate ZK or cryptography into their solutions, guiding organizations to unlock the potential of secure digital solutions.`,
-    },
-    {
-      title: 'Auditing',
-      description: `We offer thorough analysis and verification of zero-knowledge circuits and smart contracts for enhanced security and reliability.`,
-    },
-  ];
-
   return (
     <section
       id='Services'

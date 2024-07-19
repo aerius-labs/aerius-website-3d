@@ -34,28 +34,33 @@ export default function Home() {
   }, [progress]);
 
   useEffect(() => {
-    (async () => {
-      const lenis = new Lenis({
-        lerp: 0.1,
-        wheelMultiplier: 0.6,
-        touchMultiplier: 0.6,
-      });
+    const lenis = new Lenis({
+      lerp: 0.1,
+      wheelMultiplier: 0.6,
+      touchMultiplier: 0.6,
+    });
 
-      function raf(time: number) {
-        lenis.raf(time);
-        requestAnimationFrame(raf);
-      }
-
+    function raf(time: number) {
+      lenis.raf(time);
       requestAnimationFrame(raf);
+    }
 
-      lenis.on('scroll', ScrollTrigger.update);
+    requestAnimationFrame(raf);
 
-      gsap.ticker.add((time) => {
+    lenis.on('scroll', ScrollTrigger.update);
+
+    gsap.ticker.add((time) => {
+      lenis.raf(time * 1000);
+    });
+
+    gsap.ticker.lagSmoothing(0);
+
+    return () => {
+      gsap.ticker.remove((time) => {
         lenis.raf(time * 1000);
       });
-
-      gsap.ticker.lagSmoothing(0);
-    })();
+      lenis.destroy();
+    };
   }, []);
 
   return (

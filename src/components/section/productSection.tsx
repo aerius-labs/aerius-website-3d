@@ -1,34 +1,16 @@
 import { Akzidenzgroteskbe, IBMPlexMono } from '@/fonts/fonts';
 import Image from 'next/image';
 import dynamic from 'next/dynamic';
+import { productItem } from '@/data/data';
 
 const Scene = dynamic(() => import('@/components/scene/satelliteScene'), {
   ssr: false,
 });
 
-export default function ProductSection() {
-  const products = [
-    {
-      id: 1,
-      imageSrc: '/images/athena_finance.png',
-      imageAlt: 'athenaFinance_image',
-      title: 'Athena Finance',
-      description:
-        'On-chain asset management for the Cosmos ecosystem, based on CosmWasm.',
-    },
-    {
-      id: 2,
-      imageSrc: '/images/zk_snap.png',
-      imageAlt: 'zkSnap_image',
-      title: 'Zk Snap',
-      description:
-        'Off-chain ballot privacy for DAOs, where voting is simple, anonymous, and user friendly.',
-    },
-  ];
-
+export default function productItemection() {
   return (
     <section
-      id='Products'
+      id='productItem'
       className={`relative ${Akzidenzgroteskbe.className} flex w-screen flex-col justify-center text-white lg:items-start`}
     >
       {/* Top Line */}
@@ -63,9 +45,9 @@ export default function ProductSection() {
           </h3>
         </div>
         <div className='grid gap-4 pt-10 md:grid-rows-2'>
-          {products.map((item) => (
+          {productItem.map((item, index) => (
             <div
-              key={item.id}
+              key={index}
               className='border border-white p-5 backdrop-blur-sm sm:flex sm:flex-row'
             >
               <div className='basis-1/3'>
