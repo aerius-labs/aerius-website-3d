@@ -1,5 +1,3 @@
-'use client';
-import Image from 'next/image';
 import { Akzidenzgroteskbe, IBMPlexMono } from '@/fonts/fonts';
 
 export default function ServicesSection() {

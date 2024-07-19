@@ -1,5 +1,3 @@
-import React from 'react';
-
 export default function BorderCorners() {
   return (
     <div className='fixed z-[1] flex h-full w-full flex-col justify-between gap-20 p-5 sm:p-6'>

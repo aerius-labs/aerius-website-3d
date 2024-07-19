@@ -1,5 +1,3 @@
-'use client';
-
 import { useEffect } from 'react';
 import AOS from 'aos';
 
@@ -9,14 +7,16 @@ import Image from 'next/image';
 import 'aos/dist/aos.css';
 import { Akzidenzgroteskbe, FKScreamerBlack } from '@/fonts/fonts';
 
-export default function HeroSection() {
+export default function HeroSection({ loaded }: { loaded: boolean }) {
   useEffect(() => {
-    AOS.init({
-      duration: 700,
-      once: false,
-      offset: 100,
-    });
-  }, []);
+    if (loaded) {
+      AOS.init({
+        duration: 700,
+        once: true,
+        offset: 100,
+      });
+    }
+  }, [loaded]);
 
   return (
     <section className='relative flex min-h-screen flex-col items-center justify-center text-white'>

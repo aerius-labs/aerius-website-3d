@@ -1,4 +1,3 @@
-'use client';
 import { useThree, useFrame } from '@react-three/fiber';
 import { useEffect } from 'react';
 import { PerspectiveCamera } from 'three';
@@ -33,13 +32,6 @@ export default function AdjustCamera({
       window.removeEventListener('resize', handleResize);
     };
   }, [camera]);
-
-  useFrame(() => {
-    if (camera instanceof PerspectiveCamera) {
-      // Ensure the camera updates every frame if needed
-      camera.updateProjectionMatrix();
-    }
-  });
 
   return null;
 }
