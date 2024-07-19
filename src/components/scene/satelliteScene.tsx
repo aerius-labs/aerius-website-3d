@@ -1,5 +1,4 @@
 import { Canvas } from '@react-three/fiber';
-import { Suspense } from 'react';
 import { Environment } from '@react-three/drei';
 import SatelliteModel from '../3dModel/satellite';
 import AdjustCamera from '@/helpers/handleCameraFOV';
@@ -34,9 +33,7 @@ export default function SatelliteScene() {
       />
       <ambientLight intensity={0.4} />
       <Environment files={'./images/env.hdr'} />
-      <Suspense fallback={null}>
-        <SatelliteModel />
-      </Suspense>
+      <SatelliteModel />
       <AdjustCamera mobileFov={50} desktopFov={32} aspectRatio={16 / 9} />
     </Canvas>
   );

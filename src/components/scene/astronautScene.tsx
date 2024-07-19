@@ -1,5 +1,4 @@
 import { Canvas } from '@react-three/fiber';
-import { Suspense } from 'react';
 import { Environment } from '@react-three/drei';
 import AstronautModel from '../3dModel/astronaut';
 import AdjustCamera from '@/helpers/handleCameraFOV';
@@ -8,7 +7,7 @@ export default function AstronautScene() {
   return (
     <Canvas
       gl={{ antialias: true }}
-      dpr={[1.0, 1.1]}
+      dpr={[1.0, 1.2]}
       camera={{
         far: 1000,
         near: 0.1,
@@ -34,9 +33,7 @@ export default function AstronautScene() {
       />
       <ambientLight intensity={3} />
       <Environment files={'./images/env.hdr'} />
-      <Suspense fallback={null}>
-        <AstronautModel />
-      </Suspense>
+      <AstronautModel />
       <AdjustCamera mobileFov={50} desktopFov={32} aspectRatio={16 / 9} />
     </Canvas>
   );
