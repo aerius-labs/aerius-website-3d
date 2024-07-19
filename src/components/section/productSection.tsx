@@ -49,7 +49,7 @@ export default function ProductSection() {
       </div>
 
       {/* Content */}
-      <div className='z-10 px-5 pt-6 md:w-[70vw] lg:w-[50vw] lg:px-20'>
+      <div className='px-5 pt-6 md:w-[70vw] lg:w-[50vw] lg:px-20'>
         <div className='flex flex-col gap-4 text-center md:text-left'>
           <h1 className='text-2xl font-bold sm:text-3xl lg:text-5xl'>
             EMPOWER YOUR EXPERIENCES
