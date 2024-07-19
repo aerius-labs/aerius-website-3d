@@ -20,6 +20,9 @@ importers:
       aos:
         specifier: ^2.3.4
         version: 2.3.4
+      gsap:
+        specifier: ^3.12.5
+        version: 3.12.5
       next:
         specifier: 14.2.3
         version: 14.2.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -35,6 +38,9 @@ importers:
       three:
         specifier: ^0.165.0
         version: 0.165.0
+      three-stdlib:
+        specifier: ^2.30.4
+        version: 2.30.4(three@0.165.0)
     devDependencies:
       '@types/aos':
         specifier: ^3.0.7
@@ -928,6 +934,9 @@ packages:
   graphemer@1.4.0:
     resolution: {integrity: sha512-EtKwoO6kxCL9WO5xipiHTZlSzBm7WLT627TqC/uVRd0HKmq8NXyebnNYxDoBi7wt8eTWrUrKXCOVaFq9x1kgag==}
 
+  gsap@3.12.5:
+    resolution: {integrity: sha512-srBfnk4n+Oe/ZnMIOXt3gT605BX9x5+rh/prT2F1SsNJsU1XuMiP0E2aptW481OnonOGACZWBqseH5Z7csHxhQ==}
+
   has-bigints@1.0.2:
     resolution: {integrity: sha512-tSvCKtBr9lkF0Ex0aQiP9N+OpV4zi2r/Nee5VkRDbaqv35RLYMzbwQfFSZZH0kR+Rd6302UJZ2p/bJCEoR3VoQ==}
 
@@ -1745,8 +1754,8 @@ packages:
     peerDependencies:
       three: '>= 0.151.0'
 
-  three-stdlib@2.30.3:
-    resolution: {integrity: sha512-rYr8PqMljMza+Ct8kQk90Y7y+YcWoPu1thfYv5YGCp0hytNRbxSQWXY4GpdTGymCj3bDggEBpxso53C3pPwhIw==}
+  three-stdlib@2.30.4:
+    resolution: {integrity: sha512-E7sN8UkaorSq2uRZU14AE7wXkdCBa2oFwPkPt92zaecuzrgd98BXkTt+2tFQVF1tPJRvfs7aMZV5dSOq4/vNVg==}
     peerDependencies:
       three: '>=0.128.0'
 
@@ -2096,7 +2105,7 @@ snapshots:
       suspend-react: 0.1.3(react@18.3.1)
       three: 0.165.0
       three-mesh-bvh: 0.7.5(three@0.165.0)
-      three-stdlib: 2.30.3(three@0.165.0)
+      three-stdlib: 2.30.4(three@0.165.0)
       troika-three-text: 0.49.1(three@0.165.0)
       tunnel-rat: 0.1.2(@types/react@18.3.3)(react@18.3.1)
       utility-types: 3.11.0
@@ -2982,6 +2991,8 @@ snapshots:
 
   graphemer@1.4.0: {}
 
+  gsap@3.12.5: {}
+
   has-bigints@1.0.2: {}
 
   has-flag@4.0.0: {}
@@ -3749,7 +3760,7 @@ snapshots:
     dependencies:
       three: 0.165.0
 
-  three-stdlib@2.30.3(three@0.165.0):
+  three-stdlib@2.30.4(three@0.165.0):
     dependencies:
       '@types/draco3d': 1.4.10
       '@types/offscreencanvas': 2019.7.3

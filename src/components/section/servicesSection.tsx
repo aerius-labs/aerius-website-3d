@@ -60,23 +60,6 @@ export default function ServicesSection() {
           </p>
         </div>
       </div>
-
-      {/* Bottom Line */}
-      <div className='relative flex min-h-[150vh] w-screen items-center justify-center overflow-hidden'>
-        <div className='absolute bottom-0 left-[50%] top-0 h-full w-[32%] lg:left-[18%]'>
-          <Image
-            className='hidden h-full w-[100%] object-cover lg:absolute lg:block'
-            width={100}
-            height={100}
-            src='/lines/bottomLineForLargeS.svg'
-            alt='bottomLineForLargeS_image'
-          />
-          <div className='absolute z-[5] h-full w-[2px] bg-white/50 lg:hidden'></div>
-          <div className='absolute bottom-[50px] left-[-20px] z-10 bg-black py-2 text-3xl font-bold text-white/50 md:text-4xl'>
-            03
-          </div>
-        </div>
-      </div>
     </section>
   );
 }

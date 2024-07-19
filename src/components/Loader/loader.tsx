@@ -6,7 +6,7 @@ interface LoaderProps {
 
 export default function Loader({ progress }: LoaderProps) {
   return (
-    <div className='fixed z-[15] flex h-screen w-full flex-col items-center justify-center gap-8 bg-black text-white'>
+    <div className='fixed z-50 flex h-screen w-full flex-col items-center justify-center gap-8 bg-black text-white'>
       <Image
         src='/images/aeriusLogo2.png'
         alt='loader'

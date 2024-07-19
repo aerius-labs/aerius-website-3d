@@ -1,5 +1,3 @@
-'use client';
-import { useEffect, useRef } from 'react';
 import Image from 'next/image';
 import dynamic from 'next/dynamic';
 import { Akzidenzgroteskbe, IBMPlexMono } from '@/fonts/fonts';
@@ -9,45 +7,14 @@ const Scene = dynamic(() => import('@/components/scene/astronautScene'), {
 });
 
 export default function AboutUsSection() {
-  const canvasRef = useRef<HTMLDivElement>(null);
-  const sectionRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (canvasRef.current) {
-          if (entry.isIntersecting) {
-            canvasRef.current.style.position = 'fixed';
-          } else {
-            canvasRef.current.style.position = 'absolute';
-          }
-        }
-      },
-      {
-        root: null,
-        rootMargin: `0px 0px -${window.innerHeight}px 0px`,
-        threshold: 0,
-      }
-    );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
-    return () => {
-      observer.disconnect();
-    };
-  }, []);
-
   return (
     <section
-      ref={sectionRef}
       className={`relative ${Akzidenzgroteskbe.className} flex w-screen flex-col items-end justify-center overflow-hidden text-white`}
     >
       {/* Top line */}
       <div className='relative z-10 min-h-[110vh] w-screen overflow-hidden text-center'>
         <div className='absolute left-[15%] flex h-full justify-center md:left-[55%]'>
-          <div className='absolute z-[5] h-full w-[2px] bg-white/50'></div>
+          <div className='absolute h-full w-[2px] bg-white/50'></div>
           <div className='absolute bottom-[50px] z-10 bg-black py-2 text-3xl font-bold text-white/50 md:text-4xl'>
             01
           </div>
@@ -104,7 +71,11 @@ export default function AboutUsSection() {
         </div>
       </div>
 
-      <div ref={canvasRef} className='left-0 right-0 top-0 h-screen w-full'>
+      {/* Astronaut Scene */}
+      <div
+        id='astronautContainer'
+        className='absolute left-0 right-0 top-0 h-screen w-full'
+      >
         <Scene />
       </div>
     </section>

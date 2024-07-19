@@ -1,50 +1,74 @@
 import { useAnimations, useGLTF } from '@react-three/drei';
 import { useFrame } from '@react-three/fiber';
-import { useEffect, useRef, useState } from 'react';
-import { Group } from 'three';
+import { useEffect, useRef } from 'react';
+import gsap from 'gsap';
+import ScrollTrigger from 'gsap/ScrollTrigger';
 
+gsap.registerPlugin(ScrollTrigger);
 useGLTF.preload('/models/logoBreak.glb');
 
-export default function Model() {
-  const group = useRef<Group | any>();
-  const { nodes, materials, animations, scene }: any = useGLTF(
+export default function AeriusLogoModel() {
+  const group = useRef<any>();
+  const { nodes, materials, animations }: any = useGLTF(
     '/models/logoBreak.glb'
   );
-  const { actions } = useAnimations(animations, group);
-  const [scrollPosition, setScrollPosition] = useState(0);
-  const [animationStarted, setAnimationStarted] = useState(false);
+  const { mixer } = useAnimations(animations, group);
 
   useEffect(() => {
-    const handleScroll = () => {
-      const scrollY = window.scrollY;
-      const maxScroll =
-        document.documentElement.scrollHeight - window.innerHeight;
-      setScrollPosition(scrollY / maxScroll);
-    };
+    // Play the actions once to initialize them
+    animations.forEach((clip: any) => {
+      const action = mixer.clipAction(clip);
+      action.paused = true;
+    });
 
-    window.addEventListener('scroll', handleScroll);
+    // Register ScrollTrigger
+    ScrollTrigger.create({
+      trigger: '#logoContainer',
+      start: 'top top',
+      end: 'top -200%',
+      pin: true,
+      scrub: 2,
+      onEnter: () => {
+        animations.forEach((clip: any) => {
+          const action = mixer.clipAction(clip);
+          action.play();
+        });
+      },
+      onLeave: () => {
+        animations.forEach((clip: any) => {
+          const action = mixer.clipAction(clip);
+          action.paused = true;
+        });
+      },
+      onEnterBack: () => {
+        animations.forEach((clip: any) => {
+          const action = mixer.clipAction(clip);
+          action.play();
+        });
+      },
+      onLeaveBack: () => {
+        animations.forEach((clip: any) => {
+          const action = mixer.clipAction(clip);
+          action.paused = true;
+        });
+      },
+      onUpdate: (self) => {
+        const progress = self.progress;
+        animations.forEach((clip: any) => {
+          const action = mixer.clipAction(clip);
+          action.paused = true;
+          action.time = clip.duration * progress;
+        });
+      },
+    });
+
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
     };
-  }, []);
+  }, [mixer]);
 
-  useEffect(() => {
-    if (scrollPosition >= 0.04 && actions) {
-      setAnimationStarted(true);
-      Object.values(actions).forEach((action: any) => action.play());
-    } else if (actions) {
-      setAnimationStarted(false);
-      Object.values(actions).forEach((action: any) => action.stop());
-    }
-  }, [scrollPosition, actions]);
-
-  useFrame(() => {
-    if (animationStarted && actions) {
-      Object.values(actions).forEach((action: any) => {
-        action.time = (scrollPosition - 0.04) * 2 * action.getClip().duration;
-        action.paused = false;
-      });
-    }
+  useFrame((state, delta) => {
+    mixer?.update(delta);
   });
 
   return (
