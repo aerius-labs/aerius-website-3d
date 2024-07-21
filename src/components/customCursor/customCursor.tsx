@@ -41,11 +41,31 @@ const CustomCursor = () => {
       el.addEventListener('mouseleave', mouseLeave);
     });
 
+    // hover on link logic
+    const mouseEnterOnLink = () => {
+      gsap.set('.cursor', { display: 'none' });
+      gsap.set('.cursorFollower', { display: 'none' });
+    };
+
+    const mouseLeaveFromLink = () => {
+      gsap.set('.cursor', { display: 'block' });
+      gsap.set('.cursorFollower', { display: 'block' });
+    };
+
+    document.querySelectorAll('a').forEach((el) => {
+      el.addEventListener('mouseenter', mouseEnterOnLink);
+      el.addEventListener('mouseleave', mouseLeaveFromLink);
+    });
+
     return () => {
       document.removeEventListener('mousemove', moveCursor);
       document.querySelectorAll('.hovering').forEach((el) => {
         el.removeEventListener('mouseenter', mouseEnter);
         el.removeEventListener('mouseleave', mouseLeave);
+      });
+      document.querySelectorAll('a').forEach((el) => {
+        el.removeEventListener('mouseenter', mouseEnterOnLink);
+        el.removeEventListener('mouseleave', mouseLeaveFromLink);
       });
     };
   }, []);

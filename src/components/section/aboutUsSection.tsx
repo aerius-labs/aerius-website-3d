@@ -31,7 +31,7 @@ export default function AboutUsSection() {
 
       {/* Content */}
       <div id='About' className='px-5 lg:px-20'>
-        <div className='gap-4 border border-white p-5 backdrop-blur-sm md:w-[60vw] lg:w-[50vw]'>
+        <div className='gap-4 border border-white p-5 md:w-[60vw] lg:w-[50vw]'>
           <h1 className='border-b border-white pb-5 text-center text-2xl font-bold sm:text-left lg:text-3xl'>
             <span className='text-white/50'>FUTURE OF</span>{' '}
             <span className='hovering relative'>
@@ -40,7 +40,7 @@ export default function AboutUsSection() {
             </span>
           </h1>
           <p
-            className={`flex ${IBMPlexMono.className} flex-col gap-5 pt-5 text-center text-xl leading-normal sm:text-left`}
+            className={`flex ${IBMPlexMono.className} flex-col gap-5 pt-5 text-center text-xl leading-normal backdrop-blur-sm sm:text-left`}
           >
             <span>
               Aerius Labs is where cryptography, blockchain, and zero-knowledge

@@ -66,7 +66,7 @@ export default function Home() {
   return (
     <>
       {!isLoaded && <Loader progress={progress} />}
-      {isLoaded && <CustomCursor />}
+      {isLoaded && window.innerWidth > 768 && <CustomCursor />}
       <main className='relative flex flex-col items-center justify-between'>
         <div className='fixed -z-20 h-screen w-screen bg-black'></div>
         {isLoaded && <BordersCorner />}
