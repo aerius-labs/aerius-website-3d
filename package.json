@@ -25,7 +25,8 @@
     "react": "^18",
     "react-dom": "^18",
     "react-fast-marquee": "^1.6.4",
-    "three": "^0.165.0"
+    "three": "^0.165.0",
+    "zustand": "^5.0.1"
   },
   "devDependencies": {
     "@types/aos": "^3.0.7",
