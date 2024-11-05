@@ -35,24 +35,21 @@ export default function Home() {
 
   useEffect(() => {
     const lenis = new Lenis({
-      lerp: 0.1,
-      wheelMultiplier: 0.6,
-      touchMultiplier: 0.6,
+      lerp: 0.2,
+      wheelMultiplier: 0.4,
+      touchMultiplier: 0.4,
     });
 
     function raf(time: number) {
       lenis.raf(time);
       requestAnimationFrame(raf);
     }
-
     requestAnimationFrame(raf);
 
     lenis.on('scroll', ScrollTrigger.update);
-
     gsap.ticker.add((time) => {
       lenis.raf(time * 1000);
     });
-
     gsap.ticker.lagSmoothing(0);
 
     return () => {
@@ -75,7 +72,7 @@ export default function Home() {
         <AboutUsSection />
         <ServicesSection />
         <ProductSection />
-        <TrustSection />
+        {/* <TrustSection /> */}
         <OurWritingsSection />
         <FooterSection />
         <ScrollSpy />
