@@ -5,7 +5,7 @@ export default function OurWritingsSection() {
   return (
     <section
       id='Blogs'
-      className={`relative ${Akzidenzgroteskbe.className} flex w-screen flex-col items-center justify-center px-5 pb-60 pt-10 text-white md:pb-0 lg:px-20`}
+      className={`relative ${Akzidenzgroteskbe.className} flex w-screen flex-col items-center justify-center p-10 px-5 pb-60 text-white md:pb-0 lg:px-20`}
     >
       {/* Content */}
       <div className='sticky top-10 flex flex-col items-center justify-center'>

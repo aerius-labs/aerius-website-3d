@@ -35,9 +35,9 @@ export default function Home() {
 
   useEffect(() => {
     const lenis = new Lenis({
-      lerp: 0.2,
-      wheelMultiplier: 0.4,
-      touchMultiplier: 0.4,
+      lerp: 0.1,
+      wheelMultiplier: 1.5,
+      touchMultiplier: 1.5,
     });
 
     function raf(time: number) {

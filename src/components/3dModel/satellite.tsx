@@ -100,6 +100,10 @@ export default function SatelliteModel() {
           const action = mixer.clipAction(clip);
           action.play();
         });
+        let opacity = 0.5;
+        Object.values(clonedMaterials).forEach((material) => {
+          material.opacity = opacity;
+        });
       },
       onLeave: () => {
         animations.forEach((clip: any) => {
@@ -132,15 +136,15 @@ export default function SatelliteModel() {
     // Fade effect trigger
     ScrollTrigger.create({
       trigger: '#satelliteContainer',
-      start: 'top 20%',
+      start: 'top -20%',
       end: 'top -260%',
       scrub: 2,
       onUpdate: (self) => {
         // Calculate opacity based on scroll progress
+        let opacity = Math.max(0, 0.5 + self.progress);
+        if (self.progress >= 0.95) opacity = 0;
         Object.values(clonedMaterials).forEach((material) => {
-          const baseOpacity =
-            material === clonedMaterials['Frosted Glass 01'] ? 0.9 : 1;
-          material.opacity = baseOpacity * (1 - self.progress);
+          material.opacity = opacity;
         });
       },
     });
