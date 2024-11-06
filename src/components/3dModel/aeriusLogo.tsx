@@ -1,6 +1,6 @@
 import { useAnimations, useGLTF } from '@react-three/drei';
 import { useFrame } from '@react-three/fiber';
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useMemo } from 'react';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 import { Color, Euler, Vector2 } from 'three';
@@ -17,66 +17,66 @@ export default function AeriusLogoModel() {
   const { animations, nodes, materials } = model;
   const { mixer } = useAnimations(animations, group);
 
-  useEffect(() => {
-    materials['Frosted Glass 01'].aoMapIntensity = 1;
-    materials['Frosted Glass 01'].blendAlpha = 0;
-    materials['Frosted Glass 01'].blendColor = new Color(0, 0, 0);
-    materials['Frosted Glass 01'].blendDst = 205;
-    materials['Frosted Glass 01'].blendEquation = 100;
-    materials['Frosted Glass 01'].blendSrc = 204;
-    materials['Frosted Glass 01'].blending = 1;
-    materials['Frosted Glass 01'].bumpScale = 1;
-    materials['Frosted Glass 01'].color = new Color(
-      0.5972017883558645,
-      0.06301001764564068,
-      1
-    );
-    materials['Frosted Glass 01'].colorWrite = true;
-    materials['Frosted Glass 01'].depthFunc = 3;
-    materials['Frosted Glass 01'].depthTest = true;
-    materials['Frosted Glass 01'].depthWrite = true;
-    materials['Frosted Glass 01'].displacementScale = 1;
-    materials['Frosted Glass 01'].dust = 1;
-    materials['Frosted Glass 01'].emissive = new Color(0, 0, 0);
-    materials['Frosted Glass 01'].emissiveIntensity = 1;
-    materials['Frosted Glass 01'].envMapIntensity = 1;
-    materials['Frosted Glass 01'].envMapRotation = new Euler(0, 0, 0, 'XYZ');
-    materials['Frosted Glass 01'].fog = true;
-    materials['Frosted Glass 01'].ior = 1.85;
-    materials['Frosted Glass 01'].isMaterial = true;
-    materials['Frosted Glass 01'].isMeshStandardMaterial = true;
-    materials['Frosted Glass 01'].lightMapIntensity = 1;
-    materials['Frosted Glass 01'].metalness = 0.9;
-    materials['Frosted Glass 01'].name = 'Frosted Glass 01';
-    materials['Frosted Glass 01'].normalScale = new Vector2(1, -1);
-    materials['Frosted Glass 01'].opacity = 0.9;
-    materials['Frosted Glass 01'].reflection = new Color(
-      1,
-      0.17144110072255403,
-      0.9301108583738498
-    );
-    materials['Frosted Glass 01'].refractionFactor = 0.9;
-    materials['Frosted Glass 01'].roughness = 0.2;
-    materials['Frosted Glass 01'].shininess = 0.5;
-    materials['Frosted Glass 01'].side = 2;
-    materials['Frosted Glass 01'].stencilFail = 7680;
-    materials['Frosted Glass 01'].stencilFunc = 519;
-    materials['Frosted Glass 01'].stencilFuncMask = 255;
-    materials['Frosted Glass 01'].stencilWriteMask = 255;
-    materials['Frosted Glass 01'].stencilZFail = 7680;
-    materials['Frosted Glass 01'].stencilZPass = 7680;
-    materials['Frosted Glass 01'].toneMapped = true;
-    materials['Frosted Glass 01'].transparent = true;
-  }, []);
+  // Create base material settings
+  const createBaseMaterial = () => {
+    const material = materials['Frosted Glass 01'].clone();
+    material.aoMapIntensity = 1;
+    material.blendAlpha = 0;
+    material.blendColor = new Color(0, 0, 0);
+    material.blendDst = 205;
+    material.blendEquation = 100;
+    material.blendSrc = 204;
+    material.blending = 1;
+    material.bumpScale = 1;
+    material.color = new Color(0.5972017883558645, 0.06301001764564068, 1);
+    material.colorWrite = true;
+    material.depthFunc = 3;
+    material.depthTest = true;
+    material.depthWrite = true;
+    material.displacementScale = 1;
+    material.dust = 1;
+    material.emissive = new Color(0, 0, 0);
+    material.emissiveIntensity = 1;
+    material.envMapIntensity = 1;
+    material.envMapRotation = new Euler(0, 0, 0, 'XYZ');
+    material.fog = true;
+    material.ior = 1.85;
+    material.isMaterial = true;
+    material.isMeshStandardMaterial = true;
+    material.lightMapIntensity = 1;
+    material.metalness = 0.9;
+    material.name = 'Frosted Glass 01';
+    material.normalScale = new Vector2(1, -1);
+    material.opacity = 0.9;
+    material.reflection = new Color(1, 0.17144110072255403, 0.9301108583738498);
+    material.refractionFactor = 0.9;
+    material.roughness = 0.2;
+    material.shininess = 0.5;
+    material.side = 2;
+    material.stencilFail = 7680;
+    material.stencilFunc = 519;
+    material.stencilFuncMask = 255;
+    material.stencilWriteMask = 255;
+    material.stencilZFail = 7680;
+    material.stencilZPass = 7680;
+    material.toneMapped = true;
+    material.transparent = true;
+    return material;
+  };
+
+  // Create materials for each mesh
+  const meshMaterials = useMemo(() => {
+    return Object.keys(nodes).map(() => createBaseMaterial());
+  }, [nodes]);
 
   useGSAP(() => {
-    // Play the actions once to initialize them
+    // Animation setup
     animations.forEach((clip: any) => {
       const action = mixer.clipAction(clip);
       action.paused = true;
     });
 
-    // Register ScrollTrigger
+    // Main scroll trigger for animation
     ScrollTrigger.create({
       trigger: '#logoContainer',
       start: 'top 40%',
@@ -116,15 +116,31 @@ export default function AeriusLogoModel() {
       },
     });
 
+    // Fade out scroll trigger
     ScrollTrigger.create({
       trigger: '#logoContainer',
-      start: 'top top', // Pin when the top of the logoContainer hits the top of the viewport
-      end: '+=50%', // End pinning when the bottom of the logoContainer hits the top of the viewport
+      start: 'top 5%', // Start fading when logo is 20% from top
+      end: 'top -120%', // Complete fade when logo is -20% from top
+      scrub: 2,
+      onUpdate: (self) => {
+        // Calculate opacity based on scroll progress
+        const opacity = Math.max(0, 0.9 * (1 - self.progress));
+        meshMaterials.forEach((material) => {
+          material.opacity = opacity;
+        });
+      },
+    });
+
+    // Pin trigger
+    ScrollTrigger.create({
+      trigger: '#logoContainer',
+      start: 'top top',
+      end: '+=50%',
       pin: true,
       scrub: 2,
       pinSpacing: false,
     });
-  }, [mixer]);
+  }, [mixer, meshMaterials]);
 
   useFrame((state, delta) => {
     mixer?.update(delta);
@@ -133,7 +149,7 @@ export default function AeriusLogoModel() {
   return (
     <group ref={group} dispose={null}>
       <group name='Scene'>
-        {Object.keys(nodes).map((nodeName) => {
+        {Object.keys(nodes).map((nodeName, index) => {
           if (nodeName.includes('Logo_Main001_cell')) {
             return (
               <mesh
@@ -142,7 +158,7 @@ export default function AeriusLogoModel() {
                 castShadow
                 receiveShadow
                 geometry={nodes[nodeName].geometry}
-                material={materials['Frosted Glass 01'].clone()}
+                material={meshMaterials[index]}
                 position={nodes[nodeName].position}
                 scale={nodes[nodeName].scale}
               />
