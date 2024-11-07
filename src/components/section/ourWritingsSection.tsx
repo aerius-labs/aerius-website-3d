@@ -113,8 +113,22 @@ export default function OurWritingsSection() {
           <div className='hidden h-[70%] min-h-[250px] w-[2px] bg-white/50 md:block'></div>
         </div>
       </div>
-
       <Link
+        href='#'
+        className='hovering group absolute bottom-56 z-10 flex items-center justify-center gap-3 transition-all duration-300'
+      >
+        <div className='flex h-10 w-10 items-center justify-center rounded-full border border-white p-3 transition-all duration-300 group-hover:bg-white'>
+          <span className='text-white transition-all duration-300 group-hover:-rotate-45 group-hover:text-black'>
+            →
+          </span>
+        </div>
+        <span
+          className={`text-base ${IBMPlexMono.className} font-bold md:text-lg`}
+        >
+          Explore More
+        </span>
+      </Link>
+      {/* <Link
         href='#'
         className='group absolute bottom-[220px] z-10 flex items-center justify-center gap-3'
       >
@@ -126,7 +140,7 @@ export default function OurWritingsSection() {
         >
           Explore More
         </span>
-      </Link>
+      </Link> */}
     </section>
   );
 }

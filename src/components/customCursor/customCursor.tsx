@@ -1,61 +1,71 @@
-import { useEffect } from 'react';
+import React, { useEffect } from 'react';
 import gsap from 'gsap';
 
 const CustomCursor = () => {
   useEffect(() => {
-    // CursorFollow logic
-    const moveCursor = (e: MouseEvent) => {
+    // Cursor follow logic
+    const moveCursor = (e: any) => {
       gsap.to('.cursorFollower', {
-        x: e.clientX - 6,
-        y: e.clientY - 6,
-        duration: 1.5,
-        ease: 'power4.out',
+        x: e.clientX - 16,
+        y: e.clientY - 16,
+        duration: 0.8,
+        ease: 'power2.out',
       });
       gsap.to('.cursor', {
-        x: e.clientX - 4,
-        y: e.clientY - 4,
-        duration: 0.5,
-        ease: 'power4.out',
+        x: e.clientX - 8,
+        y: e.clientY - 8,
+        duration: 0.3,
+        ease: 'power2.out',
+      });
+    };
+
+    // Hover logic for arrow
+    const arrowLink = document.querySelector('.group');
+
+    const mouseEnter = () => {
+      gsap.to('.cursor', {
+        opacity: 0,
+        duration: 0.3,
+      });
+      gsap.to('.cursorFollower', {
+        scale: 2,
+        duration: 0.3,
+      });
+    };
+
+    const mouseLeave = () => {
+      gsap.to('.cursor', {
+        opacity: 1,
+        duration: 0.3,
+      });
+      gsap.to('.cursorFollower', {
+        scale: 1,
+        duration: 0.3,
       });
     };
 
     document.addEventListener('mousemove', moveCursor);
 
-    // Hover logic
-    const mouseEnter = () => {
-      gsap.set('.cursor', { display: 'none' });
-      gsap.to('.cursorFollower', {
-        scale: 2,
-      });
-    };
-
-    const mouseLeave = () => {
-      gsap.set('.cursor', { display: 'block' });
-      gsap.to('.cursorFollower', {
-        scale: 1,
-      });
-    };
-
-    document.querySelectorAll('.hovering').forEach((el) => {
-      el.addEventListener('mouseenter', mouseEnter);
-      el.addEventListener('mouseleave', mouseLeave);
-    });
+    if (arrowLink) {
+      arrowLink.addEventListener('mouseenter', mouseEnter);
+      arrowLink.addEventListener('mouseleave', mouseLeave);
+    }
 
     return () => {
       document.removeEventListener('mousemove', moveCursor);
-      document.querySelectorAll('.hovering').forEach((el) => {
-        el.removeEventListener('mouseenter', mouseEnter);
-        el.removeEventListener('mouseleave', mouseLeave);
-      });
+      if (arrowLink) {
+        arrowLink.removeEventListener('mouseenter', mouseEnter);
+        arrowLink.removeEventListener('mouseleave', mouseLeave);
+      }
     };
   }, []);
 
   return (
     <>
-      <div className='cursor fixed top-0 z-20 flex h-4 w-4 items-center justify-center rounded-[50%] bg-black mix-blend-difference'>
+      <div className='cursor pointer-events-none fixed top-0 z-20 h-4 w-4 rounded-[50%] bg-black mix-blend-difference'>
         <div className='absolute left-[4px] top-[4px] h-full w-full rounded-[50%] bg-white mix-blend-difference'></div>
       </div>
-      <div className='cursorFollower fixed top-0 z-10 h-8 w-8 rounded-[50%] bg-white mix-blend-difference'></div>
+      <div className='cursorFollower pointer-events-none fixed top-0 z-10 h-8 w-8 rounded-[50%] bg-white mix-blend-difference'></div>
     </>
   );
 };
