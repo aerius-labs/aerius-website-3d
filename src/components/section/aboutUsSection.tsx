@@ -1,12 +1,64 @@
 import Image from 'next/image';
 import dynamic from 'next/dynamic';
 import { Akzidenzgroteskbe, IBMPlexMono } from '@/fonts/fonts';
+import { useEffect, useRef } from 'react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 const Scene = dynamic(() => import('@/components/scene/astronautScene'), {
   ssr: false,
 });
 
 export default function AboutUsSection() {
+  const topLineRef = useRef(null);
+
+  useEffect(() => {
+    // Register the ScrollTrigger plugin with GSAP
+    gsap.registerPlugin(ScrollTrigger);
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && entry.intersectionRatio >= 0.9) {
+            gsap.to(entry.target, {
+              opacity: 1,
+              y: 0,
+              duration: 1,
+              ease: 'power2.out',
+              scrollTrigger: {
+                trigger: entry.target,
+                start: 'top 5%',
+                end: 'bottom 80%',
+                scrub: true,
+              },
+            });
+          } else {
+            gsap.to(entry.target, {
+              opacity: 0,
+              y: 0,
+              duration: 1,
+              ease: 'power2.out',
+            });
+          }
+        });
+      },
+      {
+        rootMargin: '0px',
+        threshold: 0.9, // Trigger the animation when the element is 90% in view
+      }
+    );
+
+    if (topLineRef.current) {
+      observer.observe(topLineRef.current);
+    }
+
+    return () => {
+      if (topLineRef.current) {
+        observer.unobserve(topLineRef.current);
+      }
+    };
+  }, []);
+
   return (
     <section
       className={`relative ${Akzidenzgroteskbe.className} flex h-fit w-screen flex-col items-end justify-center overflow-hidden text-white`}
@@ -20,8 +72,11 @@ export default function AboutUsSection() {
       </div>
 
       {/* Top line */}
-      <div className='relative min-h-[110vh] w-screen overflow-hidden text-center'>
-        <div className='absolute left-[15%] flex h-full justify-center md:left-[55%]'>
+      <div
+        ref={topLineRef}
+        className='relative min-h-[110vh] w-screen translate-y-[-20px] overflow-hidden text-center opacity-50'
+      >
+        <div className='absolute flex h-full w-full justify-center'>
           <div className='absolute h-full w-[2px] bg-white/50'></div>
           <div className='absolute bottom-[50px] z-10 bg-black py-2 text-3xl font-bold text-white/50 md:text-4xl'>
             01
