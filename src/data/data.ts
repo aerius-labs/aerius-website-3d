@@ -29,3 +29,46 @@ export const productItem = [
       'Off-chain ballot privacy for DAOs, where voting is simple, anonymous, and user friendly.',
   },
 ];
+
+export const blogsData = [
+  {
+    title: 'Athena Finance',
+    description:
+      'On-chain asset management for the Cosmos ecosystem, based on CosmWasm.',
+    link: '#athenaFinance',
+    image: {
+      src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-C_UAhXq9GfuGO452EEzfbKnh1viQB9EDBQ&s',
+      alt: 'Blog Post Image',
+    },
+  },
+  {
+    title: 'Athena Finance',
+    description:
+      'On-chain asset management for the Cosmos ecosystem, based on CosmWasm.',
+    link: '#athenaFinance',
+    image: {
+      src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-C_UAhXq9GfuGO452EEzfbKnh1viQB9EDBQ&s',
+      alt: 'Blog Post Image',
+    },
+  },
+  {
+    title: 'Athena Finance',
+    description:
+      'On-chain asset management for the Cosmos ecosystem, based on CosmWasm.',
+    link: '#athenaFinance',
+    image: {
+      src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-C_UAhXq9GfuGO452EEzfbKnh1viQB9EDBQ&s',
+      alt: 'Blog Post Image',
+    },
+  },
+  {
+    title: 'Athena Finance',
+    description:
+      'On-chain asset management for the Cosmos ecosystem, based on CosmWasm.',
+    link: '#athenaFinance',
+    image: {
+      src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-C_UAhXq9GfuGO452EEzfbKnh1viQB9EDBQ&s',
+      alt: 'Blog Post Image',
+    },
+  },
+];

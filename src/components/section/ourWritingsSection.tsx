@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import { IBMPlexMono, Akzidenzgroteskbe } from '@/fonts/fonts';
+import { HoverEffect } from '../ui/card';
+import { blogsData } from '@/data/data';
 
 export default function OurWritingsSection() {
   return (
@@ -22,100 +24,10 @@ export default function OurWritingsSection() {
           </span>
         </h3>
       </div>
-
-      <div className='relative mt-10 flex flex-col justify-center gap-10 md:mt-20 md:flex-row md:bg-gradient-black'>
-        <div className='sticky top-[150px] z-10 flex h-[50vh] flex-col items-center justify-center md:top-52 md:mt-[40vh] md:h-screen'>
-          <Link
-            href='#'
-            className='group relative flex cursor-pointer flex-col justify-between gap-20 border p-5 md:gap-40'
-          >
-            <h1 className='text-xl font-bold lg:text-2xl'>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum,
-              distinctio quo
-            </h1>
-            <div className='flex items-end justify-between gap-5'>
-              <div className={`${IBMPlexMono.className}`}>
-                <p>Lorem ipsum dolor sit amet.</p>
-                <p className='text-white/50'>May 5, 2024</p>
-              </div>
-              <div className='flex h-[20px] w-[20px] items-center justify-center rounded-[50%] p-4 font-bold group-hover:-rotate-45 group-hover:bg-white group-hover:text-black'>
-                →
-              </div>
-            </div>
-          </Link>
-          {/* Bottom Line */}
-          <div className='hidden h-[70%] min-h-[250px] w-[2px] bg-white/50 md:block'></div>
-        </div>
-        <div className='sticky top-[430px] z-10 flex h-[50vh] flex-col items-center justify-center md:top-52 md:mt-[80vh] md:h-screen'>
-          <Link
-            href='#'
-            className='group relative flex cursor-pointer flex-col justify-between gap-20 border p-5 md:gap-40'
-          >
-            <h1 className='text-xl font-bold lg:text-2xl'>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum,
-              distinctio quo
-            </h1>
-            <div className='flex items-end justify-between gap-5'>
-              <div className={`${IBMPlexMono.className}`}>
-                <p>Lorem ipsum dolor sit amet.</p>
-                <p className='text-white/50'>May 5, 2024</p>
-              </div>
-              <div className='flex h-[20px] w-[20px] items-center justify-center rounded-[50%] p-4 font-bold group-hover:-rotate-45 group-hover:bg-white group-hover:text-black'>
-                →
-              </div>
-            </div>
-          </Link>
-          {/* Bottom Line */}
-          <div className='hidden h-[70%] min-h-[250px] w-[2px] bg-white/50 md:block'></div>
-        </div>
-        <div className='sticky top-[710px] z-10 flex h-[50vh] flex-col items-center justify-center md:top-52 md:mt-[120vh] md:h-screen'>
-          <Link
-            href='#'
-            className='group relative flex cursor-pointer flex-col justify-between gap-20 border p-5 md:gap-40'
-          >
-            <h1 className='text-xl font-bold lg:text-2xl'>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum,
-              distinctio quo
-            </h1>
-            <div className='flex items-end justify-between gap-5'>
-              <div className={`${IBMPlexMono.className}`}>
-                <p>Lorem ipsum dolor sit amet.</p>
-                <p className='text-white/50'>May 5, 2024</p>
-              </div>
-              <div className='flex h-[20px] w-[20px] items-center justify-center rounded-[50%] p-4 font-bold group-hover:-rotate-45 group-hover:bg-white group-hover:text-black'>
-                →
-              </div>
-            </div>
-          </Link>
-          {/* Bottom Line */}
-          <div className='hidden h-[70%] min-h-[250px] w-[2px] bg-white/50 md:block'></div>
-        </div>
-        <div className='sticky top-[990px] z-10 flex h-[50vh] flex-col items-center justify-center md:top-52 md:mt-[160vh] md:h-screen'>
-          <Link
-            href='#'
-            className='group relative flex cursor-pointer flex-col justify-between gap-20 border bg-black p-5 md:gap-40 md:bg-transparent'
-          >
-            <h1 className='text-xl font-bold lg:text-2xl'>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum,
-              distinctio quo
-            </h1>
-            <div className='flex items-end justify-between gap-5'>
-              <div className={`${IBMPlexMono.className}`}>
-                <p>Lorem ipsum dolor sit amet.</p>
-                <p className='text-white/50'>May 5, 2024</p>
-              </div>
-              <div className='flex h-[20px] w-[20px] items-center justify-center rounded-[50%] p-4 font-bold group-hover:-rotate-45 group-hover:bg-white group-hover:text-black'>
-                →
-              </div>
-            </div>
-          </Link>
-          {/* Bottom Line */}
-          <div className='hidden h-[70%] min-h-[250px] w-[2px] bg-white/50 md:block'></div>
-        </div>
-      </div>
+      <HoverEffect items={blogsData} />
       <Link
         href='#'
-        className='hovering group absolute bottom-56 z-10 flex items-center justify-center gap-3 transition-all duration-300'
+        className='hovering group z-10 mb-40 flex items-center justify-center gap-3 transition-all duration-300'
       >
         <div className='flex h-10 w-10 items-center justify-center rounded-full border border-white p-3 transition-all duration-300 group-hover:bg-white'>
           <span className='text-white transition-all duration-300 group-hover:-rotate-45 group-hover:text-black'>
@@ -128,19 +40,6 @@ export default function OurWritingsSection() {
           Explore More
         </span>
       </Link>
-      {/* <Link
-        href='#'
-        className='group absolute bottom-[220px] z-10 flex items-center justify-center gap-3'
-      >
-        <div className='flex h-[10px] w-[10px] items-center justify-center rounded-[50%] p-3 font-bold group-hover:-rotate-45 group-hover:bg-white group-hover:text-black'>
-          →
-        </div>
-        <span
-          className={`text-base ${IBMPlexMono.className} font-bold md:text-lg`}
-        >
-          Explore More
-        </span>
-      </Link> */}
     </section>
   );
 }

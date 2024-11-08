@@ -93,7 +93,7 @@ export default function SatelliteModel() {
     ScrollTrigger.create({
       trigger: '#satelliteContainer',
       start: 'top 40%',
-      end: '+=300%',
+      end: '+=320%',
       scrub: 2,
       onEnter: () => {
         animations.forEach((clip: any) => {
@@ -137,7 +137,7 @@ export default function SatelliteModel() {
     ScrollTrigger.create({
       trigger: '#satelliteContainer',
       start: 'top -20%',
-      end: 'top -260%',
+      end: 'top -300%',
       scrub: 2,
       onUpdate: (self) => {
         // Calculate opacity based on scroll progress
