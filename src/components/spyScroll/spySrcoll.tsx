@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import Link from 'next/link';
 
 const sections = ['About', 'Services', 'Products', 'Trusted', 'Blogs'];
 
@@ -38,23 +37,37 @@ const ScrollSpy = () => {
     };
   }, []);
 
+  const scrollToSection = (sectionId: string) => {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+      });
+    }
+  };
+
   return (
     <div className='group fixed right-6 top-6 z-20 hidden h-[25px] gap-2 p-5 text-white md:flex'>
       {sections.map((sectionId) => (
-        <Link
-          href={`#${sectionId}`}
+        <div
           key={sectionId}
-          className='flex items-center gap-1'
+          className='flex cursor-pointer items-center gap-1'
+          onClick={() => scrollToSection(sectionId)}
         >
           <p
-            className={`hidden text-white/50 transition duration-300 ease-in-out hover:text-white group-hover:block ${activeSection === sectionId ? 'text-white' : ''}`}
+            className={`hidden text-white/50 transition duration-300 ease-in-out hover:text-white group-hover:block ${
+              activeSection === sectionId ? 'text-white' : ''
+            }`}
           >
             {sectionId}
           </p>
           <div
-            className={`h-3 w-3 rounded-full border ${activeSection === sectionId ? 'border-white' : 'border-white/50'}`}
+            className={`h-3 w-3 rounded-full border ${
+              activeSection === sectionId ? 'border-white' : 'border-white/50'
+            }`}
           ></div>
-        </Link>
+        </div>
       ))}
     </div>
   );
