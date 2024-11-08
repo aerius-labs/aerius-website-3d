@@ -137,12 +137,12 @@ export default function SatelliteModel() {
     ScrollTrigger.create({
       trigger: '#satelliteContainer',
       start: 'top -20%',
-      end: 'top -300%',
+      end: 'top -270%',
       scrub: 2,
       onUpdate: (self) => {
         // Calculate opacity based on scroll progress
         let opacity = Math.max(0, 0.5 + self.progress);
-        if (self.progress >= 0.95) opacity = 0;
+        if (self.progress >= 0.8) opacity = 1 - (self.progress - 0.8) / 0.17;
         Object.values(clonedMaterials).forEach((material) => {
           material.opacity = opacity;
         });

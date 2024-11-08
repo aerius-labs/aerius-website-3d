@@ -125,7 +125,7 @@ export default function AeriusLogoModel() {
       onUpdate: (self) => {
         // Calculate opacity based on scroll progress
         let opacity = 1;
-        if (self.progress >= 0.95) opacity = 0;
+        if (self.progress >= 0.8) opacity = 1 - (self.progress - 0.8) / 0.17;
         meshMaterials.forEach((material) => {
           material.opacity = opacity;
         });
