@@ -10,7 +10,7 @@ const Scene = dynamic(() => import('@/components/scene/satelliteScene'), {
 export default function productItemection() {
   return (
     <section
-      id='productItem'
+      id='Products'
       className={`relative ${Akzidenzgroteskbe.className} flex w-screen flex-col justify-center text-white lg:items-start`}
     >
       {/* Top Line */}

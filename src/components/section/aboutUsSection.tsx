@@ -61,6 +61,7 @@ export default function AboutUsSection() {
 
   return (
     <section
+      id='About'
       className={`relative ${Akzidenzgroteskbe.className} flex h-fit w-screen flex-col items-end justify-center overflow-hidden text-white`}
     >
       {/* Astronaut Scene */}

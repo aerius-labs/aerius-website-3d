@@ -16,7 +16,10 @@ export default function HeroSection({ loaded }: { loaded: boolean }) {
   }, [loaded]);
 
   return (
-    <section className='relative flex min-h-screen flex-col items-center justify-center text-white'>
+    <section
+      id='Hero'
+      className='relative flex min-h-screen flex-col items-center justify-center text-white'
+    >
       <div className='absolute top-0 mt-4 flex justify-center overflow-hidden'>
         <Image
           className='w-10 sm:w-12 lg:w-16'
