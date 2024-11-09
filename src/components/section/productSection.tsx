@@ -84,9 +84,9 @@ export default function productItemection() {
 
       {/* Bottom Line */}
       <div className='relative flex min-h-[150vh] w-screen items-center justify-center overflow-hidden'>
-        <div className='absolute left-[50%] top-0 h-full lg:left-[18%] lg:w-[32%]'>
+        <div className='absolute left-[50%] top-0 h-full lg:left-[19%] lg:w-[32%] 2xl:left-[20%]'>
           <Image
-            className='hidden h-full w-[90%] scale-x-[-1] lg:absolute lg:block'
+            className='hidden h-full w-[100%] scale-x-[-1] lg:absolute lg:block'
             width={100}
             height={100}
             src='/lines/bottomLineForLargeS.svg'

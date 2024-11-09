@@ -72,7 +72,7 @@ export default function Home() {
         <AboutUsSection />
         <ServicesSection />
         <ProductSection />
-        {/* <TrustSection /> */}
+        <TrustSection />
         <OurWritingsSection />
         <FooterSection />
         <ScrollSpy />

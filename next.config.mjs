@@ -14,6 +14,12 @@ const nextConfig = {
         port: '',
         pathname: '/images/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'labs.sigma.software',
+        port: '',
+        pathname: '/investment/**',
+      },
     ],
   },
 };
