@@ -102,7 +102,7 @@ export default function TrustSection() {
       </div>
       {/* Logo Grid */}
       <div className='relative z-10 flex min-h-[55vh] w-screen items-center justify-center overflow-hidden'>
-        <div className='grid w-1/2 grid-cols-2 gap-20 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 '>
+        <div className='grid w-[1/2] grid-cols-2 gap-20 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 '>
           {partnerLogos.map(({ id, src, link }) => (
             <a
               key={id}
@@ -119,21 +119,31 @@ export default function TrustSection() {
                   alt={`Logo ${id}`}
                   width={100}
                   height={100}
-                  className='scale-125 transition-transform duration-300 group-hover:scale-100'
+                  className='ml-6 scale-125 transition-transform duration-300 group-hover:scale-100'
                 />
-                {/* className='absolute hidden group-hover:block inset-0 z-10 h-full w-full overflow-visible group-hover:scale-90 transition-transform duration-300' */}
-                <div className='absolute inset-0 z-10 hidden h-full w-full overflow-visible transition-transform duration-300 group-hover:block group-hover:scale-90'>
+                <div className='absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100'>
                   <svg
-                    className='absolute left-0 top-0 h-full w-full'
-                    viewBox='0 0 300 71'
+                    className='absolute left-0 top-0 w-full'
+                    viewBox='0 0 200 20'
                     fill='none'
-                    xmlns='http://www.w3.org/2000/svg'
                   >
                     <path
-                      d='M1.16797 71.0061V32.2932L32.4363 1.0249H150.061H267.689L298.957 32.2932V71.0061'
-                      stroke='white'
-                      strokeWidth='2'
-                      className='translate-y-full transition-transform duration-500 group-hover:translate-y-0'
+                      d='M0,20 V10 L10,0 H190 L200,10 V20'
+                      stroke='currentColor'
+                      strokeWidth='1'
+                      className='origin-top translate-y-[-100%] transition-transform duration-500 group-hover:translate-y-0'
+                    />
+                  </svg>
+                  <svg
+                    className='absolute bottom-0 left-0 w-full'
+                    viewBox='0 0 200 20'
+                    fill='none'
+                  >
+                    <path
+                      d='M0,0 V10 L10,20 H190 L200,10 V0'
+                      stroke='currentColor'
+                      strokeWidth='1'
+                      className='origin-bottom translate-y-[100%] transition-transform duration-500 group-hover:translate-y-0'
                     />
                   </svg>
                 </div>
@@ -142,7 +152,7 @@ export default function TrustSection() {
           ))}
         </div>
       </div>
-
+      {/* className='absolute hidden group-hover:block inset-0 z-10 h-full w-full overflow-visible group-hover:scale-90 transition-transform duration-300' */}
       {/* Bottom Line */}
       <div className='relative z-10 flex min-h-[70vh] w-screen items-center justify-center overflow-hidden'>
         <div className='absolute bottom-0 left-[50%] top-0 h-full'>

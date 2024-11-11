@@ -29,7 +29,7 @@ export const HoverEffect = ({
       )}
     >
       {items.map((item, idx) => (
-        <div className='flex flex-col items-center'>
+        <div key={idx} className='flex flex-col items-center'>
           <Link
             href={item?.link}
             key={item?.link + idx}
