@@ -48,7 +48,7 @@ export default function productItemection() {
           {productItem.map((item, index) => (
             <div
               key={index}
-              className='border border-white p-5 backdrop-blur-sm sm:flex sm:flex-row'
+              className='border border-white p-10 backdrop-blur-sm sm:flex sm:flex-row'
             >
               <div className='basis-1/3'>
                 <Image
@@ -56,11 +56,11 @@ export default function productItemection() {
                   width={200}
                   height={200}
                   alt={item.imageAlt}
-                  className='h-full w-full object-cover pb-5 md:pr-5'
+                  className='object-fit h-full w-full pb-5 md:pr-5'
                 />
               </div>
               <div className='basis-2/3 border-white md:border-l-[1px] md:pl-5'>
-                <h1 className='border-b-[1px] border-white pb-5 text-center text-2xl font-bold lg:text-3xl'>
+                <h1 className='border-b-[1px] border-white pb-5 text-2xl font-bold uppercase lg:text-3xl'>
                   {item.title}
                 </h1>
                 <p
