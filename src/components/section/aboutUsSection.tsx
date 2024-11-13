@@ -28,7 +28,7 @@ export default function AboutUsSection() {
               scrollTrigger: {
                 trigger: entry.target,
                 start: 'top 5%',
-                end: 'bottom 80%',
+                end: 'bottom 100%',
                 scrub: true,
               },
             });
