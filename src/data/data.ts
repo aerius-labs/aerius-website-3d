@@ -72,3 +72,81 @@ export const blogsData = [
     },
   },
 ];
+
+export const partnerLogos = [
+  {
+    id: 1,
+    src: '/img1.png',
+    link: 'https://partner1.com',
+  },
+  {
+    id: 2,
+    src: '/img2.png',
+    link: 'https://partner2.com',
+  },
+  {
+    id: 3,
+    src: '/img3.png',
+    link: 'https://partner3.com',
+  },
+  {
+    id: 4,
+    src: '/img4.png',
+    link: 'https://partner4.com',
+  },
+  {
+    id: 5,
+    src: '/img5.png',
+    link: 'https://partner5.com',
+  },
+  {
+    id: 6,
+    src: '/img6.png',
+    link: 'https://partner6.com',
+  },
+  {
+    id: 7,
+    src: '/img7.png',
+    link: 'https://partner7.com',
+  },
+  {
+    id: 8,
+    src: '/img8.png',
+    link: 'https://partner8.com',
+  },
+  {
+    id: 9,
+    src: '/img9.png',
+    link: 'https://partner9.com',
+  },
+  {
+    id: 10,
+    src: '/img5.png',
+    link: 'https://partner5.com',
+  },
+  {
+    id: 11,
+    src: '/img6.png',
+    link: 'https://partner6.com',
+  },
+  {
+    id: 12,
+    src: '/img7.png',
+    link: 'https://partner7.com',
+  },
+  {
+    id: 13,
+    src: '/img8.png',
+    link: 'https://partner8.com',
+  },
+  {
+    id: 14,
+    src: '/img9.png',
+    link: 'https://partner9.com',
+  },
+  {
+    id: 15,
+    src: '/img9.png',
+    link: 'https://partner9.com',
+  },
+];
