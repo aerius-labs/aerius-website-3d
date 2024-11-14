@@ -13,7 +13,6 @@ export default function AboutUsSection() {
   const topLineRef = useRef(null);
 
   useEffect(() => {
-    // Register the ScrollTrigger plugin with GSAP
     gsap.registerPlugin(ScrollTrigger);
 
     const observer = new IntersectionObserver(
@@ -44,7 +43,7 @@ export default function AboutUsSection() {
       },
       {
         rootMargin: '0px',
-        threshold: 0.9, // Trigger the animation when the element is 90% in view
+        threshold: 0.9,
       }
     );
 
@@ -116,7 +115,7 @@ export default function AboutUsSection() {
       </div>
 
       {/* Bottom line */}
-      <div className='relative z-10 flex min-h-[130vh] w-screen overflow-hidden'>
+      <div className='relative z-10 mb-20 flex min-h-[130vh] w-screen overflow-hidden'>
         <div className='absolute bottom-0 left-[50%] top-0 h-full w-[35%]'>
           <Image
             className='hidden h-full w-[100%] object-cover lg:absolute lg:block'
@@ -137,6 +136,13 @@ export default function AboutUsSection() {
           </div>
         </div>
       </div>
+      <div
+        className='absolute bottom-0 left-0 right-0 h-[25vh] bg-gradient-to-t from-black via-black/50 to-transparent'
+        style={{
+          backgroundImage:
+            'linear-gradient(rgba(255, 255, 255, 0), rgba(0, 0, 0, .5) 47%, #000)',
+        }}
+      />
     </section>
   );
 }

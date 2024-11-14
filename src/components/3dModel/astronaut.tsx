@@ -95,7 +95,7 @@ export default function AstronautModel() {
     ScrollTrigger.create({
       trigger: '#astronautContainer',
       start: 'top 40%',
-      end: '+=280%',
+      end: '+=260%',
       scrub: 2,
       onEnter: () => {
         animations.forEach((clip: any) => {

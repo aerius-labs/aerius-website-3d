@@ -56,7 +56,7 @@ export default function productItemection() {
                   width={200}
                   height={200}
                   alt={item.imageAlt}
-                  className='object-fit h-full w-full pb-5 md:pr-5'
+                  className='h-full w-full object-contain pb-5 md:pr-5'
                 />
               </div>
               <div className='basis-2/3 border-white md:border-l-[1px] md:pl-5'>
