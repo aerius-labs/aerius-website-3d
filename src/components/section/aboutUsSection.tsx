@@ -85,8 +85,8 @@ export default function AboutUsSection() {
       </div>
 
       {/* Content */}
-      <div id='About' className='px-5 lg:px-20'>
-        <div className='gap-4 border border-white p-5 backdrop-blur-sm md:w-[30vw] lg:w-[30vw]'>
+      <div id='About' className='px-5 lg:px-40'>
+        <div className='gap-4 border border-white p-5 backdrop-blur-sm md:w-[35vw] lg:w-[35vw]'>
           <h1 className='border-b border-white pb-5 text-center text-4xl font-bold sm:text-left lg:text-4xl'>
             <span className='text-white/50'>FUTURE OF</span>{' '}
             <span className='hovering relative'>
