@@ -72,7 +72,7 @@ export default function HeroSection({ loaded }: { loaded: boolean }) {
       </div>
       <div className='overflow-hidden'>
         <p
-          className={`py-4 ${Akzidenzgroteskbe.className} text-center text-sm sm:text-xl lg:py-8 lg:text-2xl`}
+          className={`${Akzidenzgroteskbe.className} text-center text-sm sm:text-xl lg:text-2xl`}
           data-aos='slide-up'
           data-aos-delay='700'
         >

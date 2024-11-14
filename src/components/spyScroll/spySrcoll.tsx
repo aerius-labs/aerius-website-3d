@@ -67,7 +67,7 @@ const ScrollSpy = () => {
             <div className='relative flex w-full items-center justify-end'>
               <p
                 className={`
-                  absolute right-6 whitespace-nowrap text-sm
+                  absolute right-5 whitespace-nowrap text-sm
                   ${isHovered ? 'translate-x-0 opacity-100' : 'invisible translate-x-4 opacity-0'}
                   ${activeSection === sectionId ? 'text-white' : 'text-white/50'}
                   transition-all delay-100 duration-300 ease-in-out hover:text-white

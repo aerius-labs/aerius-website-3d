@@ -33,10 +33,10 @@ export default function productItemection() {
       {/* Content */}
       <div className='px-5 pt-6 md:w-[70vw] lg:w-[50vw] lg:px-20'>
         <div className='flex flex-col gap-4 text-center md:text-left'>
-          <h1 className='text-2xl font-bold sm:text-3xl lg:text-5xl'>
+          <h1 className='text-2xl font-bold lg:text-5xl'>
             EMPOWER YOUR EXPERIENCES
           </h1>
-          <h3 className='text-lg sm:text-xl lg:text-2xl'>
+          <h3 className='text-lg lg:text-2xl'>
             <span className='text-white/50'>With our </span>
             <span className='hovering relative'>
               <span className='absolute z-40 h-full w-full bg-transparent'></span>
@@ -48,7 +48,7 @@ export default function productItemection() {
           {productItem.map((item, index) => (
             <div
               key={index}
-              className='border border-white p-10 backdrop-blur-sm sm:flex sm:flex-row'
+              className='border border-white p-4 backdrop-blur-sm sm:flex sm:flex-row'
             >
               <div className='basis-1/3'>
                 <Image
@@ -59,12 +59,14 @@ export default function productItemection() {
                   className='h-full w-full object-contain pb-5 md:pr-5'
                 />
               </div>
-              <div className='basis-2/3 border-white md:border-l-[1px] md:pl-5'>
-                <h1 className='border-b-[1px] border-white pb-5 text-2xl font-bold uppercase lg:text-3xl'>
+              <div
+                className={`${Akzidenzgroteskbe.className} basis-2/3 border-white md:border-l-[1px] md:pl-5`}
+              >
+                <h1 className='border-b-[1px] border-white pb-3 text-2xl font-extrabold uppercase'>
                   {item.title}
                 </h1>
                 <p
-                  className={`${IBMPlexMono.className} pt-5 text-center text-xl leading-normal sm:text-left`}
+                  className={`${IBMPlexMono.className} pt-3 text-center text-base leading-normal sm:text-left`}
                 >
                   {item.description}
                 </p>
@@ -93,7 +95,7 @@ export default function productItemection() {
             alt='bottomLineForLargeS_image'
           />
           <div className='absolute h-full w-[2px] bg-white/50 lg:hidden'></div>
-          <div className='absolute bottom-[50px] right-[24px] z-10 bg-black py-2 text-3xl font-bold text-white/50 md:text-4xl'>
+          <div className='absolute bottom-[50px] left-[90%] z-10 bg-black py-2 text-3xl font-bold text-white/50 md:text-4xl'>
             04
           </div>
         </div>

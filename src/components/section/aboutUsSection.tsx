@@ -73,10 +73,10 @@ export default function AboutUsSection() {
 
       {/* Top line */}
       <div
-        ref={topLineRef}
-        className='relative min-h-[110vh] w-screen translate-y-[-20px] overflow-hidden text-center opacity-50'
+        // ref={topLineRef}
+        className='relative min-h-[110vh] w-screen overflow-hidden text-center opacity-50'
       >
-        <div className='absolute flex h-full w-full justify-center'>
+        <div className='absolute left-[20%] flex h-full w-full justify-center'>
           <div className='absolute h-full w-[2px] bg-white/50'></div>
           <div className='absolute bottom-[50px] z-10 bg-black py-2 text-3xl font-bold text-white/50 md:text-4xl'>
             01
@@ -86,8 +86,8 @@ export default function AboutUsSection() {
 
       {/* Content */}
       <div id='About' className='px-5 lg:px-20'>
-        <div className='gap-4 border border-white p-5 backdrop-blur-sm md:w-[60vw] lg:w-[50vw]'>
-          <h1 className='border-b border-white pb-5 text-center text-2xl font-bold sm:text-left lg:text-3xl'>
+        <div className='gap-4 border border-white p-5 backdrop-blur-sm md:w-[30vw] lg:w-[30vw]'>
+          <h1 className='border-b border-white pb-5 text-center text-4xl font-bold sm:text-left lg:text-4xl'>
             <span className='text-white/50'>FUTURE OF</span>{' '}
             <span className='hovering relative'>
               <span className='absolute z-40 h-full w-full bg-transparent'></span>
@@ -95,7 +95,7 @@ export default function AboutUsSection() {
             </span>
           </h1>
           <p
-            className={`flex ${IBMPlexMono.className} flex-col gap-5 pt-5 text-center text-xl leading-normal sm:text-left`}
+            className={`flex ${IBMPlexMono.className} flex-col gap-5 pt-5 text-center text-lg leading-normal sm:text-left`}
           >
             <span>
               Aerius Labs is where cryptography, blockchain, and zero-knowledge

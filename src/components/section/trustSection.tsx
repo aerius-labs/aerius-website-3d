@@ -6,14 +6,12 @@ export default function TrustSection() {
   return (
     <section
       id='Trusted'
-      className={`flex ${Akzidenzgroteskbe.className} w-screen flex-col justify-center pt-10 text-white`}
+      className={`flex ${Akzidenzgroteskbe.className} w-screen flex-col justify-center gap-10 pt-10 text-white`}
     >
       {/* Content */}
       <div className='flex flex-col items-center gap-4 px-5'>
-        <h1 className='text-2xl font-bold sm:text-4xl lg:text-6xl'>
-          BUILT ON TRUST
-        </h1>
-        <h3 className='text-center text-lg sm:text-xl lg:text-2xl'>
+        <h1 className='text-2xl font-bold lg:text-5xl'>BUILT ON TRUST</h1>
+        <h3 className='text-center text-lg lg:text-2xl'>
           <span className='text-white/50'>
             At Aerius Labs, we&apos;re honoured to have earned the trust of{' '}
           </span>
