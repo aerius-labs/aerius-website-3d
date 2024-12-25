@@ -62,10 +62,10 @@ const CustomCursor = () => {
 
   return (
     <>
-      <div className='cursor pointer-events-none fixed top-0 z-20 h-4 w-4 rounded-[50%] bg-black mix-blend-difference'>
+      <div className='cursor pointer-events-none fixed top-0 z-30 h-4 w-4 rounded-[50%] bg-black mix-blend-difference'>
         <div className='absolute left-[4px] top-[4px] h-full w-full rounded-[50%] bg-white mix-blend-difference'></div>
       </div>
-      <div className='cursorFollower pointer-events-none fixed top-0 z-10 h-8 w-8 rounded-[50%] bg-white mix-blend-difference'></div>
+      <div className='cursorFollower pointer-events-none fixed top-0 z-20 h-8 w-8 rounded-[50%] bg-white mix-blend-difference'></div>
     </>
   );
 };

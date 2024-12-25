@@ -27,15 +27,15 @@ export default function OurWritingsSection() {
       <HoverEffect items={blogsData} />
       <Link
         href='#'
-        className='hovering group z-10 mb-40 flex items-center justify-center gap-3 transition-all duration-300'
+        className='hovering group mb-40 flex items-center justify-center gap-3 transition-all duration-300'
       >
-        <div className='flex h-10 w-10 items-center justify-center rounded-full border border-white p-3 transition-all duration-300 group-hover:bg-white'>
+        <div className='z-10 flex h-10 w-10 items-center justify-center rounded-full border border-white p-3 transition-all duration-300 group-hover:bg-white'>
           <span className='text-white transition-all duration-300 group-hover:-rotate-45 group-hover:text-black'>
             →
           </span>
         </div>
         <span
-          className={`text-base ${IBMPlexMono.className} font-bold md:text-lg`}
+          className={`z-10 text-base ${IBMPlexMono.className} relative font-bold md:text-lg`}
         >
           Explore More
         </span>

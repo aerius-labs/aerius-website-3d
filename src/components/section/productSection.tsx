@@ -24,7 +24,7 @@ export default function productItemection() {
             alt='bottomLineForLargeS_image'
           />
           <div className='absolute h-full w-[2px] bg-white/50 lg:hidden'></div>
-          <div className='absolute bottom-[50px] left-[-20px] z-10 bg-black py-2 text-3xl font-bold text-white/50 md:text-4xl'>
+          <div className='absolute bottom-[50px] left-[-20px] z-0 bg-black py-2 text-3xl font-bold text-white/50 md:text-4xl'>
             03
           </div>
         </div>
@@ -95,7 +95,7 @@ export default function productItemection() {
             alt='bottomLineForLargeS_image'
           />
           <div className='absolute h-full w-[2px] bg-white/50 lg:hidden'></div>
-          <div className='absolute bottom-[50px] left-[90%] z-10 bg-black py-2 text-3xl font-bold text-white/50 md:text-4xl'>
+          <div className='absolute bottom-[50px] left-[90%] z-0 bg-black py-2 text-3xl font-bold text-white/50 md:text-4xl'>
             04
           </div>
         </div>
