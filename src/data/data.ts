@@ -22,6 +22,13 @@ export const productItem = [
       'On-chain asset management for the Cosmos ecosystem, based on CosmWasm.',
   },
   {
+    imageSrc: '/images/athena_finance.png',
+    imageAlt: 'athenaFinance_image',
+    title: 'Athena Finance',
+    description:
+      'On-chain asset management for the Cosmos ecosystem, based on CosmWasm.',
+  },
+  {
     imageSrc: '/images/zk_snap.png',
     imageAlt: 'zkSnap_image',
     title: 'Zk Snap',
