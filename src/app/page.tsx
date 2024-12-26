@@ -14,7 +14,7 @@ import Loader from '@/components/Loader/loader';
 import CustomCursor from '@/components/customCursor/customCursor';
 
 import { useLoading } from '../context/loadingContext';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useProgress } from '@react-three/drei';
 
 import Lenis from 'lenis';
@@ -26,7 +26,8 @@ gsap.registerPlugin(ScrollTrigger);
 export default function Home() {
   const { progress } = useProgress();
   const { isLoaded, setIsLoaded } = useLoading();
-
+  const [isCornersLoaded, setIsCornersLoaded] = useState(false);
+  console.log(isLoaded, isCornersLoaded, progress);
   useEffect(() => {
     if (progress === 100) {
       setIsLoaded(true);
@@ -66,8 +67,8 @@ export default function Home() {
       {isLoaded && <CustomCursor />}
       <main className='relative flex flex-col items-center justify-between'>
         <div className='fixed -z-20 h-screen w-screen bg-black'></div>
-        {isLoaded && <BordersCorner />}
-        <HeroSection loaded={isLoaded} />
+        {isLoaded && <BordersCorner setIsCornersLoaded={setIsCornersLoaded} />}
+        <HeroSection loaded={isCornersLoaded} />
         <AeriusLogoSection />
         <AboutUsSection />
         <ServicesSection />
