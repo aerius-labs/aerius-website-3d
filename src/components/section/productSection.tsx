@@ -2,12 +2,24 @@ import { Akzidenzgroteskbe, IBMPlexMono } from '@/fonts/fonts';
 import Image from 'next/image';
 import dynamic from 'next/dynamic';
 import { productItem } from '@/data/data';
+import { useEffect, useState } from 'react';
 
 const Scene = dynamic(() => import('@/components/scene/satelliteScene'), {
   ssr: false,
 });
 
 export default function productItemection() {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 1024);
+    };
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
   return (
     <section
       id='Products'
@@ -86,6 +98,24 @@ export default function productItemection() {
 
       {/* Bottom Line */}
       <div className='relative flex min-h-[150vh] w-screen items-center justify-center overflow-hidden'>
+        <div className='absolute bottom-0 left-[50%] top-0 h-full w-[32%] lg:left-[18%]'>
+          <Image
+            className='hidden h-full w-[100%] scale-x-[-1] object-cover lg:absolute lg:block'
+            width={100}
+            height={100}
+            src='/lines/bottomLineForLargeS.svg'
+            alt='bottomLineForLargeS_image'
+          />
+          <div className='absolute h-full w-[2px] bg-white/50 lg:hidden'></div>
+          <div
+            className={`absolute bottom-[50px] z-0 bg-black py-2 text-3xl font-bold text-white/50 md:text-4xl 
+            ${!isMobile ? 'right-[-20px]' : 'left-[-20px]'}`}
+          >
+            04
+          </div>
+        </div>
+      </div>
+      {/* <div className='relative flex min-h-[150vh] w-screen items-center justify-center overflow-hidden'>
         <div className='absolute left-[50%] top-0 h-full lg:left-[19%] lg:w-[32%] 2xl:left-[20%]'>
           <Image
             className='hidden h-full w-[100%] scale-x-[-1] lg:absolute lg:block'
@@ -94,12 +124,11 @@ export default function productItemection() {
             src='/lines/bottomLineForLargeS.svg'
             alt='bottomLineForLargeS_image'
           />
-          <div className='absolute h-full w-[2px] bg-white/50 lg:hidden'></div>
           <div className='absolute bottom-[50px] left-[90%] z-0 bg-black py-2 text-3xl font-bold text-white/50 md:text-4xl'>
             04
           </div>
         </div>
-      </div>
+      </div> */}
     </section>
   );
 }
