@@ -27,7 +27,7 @@ export default function Home() {
   const { progress } = useProgress();
   const { isLoaded, setIsLoaded } = useLoading();
   const [isCornersLoaded, setIsCornersLoaded] = useState(false);
-  console.log(isLoaded, isCornersLoaded, progress);
+
   useEffect(() => {
     if (progress === 100) {
       setIsLoaded(true);
