@@ -40,6 +40,7 @@ export default function Home() {
       wheelMultiplier: 0.4,
       touchMultiplier: 0.4,
     });
+    lenis.scrollTo(0, { immediate: true });
 
     function raf(time: number) {
       lenis.raf(time);
