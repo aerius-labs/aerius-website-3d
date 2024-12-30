@@ -8,7 +8,7 @@ const Scene = dynamic(() => import('@/components/scene/satelliteScene'), {
   ssr: false,
 });
 
-export default function productItemection() {
+export default function ProductItemSection() {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
