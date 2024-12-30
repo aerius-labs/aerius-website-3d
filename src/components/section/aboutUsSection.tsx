@@ -31,13 +31,6 @@ export default function AboutUsSection() {
                 scrub: true,
               },
             });
-          } else {
-            gsap.to(entry.target, {
-              opacity: 0,
-              y: 0,
-              duration: 1,
-              ease: 'power2.out',
-            });
           }
         });
       },
@@ -48,6 +41,11 @@ export default function AboutUsSection() {
     );
 
     if (topLineRef.current) {
+      gsap.set(topLineRef.current, {
+        opacity: 0,
+        y: 50,
+      });
+
       observer.observe(topLineRef.current);
     }
 
@@ -73,8 +71,8 @@ export default function AboutUsSection() {
 
       {/* Top line */}
       <div
-        // ref={topLineRef}
-        className='relative min-h-[110vh] w-screen overflow-hidden text-center opacity-50'
+        ref={topLineRef}
+        className='relative min-h-[110vh] w-screen overflow-hidden text-center'
       >
         <div className='absolute left-[20%] flex h-full w-full justify-center'>
           <div className='absolute h-full w-[2px] bg-white/50'></div>
