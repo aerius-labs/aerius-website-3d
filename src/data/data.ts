@@ -47,6 +47,7 @@ export const blogsData = [
       src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-C_UAhXq9GfuGO452EEzfbKnh1viQB9EDBQ&s',
       alt: 'Blog Post Image',
     },
+    publishDate: '13, Dec, 2024',
   },
   {
     title: 'Athena Finance',
@@ -57,6 +58,7 @@ export const blogsData = [
       src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-C_UAhXq9GfuGO452EEzfbKnh1viQB9EDBQ&s',
       alt: 'Blog Post Image',
     },
+    publishDate: '13, Dec, 2024',
   },
   {
     title: 'Athena Finance',
@@ -67,6 +69,7 @@ export const blogsData = [
       src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-C_UAhXq9GfuGO452EEzfbKnh1viQB9EDBQ&s',
       alt: 'Blog Post Image',
     },
+    publishDate: '13, Dec, 2024',
   },
   {
     title: 'Athena Finance',
@@ -77,6 +80,7 @@ export const blogsData = [
       src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-C_UAhXq9GfuGO452EEzfbKnh1viQB9EDBQ&s',
       alt: 'Blog Post Image',
     },
+    publishDate: '13, Dec, 2024',
   },
 ];
 

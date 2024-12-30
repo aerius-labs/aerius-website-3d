@@ -12,6 +12,7 @@ export const HoverEffect = ({
     title: string;
     description: string;
     link: string;
+    publishDate: string;
     image: {
       src: string;
       alt: string;
@@ -33,7 +34,7 @@ export const HoverEffect = ({
           <Link
             href={item?.link}
             key={item?.link + idx}
-            className='group relative block h-[410px] w-full px-2'
+            className='group relative block h-[460px] w-full px-2'
             onMouseEnter={() => setHoveredIndex(idx)}
             onMouseLeave={() => setHoveredIndex(null)}
           >
@@ -54,7 +55,7 @@ export const HoverEffect = ({
                 />
               )}
             </AnimatePresence>
-            <Card image={item.image}>
+            <Card image={item.image} publishDate={item.publishDate}>
               <CardTitle className='text-2xl'>{item.title}</CardTitle>
               <CardDescription className='text-lg'>
                 {item.description}
@@ -71,6 +72,7 @@ export const HoverEffect = ({
 export const Card = ({
   className,
   image,
+  publishDate,
   children,
 }: {
   className?: string;
@@ -78,12 +80,13 @@ export const Card = ({
     src: string;
     alt: string;
   };
+  publishDate?: string;
   children: React.ReactNode;
 }) => {
   return (
     <div
       className={cn(
-        'relative z-20 h-full w-full overflow-hidden  border border-transparent bg-black p-4 group-hover:border-slate-700 dark:border-white/[0.4]',
+        'relative z-20 h-full w-full overflow-hidden border border-transparent bg-black p-4 group-hover:border-slate-700 dark:border-white/[0.4]',
         className
       )}
     >
@@ -93,12 +96,22 @@ export const Card = ({
             src={image.src}
             alt={image.alt}
             fill
-            className=' object-cover'
+            className='object-cover'
           />
         </div>
       )}
       <div className='relative z-50'>
-        <div className='p-4'>{children}</div>
+        <div className='p-4'>
+          {children}
+          <div className='mt-6 flex items-center justify-between border-t border-zinc-800 pt-4'>
+            <span className='text-sm text-zinc-400'>{publishDate}</span>
+            <div className='z-10 flex h-10 w-10 items-center justify-center rounded-full border border-white p-3 transition-all duration-300 group-hover:bg-white'>
+              <span className='text-white transition-all duration-300 group-hover:-rotate-45 group-hover:text-black'>
+                →
+              </span>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
