@@ -72,9 +72,9 @@ export default function ProductItemSection() {
                 />
               </div>
               <div
-                className={`${Akzidenzgroteskbe.className} basis-2/3 border-white md:border-l-[1px] md:pl-5`}
+                className={`${Akzidenzgroteskbe.className} mt-2 basis-2/3 border-white md:border-l-[1px] md:pl-5`}
               >
-                <h1 className='border-b-[1px] border-white pb-3 text-2xl font-extrabold uppercase'>
+                <h1 className='flex justify-center border-b-[1px] border-white pb-3 text-2xl font-extrabold uppercase md:justify-start'>
                   {item.title}
                 </h1>
                 <p
@@ -91,7 +91,7 @@ export default function ProductItemSection() {
       {/* Satellite Scene */}
       <div
         id='satelliteContainer'
-        className='absolute left-0 right-0 top-0 -z-10 h-screen w-full brightness-100'
+        className='absolute left-0 right-0 top-0 -z-10 hidden h-screen w-full brightness-100 md:block'
       >
         <Scene />
       </div>

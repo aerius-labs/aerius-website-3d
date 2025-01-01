@@ -64,7 +64,7 @@ export default function AboutUsSection() {
       {/* Astronaut Scene */}
       <div
         id='astronautContainer'
-        className='absolute left-0 right-0 top-0 -z-10 h-screen w-full brightness-110'
+        className='absolute left-0 right-0 top-0 -z-10 hidden h-screen w-full brightness-110 md:block'
       >
         <Scene />
       </div>
