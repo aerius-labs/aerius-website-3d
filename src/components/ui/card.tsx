@@ -25,7 +25,7 @@ export const HoverEffect = ({
   return (
     <div
       className={cn(
-        'sticky z-10 grid h-[500px] grid-cols-1 flex-col items-center justify-center bg-black py-10 md:grid-cols-2 lg:grid-cols-4',
+        'sticky z-10 grid h-[500px] grid-cols-1 flex-col items-center justify-center gap-6 bg-black py-10 md:grid-cols-2 md:gap-0 lg:grid-cols-4 lg:gap-0 xl:gap-0',
         className
       )}
     >

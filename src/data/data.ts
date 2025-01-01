@@ -135,29 +135,4 @@ export const partnerLogos = [
     src: '/img5.png',
     link: 'https://partner5.com',
   },
-  {
-    id: 11,
-    src: '/img6.png',
-    link: 'https://partner6.com',
-  },
-  {
-    id: 12,
-    src: '/img7.png',
-    link: 'https://partner7.com',
-  },
-  {
-    id: 13,
-    src: '/img8.png',
-    link: 'https://partner8.com',
-  },
-  {
-    id: 14,
-    src: '/img9.png',
-    link: 'https://partner9.com',
-  },
-  {
-    id: 15,
-    src: '/img9.png',
-    link: 'https://partner9.com',
-  },
 ];
