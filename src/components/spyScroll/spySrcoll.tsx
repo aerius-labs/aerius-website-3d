@@ -50,7 +50,7 @@ const ScrollSpy = () => {
 
   return (
     <div
-      className='fixed right-6 top-6 z-10 p-5'
+      className='fixed right-6 top-6 z-10 hidden p-5 md:block'
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
