@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 
 const sections = ['About', 'Services', 'Products', 'Trusted', 'Blogs'];
 
-const ScrollSpy = () => {
+const ScrollSpy = ({ loaded }: { loaded: boolean }) => {
   const [activeSection, setActiveSection] = useState('');
   const [isHovered, setIsHovered] = useState(false);
 
@@ -50,7 +50,7 @@ const ScrollSpy = () => {
 
   return (
     <div
-      className='fixed right-6 top-6 z-10 hidden p-5 md:block'
+      className={`fixed right-6 top-6 z-10 hidden p-5 ${loaded ? 'md:block' : 'hidden'}`}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
