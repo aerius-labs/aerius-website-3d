@@ -3,206 +3,164 @@ import { useFrame } from '@react-three/fiber';
 import { useEffect, useRef, useMemo } from 'react';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
-import { Color, Euler, Vector2 } from 'three';
 import { useGSAP } from '@gsap/react';
+import { Color, MeshStandardMaterial } from 'three';
 
 gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(useGSAP);
 
-useGLTF.preload('/models/astronaut.glb');
+useGLTF.preload('/models/Astronaut1.glb');
 
 export default function AstronautModel() {
   const group = useRef<any>(null);
   const { nodes, materials, animations }: any = useGLTF(
-    '/models/astronaut.glb'
+    '/models/Astronaut1.glb'
   );
-  const { mixer } = useAnimations(animations, group);
+  const { mixer, actions } = useAnimations(animations, group);
+  const logoMaterialsRef = useRef<MeshStandardMaterial[]>([]);
 
-  // Create cloned materials to avoid affecting other instances
   const clonedMaterials = useMemo(() => {
-    return {
-      'Ch44_Body.001': materials['Ch44_Body.001'].clone(),
-      'Ch44_body1.001': materials['Ch44_body1.001'].clone(),
-      'Glass Gradient': materials['Glass Gradient'].clone(),
-      'Frosted Glass 01': materials['Frosted Glass 01'].clone(),
-    };
+    if (!materials) return null;
+    return Object.entries(materials).reduce(
+      (acc: any, [key, material]: any) => {
+        const clonedMaterial = material.clone();
+        clonedMaterial.transparent = true;
+        clonedMaterial.opacity = 0;
+        acc[key] = clonedMaterial;
+        return acc;
+      },
+      {}
+    );
   }, [materials]);
 
-  // Set up initial material properties
   useEffect(() => {
-    // Frosted Glass setup
-    clonedMaterials['Frosted Glass 01'].aoMapIntensity = 1;
-    clonedMaterials['Frosted Glass 01'].blendAlpha = 0;
-    clonedMaterials['Frosted Glass 01'].blendColor = new Color(0, 0, 0);
-    clonedMaterials['Frosted Glass 01'].blendDst = 205;
-    clonedMaterials['Frosted Glass 01'].blendEquation = 100;
-    clonedMaterials['Frosted Glass 01'].blendSrc = 204;
-    clonedMaterials['Frosted Glass 01'].blending = 1;
-    clonedMaterials['Frosted Glass 01'].bumpScale = 1;
-    clonedMaterials['Frosted Glass 01'].color = new Color(
-      0.5972017883558645,
-      0.06301001764564068,
-      1
-    );
-    clonedMaterials['Frosted Glass 01'].colorWrite = true;
-    clonedMaterials['Frosted Glass 01'].depthFunc = 3;
-    clonedMaterials['Frosted Glass 01'].depthTest = true;
-    clonedMaterials['Frosted Glass 01'].depthWrite = true;
-    clonedMaterials['Frosted Glass 01'].displacementScale = 1;
-    clonedMaterials['Frosted Glass 01'].dust = 1;
-    clonedMaterials['Frosted Glass 01'].emissive = new Color(0, 0, 0);
-    clonedMaterials['Frosted Glass 01'].emissiveIntensity = 1;
-    clonedMaterials['Frosted Glass 01'].envMapIntensity = 1;
-    clonedMaterials['Frosted Glass 01'].envMapRotation = new Euler(
-      0,
-      0,
-      0,
-      'XYZ'
-    );
-    clonedMaterials['Frosted Glass 01'].fog = true;
-    clonedMaterials['Frosted Glass 01'].ior = 1.85;
-    clonedMaterials['Frosted Glass 01'].metalness = 0.9;
-    clonedMaterials['Frosted Glass 01'].normalScale = new Vector2(1, -1);
-    clonedMaterials['Frosted Glass 01'].opacity = 0.9;
-    clonedMaterials['Frosted Glass 01'].roughness = 0.1;
-    clonedMaterials['Frosted Glass 01'].transparent = true;
-
-    // Glass Gradient setup
-    clonedMaterials['Glass Gradient'].metalness = 0.7;
-    clonedMaterials['Glass Gradient'].roughness = 0.2;
-    clonedMaterials['Glass Gradient'].ior = 1.45;
-    clonedMaterials['Glass Gradient'].transparent = true;
-    clonedMaterials['Glass Gradient'].opacity = 1;
-
-    // Make other materials transparent for fade effect
-    clonedMaterials['Ch44_Body.001'].transparent = true;
-    clonedMaterials['Ch44_body1.001'].transparent = true;
-
-    // Set initial opacity for all materials
-    Object.values(clonedMaterials).forEach((material) => {
-      material.opacity = material.opacity || 1;
+    if (!actions || !mixer) return;
+    Object.values(actions).forEach((action: any) => {
+      if (action) {
+        action.reset();
+        action.play();
+        action.paused = true;
+      }
     });
-  }, [clonedMaterials]);
+  }, [actions, mixer]);
 
   useGSAP(() => {
-    // Animation setup
-    animations.forEach((clip: any) => {
-      const action = mixer.clipAction(clip);
-      action.paused = true;
-    });
-
-    // Main animation trigger
-    ScrollTrigger.create({
-      trigger: '#astronautContainer',
-      start: 'top 40%',
-      end: '+=260%',
-      scrub: 2,
-      onEnter: () => {
-        animations.forEach((clip: any) => {
-          const action = mixer.clipAction(clip);
-          action.play();
-        });
-        let opacity = 0.5;
-        Object.values(clonedMaterials).forEach((material) => {
-          material.opacity = opacity;
-        });
-      },
-      onLeave: () => {
-        animations.forEach((clip: any) => {
-          const action = mixer.clipAction(clip);
-          action.paused = true;
-        });
-      },
-      onEnterBack: () => {
-        animations.forEach((clip: any) => {
-          const action = mixer.clipAction(clip);
-          action.play();
-        });
-      },
-      onLeaveBack: () => {
-        animations.forEach((clip: any) => {
-          const action = mixer.clipAction(clip);
-          action.paused = true;
-        });
-      },
-      onUpdate: (self) => {
-        const progress = self.progress;
-        animations.forEach((clip: any) => {
-          const action = mixer.clipAction(clip);
-          action.paused = true;
-          action.time = clip.duration * progress;
-        });
+    if (!mixer || !actions || !clonedMaterials) return;
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: '#astronautContainer',
+        start: 'top 0',
+        end: '+=200%',
+        scrub: 1,
+        markers: false,
+        pin: true,
+        onUpdate: (self) => {
+          const progress = self.progress;
+          Object.values(actions).forEach((action: any) => {
+            if (action) {
+              action.time = action.getClip().duration * progress;
+              mixer.update(0);
+            }
+          });
+        },
+        onLeave: () => {
+          Object.values(actions).forEach((action: any) => {
+            if (action) action.paused = true;
+          });
+        },
+        onEnterBack: () => {
+          Object.values(actions).forEach((action: any) => {
+            if (action) action.paused = true;
+          });
+        },
       },
     });
 
-    // Fade effect trigger
     ScrollTrigger.create({
       trigger: '#astronautContainer',
-      start: 'top 0%',
-      end: 'top -240%',
+      start: 'top 10%',
+      end: 'top -220%',
       scrub: 2,
       onUpdate: (self) => {
-        // Calculate opacity based on scroll progress
-        let opacity = Math.max(0, 0.5 + self.progress);
-        if (self.progress >= 0.8) opacity = 1 - (self.progress - 0.8) / 0.17;
-        Object.values(clonedMaterials).forEach((material) => {
+        let opacity = 0;
+        if (self.progress < 0.1) {
+          opacity = self.progress * 10;
+        } else if (self.progress >= 0.8) {
+          opacity = 1 - (self.progress - 0.8) / 0.2;
+        } else {
+          opacity = 1;
+        }
+        opacity = Math.max(0, Math.min(1, opacity));
+        Object.values(clonedMaterials).forEach((material: any) => {
           material.opacity = opacity;
+        });
+        logoMaterialsRef.current.forEach((material) => {
+          if (material) {
+            material.opacity = opacity * 0.7;
+          }
         });
       },
     });
 
-    // Pin trigger
-    ScrollTrigger.create({
-      trigger: '#astronautContainer',
-      start: 'top top',
-      end: '+=180%',
-      pin: true,
-      scrub: 2,
-    });
-
-    return () => {
-      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
-    };
-  }, [mixer, clonedMaterials]);
+    return () => tl.kill();
+  }, [mixer, actions, clonedMaterials]);
 
   useFrame((_, delta) => {
-    mixer?.update(delta);
+    if (mixer && (ScrollTrigger as any).isScrolling) {
+      mixer.update(delta);
+    }
   });
+
+  if (!clonedMaterials || !nodes) return null;
 
   return (
     <group ref={group} dispose={null}>
       <group name='Scene'>
-        <group
-          name='Armature001'
-          position={[-4.452, -11.697, -12.968]}
-          rotation={[1.461, 0, 0]}
-          scale={0.1}
-        >
-          <group name='Ch44001'>
-            <skinnedMesh
-              name='Mesh001'
-              geometry={nodes.Mesh001.geometry}
-              material={clonedMaterials['Ch44_Body.001']}
-              skeleton={nodes.Mesh001.skeleton}
-            />
-            <skinnedMesh
-              name='Mesh001_1'
-              geometry={nodes.Mesh001_1.geometry}
-              material={clonedMaterials['Ch44_body1.001']}
-              skeleton={nodes.Mesh001_1.skeleton}
-            />
-            <skinnedMesh
-              name='Mesh001_2'
-              geometry={nodes.Mesh001_2.geometry}
-              material={clonedMaterials['Glass Gradient']}
-              skeleton={nodes.Mesh001_2.skeleton}
-            />
+        {nodes.Armature001 && (
+          <group
+            name='Armature001'
+            position={[-4.452, -11.697, -12.968]}
+            rotation={[1.461, 0, 0]}
+            scale={0.1}
+            renderOrder={2}
+          >
+            {nodes.Ch44001 && clonedMaterials['Material'] && (
+              <skinnedMesh
+                name='Ch44001'
+                geometry={nodes.Ch44001.geometry}
+                material={clonedMaterials['Material']}
+                skeleton={nodes.Ch44001.skeleton}
+                castShadow
+                receiveShadow
+                renderOrder={2}
+              />
+            )}
+            {nodes.Ch44002 && clonedMaterials['Glass Gradient'] && (
+              <skinnedMesh
+                name='Ch44002'
+                geometry={nodes.Ch44002.geometry}
+                material={clonedMaterials['Glass Gradient']}
+                skeleton={nodes.Ch44002.skeleton}
+                castShadow
+                receiveShadow
+                renderOrder={2}
+              />
+            )}
+            {nodes.mixamorigHips && <primitive object={nodes.mixamorigHips} />}
           </group>
-          <primitive object={nodes.mixamorigHips} />
-        </group>
-        <group name='Empty001' scale={26.353}>
-          {Object.keys(nodes).map((nodeName) => {
-            if (nodeName.includes('Logo_Main001_cell')) {
+        )}
+        <group name='Empty001' scale={26.353} renderOrder={1}>
+          {Object.keys(nodes)
+            .filter((key) => key.includes('Logo_Main001_cell'))
+            .map((nodeName, index) => {
+              const material = new MeshStandardMaterial({
+                color: '#67009a',
+                emissive: '#67009a',
+                emissiveIntensity: 1.5,
+                transparent: true,
+                opacity: 0,
+              });
+              logoMaterialsRef.current[index] = material;
               return (
                 <mesh
                   key={nodeName}
@@ -210,14 +168,13 @@ export default function AstronautModel() {
                   castShadow
                   receiveShadow
                   geometry={nodes[nodeName].geometry}
-                  material={clonedMaterials['Frosted Glass 01']}
+                  material={material}
                   position={nodes[nodeName].position}
                   scale={nodes[nodeName].scale}
+                  renderOrder={1}
                 />
               );
-            }
-            return null;
-          })}
+            })}
         </group>
       </group>
     </group>
