@@ -18,7 +18,6 @@ export default function SatelliteModel() {
   );
   const { mixer } = useAnimations(animations, group);
 
-  // Create cloned materials to avoid affecting other instances
   const clonedMaterials = useMemo(() => {
     return {
       'Frosted Glass 01': materials['Frosted Glass 01'].clone(),
@@ -63,7 +62,7 @@ export default function SatelliteModel() {
     clonedMaterials['Frosted Glass 01'].metalness = 0.9;
     clonedMaterials['Frosted Glass 01'].normalScale = new Vector2(1, -1);
     clonedMaterials['Frosted Glass 01'].opacity = 0.9;
-    clonedMaterials['Frosted Glass 01'].roughness = 0.2;
+    clonedMaterials['Frosted Glass 01'].roughness = 5;
     clonedMaterials['Frosted Glass 01'].transparent = true;
 
     // Other materials setup
@@ -74,6 +73,7 @@ export default function SatelliteModel() {
     clonedMaterials['tie fighter base'].roughness = 0.2;
     clonedMaterials['tie fighter base'].transparent = true;
 
+    clonedMaterials['TIE FIGHTER WING'].fog = true;
     clonedMaterials['TIE FIGHTER WING'].transparent = true;
 
     // Set initial opacity for all materials

@@ -18,20 +18,20 @@ export default function SatelliteScene() {
       }}
     >
       <pointLight
-        intensity={1500}
-        decay={2}
-        color='#b8b6ff'
+        intensity={2000}
+        decay={2.1}
+        color='#E5E4E2'
         position={[10, 20, -10]}
         rotation={[-Math.PI / 2, 0, 0]}
       />
+
       <pointLight
         intensity={100}
         decay={2}
-        color='#fefffa'
+        color='#E5E4E2'
         position={[0, 10, -10]}
         rotation={[-Math.PI / 2, 0, 0]}
       />
-      <ambientLight intensity={0.4} />
       <Environment files={'./images/env.hdr'} />
       <SatelliteModel />
       <AdjustCamera mobileFov={50} desktopFov={32} aspectRatio={16 / 9} />
