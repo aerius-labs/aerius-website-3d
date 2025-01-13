@@ -76,7 +76,7 @@ export default function Home() {
         <ProductSection />
         <TrustSection />
         <OurWritingsSection />
-        <FooterSection />
+        {/* <FooterSetion /> */}
         <ScrollSpy loaded={isCornersLoaded} />
       </main>
     </>

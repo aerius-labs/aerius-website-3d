@@ -1,147 +1,130 @@
 import { useAnimations, useGLTF } from '@react-three/drei';
 import { useFrame } from '@react-three/fiber';
-import { useEffect, useRef, useMemo } from 'react';
+import { useRef, useMemo, useState } from 'react';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
-import { Color, Euler, Vector2 } from 'three';
+import { Color, DoubleSide } from 'three';
 import { useGSAP } from '@gsap/react';
 
 gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(useGSAP);
 
-useGLTF.preload('/models/logoBreak.glb');
+useGLTF.preload('/models/LogoBreaks.glb');
 
 export default function AeriusLogoModel() {
   const group = useRef<any>();
-  const model: any = useGLTF('/models/logoBreak.glb');
+  const model = useGLTF('/models/LogoBreaks.glb');
   const { animations, nodes, materials } = model;
   const { mixer } = useAnimations(animations, group);
+  const [load, setLoad] = useState(false);
 
-  // Create base material settings
   const createBaseMaterial = () => {
-    const material = materials['Frosted Glass 01'].clone();
-    material.aoMapIntensity = 1;
-    material.blendAlpha = 0;
-    material.blendColor = new Color(0, 0, 0);
-    material.blendDst = 205;
-    material.blendEquation = 100;
-    material.blendSrc = 204;
-    material.blending = 1;
-    material.bumpScale = 1;
-    material.color = new Color(0.5972017883558645, 0.06301001764564068, 1);
-    material.colorWrite = true;
-    material.depthFunc = 3;
-    material.depthTest = true;
-    material.depthWrite = true;
-    material.displacementScale = 1;
-    material.dust = 1;
-    material.emissive = new Color(0, 0, 0);
-    material.emissiveIntensity = 1;
-    material.envMapIntensity = 1;
-    material.envMapRotation = new Euler(0, 0, 0, 'XYZ');
-    material.fog = true;
-    material.ior = 1.85;
-    material.isMaterial = true;
-    material.isMeshStandardMaterial = true;
-    material.lightMapIntensity = 1;
+    const material:any = materials['Material'].clone();
     material.metalness = 0.9;
-    material.name = 'Frosted Glass 01';
-    material.normalScale = new Vector2(1, -1);
-    material.opacity = 0.9;
-    material.reflection = new Color(1, 0.17144110072255403, 0.9301108583738498);
-    material.refractionFactor = 0.9;
     material.roughness = 0.2;
-    material.shininess = 0.5;
-    material.side = 2;
-    material.stencilFail = 7680;
-    material.stencilFunc = 519;
-    material.stencilFuncMask = 255;
-    material.stencilWriteMask = 255;
-    material.stencilZFail = 7680;
-    material.stencilZPass = 7680;
-    material.toneMapped = true;
+    material.opacity = 0;
     material.transparent = true;
+    material.depthWrite = false;
+    material.side = DoubleSide;
+    material.alphaTest = 0.01;
+    material.color = new Color(0.6, 0.06, 1);
+    material.emissiveIntensity = 1.2;
+    material.envMapIntensity = 1.5;
     return material;
   };
 
-  // Create materials for each mesh
   const meshMaterials = useMemo(() => {
     return Object.keys(nodes).map(() => createBaseMaterial());
   }, [nodes]);
 
   useGSAP(() => {
-    // Animation setup
-    animations.forEach((clip: any) => {
-      const action = mixer.clipAction(clip);
+    const layerOneAnimation:any = animations.find(clip => 
+      clip.name === 'Layer_001Action.001'
+    );
+    const layerOneAction:any = mixer.clipAction(layerOneAnimation);
+    layerOneAction.clampWhenFinished = true;
+    layerOneAction.loop = false;
+    layerOneAction.play();
+
+    const explosionAnimations = animations.filter(clip => 
+      !clip.name.includes('Layer_001')
+    );
+
+    const explosionActions = explosionAnimations.map(clip => {
+      const action:any = mixer.clipAction(clip);
+      action.clampWhenFinished = true;
+      action.loop = false;
       action.paused = true;
+      return action;
     });
 
-    // Main scroll trigger for animation
     ScrollTrigger.create({
       trigger: '#logoContainer',
-      start: 'top 40%',
+      start: 'top center',
       end: '+=150%',
-      scrub: 2,
-      onEnter: () => {
-        animations.forEach((clip: any) => {
-          const action = mixer.clipAction(clip);
-          action.play();
-        });
-      },
-      onLeave: () => {
-        animations.forEach((clip: any) => {
-          const action = mixer.clipAction(clip);
-          action.paused = true;
-        });
-      },
-      onEnterBack: () => {
-        animations.forEach((clip: any) => {
-          const action = mixer.clipAction(clip);
-          action.play();
-        });
-      },
-      onLeaveBack: () => {
-        animations.forEach((clip: any) => {
-          const action = mixer.clipAction(clip);
-          action.paused = true;
-        });
-      },
+      scrub: 1,
       onUpdate: (self) => {
         const progress = self.progress;
-        animations.forEach((clip: any) => {
-          const action = mixer.clipAction(clip);
-          action.paused = true;
-          action.time = clip.duration * progress;
-        });
-      },
-    });
+        if (progress <= 0.5) {
+          const layerOneProgress = progress * 2;          
+          Object.keys(nodes).forEach((nodeName, index) => {
+            if (nodeName === 'Logo_Main') {
+              meshMaterials[index].opacity = Math.min(layerOneProgress * 2, 1);
+              meshMaterials[index].depthWrite = meshMaterials[index].opacity === 1;
+            } else if (nodeName.includes('Logo_Main001_cell')) {
+              meshMaterials[index].opacity = 0;
+              meshMaterials[index].depthWrite = false;
+            }
+          });
 
-    // Fade out scroll trigger
-    ScrollTrigger.create({
-      trigger: '#logoContainer',
-      start: 'top 5%', // Start fading when logo is 20% from top
-      end: 'top -120%', // Complete fade when logo is -20% from top
-      scrub: 2,
-      onUpdate: (self) => {
-        // Calculate opacity based on scroll progress
-        let opacity = 1;
-        if (self.progress >= 0.8) opacity = 1 - (self.progress - 0.8) / 0.17;
-        meshMaterials.forEach((material) => {
-          material.opacity = opacity;
-        });
-      },
-    });
+          layerOneAction.time = layerOneAction.getClip().duration * layerOneProgress;
+          
+          explosionActions.forEach(action => {
+            action.time = 0;
+            action.paused = true;
+          });
+        } else if (progress <= 0.75) {
+          const explosionProgress = (progress - 0.5) * 4;
+          
+          Object.keys(nodes).forEach((nodeName, index) => {
+            if (nodeName === 'Logo_Main') {
+              meshMaterials[index].opacity = Math.max(0, 1 - explosionProgress * 2);
+              meshMaterials[index].depthWrite = meshMaterials[index].opacity === 1;
+            } else if (nodeName.includes('Logo_Main001_cell')) {
+              meshMaterials[index].opacity = Math.min(explosionProgress * 2, 1);
+              meshMaterials[index].depthWrite = meshMaterials[index].opacity === 1;
+            }
+          });
 
-    // Pin trigger
-    ScrollTrigger.create({
-      trigger: '#logoContainer',
-      start: 'top top',
-      end: '+=50%',
-      pin: true,
-      scrub: 2,
-      pinSpacing: false,
+          layerOneAction.time = layerOneAction.getClip().duration;
+          layerOneAction.paused = true;
+
+          explosionActions.forEach(action => {
+            action.time = action.getClip().duration * explosionProgress;
+            action.play();
+            action.paused = true;
+          });
+        } else {
+          const fadeOutProgress = (progress - 0.75) * 4;
+          
+          Object.keys(nodes).forEach((nodeName, index) => {
+            if (nodeName.includes('Logo_Main001_cell')) {
+              meshMaterials[index].opacity = Math.max(0, 1 - fadeOutProgress);
+              meshMaterials[index].depthWrite = meshMaterials[index].opacity === 1;
+            } else {
+              meshMaterials[index].opacity = 0;
+              meshMaterials[index].depthWrite = false;
+            }
+          });
+
+          explosionActions.forEach(action => {
+            action.time = action.getClip().duration;
+            action.paused = true;
+          });
+        }
+      }
     });
-  }, [mixer, meshMaterials]);
+  }, [mixer, meshMaterials, animations, nodes]);
 
   useFrame((state, delta) => {
     mixer?.update(delta);
@@ -149,19 +132,20 @@ export default function AeriusLogoModel() {
 
   return (
     <group ref={group} dispose={null}>
-      <group name='Scene'>
+      <group name="Scene">
         {Object.keys(nodes).map((nodeName, index) => {
-          if (nodeName.includes('Logo_Main001_cell')) {
+          if (nodeName === 'Logo_Main' || nodeName.includes('Logo_Main001_cell')) {
             return (
               <mesh
                 key={nodeName}
                 name={nodeName}
                 castShadow
                 receiveShadow
-                geometry={nodes[nodeName].geometry}
+                geometry={(nodes[nodeName] as any).geometry}
                 material={meshMaterials[index]}
                 position={nodes[nodeName].position}
                 scale={nodes[nodeName].scale}
+                renderOrder={nodeName === 'Logo_Main' ? 0 : 1} // Ensure proper rendering order
               />
             );
           }
