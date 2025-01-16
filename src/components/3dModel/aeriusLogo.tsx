@@ -19,7 +19,7 @@ export default function AeriusLogoModel() {
   const [load, setLoad] = useState(false);
 
   const createBaseMaterial = () => {
-    const material:any = materials['Material'].clone();
+    const material: any = materials['Material'].clone();
     material.metalness = 0.9;
     material.roughness = 0.2;
     material.opacity = 0;
@@ -38,20 +38,20 @@ export default function AeriusLogoModel() {
   }, [nodes]);
 
   useGSAP(() => {
-    const layerOneAnimation:any = animations.find(clip => 
-      clip.name === 'Layer_001Action.001'
+    const layerOneAnimation: any = animations.find(
+      (clip) => clip.name === 'Layer_001Action.001'
     );
-    const layerOneAction:any = mixer.clipAction(layerOneAnimation);
+    const layerOneAction: any = mixer.clipAction(layerOneAnimation);
     layerOneAction.clampWhenFinished = true;
     layerOneAction.loop = false;
     layerOneAction.play();
 
-    const explosionAnimations = animations.filter(clip => 
-      !clip.name.includes('Layer_001')
+    const explosionAnimations = animations.filter(
+      (clip) => !clip.name.includes('Layer_001')
     );
 
-    const explosionActions = explosionAnimations.map(clip => {
-      const action:any = mixer.clipAction(clip);
+    const explosionActions = explosionAnimations.map((clip) => {
+      const action: any = mixer.clipAction(clip);
       action.clampWhenFinished = true;
       action.loop = false;
       action.paused = true;
@@ -66,63 +66,71 @@ export default function AeriusLogoModel() {
       onUpdate: (self) => {
         const progress = self.progress;
         if (progress <= 0.5) {
-          const layerOneProgress = progress * 2;          
+          const layerOneProgress = progress * 2;
           Object.keys(nodes).forEach((nodeName, index) => {
             if (nodeName === 'Logo_Main') {
               meshMaterials[index].opacity = Math.min(layerOneProgress * 2, 1);
-              meshMaterials[index].depthWrite = meshMaterials[index].opacity === 1;
+              meshMaterials[index].depthWrite =
+                meshMaterials[index].opacity === 1;
             } else if (nodeName.includes('Logo_Main001_cell')) {
               meshMaterials[index].opacity = 0;
               meshMaterials[index].depthWrite = false;
             }
           });
 
-          layerOneAction.time = layerOneAction.getClip().duration * layerOneProgress;
-          
-          explosionActions.forEach(action => {
+          layerOneAction.time =
+            layerOneAction.getClip().duration * layerOneProgress;
+
+          explosionActions.forEach((action) => {
             action.time = 0;
             action.paused = true;
           });
         } else if (progress <= 0.75) {
           const explosionProgress = (progress - 0.5) * 4;
-          
+
           Object.keys(nodes).forEach((nodeName, index) => {
             if (nodeName === 'Logo_Main') {
-              meshMaterials[index].opacity = Math.max(0, 1 - explosionProgress * 2);
-              meshMaterials[index].depthWrite = meshMaterials[index].opacity === 1;
+              meshMaterials[index].opacity = Math.max(
+                0,
+                1 - explosionProgress * 2
+              );
+              meshMaterials[index].depthWrite =
+                meshMaterials[index].opacity === 1;
             } else if (nodeName.includes('Logo_Main001_cell')) {
               meshMaterials[index].opacity = Math.min(explosionProgress * 2, 1);
-              meshMaterials[index].depthWrite = meshMaterials[index].opacity === 1;
+              meshMaterials[index].depthWrite =
+                meshMaterials[index].opacity === 1;
             }
           });
 
           layerOneAction.time = layerOneAction.getClip().duration;
           layerOneAction.paused = true;
 
-          explosionActions.forEach(action => {
+          explosionActions.forEach((action) => {
             action.time = action.getClip().duration * explosionProgress;
             action.play();
             action.paused = true;
           });
         } else {
           const fadeOutProgress = (progress - 0.75) * 4;
-          
+
           Object.keys(nodes).forEach((nodeName, index) => {
             if (nodeName.includes('Logo_Main001_cell')) {
               meshMaterials[index].opacity = Math.max(0, 1 - fadeOutProgress);
-              meshMaterials[index].depthWrite = meshMaterials[index].opacity === 1;
+              meshMaterials[index].depthWrite =
+                meshMaterials[index].opacity === 1;
             } else {
               meshMaterials[index].opacity = 0;
               meshMaterials[index].depthWrite = false;
             }
           });
 
-          explosionActions.forEach(action => {
+          explosionActions.forEach((action) => {
             action.time = action.getClip().duration;
             action.paused = true;
           });
         }
-      }
+      },
     });
   }, [mixer, meshMaterials, animations, nodes]);
 
@@ -132,9 +140,12 @@ export default function AeriusLogoModel() {
 
   return (
     <group ref={group} dispose={null}>
-      <group name="Scene">
+      <group name='Scene'>
         {Object.keys(nodes).map((nodeName, index) => {
-          if (nodeName === 'Logo_Main' || nodeName.includes('Logo_Main001_cell')) {
+          if (
+            nodeName === 'Logo_Main' ||
+            nodeName.includes('Logo_Main001_cell')
+          ) {
             return (
               <mesh
                 key={nodeName}

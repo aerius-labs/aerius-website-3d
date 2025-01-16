@@ -15,8 +15,8 @@ export default function AeriusScene() {
         position: [-0.078, 0.935, 11.351],
       }}
     >
-      <pointLight intensity={400} color="#fff" position={[5, 10, 0]} />
-      <pointLight intensity={200} color="#b0a2ff" position={[-5, -10, 0]} />
+      <pointLight intensity={400} color='#fff' position={[5, 10, 0]} />
+      <pointLight intensity={200} color='#b0a2ff' position={[-5, -10, 0]} />
       <spotLight
         intensity={300}
         angle={0.5}
@@ -29,13 +29,13 @@ export default function AeriusScene() {
           position={[-5, 2, -1]}
           scale={[10, 2, 1]}
           intensity={4}
-          color="#ff9f50"
+          color='#ff9f50'
         />
         <Lightformer
           position={[5, 0, -5]}
           scale={[10, 2, 1]}
           intensity={4}
-          color="#9f50ff"
+          color='#9f50ff'
         />
       </Environment>
       <AeriusLogoModel />
