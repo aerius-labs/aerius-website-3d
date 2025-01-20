@@ -7,7 +7,7 @@ export default function OurWritingsSection() {
   return (
     <section
       id='Blogs'
-      className={`relative ${Akzidenzgroteskbe.className} flex w-screen flex-col items-center justify-center p-10 px-5 pb-60 text-white md:pb-0 lg:px-20`}
+      className={`relative ${Akzidenzgroteskbe.className} flex w-screen flex-col items-center justify-center px-5 text-white lg:px-20`}
     >
       {/* Content */}
       <div className='sticky -top-12 flex flex-col items-center justify-center'>
@@ -24,22 +24,30 @@ export default function OurWritingsSection() {
           </span>
         </h3>
       </div>
-      <HoverEffect items={blogsData} />
-      <Link
-        href='#'
-        className='hovering group mb-40 flex items-center justify-center gap-3 pt-10 transition-all duration-300'
-      >
-        <div className='z-10 flex h-10 w-10 items-center justify-center rounded-full border border-white p-3 transition-all duration-300 group-hover:bg-white'>
-          <span className='text-white transition-all duration-300 group-hover:-rotate-45 group-hover:text-black'>
-            →
-          </span>
+
+      <div className='w-full'>
+        <div className='relative w-full'>
+          <HoverEffect items={blogsData} />
         </div>
-        <span
-          className={`z-10 text-base ${IBMPlexMono.className} relative font-bold md:text-lg`}
-        >
-          Explore More
-        </span>
-      </Link>
+
+        <div className='mb-0 flex w-full justify-center pt-10 lg:mb-40'>
+          <Link
+            href='#'
+            className='hovering group flex items-center justify-center gap-3 transition-all duration-300'
+          >
+            <div className='z-10 flex h-10 w-10 items-center justify-center rounded-full border border-white p-3 transition-all duration-300 group-hover:bg-white'>
+              <span className='text-white transition-all duration-300 group-hover:-rotate-45 group-hover:text-black'>
+                →
+              </span>
+            </div>
+            <span
+              className={`z-10 text-base ${IBMPlexMono.className} relative font-bold md:text-lg`}
+            >
+              Explore More
+            </span>
+          </Link>
+        </div>
+      </div>
     </section>
   );
 }
