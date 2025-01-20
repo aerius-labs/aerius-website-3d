@@ -15,16 +15,16 @@ export const serviceItem = [
 
 export const productItem = [
   {
-    imageSrc: '/images/athena_finance.png',
-    imageAlt: 'athenaFinance_image',
-    title: 'Athena Finance',
+    imageSrc: '/images/vex.jpg',
+    imageAlt: 'vex_image',
+    title: 'VEX',
     description:
-      'On-chain asset management for the Cosmos ecosystem, based on CosmWasm.',
+      'Not a CEX. Not a DEX. A revolutionary exchange platform that combines the best of both worlds—delivering centralized performance with decentralized trust',
   },
   {
     imageSrc: '/images/athena_finance.png',
     imageAlt: 'athenaFinance_image',
-    title: 'Athena Finance',
+    title: 'Scalerize',
     description:
       'On-chain asset management for the Cosmos ecosystem, based on CosmWasm.',
   },
@@ -33,7 +33,7 @@ export const productItem = [
     imageAlt: 'zkSnap_image',
     title: 'Zk Snap',
     description:
-      'Off-chain ballot privacy for DAOs, where voting is simple, anonymous, and user friendly.',
+      'Off-chain ballot privacy for DAOs, where voting is simple, anonymous, and user friendly. Off-chain ballot privacy for DAOs, where voting is simple, anonymous, and user friendly.',
   },
 ];
 
