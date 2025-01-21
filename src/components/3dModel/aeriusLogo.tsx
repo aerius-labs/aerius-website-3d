@@ -77,7 +77,7 @@ export default function AeriusLogoModel() {
               meshMaterials[index].depthWrite = false;
             }
           });
-
+          layerOneAction.paused = true;
           layerOneAction.time =
             layerOneAction.getClip().duration * layerOneProgress;
 
