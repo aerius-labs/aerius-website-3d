@@ -26,16 +26,16 @@ export default function ProductItemSection() {
       className={`relative ${Akzidenzgroteskbe.className} flex w-screen flex-col justify-center text-white lg:items-start`}
     >
       {/* Top Line */}
-      <div className='relative flex min-h-[150vh] w-screen items-center justify-center overflow-hidden'>
-        <div className='absolute bottom-0 left-[50%] top-0 h-full w-[32%] lg:left-[18%]'>
+      <div className='relative flex min-h-[150vh] w-screen items-center overflow-hidden'>
+        <div className='absolute bottom-0 left-[50%] top-0 h-full w-[35%] md:left-[20%]'>
           <Image
-            className='hidden h-full w-[100%] object-cover lg:absolute lg:block'
+            className='hidden h-full w-[100%] object-cover lg:absolute xl:block'
             width={100}
             height={100}
             src='/lines/bottomLineForLargeS.svg'
             alt='bottomLineForLargeS_image'
           />
-          <div className='absolute h-full w-[2px] bg-white/50 lg:hidden'></div>
+          <div className='absolute h-full w-[2px] bg-white/50 xl:hidden'></div>
           <div className='absolute bottom-[50px] left-[-20px] z-0 bg-black py-2 text-3xl font-bold text-white/50 md:text-4xl'>
             03
           </div>
@@ -97,16 +97,16 @@ export default function ProductItemSection() {
       </div>
 
       {/* Bottom Line */}
-      <div className='relative flex min-h-[150vh] w-screen items-center justify-center overflow-hidden'>
+      {/* <div className='relative flex min-h-[100vh] xl:min-h-[140vh] w-screen items-center justify-center overflow-hidden'>
         <div className='absolute bottom-0 left-[50%] top-0 h-full w-[32%] lg:left-[18%]'>
+          <div className='absolute h-full lg:h-[18%] w-[2px] bg-white/30 xl:hidden'></div>
           <Image
-            className='hidden h-full w-[100%] scale-x-[-1] object-cover lg:absolute lg:block'
+            className='h-full w-[100%] hidden lg:block scale-x-[-1] object-fit lg:object-cover'
             width={100}
             height={100}
             src='/lines/bottomLineForLargeS.svg'
             alt='bottomLineForLargeS_image'
           />
-          <div className='absolute h-full w-[2px] bg-white/50 lg:hidden'></div>
           <div
             className={`absolute bottom-[50px] z-0 bg-black py-2 text-3xl font-bold text-white/50 md:text-4xl 
             ${!isMobile ? 'right-[-20px]' : 'left-[-20px]'}`}
@@ -114,21 +114,27 @@ export default function ProductItemSection() {
             04
           </div>
         </div>
-      </div>
-      {/* <div className='relative flex min-h-[150vh] w-screen items-center justify-center overflow-hidden'>
-        <div className='absolute left-[50%] top-0 h-full lg:left-[19%] lg:w-[32%] 2xl:left-[20%]'>
-          <Image
-            className='hidden h-full w-[100%] scale-x-[-1] lg:absolute lg:block'
-            width={100}
-            height={100}
-            src='/lines/bottomLineForLargeS.svg'
-            alt='bottomLineForLargeS_image'
-          />
-          <div className='absolute bottom-[50px] left-[90%] z-0 bg-black py-2 text-3xl font-bold text-white/50 md:text-4xl'>
+      </div> */}
+      <div className='relative flex min-h-[100vh] w-screen items-center justify-center overflow-hidden xl:min-h-[140vh]'>
+        <div className='absolute bottom-0 left-[50%] top-0 h-full w-[32%] lg:left-[18%]'>
+          <div className='absolute h-full w-[2px] bg-white/30 lg:hidden'></div>
+          <div className='hidden h-full w-full lg:block'>
+            <Image
+              className='hidden h-full w-[100%] scale-x-[-1] object-cover lg:block'
+              width={100}
+              height={100}
+              src='/lines/bottomLineForLargeS.svg'
+              alt='bottomLineForLargeS_image'
+            />
+          </div>
+          <div
+            className={`absolute bottom-[50px] z-0 bg-black py-2 text-3xl font-bold text-white/50 md:text-4xl
+            ${!isMobile ? 'right-[-20px]' : 'left-[-20px]'}`}
+          >
             04
           </div>
         </div>
-      </div> */}
+      </div>
     </section>
   );
 }

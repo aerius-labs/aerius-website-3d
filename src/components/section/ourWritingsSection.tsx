@@ -30,7 +30,7 @@ export default function OurWritingsSection() {
           <HoverEffect items={blogsData} />
         </div>
 
-        <div className='mb-0 flex w-full justify-center lg:mb-40'>
+        <div className='mb-10 flex w-full justify-center lg:mb-40 lg:mt-20 xl:mt-0'>
           <Link
             href='#'
             className='hovering group flex items-center justify-center gap-3 transition-all duration-300'

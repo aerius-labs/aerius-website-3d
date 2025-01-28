@@ -116,14 +116,14 @@ export default function AboutUsSection() {
       <div className='relative mb-20 flex min-h-[130vh] w-screen overflow-hidden'>
         <div className='absolute bottom-0 left-[50%] top-0 h-full w-[35%]'>
           <Image
-            className='hidden h-full w-[100%] object-cover lg:absolute lg:block'
+            className='hidden h-full w-[100%] object-cover lg:absolute xl:block'
             width={100}
             height={100}
             src='/lines/bottomLineForLargeS.svg'
             alt='bottomLineForLargeS_image'
           />
           <Image
-            className='absolute h-full w-[100%] scale-x-[-1] object-cover lg:hidden'
+            className='absolute h-full w-[100%] scale-x-[-1] object-cover xl:hidden'
             width={100}
             height={100}
             src='/lines/bottomLineForSmallS.svg'
