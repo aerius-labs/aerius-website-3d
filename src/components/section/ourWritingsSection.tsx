@@ -10,7 +10,7 @@ export default function OurWritingsSection() {
       className={`relative ${Akzidenzgroteskbe.className} flex w-screen flex-col items-center justify-center px-5 text-white lg:px-20`}
     >
       {/* Content */}
-      <div className='sticky -top-12 flex flex-col items-center justify-center'>
+      <div className='flex flex-col items-center justify-center'>
         <h1 className='text-2xl font-bold uppercase sm:text-3xl lg:text-5xl'>
           Ready to Geek Out?
         </h1>
@@ -30,7 +30,7 @@ export default function OurWritingsSection() {
           <HoverEffect items={blogsData} />
         </div>
 
-        <div className='mb-0 flex w-full justify-center pt-10 lg:mb-40'>
+        <div className='mb-0 flex w-full justify-center lg:mb-40'>
           <Link
             href='#'
             className='hovering group flex items-center justify-center gap-3 transition-all duration-300'

@@ -25,16 +25,16 @@ export const HoverEffect = ({
   return (
     <div
       className={cn(
-        'sticky z-10 grid h-full grid-cols-1 flex-col items-center justify-center gap-6 bg-black py-10 md:grid-cols-2 md:gap-0 lg:h-[500px] lg:grid-cols-4 lg:gap-0 xl:gap-0',
+        'sticky z-10 grid h-full grid-cols-1 flex-col items-center justify-center gap-6 bg-black py-10 md:grid-cols-2 md:gap-0 lg:h-[550px] lg:grid-cols-4 lg:gap-0 xl:gap-0',
         className
       )}
     >
       {items.map((item, idx) => (
-        <div key={idx} className='flex flex-col items-center'>
+        <div key={idx} className='relative flex flex-col items-center'>
           <Link
             href={item?.link}
             key={item?.link + idx}
-            className='group relative block h-[460px] w-full px-2'
+            className='group relative block min-h-[460px] w-full px-2'
             onMouseEnter={() => setHoveredIndex(idx)}
             onMouseLeave={() => setHoveredIndex(null)}
           >
@@ -62,7 +62,7 @@ export const HoverEffect = ({
               </CardDescription>
             </Card>
           </Link>
-          <div className='hidden h-[314px] min-h-[250px] w-[2px] bg-white/50 text-center md:block'></div>
+          <div className='hidden min-h-[250px] w-[2px] bg-white/50 text-center lg:block'></div>
         </div>
       ))}
     </div>
@@ -103,7 +103,7 @@ export const Card = ({
       <div className='relative z-50'>
         <div className='p-4'>
           {children}
-          <div className='mt-6 flex items-center justify-between border-t border-zinc-800 pt-4'>
+          <div className='mt-auto flex items-center justify-between border-t border-zinc-800 pt-4'>
             <span className='text-sm text-zinc-400'>{publishDate}</span>
             <div className='z-10 flex h-10 w-10 items-center justify-center rounded-full border border-white p-3 transition-all duration-300 group-hover:bg-white'>
               <span className='text-white transition-all duration-300 group-hover:-rotate-45 group-hover:text-black'>
