@@ -22,8 +22,8 @@ export default function TrustSection() {
         </h3>
       </div>
       {/* Logo Grid */}
-      <div className='relative z-10 flex min-h-[55vh] w-screen items-center justify-center overflow-hidden'>
-        <div className='grid w-[1/2] grid-cols-2 gap-20 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5'>
+      <div className='relative z-10 flex w-screen justify-center overflow-hidden'>
+        <div className='grid w-[1/2] grid-cols-2 gap-6 sm:grid-cols-3 md:gap-20 lg:grid-cols-4 xl:grid-cols-5'>
           {partnerLogos.map(({ id, src, link }) => (
             <a
               key={id}

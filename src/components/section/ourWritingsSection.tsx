@@ -25,7 +25,7 @@ export default function OurWritingsSection() {
         </h3>
       </div>
 
-      <div className='w-full'>
+      <div className='w-full pt-10'>
         <div className='relative w-full'>
           <HoverEffect items={blogsData} />
         </div>
