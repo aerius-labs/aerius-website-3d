@@ -51,7 +51,7 @@ export default function TrustSection() {
                     <path
                       d='M0,20 V10 L10,0 H190 L200,10 V20'
                       stroke='#ffffff'
-                      strokeWidth='1'
+                      strokeWidth='2'
                       className='origin-top translate-y-[-100%] transition-transform duration-500 group-hover:translate-y-0'
                     />
                   </svg>
@@ -63,7 +63,7 @@ export default function TrustSection() {
                     <path
                       d='M0,0 V10 L10,20 H190 L200,10 V0'
                       stroke='#ffffff'
-                      strokeWidth='1'
+                      strokeWidth='2'
                       className='origin-bottom translate-y-[100%] transition-transform duration-500 group-hover:translate-y-0'
                     />
                   </svg>
