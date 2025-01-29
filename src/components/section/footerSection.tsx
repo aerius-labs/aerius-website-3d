@@ -10,7 +10,7 @@ export default function FooterSection() {
         <div className='z-20 hidden flex-col gap-2 px-4 py-6 sm:flex-row sm:gap-0 sm:py-2 md:flex'>
           <Link
             href='#'
-            className='flex flex-row items-center gap-1 sm:w-[17.2vw] sm:flex-col'
+            className='flex flex-row items-center gap-1 hover:scale-125 hover:duration-300 sm:w-[17.2vw] sm:flex-col'
           >
             <Image
               src='/socialIcons/briefcase_icon.svg'
@@ -23,7 +23,7 @@ export default function FooterSection() {
           </Link>
           <Link
             href='#'
-            className='flex flex-row items-center gap-1 sm:w-[21.9vw] sm:flex-col'
+            className='flex flex-row items-center gap-1 hover:scale-125 hover:duration-300 sm:w-[21.9vw] sm:flex-col'
           >
             <Image
               src='/socialIcons/telegram_icon.svg'
@@ -36,7 +36,7 @@ export default function FooterSection() {
           </Link>
           <Link
             href='#'
-            className='flex flex-row items-center gap-1 sm:w-[21.9vw] sm:flex-col'
+            className='flex flex-row items-center gap-1 hover:scale-125 hover:duration-300 sm:w-[21.9vw] sm:flex-col'
           >
             <Image
               src='/socialIcons/github_icon.svg'
@@ -49,7 +49,7 @@ export default function FooterSection() {
           </Link>
           <Link
             href='#'
-            className='flex flex-row items-center gap-1 sm:w-[21.9vw] sm:flex-col'
+            className='flex flex-row items-center gap-1 hover:scale-125 hover:duration-300 sm:w-[21.9vw] sm:flex-col'
           >
             <Image
               src='/socialIcons/medium_icon.svg'
@@ -62,7 +62,7 @@ export default function FooterSection() {
           </Link>
           <Link
             href='#'
-            className='flex flex-row items-center gap-1 sm:w-[17.2vw] sm:flex-col'
+            className='flex flex-row items-center gap-1 hover:scale-125 hover:duration-300 sm:w-[17.2vw] sm:flex-col'
           >
             <Image
               src='/socialIcons/twitter_icon.svg'
@@ -77,7 +77,7 @@ export default function FooterSection() {
         <div className='z-20 flex flex-row justify-between gap-2 px-4 py-6 sm:flex-row sm:gap-0 sm:py-2 md:hidden'>
           <Link
             href='#'
-            className='flex flex-row items-center gap-1 sm:w-[17.2vw] sm:flex-col'
+            className='flex flex-row items-center gap-1 hover:scale-125 hover:duration-300 sm:w-[17.2vw] sm:flex-col'
           >
             <Image
               src='/socialIcons/briefcase_icon.svg'
@@ -89,7 +89,7 @@ export default function FooterSection() {
           </Link>
           <Link
             href='#'
-            className='flex flex-row items-center gap-1 sm:w-[21.9vw] sm:flex-col'
+            className='flex flex-row items-center gap-1 hover:scale-125 hover:duration-300 sm:w-[21.9vw] sm:flex-col'
           >
             <Image
               src='/socialIcons/telegram_icon.svg'
@@ -101,7 +101,7 @@ export default function FooterSection() {
           </Link>
           <Link
             href='#'
-            className='flex flex-row items-center gap-1 sm:w-[21.9vw] sm:flex-col'
+            className='flex flex-row items-center gap-1 hover:scale-125 hover:duration-300 sm:w-[21.9vw] sm:flex-col'
           >
             <Image
               src='/socialIcons/github_icon.svg'
@@ -113,7 +113,7 @@ export default function FooterSection() {
           </Link>
           <Link
             href='#'
-            className='flex flex-row items-center gap-1 sm:w-[21.9vw] sm:flex-col'
+            className='flex flex-row items-center gap-1 hover:scale-125 hover:duration-300 sm:w-[21.9vw] sm:flex-col'
           >
             <Image
               src='/socialIcons/medium_icon.svg'
@@ -125,7 +125,7 @@ export default function FooterSection() {
           </Link>
           <Link
             href='#'
-            className='flex flex-row items-center gap-1 sm:w-[17.2vw] sm:flex-col'
+            className='flex flex-row items-center gap-1 hover:scale-125 hover:duration-300 sm:w-[17.2vw] sm:flex-col'
           >
             <Image
               src='/socialIcons/twitter_icon.svg'
