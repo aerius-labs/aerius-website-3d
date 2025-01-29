@@ -50,6 +50,7 @@ const ScrollSpy = ({ loaded }: { loaded: boolean }) => {
 
   return (
     <div
+      id='spy-container'
       className={`fixed right-6 top-6 z-10 hidden p-5 ${loaded ? 'lg:block' : 'hidden'}`}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}

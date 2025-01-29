@@ -2,11 +2,9 @@ import React, { useEffect } from 'react';
 import gsap from 'gsap';
 
 const CustomCursor = () => {
-  const isDesktop = window.matchMedia('(min-width: 1440px)').matches;
-  if (!isDesktop) return;
+  if (!window.matchMedia('(min-width: 1440px)').matches) return null;
 
   useEffect(() => {
-    // Cursor follow logic
     const moveCursor = (e: any) => {
       gsap.to('.cursorFollower', {
         x: e.clientX - 16,
@@ -22,21 +20,18 @@ const CustomCursor = () => {
       });
     };
 
-    // Hover logic for arrow
-    const arrowLink = document.querySelector('.group');
-
-    const mouseEnter = () => {
+    const handleElementHover = () => {
       gsap.to('.cursor', {
         opacity: 0,
         duration: 0.3,
       });
       gsap.to('.cursorFollower', {
-        scale: 2,
+        scale: 1.5,
         duration: 0.3,
       });
     };
 
-    const mouseLeave = () => {
+    const handleElementLeave = () => {
       gsap.to('.cursor', {
         opacity: 1,
         duration: 0.3,
@@ -47,19 +42,46 @@ const CustomCursor = () => {
       });
     };
 
-    document.addEventListener('mousemove', moveCursor);
+    const addHoverListeners = () => {
+      const interactiveElements = document.querySelectorAll(
+        'a, button, .group, [role="button"], input, select, textarea, [tabindex]:not([tabindex="-1"]), #spy-container, #spy-container *'
+      );
 
-    if (arrowLink) {
-      arrowLink.addEventListener('mouseenter', mouseEnter);
-      arrowLink.addEventListener('mouseleave', mouseLeave);
-    }
+      interactiveElements.forEach((element) => {
+        element.addEventListener('mouseenter', handleElementHover);
+        element.addEventListener('mouseleave', handleElementLeave);
+      });
+
+      return interactiveElements;
+    };
+
+    document.addEventListener('mousemove', moveCursor);
+    const interactiveElements = addHoverListeners();
+
+    const observer = new MutationObserver((mutations) => {
+      mutations.forEach(() => {
+        const newInteractiveElements = addHoverListeners();
+        interactiveElements.forEach((element) => {
+          if (!document.contains(element)) {
+            element.removeEventListener('mouseenter', handleElementHover);
+            element.removeEventListener('mouseleave', handleElementLeave);
+          }
+        });
+      });
+    });
+
+    observer.observe(document.body, {
+      childList: true,
+      subtree: true,
+    });
 
     return () => {
       document.removeEventListener('mousemove', moveCursor);
-      if (arrowLink) {
-        arrowLink.removeEventListener('mouseenter', mouseEnter);
-        arrowLink.removeEventListener('mouseleave', mouseLeave);
-      }
+      interactiveElements.forEach((element) => {
+        element.removeEventListener('mouseenter', handleElementHover);
+        element.removeEventListener('mouseleave', handleElementLeave);
+      });
+      observer.disconnect();
     };
   }, []);
 
@@ -68,7 +90,7 @@ const CustomCursor = () => {
       <div className='cursor pointer-events-none fixed top-0 z-30 hidden h-4 w-4 rounded-[50%] bg-black mix-blend-difference lg:block'>
         <div className='absolute left-[4px] top-[4px] h-full w-full rounded-[50%] bg-white mix-blend-difference'></div>
       </div>
-      <div className='cursorFollower pointer-events-none fixed top-0 z-20 h-8 w-8 rounded-[50%] bg-white mix-blend-difference'></div>
+      <div className='cursorFollower pointer-events-none fixed top-0 z-20 hidden h-8 w-8 rounded-[50%] bg-white mix-blend-difference lg:block'></div>
     </>
   );
 };
