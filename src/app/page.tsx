@@ -8,7 +8,7 @@ import ProductSection from '@/components/section/productSection';
 import TrustSection from '@/components/section/trustSection';
 import OurWritingsSection from '@/components/section/ourWritingsSection';
 import FooterSection from '@/components/section/footerSection';
-import ScrollSpy from '@/components/spyScroll/spySrcoll';
+import ScrollSpy from '@/components/spyScroll/spyScroll';
 import BordersCorner from '@/components/BorderCorners/borderCorners';
 import Loader from '@/components/Loader/loader';
 import CustomCursor from '@/components/customCursor/customCursor';

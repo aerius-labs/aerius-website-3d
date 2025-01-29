@@ -78,8 +78,7 @@ const ScrollSpy = ({ loaded }: { loaded: boolean }) => {
               </p>
               <div
                 className={`h-3 w-3 rounded-full border transition-all duration-300
-                  ${activeSection === sectionId ? 'border-white' : 'border-white/50'}
-                  ${isHovered ? 'border-white/80' : 'border-white/50'}
+                  ${activeSection === sectionId ? 'border-white' : `border-white/50 ${isHovered ? 'border-white/80' : 'border-white/50'}`}
                 `}
               />
             </div>
