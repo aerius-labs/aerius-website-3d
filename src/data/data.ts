@@ -15,25 +15,25 @@ export const serviceItem = [
 
 export const productItem = [
   {
-    imageSrc: '/images/vex.jpg',
-    imageAlt: 'vex_image',
+    imageSrc: '/images/vex.svg',
+    imageAlt: 'vex_logo',
     title: 'VEX',
     description:
       'Not a CEX. Not a DEX. A revolutionary exchange platform that combines the best of both worlds—delivering centralized performance with decentralized trust',
   },
   {
-    imageSrc: '/images/athena_finance.png',
-    imageAlt: 'athenaFinance_image',
+    imageSrc: '/images/scalerize.svg',
+    imageAlt: 'scalerize_logo',
     title: 'Scalerize',
     description:
-      'On-chain asset management for the Cosmos ecosystem, based on CosmWasm.',
+      'Scalerize is an adaptable optimistic rollup stack that enables developers to build custom rollups for any blockchain, ensuring secure, fast transactions with single-slot finality, fraud proofs, and IBC support.',
   },
   {
-    imageSrc: '/images/zk_snap.png',
-    imageAlt: 'zkSnap_image',
+    imageSrc: '/images/zk-snap.svg',
+    imageAlt: 'zkSnap_logo',
     title: 'Zk Snap',
     description:
-      'Off-chain ballot privacy for DAOs, where voting is simple, anonymous, and user friendly. Off-chain ballot privacy for DAOs, where voting is simple, anonymous, and user friendly.',
+      'ZkSnap leverages zk proofs to provide secure, anonymous DAO voting with ballot privacy, ensuring integrity and protection from external influence in the decision-making process.',
   },
 ];
 

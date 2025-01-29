@@ -97,24 +97,6 @@ export default function ProductItemSection() {
       </div>
 
       {/* Bottom Line */}
-      {/* <div className='relative flex min-h-[100vh] xl:min-h-[140vh] w-screen items-center justify-center overflow-hidden'>
-        <div className='absolute bottom-0 left-[50%] top-0 h-full w-[32%] lg:left-[18%]'>
-          <div className='absolute h-full lg:h-[18%] w-[2px] bg-white/30 xl:hidden'></div>
-          <Image
-            className='h-full w-[100%] hidden lg:block scale-x-[-1] object-fit lg:object-cover'
-            width={100}
-            height={100}
-            src='/lines/bottomLineForLargeS.svg'
-            alt='bottomLineForLargeS_image'
-          />
-          <div
-            className={`absolute bottom-[50px] z-0 bg-black py-2 text-3xl font-bold text-white/50 md:text-4xl 
-            ${!isMobile ? 'right-[-20px]' : 'left-[-20px]'}`}
-          >
-            04
-          </div>
-        </div>
-      </div> */}
       <div className='relative flex min-h-[100vh] w-screen items-center justify-center overflow-hidden xl:min-h-[140vh]'>
         <div className='absolute bottom-0 left-[50%] top-0 h-full w-[32%] lg:left-[18%]'>
           <div className='absolute h-full w-[2px] bg-white/30 lg:hidden'></div>
