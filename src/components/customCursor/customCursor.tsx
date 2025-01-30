@@ -2,8 +2,6 @@ import React, { useEffect } from 'react';
 import gsap from 'gsap';
 
 const CustomCursor = () => {
-  if (!window.matchMedia('(min-width: 1440px)').matches) return null;
-
   useEffect(() => {
     const moveCursor = (e: any) => {
       gsap.to('.cursorFollower', {
@@ -84,6 +82,7 @@ const CustomCursor = () => {
       observer.disconnect();
     };
   }, []);
+  if (!window.matchMedia('(min-width: 1440px)').matches) return null;
 
   return (
     <>
