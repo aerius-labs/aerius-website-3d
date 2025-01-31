@@ -31,7 +31,7 @@ export default function AdjustCamera({
     return () => {
       window.removeEventListener('resize', handleModelResize);
     };
-  }, [camera]);
+  }, [camera, mobileFov, desktopFov, aspectRatio]);
 
   return null;
 }

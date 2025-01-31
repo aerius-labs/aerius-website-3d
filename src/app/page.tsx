@@ -35,6 +35,7 @@ export default function Home() {
   }, [progress]);
 
   useEffect(() => {
+    let rafId: number;
     const lenis = new Lenis({
       lerp: 0.1,
       wheelMultiplier: 0.4,
@@ -43,18 +44,29 @@ export default function Home() {
     lenis.scrollTo(0, { immediate: true });
 
     function raf(time: number) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
+      try {
+        lenis.raf(time);
+        rafId = requestAnimationFrame(raf);
+      } catch (error) {
+        console.error('Scroll update failed: ', error);
+      }
     }
-    requestAnimationFrame(raf);
+    rafId = requestAnimationFrame(raf);
 
-    lenis.on('scroll', ScrollTrigger.update);
+    lenis.on('scroll', () => {
+      try {
+        ScrollTrigger.update();
+      } catch (error) {
+        console.error('ScrollTrigger update failed:', error);
+      }
+    });
     gsap.ticker.add((time) => {
       lenis.raf(time * 1000);
     });
     gsap.ticker.lagSmoothing(0);
 
     return () => {
+      cancelAnimationFrame(rafId);
       gsap.ticker.remove((time) => {
         lenis.raf(time * 1000);
       });
