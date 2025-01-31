@@ -18,7 +18,10 @@ export default function BorderCorners({
       topRightRef.current,
       bottomLeftRef.current,
       bottomRightRef.current,
-    ];
+    ].filter(Boolean);
+    if (corners.length < 4) {
+      return;
+    }
     gsap.set(corners[0], {
       left: '47%',
       top: '47%',

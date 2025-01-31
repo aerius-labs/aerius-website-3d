@@ -32,7 +32,7 @@ export default function SatelliteScene() {
         position={[0, 10, -10]}
         rotation={[-Math.PI / 2, 0, 0]}
       />
-      <Environment files={'./images/env.hdr'} />
+      <Environment files={'/images/env.hdr'} />
       <SatelliteModel />
       <AdjustCamera mobileFov={50} desktopFov={32} aspectRatio={16 / 9} />
     </Canvas>

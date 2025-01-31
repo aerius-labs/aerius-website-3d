@@ -12,7 +12,10 @@ gsap.registerPlugin(ScrollTrigger);
 export default function AeriusLogoSection() {
   useEffect(() => {
     const logoContainer = document.getElementById('logoContainer');
-
+    if (!logoContainer) {
+      console.error('Logo container element not found');
+      return;
+    }
     if (logoContainer) {
       gsap.fromTo(
         logoContainer,
