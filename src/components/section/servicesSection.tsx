@@ -24,10 +24,10 @@ export default function ServicesSection() {
       </div>
 
       {/* Grid */}
-      <div className='grid gap-4 px-5 py-10 md:grid-cols-3 lg:px-20'>
+      <div className='grid gap-4 px-5 pt-10 lg:grid-cols-3 lg:px-20'>
         {serviceItem.map((item, index) => (
           <div key={index} className='border border-white p-5'>
-            <h1 className='border-b-[1px] border-white pb-5 text-center text-2xl font-bold lg:text-3xl'>
+            <h1 className='border-b-[1px] border-white pb-5 text-center text-3xl font-bold lg:text-3xl'>
               {item.title}
             </h1>
             <p

@@ -8,13 +8,13 @@ import ProductSection from '@/components/section/productSection';
 import TrustSection from '@/components/section/trustSection';
 import OurWritingsSection from '@/components/section/ourWritingsSection';
 import FooterSection from '@/components/section/footerSection';
-import ScrollSpy from '@/components/spyScroll/spySrcoll';
+import ScrollSpy from '@/components/spyScroll/spyScroll';
 import BordersCorner from '@/components/BorderCorners/borderCorners';
 import Loader from '@/components/Loader/loader';
 import CustomCursor from '@/components/customCursor/customCursor';
 
 import { useLoading } from '../context/loadingContext';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useProgress } from '@react-three/drei';
 
 import Lenis from 'lenis';
@@ -26,6 +26,7 @@ gsap.registerPlugin(ScrollTrigger);
 export default function Home() {
   const { progress } = useProgress();
   const { isLoaded, setIsLoaded } = useLoading();
+  const [isCornersLoaded, setIsCornersLoaded] = useState(false);
 
   useEffect(() => {
     if (progress === 100) {
@@ -36,23 +37,21 @@ export default function Home() {
   useEffect(() => {
     const lenis = new Lenis({
       lerp: 0.1,
-      wheelMultiplier: 0.6,
-      touchMultiplier: 0.6,
+      wheelMultiplier: 0.4,
+      touchMultiplier: 0.4,
     });
+    lenis.scrollTo(0, { immediate: true });
 
     function raf(time: number) {
       lenis.raf(time);
       requestAnimationFrame(raf);
     }
-
     requestAnimationFrame(raf);
 
     lenis.on('scroll', ScrollTrigger.update);
-
     gsap.ticker.add((time) => {
       lenis.raf(time * 1000);
     });
-
     gsap.ticker.lagSmoothing(0);
 
     return () => {
@@ -69,8 +68,8 @@ export default function Home() {
       {isLoaded && <CustomCursor />}
       <main className='relative flex flex-col items-center justify-between'>
         <div className='fixed -z-20 h-screen w-screen bg-black'></div>
-        {isLoaded && <BordersCorner />}
-        <HeroSection loaded={isLoaded} />
+        {isLoaded && <BordersCorner setIsCornersLoaded={setIsCornersLoaded} />}
+        <HeroSection loaded={isCornersLoaded} />
         <AeriusLogoSection />
         <AboutUsSection />
         <ServicesSection />
@@ -78,7 +77,7 @@ export default function Home() {
         <TrustSection />
         <OurWritingsSection />
         <FooterSection />
-        <ScrollSpy />
+        <ScrollSpy loaded={isCornersLoaded} />
       </main>
     </>
   );

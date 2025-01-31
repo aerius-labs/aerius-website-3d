@@ -1,9 +1,6 @@
 import { useEffect } from 'react';
 import AOS from 'aos';
-
 import Image from 'next/image';
-
-// import aos styles
 import 'aos/dist/aos.css';
 import { Akzidenzgroteskbe, FKScreamerBlack } from '@/fonts/fonts';
 
@@ -19,8 +16,11 @@ export default function HeroSection({ loaded }: { loaded: boolean }) {
   }, [loaded]);
 
   return (
-    <section className='relative flex min-h-screen flex-col items-center justify-center text-white'>
-      <div className='absolute top-0 flex justify-center overflow-hidden'>
+    <section
+      id='Hero'
+      className='relative flex min-h-screen flex-col items-center justify-center text-white'
+    >
+      <div className='absolute top-0 mt-4 flex justify-center overflow-hidden'>
         <Image
           className='w-10 sm:w-12 lg:w-16'
           data-aos='slide-up'
@@ -72,9 +72,9 @@ export default function HeroSection({ loaded }: { loaded: boolean }) {
       </div>
       <div className='overflow-hidden'>
         <p
-          className={`py-4 ${Akzidenzgroteskbe.className} text-center text-sm sm:text-xl lg:py-8 lg:text-2xl`}
+          className={`${Akzidenzgroteskbe.className} text-center text-sm sm:text-xl lg:text-2xl`}
           data-aos='slide-up'
-          data-aos-delay='1000'
+          data-aos-delay='700'
         >
           <span className='text-white/50'>
             Pioneering Invisible Integrity with{' '}
