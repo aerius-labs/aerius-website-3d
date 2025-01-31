@@ -7,10 +7,14 @@ const ScrollSpy = ({ loaded }: { loaded: boolean }) => {
   const [isHovered, setIsHovered] = useState(false);
 
   useEffect(() => {
-    const handleIntersection = (entries: any) => {
-      entries.forEach((entry: any) => {
-        if (entry.isIntersecting) {
-          setActiveSection(entry.target.id);
+    const handleIntersection = (entries: IntersectionObserverEntry[]) => {
+      entries.forEach((entry: IntersectionObserverEntry) => {
+        try {
+          if (entry.isIntersecting && entry.target instanceof HTMLElement) {
+            setActiveSection(entry.target.id);
+          }
+        } catch (error) {
+          console.error('Failed to handle intersection:', error);
         }
       });
     };
@@ -40,6 +44,16 @@ const ScrollSpy = ({ loaded }: { loaded: boolean }) => {
 
   const scrollToSection = (sectionId: string) => {
     const section = document.getElementById(sectionId);
+    try {
+      if (section && loaded) {
+        section.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start',
+        });
+      }
+    } catch (error) {
+      console.error('Failed to scroll to section:', error);
+    }
     if (section) {
       section.scrollIntoView({
         behavior: 'smooth',

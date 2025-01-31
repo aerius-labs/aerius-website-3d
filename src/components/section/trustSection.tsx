@@ -34,12 +34,12 @@ export default function TrustSection() {
             >
               <div className='relative flex h-full w-full items-center justify-center'>
                 <Image
-                  src={
-                    'https://labs.sigma.software/wp-content/uploads/2022/10/human-new.svg'
-                  }
+                  src={src}
                   alt={`Logo ${id}`}
-                  width={100}
-                  height={100}
+                  width={120}
+                  height={120}
+                  quality={90}
+                  priority={id < 5}
                   className='ml-6 scale-125 transition-transform duration-300 group-hover:scale-100'
                 />
                 <div className='absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100'>
