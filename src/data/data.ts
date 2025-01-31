@@ -1,4 +1,34 @@
-export const serviceItem = [
+interface ServiceItem {
+  title: string;
+  description: string;
+}
+
+interface ProductItem {
+  id: number;
+  imageSrc: string;
+  imageAlt: string;
+  title: string;
+  description: string;
+}
+
+interface BlogPost {
+  title: string;
+  description: string;
+  link: string;
+  image: {
+    src: string;
+    alt: string;
+  };
+  publishDate: string;
+}
+
+interface PartnerLogo {
+  id: number;
+  src: string;
+  link: string;
+}
+
+export const serviceItem: ServiceItem[] = [
   {
     title: 'R&D',
     description: `Whether it is leveraging an anonymous network, ZKPs, MPC or any other privacy technique, we can assist your team in integrating these tools into your product's initial prototyping phase.`,
@@ -13,8 +43,9 @@ export const serviceItem = [
   },
 ];
 
-export const productItem = [
+export const productItem: ProductItem[] = [
   {
+    id: 1,
     imageSrc: '/images/vex.svg',
     imageAlt: 'vex_logo',
     title: 'VEX',
@@ -22,6 +53,7 @@ export const productItem = [
       'Not a CEX. Not a DEX. A revolutionary exchange platform that combines the best of both worlds—delivering centralized performance with decentralized trust',
   },
   {
+    id: 2,
     imageSrc: '/images/scalerize.svg',
     imageAlt: 'scalerize_logo',
     title: 'Scalerize',
@@ -29,6 +61,7 @@ export const productItem = [
       'Scalerize is an adaptable optimistic rollup stack that enables developers to build custom rollups for any blockchain, ensuring secure, fast transactions with single-slot finality, fraud proofs, and IBC support.',
   },
   {
+    id: 3,
     imageSrc: '/images/zk-snap.svg',
     imageAlt: 'zkSnap_logo',
     title: 'Zk Snap',
@@ -37,7 +70,7 @@ export const productItem = [
   },
 ];
 
-export const blogsData = [
+export const blogsData: BlogPost[] = [
   {
     title: 'Athena Finance',
     description:
@@ -84,55 +117,55 @@ export const blogsData = [
   },
 ];
 
-export const partnerLogos = [
+export const partnerLogos: PartnerLogo[] = [
   {
     id: 1,
-    src: '/img1.png',
+    src: 'https://labs.sigma.software/wp-content/uploads/2022/10/human-new.svg',
     link: 'https://partner1.com',
   },
   {
     id: 2,
-    src: '/img2.png',
+    src: 'https://labs.sigma.software/wp-content/uploads/2022/10/human-new.svg',
     link: 'https://partner2.com',
   },
   {
     id: 3,
-    src: '/img3.png',
+    src: 'https://labs.sigma.software/wp-content/uploads/2022/10/human-new.svg',
     link: 'https://partner3.com',
   },
   {
     id: 4,
-    src: '/img4.png',
+    src: 'https://labs.sigma.software/wp-content/uploads/2022/10/human-new.svg',
     link: 'https://partner4.com',
   },
   {
     id: 5,
-    src: '/img5.png',
+    src: 'https://labs.sigma.software/wp-content/uploads/2022/10/human-new.svg',
     link: 'https://partner5.com',
   },
   {
     id: 6,
-    src: '/img6.png',
+    src: 'https://labs.sigma.software/wp-content/uploads/2022/10/human-new.svg',
     link: 'https://partner6.com',
   },
   {
     id: 7,
-    src: '/img7.png',
+    src: 'https://labs.sigma.software/wp-content/uploads/2022/10/human-new.svg',
     link: 'https://partner7.com',
   },
   {
     id: 8,
-    src: '/img8.png',
+    src: 'https://labs.sigma.software/wp-content/uploads/2022/10/human-new.svg',
     link: 'https://partner8.com',
   },
   {
     id: 9,
-    src: '/img9.png',
+    src: 'https://labs.sigma.software/wp-content/uploads/2022/10/human-new.svg',
     link: 'https://partner9.com',
   },
   {
     id: 10,
-    src: '/img5.png',
+    src: 'https://labs.sigma.software/wp-content/uploads/2022/10/human-new.svg',
     link: 'https://partner5.com',
   },
 ];

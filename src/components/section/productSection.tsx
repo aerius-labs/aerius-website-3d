@@ -59,7 +59,7 @@ export default function ProductItemSection() {
         <div className='grid gap-4 pt-10 md:grid-rows-2'>
           {productItem.map((item, index) => (
             <div
-              key={index}
+              key={item.id}
               className='border border-white p-4 backdrop-blur-sm sm:flex sm:flex-row'
             >
               <div className='basis-1/3'>
