@@ -32,11 +32,15 @@ export default function OurWritingsSection() {
 
         <div className='mb-10 flex w-full justify-center lg:mb-40 lg:mt-20 xl:mt-0'>
           <Link
-            href='#'
+            href='/blogs'
+            aria-label='Explore more blog posts'
             className='hovering group flex items-center justify-center gap-3 transition-all duration-300'
           >
             <div className='z-10 flex h-10 w-10 items-center justify-center rounded-full border border-white p-3 transition-all duration-300 group-hover:bg-white'>
-              <span className='text-white transition-all duration-300 group-hover:-rotate-45 group-hover:text-black'>
+              <span
+                aria-hidden='true'
+                className='text-white transition-all duration-300 group-hover:-rotate-45 group-hover:text-black'
+              >
                 →
               </span>
             </div>

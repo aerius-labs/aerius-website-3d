@@ -24,7 +24,7 @@ export default function AeriusScene() {
         position={[10, 10, 10]}
         castShadow
       />
-      <Environment files={'./images/env.hdr'}>
+      <Environment files={'/images/env.hdr'}>
         <Lightformer
           position={[-5, 2, -1]}
           scale={[10, 2, 1]}
