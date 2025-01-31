@@ -17,28 +17,7 @@
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
   overflow-x: hidden;
-  background-color: #000;
-}
-
-.loader-bar {
-  animation: slide 5s infinite;
-}
-
-@keyframes slide {
-  from {
-    transform: translateX(-100%);
-  }
-  to {
-    transform: translateX(100%);
-  }
 }
 
 @layer utilities {

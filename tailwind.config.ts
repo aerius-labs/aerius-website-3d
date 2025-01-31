@@ -8,6 +8,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      colors: {
+        white: '#e9e9e9',
+      },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':
@@ -28,10 +31,15 @@ const config: Config = {
           '0%': { justifyContent: 'center', alignItems: 'start' },
           '100%': { justifyContent: 'space-between', alignItems: 'end' },
         },
+        move: {
+          '0%': { transform: 'translateX(-200px)' },
+          '100%': { transform: 'translateX(200px)' },
+        },
       },
       animation: {
         topAway: 'topAway 0.5s ease-out forwards',
         bottomAway: 'bottomAway 0.5s ease-out forwards',
+        move: 'move 5s linear infinite',
       },
     },
   },
