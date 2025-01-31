@@ -1,9 +1,10 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import gsap from 'gsap';
 
 const CustomCursor = () => {
+  const [shouldRender, setShouldRender] = useState(true);
   useEffect(() => {
-    const moveCursor = (e: any) => {
+    const moveCursor = (e: MouseEvent) => {
       gsap.to('.cursorFollower', {
         x: e.clientX - 16,
         y: e.clientY - 16,
@@ -52,37 +53,46 @@ const CustomCursor = () => {
 
       return interactiveElements;
     };
-
-    document.addEventListener('mousemove', moveCursor);
-    const interactiveElements = addHoverListeners();
-
-    const observer = new MutationObserver((mutations) => {
-      mutations.forEach(() => {
-        const newInteractiveElements = addHoverListeners();
-        interactiveElements.forEach((element) => {
-          if (!document.contains(element)) {
-            element.removeEventListener('mouseenter', handleElementHover);
-            element.removeEventListener('mouseleave', handleElementLeave);
-          }
+    if (shouldRender) {
+      document.addEventListener('mousemove', moveCursor);
+      const interactiveElements = addHoverListeners();
+      const observer = new MutationObserver((mutations) => {
+        mutations.forEach(() => {
+          const newInteractiveElements = addHoverListeners();
+          interactiveElements.forEach((element) => {
+            if (!document.contains(element)) {
+              element.removeEventListener('mouseenter', handleElementHover);
+              element.removeEventListener('mouseleave', handleElementLeave);
+            }
+          });
         });
       });
-    });
 
-    observer.observe(document.body, {
-      childList: true,
-      subtree: true,
-    });
-
-    return () => {
-      document.removeEventListener('mousemove', moveCursor);
-      interactiveElements.forEach((element) => {
-        element.removeEventListener('mouseenter', handleElementHover);
-        element.removeEventListener('mouseleave', handleElementLeave);
+      observer.observe(document.body, {
+        childList: true,
+        subtree: true,
       });
-      observer.disconnect();
-    };
+
+      return () => {
+        document.removeEventListener('mousemove', moveCursor);
+        interactiveElements.forEach((element) => {
+          element.removeEventListener('mouseenter', handleElementHover);
+          element.removeEventListener('mouseleave', handleElementLeave);
+        });
+        observer.disconnect();
+      };
+    }
+  }, [shouldRender]);
+
+  useEffect(() => {
+    setShouldRender(window.matchMedia('(min-width: 1440px)').matches);
+    const mediaQuery = window.matchMedia('(min-width: 1440px)');
+    const handleChange = (e: MediaQueryListEvent) => setShouldRender(e.matches);
+    mediaQuery.addEventListener('change', handleChange);
+    return () => mediaQuery.removeEventListener('change', handleChange);
   }, []);
-  if (!window.matchMedia('(min-width: 1440px)').matches) return null;
+
+  if (!shouldRender) return null;
 
   return (
     <>
