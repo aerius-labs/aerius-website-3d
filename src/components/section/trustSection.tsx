@@ -23,7 +23,7 @@ export default function TrustSection() {
       </div>
       {/* Logo Grid */}
       <div className='relative z-10 flex w-screen justify-center overflow-hidden'>
-        <div className='grid w-[1/2] grid-cols-2 gap-6 sm:grid-cols-3 md:gap-20 lg:grid-cols-4 xl:grid-cols-5'>
+        <div className='grid w-[1/2] grid-cols-2 gap-6 sm:grid-cols-3 md:gap-20 lg:grid-cols-4 xl:grid-cols-4'>
           {partnerLogos.map(({ id, src, link }) => (
             <a
               key={id}
@@ -40,7 +40,7 @@ export default function TrustSection() {
                   height={120}
                   quality={90}
                   priority={id < 5}
-                  className='ml-6 scale-125 transition-transform duration-300 group-hover:scale-100'
+                  className='scale-125 p-4 transition-transform duration-300 group-hover:scale-100'
                 />
                 <div className='absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100'>
                   <svg

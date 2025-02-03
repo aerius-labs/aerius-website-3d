@@ -1,6 +1,3 @@
-import { LucideIcon, ScrollText } from "lucide-react";
-import { XIcon } from "@/helpers/lucideXLogo";
-
 interface ServiceItem {
   title: string;
   description: string;
@@ -15,7 +12,7 @@ interface ProductItem {
   links: {
     link: string;
     icon: string;
-  }[]
+  }[];
 }
 
 interface BlogPost {
@@ -34,7 +31,6 @@ interface PartnerLogo {
   src: string;
   link: string;
 }
-
 
 export const serviceItem: ServiceItem[] = [
   {
@@ -60,10 +56,19 @@ export const productItem: ProductItem[] = [
     description:
       'Not a CEX. Not a DEX. A revolutionary exchange platform that combines the best of both worlds—delivering centralized performance with decentralized trust',
     links: [
-      {link: 'https://x.com/trade_vex', icon: '/socialIcons/twitter_icon.svg'},
-      {link: 'https://medium.com/vex-research', icon: '/socialIcons/medium_icon.svg'},
-      {link: 'https://t.me/trade_vex', icon: '/socialIcons/telegram_icon.svg'}
-    ]
+      {
+        link: 'https://x.com/trade_vex',
+        icon: '/socialIcons/twitter_icon.svg',
+      },
+      {
+        link: 'https://medium.com/vex-research',
+        icon: '/socialIcons/medium_icon.svg',
+      },
+      {
+        link: 'https://t.me/trade_vex',
+        icon: '/socialIcons/telegram_icon.svg',
+      },
+    ],
   },
   {
     id: 2,
@@ -73,8 +78,11 @@ export const productItem: ProductItem[] = [
     description:
       'Scalerize is an adaptable optimistic rollup stack that enables developers to build custom rollups for any blockchain, ensuring secure, fast transactions with single-slot finality, fraud proofs, and IBC support.',
     links: [
-      {link: 'https://x.com/Scalerize_XYZ', icon: '/socialIcons/twitter_icon.svg'},
-    ]
+      {
+        link: 'https://x.com/Scalerize_XYZ',
+        icon: '/socialIcons/twitter_icon.svg',
+      },
+    ],
   },
   {
     id: 3,
@@ -84,8 +92,11 @@ export const productItem: ProductItem[] = [
     description:
       'ZkSnap leverages zk proofs to provide secure, anonymous DAO voting with ballot privacy, ensuring integrity and protection from external influence in the decision-making process.',
     links: [
-      { link: 'https://drive.google.com/file/d/1bu0oe9PVTtSuT8JpwMmzKEG8Fb-mdPLH/view', icon: '/socialIcons/scroll_icon.svg' }
-    ]
+      {
+        link: 'https://drive.google.com/file/d/1bu0oe9PVTtSuT8JpwMmzKEG8Fb-mdPLH/view',
+        icon: '/socialIcons/scroll_icon.svg',
+      },
+    ],
   },
 ];
 
@@ -139,52 +150,22 @@ export const blogsData: BlogPost[] = [
 export const partnerLogos: PartnerLogo[] = [
   {
     id: 1,
-    src: 'https://labs.sigma.software/wp-content/uploads/2022/10/human-new.svg',
-    link: 'https://partner1.com',
+    src: '/partners/sindri-logo.svg',
+    link: 'https://sindri.app/',
   },
   {
     id: 2,
-    src: 'https://labs.sigma.software/wp-content/uploads/2022/10/human-new.svg',
-    link: 'https://partner2.com',
+    src: '/partners/cysic-logo.webp',
+    link: 'https://cysic.xyz/',
   },
   {
     id: 3,
-    src: 'https://labs.sigma.software/wp-content/uploads/2022/10/human-new.svg',
-    link: 'https://partner3.com',
+    src: '/partners/plume-network-logo.png',
+    link: 'https://plumenetwork.xyz/',
   },
   {
     id: 4,
-    src: 'https://labs.sigma.software/wp-content/uploads/2022/10/human-new.svg',
-    link: 'https://partner4.com',
-  },
-  {
-    id: 5,
-    src: 'https://labs.sigma.software/wp-content/uploads/2022/10/human-new.svg',
-    link: 'https://partner5.com',
-  },
-  {
-    id: 6,
-    src: 'https://labs.sigma.software/wp-content/uploads/2022/10/human-new.svg',
-    link: 'https://partner6.com',
-  },
-  {
-    id: 7,
-    src: 'https://labs.sigma.software/wp-content/uploads/2022/10/human-new.svg',
-    link: 'https://partner7.com',
-  },
-  {
-    id: 8,
-    src: 'https://labs.sigma.software/wp-content/uploads/2022/10/human-new.svg',
-    link: 'https://partner8.com',
-  },
-  {
-    id: 9,
-    src: 'https://labs.sigma.software/wp-content/uploads/2022/10/human-new.svg',
-    link: 'https://partner9.com',
-  },
-  {
-    id: 10,
-    src: 'https://labs.sigma.software/wp-content/uploads/2022/10/human-new.svg',
-    link: 'https://partner5.com',
+    src: '/partners/d3-inc-logo.png',
+    link: 'https://d3.inc/',
   },
 ];
