@@ -1,12 +1,12 @@
 import { partnerLogos } from '@/data/data';
-import { Akzidenzgroteskbe } from '@/fonts/fonts';
+import { HankenGrotesk } from '@/fonts/fonts';
 import Image from 'next/image';
 
 export default function TrustSection() {
   return (
     <section
       id='Trusted'
-      className={`flex ${Akzidenzgroteskbe.className} w-screen flex-col justify-center gap-10 pt-10 text-white`}
+      className={`flex ${HankenGrotesk.className} w-screen flex-col justify-center gap-10 pt-10 text-white`}
     >
       {/* Content */}
       <div className='flex flex-col items-center gap-4 px-5'>

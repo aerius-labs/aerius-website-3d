@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { IBMPlexMono, Akzidenzgroteskbe } from '@/fonts/fonts';
+import { IBMPlexMono, HankenGrotesk } from '@/fonts/fonts';
 import { HoverEffect } from '../ui/card';
 import { blogsData } from '@/data/data';
 
@@ -7,7 +7,7 @@ export default function OurWritingsSection() {
   return (
     <section
       id='Blogs'
-      className={`relative ${Akzidenzgroteskbe.className} flex w-screen flex-col items-center justify-center px-5 text-white lg:px-20`}
+      className={`relative ${HankenGrotesk.className} flex w-screen flex-col items-center justify-center px-5 text-white lg:px-20`}
     >
       {/* Content */}
       <div className='flex flex-col items-center justify-center'>

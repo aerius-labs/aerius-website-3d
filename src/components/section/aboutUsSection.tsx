@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import dynamic from 'next/dynamic';
-import { Akzidenzgroteskbe, IBMPlexMono } from '@/fonts/fonts';
+import { HankenGrotesk, IBMPlexMono } from '@/fonts/fonts';
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -60,7 +60,7 @@ export default function AboutUsSection() {
   return (
     <section
       id='About'
-      className={`relative ${Akzidenzgroteskbe.className} flex h-fit w-screen flex-col items-end justify-center overflow-hidden text-white`}
+      className={`relative ${HankenGrotesk.className} flex h-fit w-screen flex-col items-end justify-center overflow-hidden text-white`}
     >
       {/* Astronaut Scene */}
       <div

@@ -1,11 +1,11 @@
-import { Akzidenzgroteskbe, IBMPlexMono } from '@/fonts/fonts';
+import { HankenGrotesk, IBMPlexMono } from '@/fonts/fonts';
 import { serviceItem } from '@/data/data';
 
 export default function ServicesSection() {
   return (
     <section
       id='Services'
-      className={`${Akzidenzgroteskbe.className} flex w-screen flex-col justify-center pt-6 text-white`}
+      className={`${HankenGrotesk.className} flex w-screen flex-col justify-center pt-6 text-white`}
     >
       {/* Heading */}
       <div className='flex flex-col items-center gap-4 px-5'>
