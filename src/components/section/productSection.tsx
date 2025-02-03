@@ -3,6 +3,7 @@ import Image from 'next/image';
 import dynamic from 'next/dynamic';
 import { productItem } from '@/data/data';
 import { useEffect, useState } from 'react';
+import Link from 'next/link';
 
 const Scene = dynamic(() => import('@/components/scene/satelliteScene'), {
   ssr: false,
@@ -56,7 +57,7 @@ export default function ProductItemSection() {
             </span>
           </h3>
         </div>
-        <div className='grid gap-4 pt-10 md:grid-rows-2'>
+        <div className='grid gap-4 pt-10 md:grid-rows-2 cursor-pointer'>
           {productItem.map((item, index) => (
             <div
               key={item.id}
@@ -82,6 +83,26 @@ export default function ProductItemSection() {
                 >
                   {item.description}
                 </p>
+                <div className='flex items-center gap-4 py-3'>
+                  {item.links.map((linkItem, index) => (
+                    <div key={index} className='flex items-center gap-4'>
+                      <Link 
+                        href={linkItem.link} 
+                        className='text-white hover:text-white/80 underline'
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <Image
+                          src={linkItem.icon}
+                          className='w-5 h-5'
+                          width={5}
+                          height={5}
+                          alt='social-icon'                    
+                        />
+                      </Link>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           ))}

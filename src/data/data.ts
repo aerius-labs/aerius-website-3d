@@ -1,3 +1,6 @@
+import { LucideIcon, ScrollText } from "lucide-react";
+import { XIcon } from "@/helpers/lucideXLogo";
+
 interface ServiceItem {
   title: string;
   description: string;
@@ -9,6 +12,10 @@ interface ProductItem {
   imageAlt: string;
   title: string;
   description: string;
+  links: {
+    link: string;
+    icon: string;
+  }[]
 }
 
 interface BlogPost {
@@ -27,6 +34,7 @@ interface PartnerLogo {
   src: string;
   link: string;
 }
+
 
 export const serviceItem: ServiceItem[] = [
   {
@@ -51,6 +59,11 @@ export const productItem: ProductItem[] = [
     title: 'VEX',
     description:
       'Not a CEX. Not a DEX. A revolutionary exchange platform that combines the best of both worlds—delivering centralized performance with decentralized trust',
+    links: [
+      {link: 'https://x.com/trade_vex', icon: '/socialIcons/twitter_icon.svg'},
+      {link: 'https://medium.com/vex-research', icon: '/socialIcons/medium_icon.svg'},
+      {link: 'https://t.me/trade_vex', icon: '/socialIcons/telegram_icon.svg'}
+    ]
   },
   {
     id: 2,
@@ -59,6 +72,9 @@ export const productItem: ProductItem[] = [
     title: 'Scalerize',
     description:
       'Scalerize is an adaptable optimistic rollup stack that enables developers to build custom rollups for any blockchain, ensuring secure, fast transactions with single-slot finality, fraud proofs, and IBC support.',
+    links: [
+      {link: 'https://x.com/Scalerize_XYZ', icon: '/socialIcons/twitter_icon.svg'},
+    ]
   },
   {
     id: 3,
@@ -67,6 +83,9 @@ export const productItem: ProductItem[] = [
     title: 'Zk Snap',
     description:
       'ZkSnap leverages zk proofs to provide secure, anonymous DAO voting with ballot privacy, ensuring integrity and protection from external influence in the decision-making process.',
+    links: [
+      { link: 'https://drive.google.com/file/d/1bu0oe9PVTtSuT8JpwMmzKEG8Fb-mdPLH/view', icon: '/socialIcons/scroll_icon.svg' }
+    ]
   },
 ];
 
