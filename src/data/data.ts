@@ -32,6 +32,13 @@ interface PartnerLogo {
   link: string;
 }
 
+export interface Link {
+  href: string;
+  src: string;
+  alt: string;
+  name: string;
+}
+
 export const serviceItem: ServiceItem[] = [
   {
     title: 'R&D',
@@ -58,15 +65,15 @@ export const productItem: ProductItem[] = [
     links: [
       {
         link: 'https://x.com/trade_vex',
-        icon: '/socialIcons/twitter_icon.svg',
+        icon: '/socialIcons/twitter.svg',
       },
       {
         link: 'https://medium.com/vex-research',
-        icon: '/socialIcons/medium_icon.svg',
+        icon: '/socialIcons/medium.svg',
       },
       {
         link: 'https://t.me/trade_vex',
-        icon: '/socialIcons/telegram_icon.svg',
+        icon: '/socialIcons/telegram.svg',
       },
     ],
   },
@@ -80,7 +87,7 @@ export const productItem: ProductItem[] = [
     links: [
       {
         link: 'https://x.com/Scalerize_XYZ',
-        icon: '/socialIcons/twitter_icon.svg',
+        icon: '/socialIcons/twitter.svg',
       },
     ],
   },
@@ -94,7 +101,7 @@ export const productItem: ProductItem[] = [
     links: [
       {
         link: 'https://drive.google.com/file/d/1bu0oe9PVTtSuT8JpwMmzKEG8Fb-mdPLH/view',
-        icon: '/socialIcons/scroll_icon.svg',
+        icon: '/socialIcons/scroll.svg',
       },
     ],
   },
@@ -150,22 +157,55 @@ export const blogsData: BlogPost[] = [
 export const partnerLogos: PartnerLogo[] = [
   {
     id: 1,
-    src: '/partners/sindri-logo.svg',
+    src: '/partners/sindri.svg',
     link: 'https://sindri.app/',
   },
   {
     id: 2,
-    src: '/partners/cysic-logo.webp',
+    src: '/partners/cysic.webp',
     link: 'https://cysic.xyz/',
   },
   {
     id: 3,
-    src: '/partners/plume-network-logo.png',
+    src: '/partners/plume-network.png',
     link: 'https://plumenetwork.xyz/',
   },
   {
     id: 4,
-    src: '/partners/d3-inc-logo.png',
+    src: '/partners/d3-inc.png',
     link: 'https://d3.inc/',
+  },
+];
+
+export const links: Link[] = [
+  {
+    href: 'https://hallowed-crayfish-844.notion.site/Jobs-at-Aerius-9a9f7b75d06f437a895d0103ef9a3d8c',
+    src: '/socialIcons/briefcase.svg',
+    alt: 'briefcase_icon',
+    name: 'Careers',
+  },
+  {
+    href: 'https://t.me/AeriusLabs',
+    src: '/socialIcons/telegram.svg',
+    alt: 'telegram_icon',
+    name: 'Telegram',
+  },
+  {
+    href: 'https://github.com/Aerius-Labs',
+    src: '/socialIcons/github.svg',
+    alt: 'github_icon',
+    name: 'Github',
+  },
+  {
+    href: 'https://blog.aeriuslabs.org/',
+    src: '/socialIcons/medium.svg',
+    alt: 'medium_icon',
+    name: 'Medium',
+  },
+  {
+    href: 'https://x.com/AeriusLabs',
+    src: '/socialIcons/twitter.svg',
+    alt: 'twitter_icon',
+    name: 'Twitter',
   },
 ];

@@ -73,7 +73,6 @@ export default function TrustSection() {
           ))}
         </div>
       </div>
-      {/* className='absolute hidden group-hover:block inset-0 z-10 h-full w-full overflow-visible group-hover:scale-90 transition-transform duration-300' */}
       {/* Bottom Line */}
       <div className='relative flex min-h-[70vh] w-screen items-center justify-center overflow-hidden'>
         <div className='absolute bottom-0 left-[50%] top-0 h-full'>

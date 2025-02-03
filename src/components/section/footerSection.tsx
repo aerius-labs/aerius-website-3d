@@ -14,7 +14,7 @@ export default function FooterSection() {
             className='flex flex-row items-center gap-1 sm:w-[17.2vw] sm:flex-col'
           >
             <Image
-              src='/socialIcons/briefcase_icon.svg'
+              src='/socialIcons/briefcase.svg'
               alt='briefcase_icon'
               width={35}
               height={35}
@@ -28,7 +28,7 @@ export default function FooterSection() {
             className='flex flex-row items-center gap-1 sm:w-[21.9vw] sm:flex-col'
           >
             <Image
-              src='/socialIcons/telegram_icon.svg'
+              src='/socialIcons/telegram.svg'
               alt='telegram_icon'
               width={35}
               height={35}
@@ -42,7 +42,7 @@ export default function FooterSection() {
             className='flex flex-row items-center gap-1 sm:w-[21.9vw] sm:flex-col'
           >
             <Image
-              src='/socialIcons/github_icon.svg'
+              src='/socialIcons/github.svg'
               alt='github_icon'
               width={35}
               height={35}
@@ -56,7 +56,7 @@ export default function FooterSection() {
             className='flex flex-row items-center gap-1 sm:w-[21.9vw] sm:flex-col'
           >
             <Image
-              src='/socialIcons/medium_icon.svg'
+              src='/socialIcons/medium.svg'
               alt='medium_icon'
               width={35}
               height={35}
@@ -70,7 +70,7 @@ export default function FooterSection() {
             className='flex flex-row items-center gap-1 sm:w-[17.2vw] sm:flex-col'
           >
             <Image
-              src='/socialIcons/twitter_icon.svg'
+              src='/socialIcons/twitter.svg'
               alt='twitter_icon'
               width={35}
               height={35}
@@ -86,7 +86,7 @@ export default function FooterSection() {
             className='flex flex-row items-center gap-1 sm:w-[17.2vw] sm:flex-col'
           >
             <Image
-              src='/socialIcons/briefcase_icon.svg'
+              src='/socialIcons/briefcase.svg'
               alt='briefcase_icon'
               width={35}
               height={35}
@@ -99,7 +99,7 @@ export default function FooterSection() {
             className='flex flex-row items-center gap-1 sm:w-[21.9vw] sm:flex-col'
           >
             <Image
-              src='/socialIcons/telegram_icon.svg'
+              src='/socialIcons/telegram.svg'
               alt='telegram_icon'
               width={35}
               height={35}
@@ -112,7 +112,7 @@ export default function FooterSection() {
             className='flex flex-row items-center gap-1 sm:w-[21.9vw] sm:flex-col'
           >
             <Image
-              src='/socialIcons/github_icon.svg'
+              src='/socialIcons/github.svg'
               alt='github_icon'
               width={35}
               height={35}
@@ -125,7 +125,7 @@ export default function FooterSection() {
             className='flex flex-row items-center gap-1 sm:w-[21.9vw] sm:flex-col'
           >
             <Image
-              src='/socialIcons/medium_icon.svg'
+              src='/socialIcons/medium.svg'
               alt='medium_icon'
               width={35}
               height={35}
@@ -138,7 +138,7 @@ export default function FooterSection() {
             className='flex flex-row items-center gap-1 sm:w-[17.2vw] sm:flex-col'
           >
             <Image
-              src='/socialIcons/twitter_icon.svg'
+              src='/socialIcons/twitter.svg'
               alt='twitter_icon'
               width={35}
               height={35}
