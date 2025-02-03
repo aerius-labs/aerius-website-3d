@@ -30,7 +30,7 @@ export default function OurWritingsSection() {
           <HoverEffect items={blogsData} />
         </div>
 
-        <div className='mb-10 flex w-full justify-center lg:mb-40 lg:mt-20 xl:mt-0'>
+        <div className='mb-10 flex w-full justify-center lg:mb-40 lg:mt-20 xl:mt-10'>
           <Link
             target='_blank'
             href='https://blog.aeriuslabs.org/'
