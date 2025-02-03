@@ -17,7 +17,7 @@ export default function TrustSection() {
           </span>
           <span className='hovering relative'>
             <span className='absolute z-40 h-full w-full bg-transparent'></span>
-            countless of individuals and businesses worldwide
+            individuals and businesses worldwide
           </span>
         </h3>
       </div>
