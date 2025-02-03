@@ -108,7 +108,7 @@ export const Card = ({
       <div className='relative z-50'>
         <div className='p-4'>
           {children}
-          <div className='mt-auto flex items-center justify-between border-t border-zinc-800 pt-4'>
+          <div className='mt-4 flex items-center justify-between border-t border-zinc-800 pt-4'>
             <span className='text-sm text-zinc-400'>{publishDate}</span>
             <div className='z-10 flex h-10 w-10 items-center justify-center rounded-full border border-white p-3 transition-all duration-300 group-hover:bg-white'>
               <span className='text-white transition-all duration-300 group-hover:-rotate-45 group-hover:text-black'>
