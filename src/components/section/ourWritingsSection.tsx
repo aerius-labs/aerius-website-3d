@@ -30,9 +30,10 @@ export default function OurWritingsSection() {
           <HoverEffect items={blogsData} />
         </div>
 
-        <div className='mb-10 flex w-full justify-center lg:mb-40 lg:mt-20 xl:mt-0'>
+        <div className='mb-10 flex w-full justify-center lg:mb-40 lg:mt-20 xl:mt-10'>
           <Link
-            href='/blogs'
+            target='_blank'
+            href='https://blog.aeriuslabs.org/'
             aria-label='Explore more blog posts'
             className='hovering group flex items-center justify-center gap-3 transition-all duration-300'
           >

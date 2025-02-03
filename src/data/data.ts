@@ -1,3 +1,6 @@
+import { LucideIcon, ScrollText } from "lucide-react";
+import { XIcon } from "@/helpers/lucideXLogo";
+
 interface ServiceItem {
   title: string;
   description: string;
@@ -9,6 +12,10 @@ interface ProductItem {
   imageAlt: string;
   title: string;
   description: string;
+  links: {
+    link: string;
+    icon: string;
+  }[]
 }
 
 interface BlogPost {
@@ -27,6 +34,7 @@ interface PartnerLogo {
   src: string;
   link: string;
 }
+
 
 export const serviceItem: ServiceItem[] = [
   {
@@ -51,6 +59,11 @@ export const productItem: ProductItem[] = [
     title: 'VEX',
     description:
       'Not a CEX. Not a DEX. A revolutionary exchange platform that combines the best of both worlds—delivering centralized performance with decentralized trust',
+    links: [
+      {link: 'https://x.com/trade_vex', icon: '/socialIcons/twitter_icon.svg'},
+      {link: 'https://medium.com/vex-research', icon: '/socialIcons/medium_icon.svg'},
+      {link: 'https://t.me/trade_vex', icon: '/socialIcons/telegram_icon.svg'}
+    ]
   },
   {
     id: 2,
@@ -59,6 +72,9 @@ export const productItem: ProductItem[] = [
     title: 'Scalerize',
     description:
       'Scalerize is an adaptable optimistic rollup stack that enables developers to build custom rollups for any blockchain, ensuring secure, fast transactions with single-slot finality, fraud proofs, and IBC support.',
+    links: [
+      {link: 'https://x.com/Scalerize_XYZ', icon: '/socialIcons/twitter_icon.svg'},
+    ]
   },
   {
     id: 3,
@@ -67,53 +83,56 @@ export const productItem: ProductItem[] = [
     title: 'Zk Snap',
     description:
       'ZkSnap leverages zk proofs to provide secure, anonymous DAO voting with ballot privacy, ensuring integrity and protection from external influence in the decision-making process.',
+    links: [
+      { link: 'https://drive.google.com/file/d/1bu0oe9PVTtSuT8JpwMmzKEG8Fb-mdPLH/view', icon: '/socialIcons/scroll_icon.svg' }
+    ]
   },
 ];
 
 export const blogsData: BlogPost[] = [
   {
-    title: 'Athena Finance',
+    title: 'Understanding Finality - Part 1',
     description:
-      'On-chain asset management for the Cosmos ecosystem, based on CosmWasm.',
-    link: '#athenaFinance',
+      'The concept of “finality” plays a big role in establishing immutability and reliability in a blockchain network. Finality refers to the point at which',
+    link: 'https://blog.aeriuslabs.org/understanding-finality-part-1-blockchain-for-dummies-2a2472aea926',
     image: {
-      src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-C_UAhXq9GfuGO452EEzfbKnh1viQB9EDBQ&s',
-      alt: 'Blog Post Image',
+      src: '/blogs/finality.gif',
+      alt: 'Finality_alt_image',
     },
-    publishDate: '13, Dec, 2024',
+    publishDate: 'Aug 23, 2024',
   },
   {
-    title: 'Athena Finance',
+    title: 'Decoding Consensus - Part 1',
     description:
-      'On-chain asset management for the Cosmos ecosystem, based on CosmWasm.',
-    link: '#athenaFinance',
+      'Blockchains have changed the way we access and utilise various services. We can now transfer assets directly without relying on intermediaries',
+    link: 'https://blog.aeriuslabs.org/decoding-consensus-blockchain-for-dummies-part-1-c9cb71609e11',
     image: {
-      src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-C_UAhXq9GfuGO452EEzfbKnh1viQB9EDBQ&s',
-      alt: 'Blog Post Image',
+      src: '/blogs/consensus.webp',
+      alt: 'Consesus_alt_image',
     },
-    publishDate: '13, Dec, 2024',
+    publishDate: 'Jan 22, 2024',
   },
   {
-    title: 'Athena Finance',
+    title: 'User Anonymity in an adversarial environment',
     description:
-      'On-chain asset management for the Cosmos ecosystem, based on CosmWasm.',
-    link: '#athenaFinance',
+      'In today’s digital landscape, striking a balance between user privacy and safeguarding against spam and abuse',
+    link: 'https://blog.aeriuslabs.org/protecting-user-anonymity-exploring-rate-limiting-nullifiers-using-zero-knowledge-proofs-2b97e7b68e52',
     image: {
-      src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-C_UAhXq9GfuGO452EEzfbKnh1viQB9EDBQ&s',
-      alt: 'Blog Post Image',
+      src: '/blogs/user-anonymity.webp',
+      alt: 'anonymity_alt_image',
     },
-    publishDate: '13, Dec, 2024',
+    publishDate: 'Feb 3, 2024',
   },
   {
-    title: 'Athena Finance',
+    title: 'Demystifying KZG Commitments',
     description:
-      'On-chain asset management for the Cosmos ecosystem, based on CosmWasm.',
-    link: '#athenaFinance',
+      'We now present a very simple walkthrough of the entire process in an attempt to make the reader understand the KZG commitment',
+    link: 'https://blog.aeriuslabs.org/demystifying-kzg-commitments-f1de10f13e93',
     image: {
-      src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-C_UAhXq9GfuGO452EEzfbKnh1viQB9EDBQ&s',
-      alt: 'Blog Post Image',
+      src: '/blogs/demistifying-kzg.webp',
+      alt: 'kzg_commitments_alt_image',
     },
-    publishDate: '13, Dec, 2024',
+    publishDate: 'May 2, 2023',
   },
 ];
 

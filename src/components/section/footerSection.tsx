@@ -9,7 +9,8 @@ export default function FooterSection() {
       <div className='relative flex w-full flex-col text-white'>
         <div className='z-20 hidden flex-col gap-2 px-4 py-6 sm:flex-row sm:gap-0 sm:py-2 md:flex'>
           <Link
-            href='#'
+            target='_blank'
+            href='https://hallowed-crayfish-844.notion.site/Jobs-at-Aerius-9a9f7b75d06f437a895d0103ef9a3d8c'
             className='flex flex-row items-center gap-1 sm:w-[17.2vw] sm:flex-col'
           >
             <Image
@@ -22,7 +23,8 @@ export default function FooterSection() {
             <p className={`text-sm ${IBMPlexMono.className}`}>Careers</p>
           </Link>
           <Link
-            href='#'
+            target='_blank'
+            href='https://t.me/AeriusLabs'
             className='flex flex-row items-center gap-1 sm:w-[21.9vw] sm:flex-col'
           >
             <Image
@@ -35,7 +37,8 @@ export default function FooterSection() {
             <p className={`text-sm ${IBMPlexMono.className}`}>Telegram</p>
           </Link>
           <Link
-            href='#'
+            target='_blank'
+            href='https://github.com/Aerius-Labs'
             className='flex flex-row items-center gap-1 sm:w-[21.9vw] sm:flex-col'
           >
             <Image
@@ -48,7 +51,8 @@ export default function FooterSection() {
             <p className={`text-sm ${IBMPlexMono.className}`}>Github</p>
           </Link>
           <Link
-            href='#'
+            target='_blank'
+            href='https://blog.aeriuslabs.org/'
             className='flex flex-row items-center gap-1 sm:w-[21.9vw] sm:flex-col'
           >
             <Image
@@ -61,7 +65,8 @@ export default function FooterSection() {
             <p className={`text-sm ${IBMPlexMono.className}`}>Medium</p>
           </Link>
           <Link
-            href='#'
+            target='_blank'
+            href='https://x.com/AeriusLabs'
             className='flex flex-row items-center gap-1 sm:w-[17.2vw] sm:flex-col'
           >
             <Image
@@ -76,7 +81,8 @@ export default function FooterSection() {
         </div>
         <div className='z-20 flex flex-row justify-between gap-2 px-4 py-6 sm:flex-row sm:gap-0 sm:py-2 md:hidden'>
           <Link
-            href='#'
+            target='_blank'
+            href='https://hallowed-crayfish-844.notion.site/Jobs-at-Aerius-9a9f7b75d06f437a895d0103ef9a3d8c'
             className='flex flex-row items-center gap-1 sm:w-[17.2vw] sm:flex-col'
           >
             <Image
@@ -88,7 +94,8 @@ export default function FooterSection() {
             />
           </Link>
           <Link
-            href='#'
+            target='_blank'
+            href='https://t.me/AeriusLabs'
             className='flex flex-row items-center gap-1 sm:w-[21.9vw] sm:flex-col'
           >
             <Image
@@ -100,7 +107,8 @@ export default function FooterSection() {
             />
           </Link>
           <Link
-            href='#'
+            target='_blank'
+            href='https://github.com/Aerius-Labs'
             className='flex flex-row items-center gap-1 sm:w-[21.9vw] sm:flex-col'
           >
             <Image
@@ -112,7 +120,8 @@ export default function FooterSection() {
             />
           </Link>
           <Link
-            href='#'
+            target='_blank'
+            href='https://blog.aeriuslabs.org/'
             className='flex flex-row items-center gap-1 sm:w-[21.9vw] sm:flex-col'
           >
             <Image
@@ -124,7 +133,8 @@ export default function FooterSection() {
             />
           </Link>
           <Link
-            href='#'
+            target='_blank'
+            href='https://x.com/AeriusLabs'
             className='flex flex-row items-center gap-1 sm:w-[17.2vw] sm:flex-col'
           >
             <Image

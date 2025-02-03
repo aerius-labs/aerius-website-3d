@@ -120,7 +120,7 @@ export default function BorderCorners({
   }, []);
 
   return (
-    <div className='fixed z-[1] h-full w-full'>
+    <div className='fixed h-full w-full'>
       <div
         ref={topLeftRef}
         className='absolute h-4 w-4 border-l-2 border-t-2 border-white/80 sm:h-6 sm:w-6'
