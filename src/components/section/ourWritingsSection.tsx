@@ -34,6 +34,7 @@ export default function OurWritingsSection() {
           <Link
             target='_blank'
             href='https://blog.aeriuslabs.org/'
+            rel='noopener noreferrer'
             aria-label='Explore more blog posts'
             className='hovering group flex items-center justify-center gap-3 transition-all duration-300'
           >
