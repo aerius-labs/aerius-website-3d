@@ -97,7 +97,7 @@ export default function ProductItemSection() {
                           className='h-5 w-5'
                           width={5}
                           height={5}
-                          alt='social-icon'
+                          alt={`${item.title} social link icon`}
                         />
                       </Link>
                     </div>

@@ -35,6 +35,7 @@ export const HoverEffect = ({
             target='_blank'
             href={item?.link}
             key={item?.link + idx}
+            rel='noopener noreferrer'
             className='group relative block min-h-[440px] w-full px-2'
             onMouseEnter={() => setHoveredIndex(idx)}
             onMouseLeave={() => setHoveredIndex(null)}
