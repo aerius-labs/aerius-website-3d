@@ -9,12 +9,12 @@ import { useGSAP } from '@gsap/react';
 gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(useGSAP);
 
-useGLTF.preload('/models/Satellite.glb');
+useGLTF.preload('/models/satellite.glb');
 
 export default function SatelliteModel() {
   const group = useRef<any>(null);
   const { nodes, materials, animations }: any = useGLTF(
-    '/models/Satellite.glb'
+    '/models/satellite.glb'
   );
   const { mixer } = useAnimations(animations, group);
 

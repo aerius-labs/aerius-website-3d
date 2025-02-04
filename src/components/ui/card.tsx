@@ -25,16 +25,18 @@ export const HoverEffect = ({
   return (
     <div
       className={cn(
-        'sticky z-10 grid h-full grid-cols-1 flex-col items-center justify-center gap-6 bg-black py-10 md:grid-cols-2 md:gap-0 lg:h-[550px] lg:grid-cols-4 lg:gap-0 xl:gap-0',
+        'sticky z-10 grid h-full grid-cols-1 flex-col items-center justify-center gap-6 bg-black py-10 md:grid-cols-2 md:gap-x-0 md:gap-y-6 lg:h-[550px] lg:grid-cols-4 lg:gap-0 xl:gap-0',
         className
       )}
     >
       {items.map((item, idx) => (
         <div key={idx} className='relative flex flex-col items-center'>
           <Link
+            target='_blank'
             href={item?.link}
             key={item?.link + idx}
-            className='group relative block min-h-[460px] w-full px-2'
+            rel='noopener noreferrer'
+            className='group relative block min-h-[440px] w-full px-2'
             onMouseEnter={() => setHoveredIndex(idx)}
             onMouseLeave={() => setHoveredIndex(null)}
             onFocus={() => setHoveredIndex(idx)}
@@ -58,8 +60,10 @@ export const HoverEffect = ({
               )}
             </AnimatePresence>
             <Card image={item.image} publishDate={item.publishDate}>
-              <CardTitle className='text-2xl'>{item.title}</CardTitle>
-              <CardDescription className='text-lg'>
+              <CardTitle className='line-clamp-1 text-2xl lg:line-clamp-2'>
+                {item.title}
+              </CardTitle>
+              <CardDescription className='line-clamp-3 text-lg'>
                 {item.description}
               </CardDescription>
             </Card>
@@ -105,7 +109,7 @@ export const Card = ({
       <div className='relative z-50'>
         <div className='p-4'>
           {children}
-          <div className='mt-auto flex items-center justify-between border-t border-zinc-800 pt-4'>
+          <div className='mt-4 flex items-center justify-between border-t border-zinc-800 pt-4'>
             <span className='text-sm text-zinc-400'>{publishDate}</span>
             <div className='z-10 flex h-10 w-10 items-center justify-center rounded-full border border-white p-3 transition-all duration-300 group-hover:bg-white'>
               <span className='text-white transition-all duration-300 group-hover:-rotate-45 group-hover:text-black'>

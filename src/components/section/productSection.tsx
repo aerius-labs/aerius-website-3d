@@ -1,8 +1,9 @@
-import { Akzidenzgroteskbe, IBMPlexMono } from '@/fonts/fonts';
+import { HankenGrotesk, IBMPlexMono } from '@/fonts/fonts';
 import Image from 'next/image';
 import dynamic from 'next/dynamic';
 import { productItem } from '@/data/data';
 import { useEffect, useState } from 'react';
+import Link from 'next/link';
 
 const Scene = dynamic(() => import('@/components/scene/satelliteScene'), {
   ssr: false,
@@ -23,7 +24,7 @@ export default function ProductItemSection() {
   return (
     <section
       id='Products'
-      className={`relative ${Akzidenzgroteskbe.className} flex w-screen flex-col justify-center text-white lg:items-start`}
+      className={`relative ${HankenGrotesk.className} flex w-screen flex-col justify-center text-white lg:items-start`}
     >
       {/* Top Line */}
       <div className='relative flex min-h-[150vh] w-screen items-center overflow-hidden'>
@@ -56,7 +57,7 @@ export default function ProductItemSection() {
             </span>
           </h3>
         </div>
-        <div className='grid gap-4 pt-10 md:grid-rows-2'>
+        <div className='grid cursor-pointer gap-4 pt-10 md:grid-rows-2'>
           {productItem.map((item, index) => (
             <div
               key={item.id}
@@ -72,7 +73,7 @@ export default function ProductItemSection() {
                 />
               </div>
               <div
-                className={`${Akzidenzgroteskbe.className} mt-2 basis-2/3 border-white md:border-l-[1px] md:pl-5`}
+                className={`${HankenGrotesk.className} mt-2 basis-2/3 border-white md:border-l-[1px] md:pl-5`}
               >
                 <h1 className='flex justify-center border-b-[1px] border-white pb-3 text-2xl font-extrabold uppercase md:justify-start'>
                   {item.title}
@@ -82,6 +83,26 @@ export default function ProductItemSection() {
                 >
                   {item.description}
                 </p>
+                <div className='flex items-center gap-4 py-3'>
+                  {item.links.map((linkItem, index) => (
+                    <div key={index} className='flex items-center gap-4'>
+                      <Link
+                        href={linkItem.link}
+                        className='text-white underline hover:text-white/80'
+                        target='_blank'
+                        rel='noopener noreferrer'
+                      >
+                        <Image
+                          src={linkItem.icon}
+                          className='h-5 w-5'
+                          width={5}
+                          height={5}
+                          alt={`${item.title} social link icon`}
+                        />
+                      </Link>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           ))}

@@ -9,11 +9,11 @@ import { useGSAP } from '@gsap/react';
 gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(useGSAP);
 
-useGLTF.preload('/models/LogoBreaks.glb');
+useGLTF.preload('/models/logoBreak.glb');
 
 export default function AeriusLogoModel() {
   const group = useRef<any>();
-  const model = useGLTF('/models/LogoBreaks.glb');
+  const model = useGLTF('/models/logoBreak.glb');
   const { animations, nodes, materials } = model;
   const { mixer } = useAnimations(animations, group);
   const [load, setLoad] = useState(false);

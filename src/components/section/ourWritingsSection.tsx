@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { IBMPlexMono, Akzidenzgroteskbe } from '@/fonts/fonts';
+import { IBMPlexMono, HankenGrotesk } from '@/fonts/fonts';
 import { HoverEffect } from '../ui/card';
 import { blogsData } from '@/data/data';
 
@@ -7,7 +7,7 @@ export default function OurWritingsSection() {
   return (
     <section
       id='Blogs'
-      className={`relative ${Akzidenzgroteskbe.className} flex w-screen flex-col items-center justify-center px-5 text-white lg:px-20`}
+      className={`relative ${HankenGrotesk.className} flex w-screen flex-col items-center justify-center px-5 text-white lg:px-20`}
     >
       {/* Content */}
       <div className='flex flex-col items-center justify-center'>
@@ -30,9 +30,11 @@ export default function OurWritingsSection() {
           <HoverEffect items={blogsData} />
         </div>
 
-        <div className='mb-10 flex w-full justify-center lg:mb-40 lg:mt-20 xl:mt-0'>
+        <div className='mb-10 flex w-full justify-center lg:mb-40 lg:mt-20 xl:mt-10'>
           <Link
-            href='/blogs'
+            target='_blank'
+            href='https://blog.aeriuslabs.org/'
+            rel='noopener noreferrer'
             aria-label='Explore more blog posts'
             className='hovering group flex items-center justify-center gap-3 transition-all duration-300'
           >

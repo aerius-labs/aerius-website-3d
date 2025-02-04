@@ -1,12 +1,12 @@
 import { partnerLogos } from '@/data/data';
-import { Akzidenzgroteskbe } from '@/fonts/fonts';
+import { HankenGrotesk } from '@/fonts/fonts';
 import Image from 'next/image';
 
 export default function TrustSection() {
   return (
     <section
       id='Trusted'
-      className={`flex ${Akzidenzgroteskbe.className} w-screen flex-col justify-center gap-10 pt-10 text-white`}
+      className={`flex ${HankenGrotesk.className} w-screen flex-col justify-center gap-10 pt-10 text-white`}
     >
       {/* Content */}
       <div className='flex flex-col items-center gap-4 px-5'>
@@ -17,13 +17,13 @@ export default function TrustSection() {
           </span>
           <span className='hovering relative'>
             <span className='absolute z-40 h-full w-full bg-transparent'></span>
-            countless of individuals and businesses worldwide
+            individuals and businesses worldwide
           </span>
         </h3>
       </div>
       {/* Logo Grid */}
       <div className='relative z-10 flex w-screen justify-center overflow-hidden'>
-        <div className='grid w-[1/2] grid-cols-2 gap-6 sm:grid-cols-3 md:gap-20 lg:grid-cols-4 xl:grid-cols-5'>
+        <div className='grid w-[1/2] grid-cols-2 gap-6 sm:grid-cols-3 md:gap-20 lg:grid-cols-4 xl:grid-cols-4'>
           {partnerLogos.map(({ id, src, link }) => (
             <a
               key={id}
@@ -40,7 +40,7 @@ export default function TrustSection() {
                   height={120}
                   quality={90}
                   priority={id < 5}
-                  className='ml-6 scale-125 transition-transform duration-300 group-hover:scale-100'
+                  className='scale-125 p-4 transition-transform duration-300 group-hover:scale-100'
                 />
                 <div className='absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100'>
                   <svg
@@ -73,7 +73,6 @@ export default function TrustSection() {
           ))}
         </div>
       </div>
-      {/* className='absolute hidden group-hover:block inset-0 z-10 h-full w-full overflow-visible group-hover:scale-90 transition-transform duration-300' */}
       {/* Bottom Line */}
       <div className='relative flex min-h-[70vh] w-screen items-center justify-center overflow-hidden'>
         <div className='absolute bottom-0 left-[50%] top-0 h-full'>
