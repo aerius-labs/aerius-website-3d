@@ -1,6 +1,3 @@
-import { LucideIcon, ScrollText } from "lucide-react";
-import { XIcon } from "@/helpers/lucideXLogo";
-
 interface ServiceItem {
   title: string;
   description: string;
@@ -15,7 +12,7 @@ interface ProductItem {
   links: {
     link: string;
     icon: string;
-  }[]
+  }[];
 }
 
 interface BlogPost {
@@ -35,6 +32,12 @@ interface PartnerLogo {
   link: string;
 }
 
+export interface Link {
+  href: string;
+  src: string;
+  alt: string;
+  name: string;
+}
 
 export const serviceItem: ServiceItem[] = [
   {
@@ -60,10 +63,19 @@ export const productItem: ProductItem[] = [
     description:
       'Not a CEX. Not a DEX. A revolutionary exchange platform that combines the best of both worlds—delivering centralized performance with decentralized trust',
     links: [
-      {link: 'https://x.com/trade_vex', icon: '/socialIcons/twitter_icon.svg'},
-      {link: 'https://medium.com/vex-research', icon: '/socialIcons/medium_icon.svg'},
-      {link: 'https://t.me/trade_vex', icon: '/socialIcons/telegram_icon.svg'}
-    ]
+      {
+        link: 'https://x.com/trade_vex',
+        icon: '/socialIcons/twitter.svg',
+      },
+      {
+        link: 'https://medium.com/vex-research',
+        icon: '/socialIcons/medium.svg',
+      },
+      {
+        link: 'https://t.me/trade_vex',
+        icon: '/socialIcons/telegram.svg',
+      },
+    ],
   },
   {
     id: 2,
@@ -73,8 +85,11 @@ export const productItem: ProductItem[] = [
     description:
       'Scalerize is an adaptable optimistic rollup stack that enables developers to build custom rollups for any blockchain, ensuring secure, fast transactions with single-slot finality, fraud proofs, and IBC support.',
     links: [
-      {link: 'https://x.com/Scalerize_XYZ', icon: '/socialIcons/twitter_icon.svg'},
-    ]
+      {
+        link: 'https://x.com/Scalerize_XYZ',
+        icon: '/socialIcons/twitter.svg',
+      },
+    ],
   },
   {
     id: 3,
@@ -84,8 +99,11 @@ export const productItem: ProductItem[] = [
     description:
       'ZkSnap leverages zk proofs to provide secure, anonymous DAO voting with ballot privacy, ensuring integrity and protection from external influence in the decision-making process.',
     links: [
-      { link: 'https://drive.google.com/file/d/1bu0oe9PVTtSuT8JpwMmzKEG8Fb-mdPLH/view', icon: '/socialIcons/scroll_icon.svg' }
-    ]
+      {
+        link: 'https://drive.google.com/file/d/1bu0oe9PVTtSuT8JpwMmzKEG8Fb-mdPLH/view',
+        icon: '/socialIcons/scroll.svg',
+      },
+    ],
   },
 ];
 
@@ -139,52 +157,55 @@ export const blogsData: BlogPost[] = [
 export const partnerLogos: PartnerLogo[] = [
   {
     id: 1,
-    src: 'https://labs.sigma.software/wp-content/uploads/2022/10/human-new.svg',
-    link: 'https://partner1.com',
+    src: '/partners/sindri.svg',
+    link: 'https://sindri.app/',
   },
   {
     id: 2,
-    src: 'https://labs.sigma.software/wp-content/uploads/2022/10/human-new.svg',
-    link: 'https://partner2.com',
+    src: '/partners/cysic.webp',
+    link: 'https://cysic.xyz/',
   },
   {
     id: 3,
-    src: 'https://labs.sigma.software/wp-content/uploads/2022/10/human-new.svg',
-    link: 'https://partner3.com',
+    src: '/partners/plume-network.png',
+    link: 'https://plumenetwork.xyz/',
   },
   {
     id: 4,
-    src: 'https://labs.sigma.software/wp-content/uploads/2022/10/human-new.svg',
-    link: 'https://partner4.com',
+    src: '/partners/d3-inc.png',
+    link: 'https://d3.inc/',
+  },
+];
+
+export const links: Link[] = [
+  {
+    href: 'https://hallowed-crayfish-844.notion.site/Jobs-at-Aerius-9a9f7b75d06f437a895d0103ef9a3d8c',
+    src: '/socialIcons/briefcase.svg',
+    alt: 'briefcase_icon',
+    name: 'Careers',
   },
   {
-    id: 5,
-    src: 'https://labs.sigma.software/wp-content/uploads/2022/10/human-new.svg',
-    link: 'https://partner5.com',
+    href: 'https://t.me/AeriusLabs',
+    src: '/socialIcons/telegram.svg',
+    alt: 'telegram_icon',
+    name: 'Telegram',
   },
   {
-    id: 6,
-    src: 'https://labs.sigma.software/wp-content/uploads/2022/10/human-new.svg',
-    link: 'https://partner6.com',
+    href: 'https://github.com/Aerius-Labs',
+    src: '/socialIcons/github.svg',
+    alt: 'github_icon',
+    name: 'Github',
   },
   {
-    id: 7,
-    src: 'https://labs.sigma.software/wp-content/uploads/2022/10/human-new.svg',
-    link: 'https://partner7.com',
+    href: 'https://blog.aeriuslabs.org/',
+    src: '/socialIcons/medium.svg',
+    alt: 'medium_icon',
+    name: 'Medium',
   },
   {
-    id: 8,
-    src: 'https://labs.sigma.software/wp-content/uploads/2022/10/human-new.svg',
-    link: 'https://partner8.com',
-  },
-  {
-    id: 9,
-    src: 'https://labs.sigma.software/wp-content/uploads/2022/10/human-new.svg',
-    link: 'https://partner9.com',
-  },
-  {
-    id: 10,
-    src: 'https://labs.sigma.software/wp-content/uploads/2022/10/human-new.svg',
-    link: 'https://partner5.com',
+    href: 'https://x.com/AeriusLabs',
+    src: '/socialIcons/twitter.svg',
+    alt: 'twitter_icon',
+    name: 'Twitter',
   },
 ];

@@ -9,12 +9,12 @@ import { Color, MeshStandardMaterial } from 'three';
 gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(useGSAP);
 
-useGLTF.preload('/models/Astronaut1.glb');
+useGLTF.preload('/models/astronaut.glb');
 
 export default function AstronautModel() {
   const group = useRef<any>(null);
   const { nodes, materials, animations }: any = useGLTF(
-    '/models/Astronaut1.glb'
+    '/models/astronaut.glb'
   );
   const { mixer, actions } = useAnimations(animations, group);
   const logoMaterialsRef = useRef<MeshStandardMaterial[]>([]);

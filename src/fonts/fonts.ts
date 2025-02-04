@@ -4,10 +4,10 @@ export const IBMPlexMono = localFont({
   src: '../../public/Fonts/IBMPlexMono-Text.otf',
 });
 
-export const FKScreamerBlack = localFont({
-  src: '../../public/Fonts/FKScreamerTrial-Black.otf',
+export const AntonRegular = localFont({
+  src: '../../public/Fonts/Anton-Regular.otf',
 });
 
-export const Akzidenzgroteskbe = localFont({
-  src: '../../public/Fonts/AkzidenzGroteskBE-Regular.otf',
+export const HankenGrotesk = localFont({
+  src: '../../public/Fonts/HankenGrotesk-Regular.ttf',
 });
